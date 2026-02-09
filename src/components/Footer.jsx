@@ -83,7 +83,12 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-bottom">
-                    <p>© 2026 PyCon Cameroon. All rights reserved.</p>
+                    <div>
+                        <p>© 2026 PyCon Cameroon. All rights reserved.</p>
+                        <p style={{ fontSize: '0.8rem', marginTop: '5px' }}>
+                            Built by <a href="https://github.com/azilmuluh" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-orange)' }}>Muluh Azinwi Success</a>
+                        </p>
+                    </div>
                     <div>
                         <Link to="/terms">Terms and Conditions</Link>
                         <span style={{ margin: '0 var(--spacing-sm)' }}>|</span>
