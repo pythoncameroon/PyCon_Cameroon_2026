@@ -1,16 +1,76 @@
-# React + Vite
+# PyCon Cameroon 2026
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the official repository for the PyCon Cameroon 2026 website. This project has been migrated from a static HTML site to a modern, high-performance React application.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Framework**: [React](https://react.dev/) (v18+)
+- **Build Tool**: [Vite](https://vitejs.dev/) - utilizing ES modules for fast HMR and builds
+- **Routing**: [React Router DOM](https://reactrouter.com/) (v6) for client-side navigation
+- **Styling**: Custom CSS with a variable-based design system and extensive keyframe animations
+- **Animations**: Custom `useScrollAnimation` hook leveraging `IntersectionObserver` for performance
 
-## React Compiler
+## 📂 Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The project follows a modular component-based architecture:
 
-## Expanding the ESLint configuration
+```
+PyCon_Cameroon_2026/
+├── public/
+│   └── Images/          # Optimized webp assets
+├── src/
+│   ├── components/      # Reusable UI blocks (Navbar, Footer, etc.)
+│   ├── layouts/         # Page wrappers (Layout.jsx)
+│   ├── pages/           # Individual route components (Home, About, etc.)
+│   ├── hooks/           # Custom logic (useScrollAnimation.js)
+│   ├── index.css        # Global styles and design tokens
+│   ├── App.jsx          # Route definitions
+│   └── main.jsx         # Application entry point
+├── index.html           # HTML entry template
+└── vite.config.js       # Vite configuration
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Installation & Setup
+
+To run this project locally:
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/azilmuluh/PyCon_Cameroon_2026.git
+    cd PyCon_Cameroon_2026
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Start the development server:**
+    ```bash
+    npm run dev
+    ```
+    Open your browser to `http://localhost:5173`.
+
+## 📦 Deployment
+
+To build the project for production:
+
+```bash
+npm run build
+```
+
+This will generate a `dist` folder containing the optimized static assets ready for deployment to platforms like Vercel, Netlify, or GitHub Pages.
+
+## ✨ Key Features
+
+- **Responsive Design**: Fully responsive layout adapting to mobile, tablet, and desktop.
+- **Tribal Aesthetics**: Custom design integrating Toghu patterns and vibrant African colors.
+- **Scroll Animations**: Smooth, performant entry animations for content sections.
+- **SPA Navigation**: Seamless transitions between pages without full reloads.
+
+## 🤝 Contributing
+
+(Add contribution guidelines here if applicable)
+
+---
+*Built with ❤️ for the Python Community in Cameroon.*
