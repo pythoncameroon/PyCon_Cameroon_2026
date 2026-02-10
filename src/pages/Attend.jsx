@@ -33,61 +33,42 @@ const Attend = () => {
                         requiring financial assistance.
                     </p>
 
-                    <div className="grid grid-3 stagger">
-                        {/* Corporate Rate */}
-                        <div className="card animate-on-scroll slide-up" style={{ borderTop: '4px solid var(--color-blue)' }}>
-                            <h3 className="card-title">Corporate Rate</h3>
-                            <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-blue)', margin: 'var(--spacing-sm) 0' }}>
-                                10,000 XAF
-                            </div>
-                            <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--spacing-md)' }}>
-                                Approx. $15 USD
-                            </p>
-
-                            <p className="card-text mb-md">
-                                If your company is paying for you to attend, please register at this rate.
-                                You help sustain the conference and our grant program.
-                            </p>
-
-                            <a href="#" className="btn btn-primary"
-                                style={{ width: '100%', background: 'var(--color-blue)', color: 'white' }}>Register Corporate</a>
-                        </div>
-
-                        {/* Individual Rate */}
+                    <div className="grid grid-2 stagger" style={{ maxWidth: '800px', margin: '0 auto' }}>
+                        {/* Early Bird Rate */}
                         <div className="card animate-on-scroll slide-up" style={{ borderTop: '4px solid var(--color-orange)' }}>
-                            <h3 className="card-title">Individual Rate</h3>
+                            <h3 className="card-title">Early Bird</h3>
                             <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-orange)', margin: 'var(--spacing-sm) 0' }}>
-                                6,000 XAF
+                                2,000 XAF
                             </div>
                             <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--spacing-md)' }}>
-                                Approx. $10 USD
+                                Limited Time Offer
                             </p>
 
                             <p className="card-text mb-md">
-                                If you are paying for yourself to attend. Employees of non-profits may
-                                also choose this rate.
+                                Secure your spot early at our special discounted rate. Available for all
+                                attendees for a limited time.
                             </p>
 
-                            <a href="#" className="btn btn-primary" style={{ width: '100%' }}>Register Individual</a>
+                            <a href="https://forms.gle/BvmvbBpPkr64bTkV8" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ width: '100%' }}>Get Early Bird Ticket</a>
                         </div>
 
-                        {/* Student Rate */}
-                        <div className="card animate-on-scroll slide-up" style={{ borderTop: '4px solid var(--color-green)' }}>
-                            <h3 className="card-title">Student Rate</h3>
-                            <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-green)', margin: 'var(--spacing-sm) 0' }}>
+                        {/* Normal Rate */}
+                        <div className="card animate-on-scroll slide-up" style={{ borderTop: '4px solid var(--color-blue)' }}>
+                            <h3 className="card-title">Normal Rate</h3>
+                            <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-blue)', margin: 'var(--spacing-sm) 0' }}>
                                 3,000 XAF
                             </div>
                             <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--spacing-md)' }}>
-                                Approx. $5 USD
+                                Standard Admission
                             </p>
 
                             <p className="card-text mb-md">
-                                For full-time students and academics. Valid student ID will be required
-                                at check-in.
+                                Standard ticket price for the two-day conference, including lunch,
+                                refreshments, and conference swag.
                             </p>
 
-                            <a href="#" className="btn btn-primary"
-                                style={{ width: '100%', background: 'var(--color-green)', color: 'white' }}>Register Student</a>
+                            <a href="https://forms.gle/BvmvbBpPkr64bTkV8" target="_blank" rel="noopener noreferrer" className="btn btn-primary"
+                                style={{ width: '100%', background: 'var(--color-blue)', color: 'white' }}>Get Normal Ticket</a>
                         </div>
                     </div>
 
