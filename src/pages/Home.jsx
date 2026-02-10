@@ -30,8 +30,8 @@ const Home = () => {
                         <a href="https://sessionize.com/pycon-camerooon-2026" className="btn btn-primary btn-lg">
                             🎤 Call For Speakers
                         </a>
-                        <Link to="https://forms.gle/BvmvbBpPkr64bTkV8" className="btn btn-secondary btn-lg">
-                            🎟️ Get Your FREE Ticket
+                        <Link to="/attend" className="btn btn-secondary btn-lg">
+                            🎟️ Get Your Ticket
                         </Link>
                     </div>
                 </div>
@@ -179,9 +179,9 @@ const Home = () => {
                         Be part of Cameroon's first PyCon and help shape the future of Python in Africa.
                     </p>
                     <div className="flex justify-center gap-sm flex-wrap">
-                        {/* <Link to="/attend" className="btn btn-lg" style={{ background: 'white', color: 'var(--color-orange)' }}>
+                        <Link to="/attend" className="btn btn-lg" style={{ background: 'white', color: 'var(--color-orange)' }}>
                             Get Your Ticket
-                        </Link> */}
+                        </Link>
                         <Link to="/speakers" className="btn btn-lg btn-secondary" style={{ borderColor: 'white', color: 'white' }}>
                             Submit a Talk
                         </Link>

@@ -39,7 +39,7 @@ const Navbar = () => {
                     <NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>About</NavLink>
                     <NavLink to="/speakers" className={({ isActive }) => isActive ? "active" : ""}>Speakers</NavLink>
                     <NavLink to="/sponsor" className={({ isActive }) => isActive ? "active" : ""}>Sponsor</NavLink>
-                    {/* <NavLink to="/attend" className={({ isActive }) => isActive ? "active" : ""}>Attend</NavLink> */}
+                    <NavLink to="/attend" className={({ isActive }) => isActive ? "active" : ""}>Attend</NavLink>
                     <NavLink to="/venue" className={({ isActive }) => isActive ? "active" : ""}>Venue</NavLink>
                 </div>
 
