@@ -72,10 +72,7 @@ const Attend = () => {
                         </div>
                     </div>
 
-                    <div className="alert alert-info mt-lg">
-                        <strong>💡 Note:</strong> Tutorial registration is separate and will open in March 2026.
-                        The cost is $20 USD per tutorial.
-                    </div>
+
                 </div>
             </section>
 
