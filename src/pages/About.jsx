@@ -1,5 +1,6 @@
 import React from 'react';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import LazyImage from '../components/LazyImage';
 
 const About = () => {
     useScrollAnimation();
@@ -97,7 +98,7 @@ const About = () => {
                             </div>
                         </div>
                         <div>
-                            <img src="/Images/50b4bb72bcda16fbabf50f8ca87ca412.webp" className="img-limit-height" alt="Community" />
+                            <LazyImage src="/Images/50b4bb72bcda16fbabf50f8ca87ca412.webp" className="img-limit-height" alt="Community" />
                         </div>
                     </div>
                 </div>
@@ -115,7 +116,7 @@ const About = () => {
 
                     <div className="grid grid-2" style={{ alignItems: 'center', gap: 'var(--spacing-xl)' }}>
                         <div>
-                            <img src="/Images/5e7ef535d7837d92dc28625166cc2568.webp" alt="PyCon Mission"
+                            <LazyImage src="/Images/5e7ef535d7837d92dc28625166cc2568.webp" alt="PyCon Mission"
                                 className="img-limit-height" />
                         </div>
                         <div>
@@ -155,7 +156,7 @@ const About = () => {
                     <div className="grid grid-3 stagger">
                         <div className="card animate-on-scroll slide-up">
                             <div className="card-icon">
-                                <img src="/Images/2e243534d6899d8f474f419e1ac832c9.webp" alt="Platform" loading="lazy" />
+                                <LazyImage src="/Images/2e243534d6899d8f474f419e1ac832c9.webp" alt="Platform" />
                             </div>
                             <h3 className="card-title">Building a Welcoming Community</h3>
                             <p className="card-text">
@@ -167,7 +168,7 @@ const About = () => {
 
                         <div className="card animate-on-scroll slide-up">
                             <div className="card-icon">
-                                <img src="/Images/Unknown.webp" alt="Talks" loading="lazy" />
+                                <LazyImage src="/Images/Unknown.webp" alt="Talks" />
                             </div>
                             <h3 className="card-title">Inspiring Talks</h3>
                             <p className="card-text">
@@ -179,7 +180,7 @@ const About = () => {
 
                         <div className="card animate-on-scroll slide-up">
                             <div className="card-icon">
-                                <img src="/Images/African.webp" alt="Workshops" loading="lazy" />
+                                <LazyImage src="/Images/African.webp" alt="Workshops" />
                             </div>
                             <h3 className="card-title">Practical Workshops</h3>
                             <p className="card-text">
@@ -190,7 +191,7 @@ const About = () => {
 
                         <div className="card animate-on-scroll slide-up">
                             <div className="card-icon">
-                                <img src="/Images/aa8b76bc47ebdea99b84fa3a26a94ade.webp" alt="Networking" loading="lazy" />
+                                <LazyImage src="/Images/aa8b76bc47ebdea99b84fa3a26a94ade.webp" alt="Networking" />
                             </div>
                             <h3 className="card-title">Simple and All-Inclusive</h3>
                             <p className="card-text">
@@ -201,7 +202,7 @@ const About = () => {
 
                         <div className="card animate-on-scroll slide-up">
                             <div className="card-icon">
-                                <img src="/Images/ChatGPT.webp" alt="Inspiration" loading="lazy" />
+                                <LazyImage src="/Images/ChatGPT.webp" alt="Inspiration" />
                             </div>
                             <h3 className="card-title">Innovation & Creativity</h3>
                             <p className="card-text">
@@ -212,7 +213,7 @@ const About = () => {
 
                         <div className="card animate-on-scroll slide-up">
                             <div className="card-icon">
-                                <img src="/Images/5a266f7460a16bd5e7b0d2cabf54e874.webp" alt="Growth" loading="lazy" />
+                                <LazyImage src="/Images/5a266f7460a16bd5e7b0d2cabf54e874.webp" alt="Growth" />
                             </div>
                             <h3 className="card-title">Growing Together</h3>
                             <p className="card-text">
@@ -250,7 +251,7 @@ const About = () => {
                                         overflow: 'hidden'
                                     }}>
                                     {member.image ? (
-                                        <img src={member.image} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                        <LazyImage src={member.image} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                     ) : (
                                         '👤'
                                     )}
