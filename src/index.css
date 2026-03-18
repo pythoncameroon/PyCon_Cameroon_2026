@@ -1625,6 +1625,82 @@ img {
     padding-top: 100px;
 }
 
+@keyframes panBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 400px 400px;
+    }
+}
+
+@keyframes glitch {
+    0%, 100% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+}
+
+@keyframes neonPulse {
+    0%, 100% {
+        text-shadow: 0 0 10px var(--color-orange), 0 0 20px var(--color-orange), 0 0 30px var(--color-orange);
+    }
+    50% {
+        text-shadow: 0 0 20px var(--color-orange), 0 0 30px var(--color-orange), 0 0 40px var(--color-orange), 0 0 50px var(--color-yellow);
+    }
+}
+
+@keyframes morphShape {
+    0%, 100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    25% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+    50% {
+        border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%;
+    }
+    75% {
+        border-radius: 60% 30% 60% 40% / 70% 40% 50% 60%;
+    }
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+}
+
+@keyframes slideInBounce {
+    0% {
+        transform: translateX(-100%) scale(0.5);
+        opacity: 0;
+    }
+    60% {
+        transform: translateX(10%) scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes rainbow {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
 .hero-background {
     position: absolute;
     top: 0;
@@ -1637,6 +1713,7 @@ img {
     background-repeat: repeat;
     background-position: center;
     filter: blur(3px);
+    animation: panBackground 20s linear infinite;
 }
 
 .hero-overlay {
@@ -1694,6 +1771,8 @@ img {
 
 .hero-title .highlight {
     color: var(--color-orange);
+    display: inline-block;
+    animation: wiggle 2s ease-in-out infinite;
 }
 
 .hero-subtitle {
