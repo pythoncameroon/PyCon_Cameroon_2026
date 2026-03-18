@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import LazyImage from '../components/LazyImage';
 
@@ -318,7 +319,7 @@ const About = () => {
                         </p>
 
                         <div className="mt-md">
-                            <a href="#" className="btn btn-secondary">Read Full Code of Conduct</a>
+                            <Link to="/code-of-conduct" className="btn btn-secondary">Read Full Code of Conduct</Link>
                         </div>
                     </div>
                 </div>

@@ -57,7 +57,7 @@ const Footer = () => {
                         <div className="footer-links">
                             <Link to="/about">Overview</Link>
                             <Link to="/about#team">Team</Link>
-                            <Link to="/about#code-of-conduct">Code of Conduct</Link>
+                            <Link to="/code-of-conduct">Code of Conduct</Link>
                             <a href="https://www.python.org/psf-landing/">Python Software Foundation</a>
                         </div>
                     </div>
@@ -93,6 +93,10 @@ const Footer = () => {
                         <Link to="/terms">Terms and Conditions</Link>
                         <span style={{ margin: '0 var(--spacing-sm)' }}>|</span>
                         <Link to="/privacy">Privacy Policy</Link>
+                        <span style={{ margin: '0 var(--spacing-sm)' }}>|</span>
+                        <Link to="/health-safety">Health & Safety</Link>
+                        <span style={{ margin: '0 var(--spacing-sm)' }}>|</span>
+                        <Link to="/financial-aid">Financial Aid</Link>
                     </div>
                 </div>
             </div>
