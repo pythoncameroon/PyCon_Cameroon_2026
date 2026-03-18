@@ -8,7 +8,7 @@ const Footer = () => {
                 <div className="footer-grid">
                     <div>
                         <div className="footer-brand">
-                            <img src="/Images/ChatGPT.webp" alt="PyCon Cameroon Logo" />
+                            <img src="/Images/python-cameroon-logo.png" alt="PyCon Cameroon Logo" />
                             <span style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--color-orange)' }}>PyCon CM 2026</span>
                         </div>
 

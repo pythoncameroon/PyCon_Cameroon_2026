@@ -202,7 +202,7 @@ const About = () => {
 
                         <div className="card animate-on-scroll slide-up">
                             <div className="card-icon">
-                                <LazyImage src="/Images/ChatGPT.webp" alt="Inspiration" />
+                                <img src="/Images/python-cameroon-logo.png" alt="Inspiration" loading="lazy" />
                             </div>
                             <h3 className="card-title">Innovation & Creativity</h3>
                             <p className="card-text">

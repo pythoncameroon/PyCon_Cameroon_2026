@@ -49,7 +49,7 @@ const Attend = () => {
                                 attendees for a limited time.
                             </p>
 
-                            <a href="https://forms.gle/BvmvbBpPkr64bTkV8" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ width: '100%' }}>Get Early Bird Ticket</a>
+                            <a href="https://ly.reckot.com/pycon-cameroon-2026-a4390c99-early-birds" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ width: '100%' }}>Get Early Bird Ticket</a>
                         </div>
 
                         {/* Normal Rate */}
@@ -67,7 +67,7 @@ const Attend = () => {
                                 refreshments, and conference swag.
                             </p>
 
-                            <a href="https://forms.gle/BvmvbBpPkr64bTkV8" target="_blank" rel="noopener noreferrer" className="btn btn-primary"
+                            <a href="https://ly.reckot.com/pycon-cameroon-2026-a4390c99-regular" target="_blank" rel="noopener noreferrer" className="btn btn-primary"
                                 style={{ width: '100%', background: 'var(--color-blue)', color: 'white' }}>Get Normal Ticket</a>
                         </div>
                     </div>
