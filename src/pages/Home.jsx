@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import LazyImage from '../components/LazyImage';
 
 const Home = () => {
     useScrollAnimation();
@@ -57,7 +58,7 @@ const Home = () => {
                     <div className="grid grid-3 mt-lg stagger">
                         <div className="card animate-slide-up">
                             <div className="card-icon">
-                                <img src="/Images/97568bbec02a103e305ee0d2bbaa6106.webp" alt="African Innovation" />
+                                <LazyImage src="/Images/97568bbec02a103e305ee0d2bbaa6106.webp" alt="African Innovation" />
                             </div>
                             <h3 className="card-title">African Innovation Hub</h3>
                             <p className="card-text">
@@ -68,7 +69,7 @@ const Home = () => {
 
                         <div className="card animate-slide-up" style={{ transitionDelay: '100ms' }}>
                             <div className="card-icon">
-                                <img src="/Images/50b4bb72bcda16fbabf50f8ca87ca412.webp" alt="Python for Everyone" />
+                                <LazyImage src="/Images/50b4bb72bcda16fbabf50f8ca87ca412.webp" alt="Python for Everyone" />
                             </div>
                             <h3 className="card-title">Python for Everyone</h3>
                             <p className="card-text">
@@ -79,7 +80,7 @@ const Home = () => {
 
                         <div className="card animate-slide-up" style={{ transitionDelay: '200ms' }}>
                             <div className="card-icon">
-                                <img src="/Images/African.webp" alt="Community" />
+                                <LazyImage src="/Images/African.webp" alt="Community" />
                             </div>
                             <h3 className="card-title">Community Driven</h3>
                             <p className="card-text">
@@ -101,7 +102,7 @@ const Home = () => {
                     <div className="grid grid-4 stagger">
                         <div className="card animate-bounce-in text-center">
                             <div className="feature-icon">
-                                <img src="/Images/5a266f7460a16bd5e7b0d2cabf54e874.webp" alt="Talks" />
+                                <LazyImage src="/Images/5a266f7460a16bd5e7b0d2cabf54e874.webp" alt="Talks" />
                             </div>
                             <h4>Inspiring Talks</h4>
                             <p className="card-text">
@@ -112,7 +113,7 @@ const Home = () => {
 
                         <div className="card animate-bounce-in text-center">
                             <div className="feature-icon">
-                                <img src="/Images/5e7ef535d7837d92dc28625166cc2568.webp" alt="Workshops" />
+                                <LazyImage src="/Images/5e7ef535d7837d92dc28625166cc2568.webp" alt="Workshops" />
                             </div>
                             <h4>Hands-on Workshops</h4>
                             <p className="card-text">
@@ -123,7 +124,7 @@ const Home = () => {
 
                         <div className="card animate-bounce-in text-center">
                             <div className="feature-icon">
-                                <img src="/Images/Unknown.webp" alt="Networking" />
+                                <LazyImage src="/Images/Unknown.webp" alt="Networking" />
                             </div>
                             <h4>Networking</h4>
                             <p className="card-text">
@@ -134,7 +135,7 @@ const Home = () => {
 
                         <div className="card animate-bounce-in text-center">
                             <div className="feature-icon">
-                                <img src="/Images/ac5ca270fe9d4f7c17c5b2bf97337208.webp" alt="Fun" />
+                                <LazyImage src="/Images/ac5ca270fe9d4f7c17c5b2bf97337208.webp" alt="Fun" />
                             </div>
                             <h4>Fun Activities</h4>
                             <p className="card-text">
