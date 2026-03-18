@@ -8,6 +8,9 @@ import Attend from './pages/Attend';
 import Venue from './pages/Venue';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
+import HealthSafety from './pages/HealthSafety';
+import FinancialAid from './pages/FinancialAid';
+import CodeOfConduct from './pages/CodeOfConduct';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -24,6 +27,9 @@ function App() {
           <Route path="venue" element={<Venue />} />
           <Route path="privacy" element={<Privacy />} />
           <Route path="terms" element={<Terms />} />
+          <Route path="health-safety" element={<HealthSafety />} />
+          <Route path="financial-aid" element={<FinancialAid />} />
+          <Route path="code-of-conduct" element={<CodeOfConduct />} />
         </Route>
       </Routes>
     </>
