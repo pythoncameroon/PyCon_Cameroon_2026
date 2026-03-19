@@ -26,6 +26,12 @@ const Navbar = () => {
         }
     }, [location]); // eslint-disable-line react-hooks/exhaustive-deps
 
+    // Lock body scroll when drawer is open
+    useEffect(() => {
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+        return () => { document.body.style.overflow = ''; };
+    }, [isOpen]);
+
     return (
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar">
             <div className="nav-container">
@@ -41,6 +47,36 @@ const Navbar = () => {
                     <NavLink to="/sponsor" className={({ isActive }) => isActive ? "active" : ""}>Sponsor</NavLink>
                     <NavLink to="/attend" className={({ isActive }) => isActive ? "active" : ""}>Attend</NavLink>
                     <NavLink to="/venue" className={({ isActive }) => isActive ? "active" : ""}>Venue</NavLink>
+                    <NavLink to="/ubucon" className={({ isActive }) => isActive ? "active" : ""} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                        <img src="/images/partners/canonical-cm.webp" alt="" style={{ width: '18px', height: '18px', objectFit: 'contain' }} />
+                        UbuCon
+                    </NavLink>
+                </div>
+
+                {/* Mobile drawer overlay */}
+                {isOpen && <div className="nav-overlay" onClick={() => setIsOpen(false)} />}
+
+                {/* Mobile drawer */}
+                <div className={`nav-drawer ${isOpen ? 'open' : ''}`}>
+                    <button
+                        className="nav-drawer-close"
+                        aria-label="Close menu"
+                        onClick={() => setIsOpen(false)}
+                    >
+                        &times;
+                    </button>
+                    <div className="nav-drawer-links">
+                        <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink>
+                        <NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>About</NavLink>
+                        <NavLink to="/speakers" className={({ isActive }) => isActive ? "active" : ""}>Speakers</NavLink>
+                        <NavLink to="/sponsor" className={({ isActive }) => isActive ? "active" : ""}>Sponsor</NavLink>
+                        <NavLink to="/attend" className={({ isActive }) => isActive ? "active" : ""}>Attend</NavLink>
+                        <NavLink to="/venue" className={({ isActive }) => isActive ? "active" : ""}>Venue</NavLink>
+                        <NavLink to="/ubucon" className={({ isActive }) => isActive ? "active" : ""} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                            <img src="/images/partners/canonical-cm.webp" alt="" style={{ width: '22px', height: '22px', objectFit: 'contain' }} />
+                            UbuCon
+                        </NavLink>
+                    </div>
                 </div>
 
                 <button

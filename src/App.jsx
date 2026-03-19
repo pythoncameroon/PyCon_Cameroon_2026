@@ -14,6 +14,7 @@ const Privacy = lazy(() => import('./pages/Privacy'));
 const Terms = lazy(() => import('./pages/Terms'));
 const HealthSafety = lazy(() => import('./pages/HealthSafety'));
 const CodeOfConduct = lazy(() => import('./pages/CodeOfConduct'));
+const UbuCon = lazy(() => import('./pages/UbuCon'));
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="terms" element={<Suspense fallback={<PageLoader />}><Terms /></Suspense>} />
           <Route path="health-safety" element={<Suspense fallback={<PageLoader />}><HealthSafety /></Suspense>} />
           <Route path="code-of-conduct" element={<Suspense fallback={<PageLoader />}><CodeOfConduct /></Suspense>} />
+          <Route path="ubucon" element={<Suspense fallback={<PageLoader />}><UbuCon /></Suspense>} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
