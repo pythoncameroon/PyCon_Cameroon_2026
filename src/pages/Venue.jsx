@@ -71,7 +71,7 @@ const Venue = () => {
                         {/* Accommodation */}
                         <div className="card bg-dark">
                             <div className="card-icon">
-                                <img src="/images/5a266f7460a16bd5e7b0d2cabf54e874.webp" alt="Accommodation" />
+                                <img src="/images/general/5a266f7460a16bd5e7b0d2cabf54e874.webp" alt="Accommodation" />
                             </div>
                             <h3>Accommodation</h3>
                             <p className="mb-md">
@@ -92,7 +92,7 @@ const Venue = () => {
                         {/* Transportation */}
                         <div className="card bg-dark">
                             <div className="card-icon">
-                                <img src="/images/4f58e509d7713f4e1f5ec84e95175c61.webp" alt="Travel" />
+                                <img src="/images/general/4f58e509d7713f4e1f5ec84e95175c61.webp" alt="Travel" />
                             </div>
                             <h3>Getting There</h3>
                             <p className="mb-md">
@@ -125,7 +125,7 @@ const Venue = () => {
                     <div className="grid grid-3 stagger">
                         <div className="card animate-on-scroll slide-up">
                             <div className="card-img">
-                                <img src="/images/national-museum.webp" alt="National Museum" />
+                                <img src="/images/venue/national-museum.webp" alt="National Museum" />
                             </div>
                             <h4>National Museum</h4>
                             <p className="card-text">
@@ -135,7 +135,7 @@ const Venue = () => {
 
                         <div className="card animate-on-scroll slide-up">
                             <div className="card-img">
-                                <img src="/images/bois-sainte-anastasie.webp" alt="Bois Sainte Anastasie" />
+                                <img src="/images/venue/bois-sainte-anastasie.webp" alt="Bois Sainte Anastasie" />
                             </div>
                             <h4>Bois Sainte Anastasie</h4>
                             <p className="card-text">
@@ -145,7 +145,7 @@ const Venue = () => {
 
                         <div className="card animate-on-scroll slide-up">
                             <div className="card-img">
-                                <img src="/images/monument-de-la-reunification.webp" alt="Monument de la Réunification" />
+                                <img src="/images/venue/monument-de-la-reunification.webp" alt="Monument de la Réunification" />
                             </div>
                             <h4>Monument de la Réunification</h4>
                             <p className="card-text">

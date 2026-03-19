@@ -10,7 +10,7 @@ const About = () => {
     {
       name: "Steve Yonkeu",
       role: "Lead Python Cameroon",
-      image: "/images/Steve.webp",
+      image: "/images/organizers/Steve.webp",
       linkedin: "https://www.linkedin.com/in/yokwejuste",
       website: "https://yokwejuste.me",
       color: "orange",
@@ -19,7 +19,7 @@ const About = () => {
     {
       name: "Edmond Makolle",
       role: "Co-Lead, Mentorship / Learning Coordinator",
-      image: "/images/edmond-makole.webp",
+      image: "/images/organizers/edmond-makole.webp",
       linkedin: "https://www.linkedin.com/in/edmondmakolle",
       color: "green",
       gradient: "teal",
@@ -27,7 +27,7 @@ const About = () => {
     {
       name: "Ange Demanou",
       role: "Social Media Manager",
-      image: "/images/ange-demanou.webp",
+      image: "/images/organizers/ange-demanou.webp",
       linkedin: "https://www.linkedin.com/in/ange-demanou-367466340",
       color: "blue",
       gradient: "teal",
@@ -35,7 +35,7 @@ const About = () => {
     {
       name: "Djoko Christian",
       role: "Open Source Coordinator",
-      image: "/images/Djoko.webp",
+      image: "/images/organizers/Djoko.webp",
       linkedin: "https://www.linkedin.com/in/djoko-christian",
       color: "red",
       gradient: "orange",
@@ -43,7 +43,7 @@ const About = () => {
     {
       name: "Abuambou Evodia",
       role: "Project Coordinator",
-      image: "/images/abuambou-evodia.webp",
+      image: "/images/organizers/abuambou-evodia.webp",
       linkedin: "https://www.linkedin.com/in/abuambou-evodia-ruth-6b1b51270",
       color: "gold",
       gradient: "orange",
@@ -51,11 +51,21 @@ const About = () => {
     {
       name: "Essi Junior",
       role: "UI/UX and Graphic Designer",
-      image: "/images/Essi.webp",
+      image: "/images/organizers/Essi.webp",
       linkedin: "https://www.linkedin.com/in/essijunior/",
       color: "teal",
       gradient: "green",
     },
+  ];
+
+  const partnerCommunities = [
+    { name: "Canonical Cameroon", image: "/images/partners/canonical-cm.webp", link: "#" },
+    { name: "Django Cameroon", image: "/images/partners/djcmr.webp", link: "https://djangocameroon.org" },
+    { name: "Angular Cameroon", image: "/images/partners/angular-cm.webp", link: "https://ngcameroon.org" },
+    { name: "AWS User Group Douala", image: "/images/partners/aws-ug-dla.webp", link: "https://dla.awscmr.com" },
+    { name: "GDG Yaounde", image: "/images/partners/gdg-yde.webp", link: "https://gdg.community.dev/gdg-yaounde" },
+    { name: "Onyani", image: "/images/partners/onyani.webp", link: "https://onyani.com" },
+    { name: "Reckot", image: "/images/partners/reckot.webp", link: "https://reckot.com" },
   ];
 
   return (
@@ -116,7 +126,7 @@ const About = () => {
             </div>
             <div>
               <LazyImage
-                src="/images/50b4bb72bcda16fbabf50f8ca87ca412.webp"
+                src="/images/general/50b4bb72bcda16fbabf50f8ca87ca412.webp"
                 className="img-limit-height"
                 alt="Community"
               />
@@ -143,7 +153,7 @@ const About = () => {
           >
             <div>
               <LazyImage
-                src="/images/5e7ef535d7837d92dc28625166cc2568.webp"
+                src="/images/general/5e7ef535d7837d92dc28625166cc2568.webp"
                 alt="PyCon Mission"
                 className="img-limit-height"
               />
@@ -200,7 +210,7 @@ const About = () => {
             <div className="card animate-on-scroll slide-up">
               <div className="card-icon">
                 <LazyImage
-                  src="/images/2e243534d6899d8f474f419e1ac832c9.webp"
+                  src="/images/general/2e243534d6899d8f474f419e1ac832c9.webp"
                   alt="Platform"
                 />
               </div>
@@ -214,7 +224,7 @@ const About = () => {
 
             <div className="card animate-on-scroll slide-up">
               <div className="card-icon">
-                <LazyImage src="/images/Unknown.webp" alt="Talks" />
+                <LazyImage src="/images/general/Unknown.webp" alt="Talks" />
               </div>
               <h3 className="card-title">Inspiring Talks</h3>
               <p className="card-text">
@@ -226,7 +236,7 @@ const About = () => {
 
             <div className="card animate-on-scroll slide-up">
               <div className="card-icon">
-                <LazyImage src="/images/African.webp" alt="Workshops" />
+                <LazyImage src="/images/patterns/African.webp" alt="Workshops" />
               </div>
               <h3 className="card-title">Practical Workshops</h3>
               <p className="card-text">
@@ -239,7 +249,7 @@ const About = () => {
             <div className="card animate-on-scroll slide-up">
               <div className="card-icon">
                 <LazyImage
-                  src="/images/aa8b76bc47ebdea99b84fa3a26a94ade.webp"
+                  src="/images/general/aa8b76bc47ebdea99b84fa3a26a94ade.webp"
                   alt="Networking"
                 />
               </div>
@@ -254,7 +264,7 @@ const About = () => {
             <div className="card animate-on-scroll slide-up">
               <div className="card-icon">
                 <img
-                  src="/images/python-cameroon-logo.webp"
+                  src="/images/branding/python-cameroon-logo.webp"
                   alt="Inspiration"
                   loading="lazy"
                 />
@@ -269,7 +279,7 @@ const About = () => {
             <div className="card animate-on-scroll slide-up">
               <div className="card-icon">
                 <LazyImage
-                  src="/images/5a266f7460a16bd5e7b0d2cabf54e874.webp"
+                  src="/images/general/5a266f7460a16bd5e7b0d2cabf54e874.webp"
                   alt="Growth"
                 />
               </div>
@@ -397,6 +407,65 @@ const About = () => {
             >
               Join Our Team
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Tribal Border */}
+      <div className="tribal-border"></div>
+
+      {/* Partner Communities */}
+      <section className="section bg-dark" id="partners">
+        <div className="container">
+          <div className="section-header">
+            <h2>
+              Partner <span className="text-gradient">Communities</span>
+            </h2>
+            <p>
+              We are proud to collaborate with these amazing communities
+              across Africa and beyond.
+            </p>
+          </div>
+
+          <div className="grid grid-4 stagger" style={{ alignItems: 'center', justifyItems: 'center' }}>
+            {partnerCommunities.map((partner, index) => (
+              <a
+                key={index}
+                href={partner.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card animate-on-scroll slide-up"
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: 'var(--spacing-md)',
+                  textAlign: 'center',
+                  textDecoration: 'none',
+                  transition: 'transform 0.3s ease',
+                  width: '100%',
+                }}
+              >
+                <img
+                  src={partner.image}
+                  alt={partner.name}
+                  loading="lazy"
+                  style={{
+                    width: '120px',
+                    height: '120px',
+                    objectFit: 'contain',
+                    marginBottom: 'var(--spacing-sm)',
+                    border: '2px solid var(--color-border)',
+                    borderRadius: '20px',
+                    padding: '8px',
+                  }}
+                />
+                <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>
+                  {partner.name}
+                </span>
+              </a>
+            ))}
           </div>
         </div>
       </section>
