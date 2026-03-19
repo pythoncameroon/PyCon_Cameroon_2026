@@ -95,8 +95,6 @@ const Footer = () => {
                         <Link to="/privacy">Privacy Policy</Link>
                         <span style={{ margin: '0 var(--spacing-sm)' }}>|</span>
                         <Link to="/health-safety">Health & Safety</Link>
-                        <span style={{ margin: '0 var(--spacing-sm)' }}>|</span>
-                        <Link to="/financial-aid">Financial Aid</Link>
                     </div>
                 </div>
             </div>

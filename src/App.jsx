@@ -13,7 +13,6 @@ const Venue = lazy(() => import('./pages/Venue'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const Terms = lazy(() => import('./pages/Terms'));
 const HealthSafety = lazy(() => import('./pages/HealthSafety'));
-const FinancialAid = lazy(() => import('./pages/FinancialAid'));
 const CodeOfConduct = lazy(() => import('./pages/CodeOfConduct'));
 
 function App() {
@@ -31,7 +30,6 @@ function App() {
           <Route path="privacy" element={<Suspense fallback={<PageLoader />}><Privacy /></Suspense>} />
           <Route path="terms" element={<Suspense fallback={<PageLoader />}><Terms /></Suspense>} />
           <Route path="health-safety" element={<Suspense fallback={<PageLoader />}><HealthSafety /></Suspense>} />
-          <Route path="financial-aid" element={<Suspense fallback={<PageLoader />}><FinancialAid /></Suspense>} />
           <Route path="code-of-conduct" element={<Suspense fallback={<PageLoader />}><CodeOfConduct /></Suspense>} />
         </Route>
       </Routes>

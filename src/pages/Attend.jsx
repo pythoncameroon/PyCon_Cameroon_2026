@@ -155,32 +155,19 @@ const Attend = () => {
                         <h2>International <span className="text-gradient">Travel & Visas</span></h2>
                     </div>
 
-                    <div className="grid grid-2" style={{ gap: 'var(--spacing-lg)' }}>
-                        <div>
-                            <h3>Visa Information</h3>
-                            <p className="mb-md">
-                                Most visitors to Cameroon require a visa. Please check with your local
-                                Cameroonian embassy or consulate for specific requirements.
-                            </p>
+                    <div style={{ maxWidth: '700px', margin: '0 auto' }}>
+                        <h3>Visa Information</h3>
+                        <p className="mb-md">
+                            Most visitors to Cameroon require a visa. Please check with your local
+                            Cameroonian embassy or consulate for specific requirements.
+                        </p>
 
-                            <div className="alert alert-warning">
-                                <strong>Visa Letters:</strong> We can provide an official invitation letter
-                                to support your visa application once you have a paid registration.
-                            </div>
-
-                            <a href="#" className="btn btn-secondary mt-sm">Request Invitation Letter</a>
+                        <div className="alert alert-warning">
+                            <strong>Visa Letters:</strong> We can provide an official invitation letter
+                            to support your visa application once you have a paid registration.
                         </div>
 
-                        <div>
-                            <h3>Travel Grants</h3>
-                            <p className="mb-md">
-                                We are committed to making PyCon Cameroon accessible. A limited number
-                                of financial aid grants are available for speakers and attendees who
-                                require assistance with travel or accommodation costs.
-                            </p>
-
-                            <a href="#" className="btn btn-secondary mt-sm">Apply for Financial Aid</a>
-                        </div>
+                        <a href="mailto:organizers@pythoncameroon.org?subject=Request%20for%20Invitation%20Letter%20-%20PyCon%20Cameroon%202026&body=Dear%20PyCon%20Cameroon%20Organizing%20Team%2C%0A%0AI%20am%20writing%20to%20request%20an%20official%20invitation%20letter%20for%20my%20visa%20application%20to%20attend%20PyCon%20Cameroon%202026.%0A%0AFull%20Name%3A%20%0APassport%20Number%3A%20%0ANationality%3A%20%0ADate%20of%20Birth%3A%20%0AEmail%3A%20%0APhone%3A%20%0AMailing%20Address%3A%20%0ARegistration%20Confirmation%20Number%3A%20%0A%0AThank%20you%20for%20your%20assistance.%0A%0ABest%20regards" className="btn btn-secondary mt-sm">Request Invitation Letter</a>
                     </div>
                 </div>
             </section>
@@ -204,7 +191,7 @@ const Attend = () => {
                             <h4>Ticket Transfers</h4>
                             <p className="card-text">
                                 You may transfer your ticket to another person by sending a written
-                                request to registration@pycon.cm before August 1, 2026.
+                                request to organizers@pythoncameroon.org before August 1, 2026.
                             </p>
                         </div>
                     </div>
