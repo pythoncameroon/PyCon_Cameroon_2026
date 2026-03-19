@@ -70,17 +70,17 @@ const Speakers = () => {
 
                         <div className="timeline">
                             <div className="timeline-item">
-                                <div className="timeline-date">March 1st, 2026</div>
+                                <div className="timeline-date">March 30th, 2026</div>
                                 <div className="timeline-content">
-                                    <h4>Call For Proposals Opens</h4>
+                                    <h4>CFP and Call for Sponsors Opens</h4>
                                     <p>Start submitting your talk and workshop proposals via Sessionize.</p>
                                 </div>
                             </div>
 
                             <div className="timeline-item">
-                                <div className="timeline-date">April 20th, 2026, 11:59 PM WAT</div>
+                                <div className="timeline-date">May 15th, 2026, 11:59 PM WAT</div>
                                 <div className="timeline-content">
-                                    <h4>Call For Proposals Closes</h4>
+                                    <h4>CFP Closes</h4>
                                     <p>Last day to submit your proposals. Don't wait until the last minute!</p>
                                 </div>
                             </div>
@@ -88,8 +88,8 @@ const Speakers = () => {
                             <div className="timeline-item">
                                 <div className="timeline-date">May 30th, 2026</div>
                                 <div className="timeline-content">
-                                    <h4>Notifications Sent</h4>
-                                    <p>All submitters will receive acceptance or feedback notifications.</p>
+                                    <h4>Announcement of Speakers</h4>
+                                    <p>Selected speakers will be announced. All submitters will receive notifications.</p>
                                 </div>
                             </div>
 
