@@ -15,7 +15,6 @@ const Home = () => {
                 </div>
 
                 <div className="hero-content animate-fade-scale">
-                    <img src="/images/branding/python-cameroon-logo.webp" alt="PyCon Cameroon Logo" className="hero-logo" />
 
                     <h1 className="hero-title">
                         <span className="highlight">PyCon</span> Cameroon 2026
