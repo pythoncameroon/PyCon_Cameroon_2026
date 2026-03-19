@@ -317,7 +317,8 @@ const Sponsor = () => {
 
                     <div className="grid grid-2 stagger">
                         {tiers.map((tier) => (
-                            <div key={tier.name} className={`card sponsor-card ${tier.className} animate-on-scroll slide-up`}>
+                            <div key={tier.name} className={`card sponsor-card ${tier.className} animate-on-scroll slide-up`}
+                                style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
                                 <div className="sponsor-tier">{tier.name === 'Community' ? 'Community Package' : `${tier.name} Tier`}</div>
                                 <div className="sponsor-price">{tier.price}</div>
                                 {tier.priceNote && (
@@ -330,7 +331,7 @@ const Sponsor = () => {
                                     {tier.description}
                                 </p>
 
-                                <ul className="sponsor-features">
+                                <ul className="sponsor-features" style={{ flex: 1 }}>
                                     {tier.features.map((feature) => (
                                         <li key={feature}>{feature}</li>
                                     ))}
@@ -338,7 +339,7 @@ const Sponsor = () => {
 
                                 <a href={`mailto:organizers@pythoncameroon.org?subject=${tier.name} Sponsorship Inquiry`}
                                     className={tier.btnClass}
-                                    style={tier.btnStyle}>Select {tier.name}</a>
+                                    style={{ ...tier.btnStyle, marginTop: 'auto' }}>Select {tier.name}</a>
                             </div>
                         ))}
                     </div>
