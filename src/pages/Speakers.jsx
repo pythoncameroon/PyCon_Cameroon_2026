@@ -195,6 +195,13 @@ const Speakers = () => {
                             you agree to be recorded.
                         </div>
 
+                        <div className="alert alert-warning">
+                            <strong>Speaker Support</strong><br />
+                            Please note that PyCon Cameroon is currently unable to provide financial
+                            assistance (travel, accommodation, etc.) to speakers. All selected speakers
+                            will receive a <strong>free conference ticket</strong> for the full event.
+                        </div>
+
                         {/* Code of Conduct */}
                         <h3 style={{ marginTop: 'var(--spacing-lg)', marginBottom: 'var(--spacing-md)' }}>
                             📜 Code of Conduct
