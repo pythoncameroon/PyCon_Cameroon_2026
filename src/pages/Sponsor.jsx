@@ -113,10 +113,7 @@ const Sponsor = () => {
                         {/* Diamond Tier */}
                         <div className="card sponsor-card diamond animate-on-scroll slide-up">
                             <div className="sponsor-tier">Diamond Tier</div>
-                            <div className="sponsor-price">XAF 1,105,000</div>
-                            <div style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', marginBottom: 'var(--spacing-md)' }}>
-                                (Approx. $2,500 USD)
-                            </div>
+                            <div className="sponsor-price">USD 5,000</div>
 
                             <p style={{ marginBottom: 'var(--spacing-md)' }}>
                                 The ultimate sponsorship package for maximum visibility and impact.
@@ -125,11 +122,11 @@ const Sponsor = () => {
                             <ul className="sponsor-features">
                                 <li>Premium booth placement</li>
                                 <li>Keynote speaking opportunity</li>
-                                <li>5 speaking slots</li>
-                                <li>20 conference tickets</li>
+                                <li>2 speaking slots</li>
+                                <li>10 conference tickets</li>
                                 <li>Large branding on signage & materials</li>
                                 <li>Top-tier logo placement on website</li>
-                                <li>Dedicated sponsor story page</li>
+                                <li>Dedicated sponsor page on website</li>
                                 <li>Mention in all press releases</li>
                             </ul>
 
@@ -140,10 +137,7 @@ const Sponsor = () => {
                         {/* Gold Tier */}
                         <div className="card sponsor-card gold animate-on-scroll slide-up">
                             <div className="sponsor-tier">Gold Tier</div>
-                            <div className="sponsor-price">XAF 650,000</div>
-                            <div style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', marginBottom: 'var(--spacing-md)' }}>
-                                (Approx. $1,000 USD)
-                            </div>
+                            <div className="sponsor-price">USD 3,500</div>
 
                             <p style={{ marginBottom: 'var(--spacing-md)' }}>
                                 Excellent visibility and engagement opportunities.
@@ -151,8 +145,8 @@ const Sponsor = () => {
 
                             <ul className="sponsor-features">
                                 <li>Exhibition booth</li>
-                                <li>3 speaking slots</li>
-                                <li>6 conference tickets</li>
+                                <li>1 speaking slot</li>
+                                <li>5 conference tickets</li>
                                 <li>Medium branding on signage & materials</li>
                                 <li>Tier 2 logo placement on website</li>
                                 <li>Mention in press releases</li>
@@ -165,21 +159,16 @@ const Sponsor = () => {
                         {/* Silver Tier */}
                         <div className="card sponsor-card silver animate-on-scroll slide-up">
                             <div className="sponsor-tier">Silver Tier</div>
-                            <div className="sponsor-price">XAF 260,000</div>
-                            <div style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', marginBottom: 'var(--spacing-md)' }}>
-                                (Approx. $700 USD)
-                            </div>
+                            <div className="sponsor-price">USD 2,000</div>
 
                             <p style={{ marginBottom: 'var(--spacing-md)' }}>
                                 Great value for companies looking to support the community.
                             </p>
 
                             <ul className="sponsor-features">
-                                <li>2 speaking slots</li>
-                                <li>4 conference tickets</li>
-                                <li>Branding on conference signage</li>
+                                <li>1 speaking slot</li>
+                                <li>3 conference tickets</li>
                                 <li>Tier 3 logo placement on website</li>
-                                <li>Sponsor story on sponsors page</li>
                             </ul>
 
                             <a href="mailto:organizers@pythoncameroon.org?subject=Silver Sponsorship Inquiry"
@@ -190,19 +179,15 @@ const Sponsor = () => {
                         {/* Bronze Tier */}
                         <div className="card sponsor-card bronze animate-on-scroll slide-up">
                             <div className="sponsor-tier">Bronze Tier</div>
-                            <div className="sponsor-price">XAF 130,000</div>
-                            <div style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', marginBottom: 'var(--spacing-md)' }}>
-                                (Approx. $100 USD)
-                            </div>
+                            <div className="sponsor-price">USD 1,000</div>
 
                             <p style={{ marginBottom: 'var(--spacing-md)' }}>
-                                Perfect for startups and smaller organizations.
+                                Ideal for startups and smaller organizations.
                             </p>
 
                             <ul className="sponsor-features">
                                 <li>1 speaking slot</li>
-                                <li>2 conference tickets</li>
-                                <li>Social media mentions</li>
+                                <li>1 conference ticket</li>
                                 <li>Company logo on website</li>
                                 <li>Branding on select materials</li>
                             </ul>
@@ -211,10 +196,30 @@ const Sponsor = () => {
                                 className="btn btn-primary btn-bronze"
                                 style={{ width: '100%', background: 'var(--color-dark)', border: '1px solid #cd7f32', color: '#cd7f32' }}>Select Bronze</a>
                         </div>
+
+                        {/* Community Tier */}
+                        <div className="card sponsor-card community animate-on-scroll slide-up">
+                            <div className="sponsor-tier">Community Package</div>
+                            <div className="sponsor-price">USD 500</div>
+
+                            <p style={{ marginBottom: 'var(--spacing-md)' }}>
+                                Ideal for startups and smaller organizations.
+                            </p>
+
+                            <ul className="sponsor-features">
+                                <li>1 conference ticket</li>
+                                <li>Company logo on website</li>
+                                <li>Branding on select materials</li>
+                            </ul>
+
+                            <a href="mailto:organizers@pythoncameroon.org?subject=Community Sponsorship Inquiry"
+                                className="btn btn-primary"
+                                style={{ width: '100%', background: 'var(--color-dark)', border: '1px solid var(--color-green)', color: 'var(--color-green)' }}>Select Community</a>
+                        </div>
                     </div>
 
                     <div className="text-center mt-lg">
-                        <p className="mb-md">Prices are listed in Cameroon Currency (XAF) as per reference, but payment in USD is accepted.</p>
+                        <p className="mb-md">Prices are listed in USD. Payment in local currency (XAF) is also accepted.</p>
                         <div className="alert alert-info">
                             <strong>Custom Packages:</strong> Don't see a package that fits your needs?
                             We're happy to discuss custom sponsorship opportunities!
