@@ -1,8 +1,170 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+
+const internationalTiers = [
+    {
+        name: 'Diamond',
+        className: 'diamond',
+        price: 'USD 5,000',
+        description: 'The ultimate sponsorship package for maximum visibility and impact.',
+        features: [
+            'Premium booth placement',
+            'Keynote speaking opportunity',
+            '2 speaking slots',
+            '10 conference tickets',
+            'Large branding on signage & materials',
+            'Top-tier logo placement on website',
+            'Dedicated sponsor page on website',
+            'Mention in all press releases',
+        ],
+        btnClass: 'btn btn-primary btn-diamond',
+        btnStyle: { width: '100%' },
+    },
+    {
+        name: 'Gold',
+        className: 'gold',
+        price: 'USD 3,500',
+        description: 'Excellent visibility and engagement opportunities.',
+        features: [
+            'Exhibition booth',
+            '1 speaking slot',
+            '5 conference tickets',
+            'Medium branding on signage & materials',
+            'Tier 2 logo placement on website',
+            'Mention in press releases',
+        ],
+        btnClass: 'btn btn-primary btn-gold',
+        btnStyle: { width: '100%', background: 'var(--color-dark)', border: '1px solid var(--color-gold)', color: 'var(--color-gold)' },
+    },
+    {
+        name: 'Silver',
+        className: 'silver',
+        price: 'USD 2,000',
+        description: 'Great value for companies looking to support the community.',
+        features: [
+            '1 speaking slot',
+            '3 conference tickets',
+            'Tier 3 logo placement on website',
+        ],
+        btnClass: 'btn btn-primary btn-silver',
+        btnStyle: { width: '100%', background: 'var(--color-dark)', border: '1px solid var(--color-text-secondary)' },
+    },
+    {
+        name: 'Bronze',
+        className: 'bronze',
+        price: 'USD 1,000',
+        description: 'Ideal for startups and smaller organizations.',
+        features: [
+            '1 speaking slot',
+            '1 conference ticket',
+            'Company logo on website',
+            'Branding on select materials',
+        ],
+        btnClass: 'btn btn-primary btn-bronze',
+        btnStyle: { width: '100%', background: 'var(--color-dark)', border: '1px solid #cd7f32', color: '#cd7f32' },
+    },
+    {
+        name: 'Community',
+        className: 'community',
+        price: 'USD 500',
+        description: 'Ideal for startups and smaller organizations.',
+        features: [
+            '1 conference ticket',
+            'Company logo on website',
+            'Branding on select materials',
+        ],
+        btnClass: 'btn btn-primary',
+        btnStyle: { width: '100%', background: 'var(--color-dark)', border: '1px solid var(--color-green)', color: 'var(--color-green)' },
+    },
+];
+
+const localTiers = [
+    {
+        name: 'Diamond',
+        className: 'diamond',
+        price: 'XAF 1,000,000',
+        priceNote: 'Approx. $2,500 USD',
+        description: 'The ultimate sponsorship package for maximum visibility and impact.',
+        features: [
+            'Premium booth placement',
+            'Keynote speaking opportunity',
+            '2 speaking slots',
+            '10 conference tickets',
+            'Large branding on signage & materials',
+            'Top-tier logo placement on website',
+            'Dedicated sponsor page on website',
+            'Mention in all press releases',
+        ],
+        btnClass: 'btn btn-primary btn-diamond',
+        btnStyle: { width: '100%' },
+    },
+    {
+        name: 'Gold',
+        className: 'gold',
+        price: 'XAF 500,000',
+        priceNote: 'Approx. $1,000 USD',
+        description: 'Excellent visibility and engagement opportunities.',
+        features: [
+            'Exhibition booth',
+            '1 speaking slot',
+            '5 conference tickets',
+            'Medium branding on signage & materials',
+            'Tier 2 logo placement on website',
+            'Mention in press releases',
+        ],
+        btnClass: 'btn btn-primary btn-gold',
+        btnStyle: { width: '100%', background: 'var(--color-dark)', border: '1px solid var(--color-gold)', color: 'var(--color-gold)' },
+    },
+    {
+        name: 'Silver',
+        className: 'silver',
+        price: 'XAF 375,000',
+        priceNote: 'Approx. $700 USD',
+        description: 'Great value for companies looking to support the community.',
+        features: [
+            '1 speaking slot',
+            '3 conference tickets',
+            'Conference signage with branding',
+            'Tier 3 logo placement on website',
+        ],
+        btnClass: 'btn btn-primary btn-silver',
+        btnStyle: { width: '100%', background: 'var(--color-dark)', border: '1px solid var(--color-text-secondary)' },
+    },
+    {
+        name: 'Bronze',
+        className: 'bronze',
+        price: 'XAF 100,000',
+        priceNote: 'Approx. $200 USD',
+        description: 'Ideal for startups and smaller organizations.',
+        features: [
+            '1 speaking slot',
+            '1 conference ticket',
+            'Company logo on website',
+            'Branding on select materials',
+        ],
+        btnClass: 'btn btn-primary btn-bronze',
+        btnStyle: { width: '100%', background: 'var(--color-dark)', border: '1px solid #cd7f32', color: '#cd7f32' },
+    },
+    {
+        name: 'Community',
+        className: 'community',
+        price: 'XAF 50,000',
+        priceNote: 'Approx. $100 USD',
+        description: 'Ideal for startups and smaller organizations.',
+        features: [
+            '1 conference ticket',
+            'Company logo on website',
+            'Branding on select materials',
+        ],
+        btnClass: 'btn btn-primary',
+        btnStyle: { width: '100%', background: 'var(--color-dark)', border: '1px solid var(--color-green)', color: 'var(--color-green)' },
+    },
+];
 
 const Sponsor = () => {
     useScrollAnimation();
+    const [isLocal, setIsLocal] = useState(false);
+    const tiers = isLocal ? localTiers : internationalTiers;
 
     return (
         <>
@@ -109,117 +271,84 @@ const Sponsor = () => {
                         <p>Choose the package that best fits your goals</p>
                     </div>
 
-                    <div className="grid grid-2 stagger">
-                        {/* Diamond Tier */}
-                        <div className="card sponsor-card diamond animate-on-scroll slide-up">
-                            <div className="sponsor-tier">Diamond Tier</div>
-                            <div className="sponsor-price">USD 5,000</div>
-
-                            <p style={{ marginBottom: 'var(--spacing-md)' }}>
-                                The ultimate sponsorship package for maximum visibility and impact.
-                            </p>
-
-                            <ul className="sponsor-features">
-                                <li>Premium booth placement</li>
-                                <li>Keynote speaking opportunity</li>
-                                <li>2 speaking slots</li>
-                                <li>10 conference tickets</li>
-                                <li>Large branding on signage & materials</li>
-                                <li>Top-tier logo placement on website</li>
-                                <li>Dedicated sponsor page on website</li>
-                                <li>Mention in all press releases</li>
-                            </ul>
-
-                            <a href="mailto:organizers@pythoncameroon.org?subject=Diamond Sponsorship Inquiry"
-                                className="btn btn-primary btn-diamond" style={{ width: '100%' }}>Select Diamond</a>
-                        </div>
-
-                        {/* Gold Tier */}
-                        <div className="card sponsor-card gold animate-on-scroll slide-up">
-                            <div className="sponsor-tier">Gold Tier</div>
-                            <div className="sponsor-price">USD 3,500</div>
-
-                            <p style={{ marginBottom: 'var(--spacing-md)' }}>
-                                Excellent visibility and engagement opportunities.
-                            </p>
-
-                            <ul className="sponsor-features">
-                                <li>Exhibition booth</li>
-                                <li>1 speaking slot</li>
-                                <li>5 conference tickets</li>
-                                <li>Medium branding on signage & materials</li>
-                                <li>Tier 2 logo placement on website</li>
-                                <li>Mention in press releases</li>
-                            </ul>
-
-                            <a href="mailto:organizers@pythoncameroon.org?subject=Gold Sponsorship Inquiry" className="btn btn-primary btn-gold"
-                                style={{ width: '100%', background: 'var(--color-dark)', border: '1px solid var(--color-gold)', color: 'var(--color-gold)' }}>Select Gold</a>
-                        </div>
-
-                        {/* Silver Tier */}
-                        <div className="card sponsor-card silver animate-on-scroll slide-up">
-                            <div className="sponsor-tier">Silver Tier</div>
-                            <div className="sponsor-price">USD 2,000</div>
-
-                            <p style={{ marginBottom: 'var(--spacing-md)' }}>
-                                Great value for companies looking to support the community.
-                            </p>
-
-                            <ul className="sponsor-features">
-                                <li>1 speaking slot</li>
-                                <li>3 conference tickets</li>
-                                <li>Tier 3 logo placement on website</li>
-                            </ul>
-
-                            <a href="mailto:organizers@pythoncameroon.org?subject=Silver Sponsorship Inquiry"
-                                className="btn btn-primary btn-silver"
-                                style={{ width: '100%', background: 'var(--color-dark)', border: '1px solid var(--color-text-secondary)' }}>Select Silver</a>
-                        </div>
-
-                        {/* Bronze Tier */}
-                        <div className="card sponsor-card bronze animate-on-scroll slide-up">
-                            <div className="sponsor-tier">Bronze Tier</div>
-                            <div className="sponsor-price">USD 1,000</div>
-
-                            <p style={{ marginBottom: 'var(--spacing-md)' }}>
-                                Ideal for startups and smaller organizations.
-                            </p>
-
-                            <ul className="sponsor-features">
-                                <li>1 speaking slot</li>
-                                <li>1 conference ticket</li>
-                                <li>Company logo on website</li>
-                                <li>Branding on select materials</li>
-                            </ul>
-
-                            <a href="mailto:organizers@pythoncameroon.org?subject=Bronze Sponsorship Inquiry"
-                                className="btn btn-primary btn-bronze"
-                                style={{ width: '100%', background: 'var(--color-dark)', border: '1px solid #cd7f32', color: '#cd7f32' }}>Select Bronze</a>
-                        </div>
-
-                        {/* Community Tier */}
-                        <div className="card sponsor-card community animate-on-scroll slide-up">
-                            <div className="sponsor-tier">Community Package</div>
-                            <div className="sponsor-price">USD 500</div>
-
-                            <p style={{ marginBottom: 'var(--spacing-md)' }}>
-                                Ideal for startups and smaller organizations.
-                            </p>
-
-                            <ul className="sponsor-features">
-                                <li>1 conference ticket</li>
-                                <li>Company logo on website</li>
-                                <li>Branding on select materials</li>
-                            </ul>
-
-                            <a href="mailto:organizers@pythoncameroon.org?subject=Community Sponsorship Inquiry"
-                                className="btn btn-primary"
-                                style={{ width: '100%', background: 'var(--color-dark)', border: '1px solid var(--color-green)', color: 'var(--color-green)' }}>Select Community</a>
+                    {/* Toggle */}
+                    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 'var(--spacing-lg)' }}>
+                        <div style={{
+                            display: 'inline-flex',
+                            background: 'var(--color-dark)',
+                            borderRadius: '50px',
+                            padding: '4px',
+                            border: '1px solid var(--color-border)',
+                        }}>
+                            <button
+                                onClick={() => setIsLocal(false)}
+                                style={{
+                                    padding: '0.6rem 1.5rem',
+                                    borderRadius: '50px',
+                                    border: 'none',
+                                    cursor: 'pointer',
+                                    fontWeight: 600,
+                                    fontSize: '0.95rem',
+                                    transition: 'all 0.3s ease',
+                                    background: !isLocal ? 'var(--color-orange)' : 'transparent',
+                                    color: !isLocal ? 'white' : 'var(--color-text-secondary)',
+                                }}
+                            >
+                                International (USD)
+                            </button>
+                            <button
+                                onClick={() => setIsLocal(true)}
+                                style={{
+                                    padding: '0.6rem 1.5rem',
+                                    borderRadius: '50px',
+                                    border: 'none',
+                                    cursor: 'pointer',
+                                    fontWeight: 600,
+                                    fontSize: '0.95rem',
+                                    transition: 'all 0.3s ease',
+                                    background: isLocal ? 'var(--color-orange)' : 'transparent',
+                                    color: isLocal ? 'white' : 'var(--color-text-secondary)',
+                                }}
+                            >
+                                Local (XAF)
+                            </button>
                         </div>
                     </div>
 
+                    <div className="grid grid-2 stagger">
+                        {tiers.map((tier) => (
+                            <div key={tier.name} className={`card sponsor-card ${tier.className} animate-on-scroll slide-up`}>
+                                <div className="sponsor-tier">{tier.name === 'Community' ? 'Community Package' : `${tier.name} Tier`}</div>
+                                <div className="sponsor-price">{tier.price}</div>
+                                {tier.priceNote && (
+                                    <div style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', marginBottom: 'var(--spacing-md)' }}>
+                                        ({tier.priceNote})
+                                    </div>
+                                )}
+
+                                <p style={{ marginBottom: 'var(--spacing-md)' }}>
+                                    {tier.description}
+                                </p>
+
+                                <ul className="sponsor-features">
+                                    {tier.features.map((feature) => (
+                                        <li key={feature}>{feature}</li>
+                                    ))}
+                                </ul>
+
+                                <a href={`mailto:organizers@pythoncameroon.org?subject=${tier.name} Sponsorship Inquiry`}
+                                    className={tier.btnClass}
+                                    style={tier.btnStyle}>Select {tier.name}</a>
+                            </div>
+                        ))}
+                    </div>
+
                     <div className="text-center mt-lg">
-                        <p className="mb-md">Prices are listed in USD. Payment in local currency (XAF) is also accepted.</p>
+                        <p className="mb-md">
+                            {isLocal
+                                ? 'Prices are listed in XAF (Cameroon Franc). USD equivalent shown for reference.'
+                                : 'Prices are listed in USD. Payment in local currency (XAF) is also accepted.'}
+                        </p>
                         <div className="alert alert-info">
                             <strong>Custom Packages:</strong> Don't see a package that fits your needs?
                             We're happy to discuss custom sponsorship opportunities!
