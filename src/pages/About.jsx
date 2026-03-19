@@ -59,7 +59,7 @@ const About = () => {
   ];
 
   const partnerCommunities = [
-    { name: "Canonical Cameroon", image: "/images/partners/canonical-cm.webp", link: "#" },
+    { name: "UbuCon Cameroon", image: "/images/partners/canonical-cm.webp", link: "#" },
     { name: "Django Cameroon", image: "/images/partners/djcmr.webp", link: "https://djangocameroon.org" },
     { name: "Angular Cameroon", image: "/images/partners/angular-cm.webp", link: "https://ngcameroon.org" },
     { name: "AWS User Group Douala", image: "/images/partners/aws-ug-dla.webp", link: "https://dla.awscmr.com" },

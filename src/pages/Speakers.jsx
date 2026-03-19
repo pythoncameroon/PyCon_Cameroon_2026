@@ -149,6 +149,24 @@ const Speakers = () => {
                             </div>
                         </div>
 
+                        {/* UbuCon Track */}
+                        <div className="alert alert-success" style={{ marginTop: 'var(--spacing-md)' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-sm)', marginBottom: 'var(--spacing-sm)' }}>
+                                <img
+                                    src="/images/partners/canonical-cm.webp"
+                                    alt="UbuCon"
+                                    style={{ width: '40px', height: '40px', objectFit: 'contain', borderRadius: '8px' }}
+                                />
+                                <strong style={{ fontSize: '1.1rem' }}>UbuCon Cameroon Track (New!)</strong>
+                            </div>
+                            <p style={{ marginBottom: 0 }}>
+                                In partnership with UbuCon Cameroon, we are accepting proposals for our dedicated
+                                Ubuntu &amp; open source track. Topics include Ubuntu development, Linux system
+                                administration, open source contributions, cloud infrastructure, and Python in
+                                the Ubuntu ecosystem. Select "UbuCon Track" when submitting on Sessionize.
+                            </p>
+                        </div>
+
                         {/* Important Notes */}
                         <h3 style={{ marginTop: 'var(--spacing-lg)', marginBottom: 'var(--spacing-md)' }}>
                             ⚠️ Important Notes

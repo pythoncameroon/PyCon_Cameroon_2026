@@ -147,6 +147,78 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* UbuCon Track */}
+            <div className="tribal-border"></div>
+            <section className="section" id="ubucon">
+                <div className="container">
+                    <div className="grid grid-2" style={{ alignItems: 'center', gap: 'var(--spacing-xl)' }}>
+                        <div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-md)', marginBottom: 'var(--spacing-md)' }}>
+                                <img
+                                    src="/images/partners/canonical-cm.webp"
+                                    alt="UbuCon Cameroon"
+                                    style={{ width: '80px', height: '80px', objectFit: 'contain', borderRadius: '12px', border: '2px solid var(--color-border)', padding: '6px' }}
+                                />
+                                <div>
+                                    <span style={{ fontSize: '0.85rem', color: 'var(--color-orange)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px' }}>New Track</span>
+                                    <h2 style={{ margin: 0 }}>UbuCon <span className="text-gradient">Cameroon</span></h2>
+                                </div>
+                            </div>
+                            <p>
+                                For the first time, PyCon Cameroon 2026 is partnering with <strong>UbuCon Cameroon</strong> to
+                                bring you a dedicated Ubuntu and open source track! This special track is co-organized by
+                                Python Cameroon and UbuCon Cameroon.
+                            </p>
+                            <p>
+                                Explore talks and workshops on Ubuntu, Linux system administration, open source
+                                contributions, cloud infrastructure, and how Python powers the Ubuntu ecosystem.
+                            </p>
+                            <div className="mt-md flex gap-sm flex-wrap">
+                                <Link to="/speakers" className="btn btn-primary">
+                                    Submit a UbuCon Talk
+                                </Link>
+                                <Link to="/attend" className="btn btn-secondary">
+                                    Attend UbuCon Track
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="card" style={{ padding: 'var(--spacing-lg)' }}>
+                            <h3 style={{ marginBottom: 'var(--spacing-md)', color: 'var(--color-orange)' }}>UbuCon Track Highlights</h3>
+                            <ul style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-sm)' }}>
+                                <li style={{ display: 'flex', gap: 'var(--spacing-sm)' }}>
+                                    <span style={{ color: 'var(--color-orange)', fontWeight: 700 }}>01</span>
+                                    <div>
+                                        <strong>Ubuntu & Python</strong>
+                                        <p style={{ fontSize: '0.9rem', marginBottom: 0 }}>How Python powers Ubuntu development, packaging, and automation.</p>
+                                    </div>
+                                </li>
+                                <li style={{ display: 'flex', gap: 'var(--spacing-sm)' }}>
+                                    <span style={{ color: 'var(--color-orange)', fontWeight: 700 }}>02</span>
+                                    <div>
+                                        <strong>Open Source Contributions</strong>
+                                        <p style={{ fontSize: '0.9rem', marginBottom: 0 }}>Getting started with contributing to Ubuntu and open source projects.</p>
+                                    </div>
+                                </li>
+                                <li style={{ display: 'flex', gap: 'var(--spacing-sm)' }}>
+                                    <span style={{ color: 'var(--color-orange)', fontWeight: 700 }}>03</span>
+                                    <div>
+                                        <strong>Cloud & Infrastructure</strong>
+                                        <p style={{ fontSize: '0.9rem', marginBottom: 0 }}>Ubuntu Server, cloud-native development, and DevOps with Python.</p>
+                                    </div>
+                                </li>
+                                <li style={{ display: 'flex', gap: 'var(--spacing-sm)' }}>
+                                    <span style={{ color: 'var(--color-orange)', fontWeight: 700 }}>04</span>
+                                    <div>
+                                        <strong>Community & Networking</strong>
+                                        <p style={{ fontSize: '0.9rem', marginBottom: 0 }}>Meet the Ubuntu Cameroon community and connect with global contributors.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Stats Section */}
             <section className="section bg-dark">
                 <div className="container">
