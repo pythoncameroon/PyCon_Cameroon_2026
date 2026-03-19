@@ -66,6 +66,7 @@ const About = () => {
     { name: "GDG Yaounde", image: "/images/partners/gdg-yde.webp", link: "https://gdg.community.dev/gdg-yaounde" },
     { name: "Onyani", image: "/images/partners/onyani.webp", link: "https://onyani.com" },
     { name: "Reckot", image: "/images/partners/reckot.webp", link: "https://reckot.com" },
+    { name: "Microsoft User Group Cameroon", image: "/images/partners/msf-ug-cm.webp", link: "https://t.me/+uOFiAi93Sr42Nzhk" },
   ];
 
   return (

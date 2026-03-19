@@ -858,11 +858,6 @@ a {
     }
 }
 
-.nav-links {
-    display: flex;
-    gap: var(--spacing-md);
-}
-
 .nav-links a {
     font-family: var(--font-ui);
     font-weight: 600;
