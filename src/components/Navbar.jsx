@@ -48,7 +48,7 @@ const Navbar = () => {
                     <NavLink to="/attend" className={({ isActive }) => isActive ? "active" : ""}>Attend</NavLink>
                     <NavLink to="/venue" className={({ isActive }) => isActive ? "active" : ""}>Venue</NavLink>
                     <NavLink to="/ubucon" className={({ isActive }) => isActive ? "active" : ""} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                        <img src="/images/partners/canonical-cm.webp" alt="" style={{ width: '18px', height: '18px', objectFit: 'contain' }} />
+                        <img src="/images/partners/canonical-cm.webp" alt="" style={{ width: '18px', height: '18px', objectFit: 'contain', borderRadius: '50%' }} />
                         UbuCon
                     </NavLink>
                 </div>
@@ -73,7 +73,7 @@ const Navbar = () => {
                         <NavLink to="/attend" className={({ isActive }) => isActive ? "active" : ""}>Attend</NavLink>
                         <NavLink to="/venue" className={({ isActive }) => isActive ? "active" : ""}>Venue</NavLink>
                         <NavLink to="/ubucon" className={({ isActive }) => isActive ? "active" : ""} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                            <img src="/images/partners/canonical-cm.webp" alt="" style={{ width: '22px', height: '22px', objectFit: 'contain' }} />
+                            <img src="/images/partners/canonical-cm.webp" alt="" style={{ width: '22px', height: '22px', objectFit: 'contain', borderRadius: '50%' }} />
                             UbuCon
                         </NavLink>
                     </div>
