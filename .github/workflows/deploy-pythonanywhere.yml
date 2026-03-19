@@ -38,20 +38,20 @@ jobs:
           file_list=$(curl -s -H "Authorization: Token ${PA_API_TOKEN}" \
             "${API_BASE}/files/path${REMOTE_DIR}/")
 
-          # Upload built files from dist/
           echo "Uploading new build..."
-          find dist -type f | while read -r file; do
+          find dist -type f -print0 | while IFS= read -r -d '' file; do
             relative_path="${file#dist/}"
             remote_path="${REMOTE_DIR}/${relative_path}"
+
+            encoded_path=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1]))" "$remote_path")
 
             echo "Uploading ${relative_path}..."
             curl -s -X POST \
               -H "Authorization: Token ${PA_API_TOKEN}" \
-              -F "content=@${file}" \
-              "${API_BASE}/files/path${remote_path}"
+              -F "content=@\"${file}\"" \
+              "${API_BASE}/files/path${encoded_path}"
           done
 
-          # Reload the web app
           echo "Reloading web app..."
           curl -s -X POST \
             -H "Authorization: Token ${PA_API_TOKEN}" \
