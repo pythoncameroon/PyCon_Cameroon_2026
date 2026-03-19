@@ -38,6 +38,40 @@ jobs:
           file_list=$(curl -s -H "Authorization: Token ${PA_API_TOKEN}" \
             "${API_BASE}/files/path${REMOTE_DIR}/")
 
+          upload_file() {
+            local file="$1"
+            local url="$2"
+            local max_retries=3
+
+            for attempt in $(seq 1 $max_retries); do
+              response=$(curl -s -w "\n%{http_code}" -X POST \
+                -H "Authorization: Token ${PA_API_TOKEN}" \
+                -F "content=@\"${file}\"" \
+                "$url")
+              http_code=$(echo "$response" | tail -1)
+              body=$(echo "$response" | sed '$d')
+
+              if [ "$http_code" = "200" ] || [ "$http_code" = "201" ]; then
+                return 0
+              elif echo "$body" | grep -q "throttled"; then
+                wait_time=$(echo "$body" | python3 -c "
+          import sys, json, re
+          try:
+              data = json.load(sys.stdin)
+              match = re.search(r'(\d+)', data.get('detail', ''))
+              print(int(match.group(1)) + 2 if match else 60)
+          except: print(60)" 2>/dev/null)
+                echo "  Throttled, waiting ${wait_time}s (attempt ${attempt}/${max_retries})..."
+                sleep "$wait_time"
+              else
+                echo "  Upload failed (HTTP ${http_code}): ${body}"
+                return 1
+              fi
+            done
+            echo "  Max retries reached for ${file}"
+            return 1
+          }
+
           echo "Uploading new build..."
           find dist -type f -print0 | while IFS= read -r -d '' file; do
             relative_path="${file#dist/}"
@@ -46,15 +80,13 @@ jobs:
             encoded_path=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1]))" "$remote_path")
 
             echo "Uploading ${relative_path}..."
-            curl -s -X POST \
-              -H "Authorization: Token ${PA_API_TOKEN}" \
-              -F "content=@\"${file}\"" \
-              "${API_BASE}/files/path${encoded_path}"
+            upload_file "$file" "${API_BASE}/files/path${encoded_path}"
           done
 
           echo "Reloading web app..."
-          curl -s -X POST \
+          reload_response=$(curl -s -X POST \
             -H "Authorization: Token ${PA_API_TOKEN}" \
-            "${API_BASE}/webapps/${PA_DOMAIN}/reload/"
+            "${API_BASE}/webapps/${PA_DOMAIN}/reload/")
+          echo "Reload response: ${reload_response}"
 
           echo "Deployment complete!"
