@@ -38,7 +38,7 @@ const Attend = () => {
                         <div className="card animate-on-scroll slide-up" style={{ borderTop: '4px solid var(--color-orange)' }}>
                             <h3 className="card-title">Early Bird</h3>
                             <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-orange)', margin: 'var(--spacing-sm) 0' }}>
-                                2,000 XAF
+                                3,000 XAF
                             </div>
                             <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--spacing-md)' }}>
                                 Limited Time Offer
@@ -56,7 +56,7 @@ const Attend = () => {
                         <div className="card animate-on-scroll slide-up" style={{ borderTop: '4px solid var(--color-blue)' }}>
                             <h3 className="card-title">Normal Rate</h3>
                             <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-blue)', margin: 'var(--spacing-sm) 0' }}>
-                                3,000 XAF
+                                5,000 XAF
                             </div>
                             <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--spacing-md)' }}>
                                 Standard Admission
