@@ -125,7 +125,7 @@ const Venue = () => {
                     <div className="grid grid-3 stagger">
                         <div className="card animate-on-scroll slide-up">
                             <div className="card-img">
-                                <img src="/Images/national musuem.jpg" alt="National Museum" />
+                                <img src="/Images/national-museum.webp" alt="National Museum" />
                             </div>
                             <h4>National Museum</h4>
                             <p className="card-text">
@@ -135,7 +135,7 @@ const Venue = () => {
 
                         <div className="card animate-on-scroll slide-up">
                             <div className="card-img">
-                                <img src="/Images/bois-sainte-anastasie.jpg" alt="Bois Sainte Anastasie" />
+                                <img src="/Images/bois-sainte-anastasie.webp" alt="Bois Sainte Anastasie" />
                             </div>
                             <h4>Bois Sainte Anastasie</h4>
                             <p className="card-text">
@@ -145,7 +145,7 @@ const Venue = () => {
 
                         <div className="card animate-on-scroll slide-up">
                             <div className="card-img">
-                                <img src="/Images/monument de la reunification.jpg" alt="Monument de la Réunification" />
+                                <img src="/Images/monument-de-la-reunification.webp" alt="Monument de la Réunification" />
                             </div>
                             <h4>Monument de la Réunification</h4>
                             <p className="card-text">

@@ -10,7 +10,7 @@ const About = () => {
     {
       name: "Steve Yonkeu",
       role: "Lead Python Cameroon",
-      image: "/Images/Steve.JPG",
+      image: "/Images/Steve.webp",
       linkedin: "https://www.linkedin.com/in/yokwejuste",
       website: "https://yokwejuste.me",
       color: "orange",
@@ -19,7 +19,7 @@ const About = () => {
     {
       name: "Edmond Makolle",
       role: "Co-Lead, Mentorship / Learning Coordinator",
-      image: "/Images/Edmond Makole.jpeg",
+      image: "/Images/edmond-makole.webp",
       linkedin: "https://www.linkedin.com/in/edmondmakolle",
       color: "green",
       gradient: "teal",
@@ -27,7 +27,7 @@ const About = () => {
     {
       name: "Ange Demanou",
       role: "Social Media Manager",
-      image: "/Images/Ange Demanou.jpeg",
+      image: "/Images/ange-demanou.webp",
       linkedin: "https://www.linkedin.com/in/ange-demanou-367466340",
       color: "blue",
       gradient: "teal",
@@ -35,7 +35,7 @@ const About = () => {
     {
       name: "Djoko Christian",
       role: "Open Source Coordinator",
-      image: "/Images/Djoko.jpeg",
+      image: "/Images/Djoko.webp",
       linkedin: "https://www.linkedin.com/in/djoko-christian",
       color: "red",
       gradient: "orange",
@@ -43,7 +43,7 @@ const About = () => {
     {
       name: "Abuambou Evodia",
       role: "Project Coordinator",
-      image: "/Images/Abuambou Evodia.jpeg",
+      image: "/Images/abuambou-evodia.webp",
       linkedin: "https://www.linkedin.com/in/abuambou-evodia-ruth-6b1b51270",
       color: "gold",
       gradient: "orange",
@@ -51,7 +51,7 @@ const About = () => {
     {
       name: "Essi Junior",
       role: "UI/UX and Graphic Designer",
-      image: "/Images/Essi.jpeg",
+      image: "/Images/Essi.webp",
       linkedin: "https://www.linkedin.com/in/essijunior/",
       color: "teal",
       gradient: "green",
@@ -254,7 +254,7 @@ const About = () => {
             <div className="card animate-on-scroll slide-up">
               <div className="card-icon">
                 <img
-                  src="/Images/python-cameroon-logo.png"
+                  src="/Images/python-cameroon-logo.webp"
                   alt="Inspiration"
                   loading="lazy"
                 />
