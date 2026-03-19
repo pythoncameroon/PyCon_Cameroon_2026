@@ -263,13 +263,6 @@ const About = () => {
             </div>
 
             <div className="card animate-on-scroll slide-up">
-              <div className="card-icon">
-                <img
-                  src="/images/branding/python-cameroon-logo.webp"
-                  alt="Inspiration"
-                  loading="lazy"
-                />
-              </div>
               <h3 className="card-title">Innovation & Creativity</h3>
               <p className="card-text">
                 We encourage creative problem-solving and innovative thinking.
