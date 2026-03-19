@@ -1,7 +1,6 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, Component } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './layouts/Layout';
-import ScrollToTop from './components/ScrollToTop';
 import PageLoader from './components/PageLoader';
 
 const Home = lazy(() => import('./pages/Home'));
@@ -16,27 +15,63 @@ const HealthSafety = lazy(() => import('./pages/HealthSafety'));
 const CodeOfConduct = lazy(() => import('./pages/CodeOfConduct'));
 const UbuCon = lazy(() => import('./pages/UbuCon'));
 
+class ErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', textAlign: 'center', padding: '2rem' }}>
+          <h2 style={{ marginBottom: '1rem' }}>Something went wrong</h2>
+          <p style={{ marginBottom: '1.5rem', color: 'var(--color-text-secondary)' }}>The page failed to load. This can happen due to a network issue.</p>
+          <button
+            onClick={() => window.location.reload()}
+            className="btn btn-primary"
+          >
+            Reload Page
+          </button>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
+function LazyPage({ children }) {
+  return (
+    <ErrorBoundary>
+      <Suspense fallback={<PageLoader />}>
+        {children}
+      </Suspense>
+    </ErrorBoundary>
+  );
+}
+
 function App() {
   return (
-    <>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Suspense fallback={<PageLoader />}><Home /></Suspense>} />
-          <Route path="about" element={<Suspense fallback={<PageLoader />}><About /></Suspense>} />
-          <Route path="speakers" element={<Suspense fallback={<PageLoader />}><Speakers /></Suspense>} />
-          <Route path="sponsor" element={<Suspense fallback={<PageLoader />}><Sponsor /></Suspense>} />
-          <Route path="attend" element={<Suspense fallback={<PageLoader />}><Attend /></Suspense>} />
-          <Route path="venue" element={<Suspense fallback={<PageLoader />}><Venue /></Suspense>} />
-          <Route path="privacy" element={<Suspense fallback={<PageLoader />}><Privacy /></Suspense>} />
-          <Route path="terms" element={<Suspense fallback={<PageLoader />}><Terms /></Suspense>} />
-          <Route path="health-safety" element={<Suspense fallback={<PageLoader />}><HealthSafety /></Suspense>} />
-          <Route path="code-of-conduct" element={<Suspense fallback={<PageLoader />}><CodeOfConduct /></Suspense>} />
-          <Route path="ubucon" element={<Suspense fallback={<PageLoader />}><UbuCon /></Suspense>} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Route>
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<LazyPage><Home /></LazyPage>} />
+        <Route path="about" element={<LazyPage><About /></LazyPage>} />
+        <Route path="speakers" element={<LazyPage><Speakers /></LazyPage>} />
+        <Route path="sponsor" element={<LazyPage><Sponsor /></LazyPage>} />
+        <Route path="attend" element={<LazyPage><Attend /></LazyPage>} />
+        <Route path="venue" element={<LazyPage><Venue /></LazyPage>} />
+        <Route path="privacy" element={<LazyPage><Privacy /></LazyPage>} />
+        <Route path="terms" element={<LazyPage><Terms /></LazyPage>} />
+        <Route path="health-safety" element={<LazyPage><HealthSafety /></LazyPage>} />
+        <Route path="code-of-conduct" element={<LazyPage><CodeOfConduct /></LazyPage>} />
+        <Route path="ubucon" element={<LazyPage><UbuCon /></LazyPage>} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Route>
+    </Routes>
   );
 }
 
