@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './layouts/Layout';
 import ScrollToTop from './components/ScrollToTop';
 import PageLoader from './components/PageLoader';
@@ -31,6 +31,7 @@ function App() {
           <Route path="terms" element={<Suspense fallback={<PageLoader />}><Terms /></Suspense>} />
           <Route path="health-safety" element={<Suspense fallback={<PageLoader />}><HealthSafety /></Suspense>} />
           <Route path="code-of-conduct" element={<Suspense fallback={<PageLoader />}><CodeOfConduct /></Suspense>} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
     </>

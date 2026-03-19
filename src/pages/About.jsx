@@ -10,7 +10,7 @@ const About = () => {
     {
       name: "Steve Yonkeu",
       role: "Lead Python Cameroon",
-      image: "/Images/Steve.webp",
+      image: "/images/Steve.webp",
       linkedin: "https://www.linkedin.com/in/yokwejuste",
       website: "https://yokwejuste.me",
       color: "orange",
@@ -19,7 +19,7 @@ const About = () => {
     {
       name: "Edmond Makolle",
       role: "Co-Lead, Mentorship / Learning Coordinator",
-      image: "/Images/edmond-makole.webp",
+      image: "/images/edmond-makole.webp",
       linkedin: "https://www.linkedin.com/in/edmondmakolle",
       color: "green",
       gradient: "teal",
@@ -27,7 +27,7 @@ const About = () => {
     {
       name: "Ange Demanou",
       role: "Social Media Manager",
-      image: "/Images/ange-demanou.webp",
+      image: "/images/ange-demanou.webp",
       linkedin: "https://www.linkedin.com/in/ange-demanou-367466340",
       color: "blue",
       gradient: "teal",
@@ -35,7 +35,7 @@ const About = () => {
     {
       name: "Djoko Christian",
       role: "Open Source Coordinator",
-      image: "/Images/Djoko.webp",
+      image: "/images/Djoko.webp",
       linkedin: "https://www.linkedin.com/in/djoko-christian",
       color: "red",
       gradient: "orange",
@@ -43,7 +43,7 @@ const About = () => {
     {
       name: "Abuambou Evodia",
       role: "Project Coordinator",
-      image: "/Images/abuambou-evodia.webp",
+      image: "/images/abuambou-evodia.webp",
       linkedin: "https://www.linkedin.com/in/abuambou-evodia-ruth-6b1b51270",
       color: "gold",
       gradient: "orange",
@@ -51,7 +51,7 @@ const About = () => {
     {
       name: "Essi Junior",
       role: "UI/UX and Graphic Designer",
-      image: "/Images/Essi.webp",
+      image: "/images/Essi.webp",
       linkedin: "https://www.linkedin.com/in/essijunior/",
       color: "teal",
       gradient: "green",
@@ -116,7 +116,7 @@ const About = () => {
             </div>
             <div>
               <LazyImage
-                src="/Images/50b4bb72bcda16fbabf50f8ca87ca412.webp"
+                src="/images/50b4bb72bcda16fbabf50f8ca87ca412.webp"
                 className="img-limit-height"
                 alt="Community"
               />
@@ -143,7 +143,7 @@ const About = () => {
           >
             <div>
               <LazyImage
-                src="/Images/5e7ef535d7837d92dc28625166cc2568.webp"
+                src="/images/5e7ef535d7837d92dc28625166cc2568.webp"
                 alt="PyCon Mission"
                 className="img-limit-height"
               />
@@ -200,7 +200,7 @@ const About = () => {
             <div className="card animate-on-scroll slide-up">
               <div className="card-icon">
                 <LazyImage
-                  src="/Images/2e243534d6899d8f474f419e1ac832c9.webp"
+                  src="/images/2e243534d6899d8f474f419e1ac832c9.webp"
                   alt="Platform"
                 />
               </div>
@@ -214,7 +214,7 @@ const About = () => {
 
             <div className="card animate-on-scroll slide-up">
               <div className="card-icon">
-                <LazyImage src="/Images/Unknown.webp" alt="Talks" />
+                <LazyImage src="/images/Unknown.webp" alt="Talks" />
               </div>
               <h3 className="card-title">Inspiring Talks</h3>
               <p className="card-text">
@@ -226,7 +226,7 @@ const About = () => {
 
             <div className="card animate-on-scroll slide-up">
               <div className="card-icon">
-                <LazyImage src="/Images/African.webp" alt="Workshops" />
+                <LazyImage src="/images/African.webp" alt="Workshops" />
               </div>
               <h3 className="card-title">Practical Workshops</h3>
               <p className="card-text">
@@ -239,7 +239,7 @@ const About = () => {
             <div className="card animate-on-scroll slide-up">
               <div className="card-icon">
                 <LazyImage
-                  src="/Images/aa8b76bc47ebdea99b84fa3a26a94ade.webp"
+                  src="/images/aa8b76bc47ebdea99b84fa3a26a94ade.webp"
                   alt="Networking"
                 />
               </div>
@@ -254,7 +254,7 @@ const About = () => {
             <div className="card animate-on-scroll slide-up">
               <div className="card-icon">
                 <img
-                  src="/Images/python-cameroon-logo.webp"
+                  src="/images/python-cameroon-logo.webp"
                   alt="Inspiration"
                   loading="lazy"
                 />
@@ -269,7 +269,7 @@ const About = () => {
             <div className="card animate-on-scroll slide-up">
               <div className="card-icon">
                 <LazyImage
-                  src="/Images/5a266f7460a16bd5e7b0d2cabf54e874.webp"
+                  src="/images/5a266f7460a16bd5e7b0d2cabf54e874.webp"
                   alt="Growth"
                 />
               </div>

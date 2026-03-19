@@ -30,7 +30,7 @@ const Navbar = () => {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar">
             <div className="nav-container">
                 <Link to="/" className="nav-logo">
-                    <img src="/Images/python-cameroon-logo.webp" alt="PyCon Cameroon Logo" />
+                    <img src="/images/python-cameroon-logo.webp" alt="PyCon Cameroon Logo" />
                     <span>PyCon CM</span>
                 </Link>
 
