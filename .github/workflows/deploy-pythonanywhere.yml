@@ -72,6 +72,11 @@ jobs:
             return 1
           }
 
+          # Upload WSGI file for SPA routing
+          WSGI_REMOTE="/home/${PA_USERNAME}/mysite/wsgi.py"
+          echo "Uploading wsgi.py..."
+          upload_file "wsgi.py" "${API_BASE}/files/path${WSGI_REMOTE}"
+
           echo "Uploading new build..."
           find dist -type f -print0 | while IFS= read -r -d '' file; do
             relative_path="${file#dist/}"
