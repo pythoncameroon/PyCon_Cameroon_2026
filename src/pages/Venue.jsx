@@ -152,6 +152,66 @@ const Venue = () => {
                                 An iconic monument symbolizing the reunification of French and British Cameroons.
                             </p>
                         </div>
+
+                        <div className="card animate-on-scroll slide-up">
+                            <div className="card-img">
+                                <img src="/images/venue/charles-atangana.webp" alt="Palais Charles Atangana" />
+                            </div>
+                            <h4>Palais Charles Atangana</h4>
+                            <p className="card-text">
+                                Historic colonial-era palace of a paramount chief, now a cultural heritage landmark in Yaoundé.
+                            </p>
+                        </div>
+
+                        <div className="card animate-on-scroll slide-up">
+                            <div className="card-img">
+                                <img src="/images/venue/mvog-beti-zoo.webp" alt="Mvog-Betsi Zoo" />
+                            </div>
+                            <h4>Mvog-Betsi Zoo</h4>
+                            <p className="card-text">
+                                Yaoundé's zoo and botanical garden, home to native wildlife including primates and tropical birds.
+                            </p>
+                        </div>
+
+                        <div className="card animate-on-scroll slide-up">
+                            <div className="card-img">
+                                <img src="/images/venue/lac-municapal-de-yaounde.webp" alt="Lac Municipal de Yaoundé" />
+                            </div>
+                            <h4>Lac Municipal de Yaoundé</h4>
+                            <p className="card-text">
+                                A scenic artificial lake in the city center, popular for walks, boat rides, and relaxation.
+                            </p>
+                        </div>
+
+                        <div className="card animate-on-scroll slide-up">
+                            <div className="card-img">
+                                <img src="/images/venue/eco-park-yaounde.webp" alt="Eco Park Yaoundé" />
+                            </div>
+                            <h4>Eco Park Yaoundé</h4>
+                            <p className="card-text">
+                                A green leisure park offering nature trails, picnic areas, and outdoor activities for families.
+                            </p>
+                        </div>
+
+                        <div className="card animate-on-scroll slide-up">
+                            <div className="card-img">
+                                <img src="/images/venue/marie-reines-des-apotres.webp" alt="Basilique Marie-Reine-des-Apôtres" />
+                            </div>
+                            <h4>Basilique Marie-Reine-des-Apôtres</h4>
+                            <p className="card-text">
+                                Striking hilltop basilica with panoramic views, one of Central Africa's most impressive churches.
+                            </p>
+                        </div>
+
+                        <div className="card animate-on-scroll slide-up">
+                            <div className="card-img">
+                                <img src="/images/venue/dade-park.webp" alt="Dade Park" />
+                            </div>
+                            <h4>Dade Park</h4>
+                            <p className="card-text">
+                                A popular recreational park in Yaoundé with green spaces, playgrounds, and weekend entertainment.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>

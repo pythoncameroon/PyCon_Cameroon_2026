@@ -56,6 +56,14 @@ const About = () => {
       color: "teal",
       gradient: "green",
     },
+    {
+      name: "Patrick Muluh",
+      role: "Lead of Canonical User Group Cameroon",
+      image: "/images/organizers/patrick-muluh.webp",
+      linkedin: "https://www.linkedin.com/in/imajin14",
+      color: "purple",
+      gradient: "blue",
+    },
   ];
 
   const partnerCommunities = [
