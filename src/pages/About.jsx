@@ -66,6 +66,45 @@ const About = () => {
     },
   ];
 
+  const valuesData = [
+    {
+      title: "Building a Welcoming Community",
+      text: "We believe that diversity and inclusivity are essential for the growth and success of our community. Everyone is welcome here, regardless of background, experience level, or identity.",
+      image: "/images/general/2e243534d6899d8f474f419e1ac832c9.webp",
+      alt: "Platform",
+    },
+    {
+      title: "Inspiring Talks",
+      text: "From beginner tutorials to advanced deep dives, we offer a wide range of talks to cater to the needs of our diverse community. Learn from local and international Python experts.",
+      image: "/images/general/Unknown.webp",
+      alt: "Talks",
+    },
+    {
+      title: "Practical Workshops",
+      text: "We learn by doing. Our hands-on workshops are designed to help you build real skills that you can apply immediately in your projects and career.",
+      image: "/images/patterns/African.webp",
+      alt: "Workshops",
+    },
+    {
+      title: "Simple and All-Inclusive",
+      text: "We want to create a welcoming and inclusive environment for everyone, regardless of their background or experience. No gatekeeping, just community.",
+      image: "/images/general/aa8b76bc47ebdea99b84fa3a26a94ade.webp",
+      alt: "Networking",
+    },
+    {
+      title: "Innovation & Creativity",
+      text: "We encourage creative problem-solving and innovative thinking. PyCon Cameroon is a space where new ideas are born and nurtured.",
+      image: "/images/general/ac5ca270fe9d4f7c17c5b2bf97337208.webp",
+      alt: "Innovation",
+    },
+    {
+      title: "Growing Together",
+      text: "Whether you're mentoring others or learning yourself, we believe in the power of shared growth. Together, we're building the future of Python in Cameroon.",
+      image: "/images/general/5a266f7460a16bd5e7b0d2cabf54e874.webp",
+      alt: "Growth",
+    },
+  ];
+
   const partnerCommunities = [
     { name: "UbuCon Cameroon", image: "/images/partners/canonical-cm.webp", link: "#" },
     { name: "Django Cameroon", image: "/images/partners/djcmr.webp", link: "https://djangocameroon.org" },
@@ -216,82 +255,15 @@ const About = () => {
           </div>
 
           <div className="grid grid-3 stagger">
-            <div className="card animate-on-scroll slide-up">
-              <div className="card-icon">
-                <LazyImage
-                  src="/images/general/2e243534d6899d8f474f419e1ac832c9.webp"
-                  alt="Platform"
-                />
+            {valuesData.map((value, index) => (
+              <div className="card animate-on-scroll slide-up" key={index}>
+                <div className="card-icon">
+                  <LazyImage src={value.image} alt={value.alt} />
+                </div>
+                <h3 className="card-title">{value.title}</h3>
+                <p className="card-text">{value.text}</p>
               </div>
-              <h3 className="card-title">Building a Welcoming Community</h3>
-              <p className="card-text">
-                We believe that diversity and inclusivity are essential for the
-                growth and success of our community. Everyone is welcome here,
-                regardless of background, experience level, or identity.
-              </p>
-            </div>
-
-            <div className="card animate-on-scroll slide-up">
-              <div className="card-icon">
-                <LazyImage src="/images/general/Unknown.webp" alt="Talks" />
-              </div>
-              <h3 className="card-title">Inspiring Talks</h3>
-              <p className="card-text">
-                From beginner tutorials to advanced deep dives, we offer a wide
-                range of talks to cater to the needs of our diverse community.
-                Learn from local and international Python experts.
-              </p>
-            </div>
-
-            <div className="card animate-on-scroll slide-up">
-              <div className="card-icon">
-                <LazyImage src="/images/patterns/African.webp" alt="Workshops" />
-              </div>
-              <h3 className="card-title">Practical Workshops</h3>
-              <p className="card-text">
-                We learn by doing. Our hands-on workshops are designed to help
-                you build real skills that you can apply immediately in your
-                projects and career.
-              </p>
-            </div>
-
-            <div className="card animate-on-scroll slide-up">
-              <div className="card-icon">
-                <LazyImage
-                  src="/images/general/aa8b76bc47ebdea99b84fa3a26a94ade.webp"
-                  alt="Networking"
-                />
-              </div>
-              <h3 className="card-title">Simple and All-Inclusive</h3>
-              <p className="card-text">
-                We want to create a welcoming and inclusive environment for
-                everyone, regardless of their background or experience. No
-                gatekeeping, just community.
-              </p>
-            </div>
-
-            <div className="card animate-on-scroll slide-up">
-              <h3 className="card-title">Innovation & Creativity</h3>
-              <p className="card-text">
-                We encourage creative problem-solving and innovative thinking.
-                PyCon Cameroon is a space where new ideas are born and nurtured.
-              </p>
-            </div>
-
-            <div className="card animate-on-scroll slide-up">
-              <div className="card-icon">
-                <LazyImage
-                  src="/images/general/5a266f7460a16bd5e7b0d2cabf54e874.webp"
-                  alt="Growth"
-                />
-              </div>
-              <h3 className="card-title">Growing Together</h3>
-              <p className="card-text">
-                Whether you're mentoring others or learning yourself, we believe
-                in the power of shared growth. Together, we're building the
-                future of Python in Cameroon.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -311,11 +283,12 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-3 stagger">
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--spacing-lg)', justifyContent: 'center' }}>
             {teamData.map((member, index) => (
               <div
                 className="card team-card animate-on-scroll slide-up"
                 key={index}
+                style={{ flex: '0 1 calc(33.333% - var(--spacing-lg))', minWidth: '280px' }}
               >
                 <div
                   className="team-card-img"
