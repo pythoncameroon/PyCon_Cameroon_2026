@@ -1,5 +1,7 @@
 import React from 'react';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import VenueCard from '../components/VenueCard';
+import { venueData } from '../data/venues';
 
 const Venue = () => {
     useScrollAnimation();
@@ -35,9 +37,7 @@ const Venue = () => {
                                 accessible, and vibrant.
                             </p>
 
-                            <p>
-                                Expect a state-of-the-art facility with:
-                            </p>
+                            <p>Expect a state-of-the-art facility with:</p>
 
                             <ul style={{ marginTop: 'var(--spacing-sm)', display: 'flex', flexDirection: 'column', gap: 'var(--spacing-xs)' }}>
                                 <li>✓ High-speed internet connectivity</li>
@@ -48,7 +48,6 @@ const Venue = () => {
                         </div>
 
                         <div style={{ height: '400px', background: '#333', borderRadius: 'var(--radius-lg)', overflow: 'hidden', position: 'relative' }}>
-                            {/* Placeholder Map */}
                             <iframe width="100%" height="100%" style={{ border: 0 }} loading="lazy" allowFullScreen
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63675.71966952737!2d11.47957790899039!3d3.848032766624866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bcf7a309a7977%3A0x7f54bad35e693c51!2sYaound%C3%A9%2C%20Cameroon!5e0!3m2!1sen!2scm!4v1684490000000!5m2!1sen!2scm">
                             </iframe>
@@ -57,7 +56,6 @@ const Venue = () => {
                 </div>
             </section>
 
-            {/* Tribal Border */}
             <div className="tribal-border"></div>
 
             {/* Getting There & Accommodation */}
@@ -68,43 +66,37 @@ const Venue = () => {
                     </div>
 
                     <div className="grid grid-2" style={{ gap: 'var(--spacing-lg)' }}>
-                        {/* Accommodation */}
                         <div className="card bg-dark">
                             <div className="card-icon">
-                                <img src="/images/general/5a266f7460a16bd5e7b0d2cabf54e874.webp" alt="Accommodation" />
+                                <img src="/images/general/5a266f7460a16bd5e7b0d2cabf54e874.webp" alt="Accommodation" loading="lazy" />
                             </div>
                             <h3>Accommodation</h3>
                             <p className="mb-md">
                                 We will be partnering with several hotels near the conference venue
                                 to offer special rates for attendees.
                             </p>
-
                             <div className="alert alert-info">
                                 <strong>Official Hotels:</strong> List coming soon once venue is confirmed!
                             </div>
-
                             <p className="card-text">
                                 Yaoundé offers a range of accommodation options from luxury hotels
                                 to budget-friendly guesthouses.
                             </p>
                         </div>
 
-                        {/* Transportation */}
                         <div className="card bg-dark">
                             <div className="card-icon">
-                                <img src="/images/general/4f58e509d7713f4e1f5ec84e95175c61.webp" alt="Travel" />
+                                <img src="/images/general/4f58e509d7713f4e1f5ec84e95175c61.webp" alt="Travel" loading="lazy" />
                             </div>
                             <h3>Getting There</h3>
                             <p className="mb-md">
                                 <strong>By Air:</strong> Yaoundé Nsimalen International Airport (NSI)
                                 is the main airport serving the city.
                             </p>
-
                             <p className="mb-md">
                                 <strong>By Bus:</strong> Several reliable bus companies operate
                                 routes connecting Yaoundé to other major cities like Douala.
                             </p>
-
                             <p className="card-text">
                                 Ride-hailing apps like Yango and local taxis are widely available
                                 for getting around the city.
@@ -123,95 +115,9 @@ const Venue = () => {
                     </div>
 
                     <div className="grid grid-3 stagger">
-                        <div className="card animate-on-scroll slide-up">
-                            <div className="card-img">
-                                <img src="/images/venue/national-museum.webp" alt="National Museum" />
-                            </div>
-                            <h4>National Museum</h4>
-                            <p className="card-text">
-                                Explore the rich history and culture of Cameroon in this former presidential palace.
-                            </p>
-                        </div>
-
-                        <div className="card animate-on-scroll slide-up">
-                            <div className="card-img">
-                                <img src="/images/venue/bois-sainte-anastasie.webp" alt="Bois Sainte Anastasie" />
-                            </div>
-                            <h4>Bois Sainte Anastasie</h4>
-                            <p className="card-text">
-                                A beautiful urban park perfect for a relaxing walk amidst nature in the city center.
-                            </p>
-                        </div>
-
-                        <div className="card animate-on-scroll slide-up">
-                            <div className="card-img">
-                                <img src="/images/venue/monument-de-la-reunification.webp" alt="Monument de la Réunification" />
-                            </div>
-                            <h4>Monument de la Réunification</h4>
-                            <p className="card-text">
-                                An iconic monument symbolizing the reunification of French and British Cameroons.
-                            </p>
-                        </div>
-
-                        <div className="card animate-on-scroll slide-up">
-                            <div className="card-img">
-                                <img src="/images/venue/charles-atangana.webp" alt="Palais Charles Atangana" />
-                            </div>
-                            <h4>Palais Charles Atangana</h4>
-                            <p className="card-text">
-                                Historic colonial-era palace of a paramount chief, now a cultural heritage landmark in Yaoundé.
-                            </p>
-                        </div>
-
-                        <div className="card animate-on-scroll slide-up">
-                            <div className="card-img">
-                                <img src="/images/venue/mvog-beti-zoo.webp" alt="Mvog-Betsi Zoo" />
-                            </div>
-                            <h4>Mvog-Betsi Zoo</h4>
-                            <p className="card-text">
-                                Yaoundé's zoo and botanical garden, home to native wildlife including primates and tropical birds.
-                            </p>
-                        </div>
-
-                        <div className="card animate-on-scroll slide-up">
-                            <div className="card-img">
-                                <img src="/images/venue/lac-municapal-de-yaounde.webp" alt="Lac Municipal de Yaoundé" />
-                            </div>
-                            <h4>Lac Municipal de Yaoundé</h4>
-                            <p className="card-text">
-                                A scenic artificial lake in the city center, popular for walks, boat rides, and relaxation.
-                            </p>
-                        </div>
-
-                        <div className="card animate-on-scroll slide-up">
-                            <div className="card-img">
-                                <img src="/images/venue/eco-park-yaounde.webp" alt="Eco Park Yaoundé" />
-                            </div>
-                            <h4>Eco Park Yaoundé</h4>
-                            <p className="card-text">
-                                A green leisure park offering nature trails, picnic areas, and outdoor activities for families.
-                            </p>
-                        </div>
-
-                        <div className="card animate-on-scroll slide-up">
-                            <div className="card-img">
-                                <img src="/images/venue/marie-reines-des-apotres.webp" alt="Basilique Marie-Reine-des-Apôtres" />
-                            </div>
-                            <h4>Basilique Marie-Reine-des-Apôtres</h4>
-                            <p className="card-text">
-                                Striking hilltop basilica with panoramic views, one of Central Africa's most impressive churches.
-                            </p>
-                        </div>
-
-                        <div className="card animate-on-scroll slide-up">
-                            <div className="card-img">
-                                <img src="/images/venue/dade-park.webp" alt="Dade Park" />
-                            </div>
-                            <h4>Dade Park</h4>
-                            <p className="card-text">
-                                A popular recreational park in Yaoundé with green spaces, playgrounds, and weekend entertainment.
-                            </p>
-                        </div>
+                        {venueData.map((venue, index) => (
+                            <VenueCard key={index} venue={venue} />
+                        ))}
                     </div>
                 </div>
             </section>

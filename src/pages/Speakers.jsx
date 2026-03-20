@@ -19,7 +19,7 @@ const Speakers = () => {
                 <div className="container">
                     <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
                         <div className="card-icon" style={{ margin: '0 auto var(--spacing-md)' }}>
-                            <img src="/images/general/Unknown.webp" alt="Speak" />
+                            <img src="/images/general/Unknown.webp" alt="Speak" loading="lazy" />
                         </div>
                         <h2>We're Excited to Have You!</h2>
                         <p style={{ fontSize: '1.25rem', margin: 'var(--spacing-md) 0' }}>
@@ -34,7 +34,7 @@ const Speakers = () => {
                             to our conference program. Don't be shy – your unique perspective matters!
                         </div>
 
-                        <a href="https://sessionize.com/pycon-camerooon-2026" className="btn btn-primary btn-lg">Submit Your Proposal</a>
+                        <a href="https://sessionize.com/pycon-camerooon-2026" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">Submit Your Proposal</a>
                     </div>
                 </div>
             </section>
@@ -222,7 +222,7 @@ const Speakers = () => {
                         </p>
 
                         <div className="text-center mt-lg">
-                            <a href="https://sessionize.com/pycon-camerooon-2026" className="btn btn-primary btn-lg">Submit on Sessionize</a>
+                            <a href="https://sessionize.com/pycon-camerooon-2026" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">Submit on Sessionize</a>
                         </div>
                     </div>
                 </div>
@@ -238,7 +238,7 @@ const Speakers = () => {
 
                     <div style={{ textAlign: 'center', padding: 'var(--spacing-xl) 0' }}>
                         <div className="card-icon" style={{ margin: '0 auto var(--spacing-md)' }}>
-                            <img src="/images/general/aa8b76bc47ebdea99b84fa3a26a94ade.webp" alt="Rocket" />
+                            <img src="/images/general/aa8b76bc47ebdea99b84fa3a26a94ade.webp" alt="Rocket" loading="lazy" />
                         </div>
                         <h3>Coming Soon!</h3>
                         <p style={{ maxWidth: '500px', margin: '0 auto' }}>
@@ -259,7 +259,7 @@ const Speakers = () => {
                     <div className="grid grid-3 stagger">
                         <div className="card animate-on-scroll slide-up text-center">
                             <div className="card-icon" style={{ margin: '0 auto var(--spacing-sm)' }}>
-                                <img src="/images/patterns/97568bbec02a103e305ee0d2bbaa6106.webp" alt="Travel" />
+                                <img src="/images/patterns/97568bbec02a103e305ee0d2bbaa6106.webp" alt="Travel" loading="lazy" />
                             </div>
                             <h4>Reach a New Audience</h4>
                             <p className="card-text">
@@ -270,7 +270,7 @@ const Speakers = () => {
 
                         <div className="card animate-on-scroll slide-up text-center">
                             <div className="card-icon" style={{ margin: '0 auto var(--spacing-sm)' }}>
-                                <img src="/images/general/5a266f7460a16bd5e7b0d2cabf54e874.webp" alt="Video" />
+                                <img src="/images/general/5a266f7460a16bd5e7b0d2cabf54e874.webp" alt="Video" loading="lazy" />
                             </div>
                             <h4>Recorded & Shared</h4>
                             <p className="card-text">
@@ -281,7 +281,7 @@ const Speakers = () => {
 
                         <div className="card animate-on-scroll slide-up text-center">
                             <div className="card-icon" style={{ margin: '0 auto var(--spacing-sm)' }}>
-                                <img src="/images/patterns/3b576d7a5b2e395a5741d81d07bdcfc8.webp" alt="Ticket" />
+                                <img src="/images/patterns/3b576d7a5b2e395a5741d81d07bdcfc8.webp" alt="Ticket" loading="lazy" />
                             </div>
                             <h4>Free Conference Pass</h4>
                             <p className="card-text">
@@ -292,7 +292,7 @@ const Speakers = () => {
 
                         <div className="card animate-on-scroll slide-up text-center">
                             <div className="card-icon" style={{ margin: '0 auto var(--spacing-sm)' }}>
-                                <img src="/images/patterns/African.webp" alt="Networking" />
+                                <img src="/images/patterns/African.webp" alt="Networking" loading="lazy" />
                             </div>
                             <h4>Networking</h4>
                             <p className="card-text">
@@ -303,7 +303,7 @@ const Speakers = () => {
 
                         <div className="card animate-on-scroll slide-up text-center">
                             <div className="card-icon" style={{ margin: '0 auto var(--spacing-sm)' }}>
-                                <img src="/images/general/38d4f8046c74231baf303ee9c7a340bf.webp" alt="Networking" />
+                                <img src="/images/general/38d4f8046c74231baf303ee9c7a340bf.webp" alt="Networking" loading="lazy" />
                             </div>
                             <h4>Build Your Brand</h4>
                             <p className="card-text">
@@ -314,7 +314,7 @@ const Speakers = () => {
 
                         <div className="card animate-on-scroll slide-up text-center">
                             <div className="card-icon" style={{ margin: '0 auto var(--spacing-sm)' }}>
-                                <img src="/images/general/ac5ca270fe9d4f7c17c5b2bf97337208.webp" alt="Ideas" />
+                                <img src="/images/general/ac5ca270fe9d4f7c17c5b2bf97337208.webp" alt="Ideas" loading="lazy" />
                             </div>
                             <h4>Give Back</h4>
                             <p className="card-text">
@@ -334,7 +334,7 @@ const Speakers = () => {
                     <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.25rem', marginBottom: 'var(--spacing-md)' }}>
                         We can't wait to see your proposal. Submit before May 31st, 2026!
                     </p>
-                    <a href="https://sessionize.com/pycon-camerooon-2026" className="btn btn-lg" style={{ background: 'white', color: 'var(--color-green)' }}>
+                    <a href="https://sessionize.com/pycon-camerooon-2026" target="_blank" rel="noopener noreferrer" className="btn btn-lg" style={{ background: 'white', color: 'var(--color-green)' }}>
                         Submit Your Proposal Now
                     </a>
                 </div>

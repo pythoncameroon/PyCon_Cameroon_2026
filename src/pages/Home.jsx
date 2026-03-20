@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import LazyImage from '../components/LazyImage';
+import TrackSection from '../components/TrackSection';
+import { ubuconHighlights, djangoHighlights } from '../data/tracks';
 
 const Home = () => {
     useScrollAnimation();
@@ -15,7 +17,6 @@ const Home = () => {
                 </div>
 
                 <div className="hero-content animate-fade-scale">
-
                     <h1 className="hero-title">
                         <span className="highlight">PyCon</span> Cameroon 2026
                     </h1>
@@ -27,7 +28,7 @@ const Home = () => {
                     </div>
 
                     <div className="hero-buttons">
-                        <a href="https://sessionize.com/pycon-camerooon-2026" className="btn btn-primary btn-lg">
+                        <a href="https://sessionize.com/pycon-camerooon-2026" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
                             🎤 Call For Speakers
                         </a>
                         <Link to="/attend" className="btn btn-secondary btn-lg">
@@ -37,7 +38,6 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Tribal Border Decoration */}
             <div className="tribal-border"></div>
 
             {/* Event Description Section */}
@@ -148,146 +148,38 @@ const Home = () => {
 
             {/* UbuCon Track */}
             <div className="tribal-border"></div>
-            <section className="section" id="ubucon">
-                <div className="container">
-                    <div className="grid grid-2" style={{ alignItems: 'center', gap: 'var(--spacing-xl)' }}>
-                        <div>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-md)', marginBottom: 'var(--spacing-md)' }}>
-                                <img
-                                    src="/images/partners/canonical-cm.webp"
-                                    alt="UbuCon Cameroon"
-                                    style={{ width: '80px', height: '80px', objectFit: 'contain', borderRadius: '12px', border: '2px solid var(--color-border)', padding: '6px' }}
-                                />
-                                <div>
-                                    <span style={{ fontSize: '0.85rem', color: 'var(--color-orange)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px' }}>New Track</span>
-                                    <h2 style={{ margin: 0 }}>UbuCon <span className="text-gradient">Cameroon</span></h2>
-                                </div>
-                            </div>
-                            <p>
-                                For the first time, PyCon Cameroon 2026 is partnering with <strong>UbuCon Cameroon</strong> to
-                                bring you a dedicated Ubuntu and open source track! This special track is co-organized by
-                                Python Cameroon and UbuCon Cameroon.
-                            </p>
-                            <p>
-                                Explore talks and workshops on Ubuntu, Linux system administration, open source
-                                contributions, cloud infrastructure, and how Python powers the Ubuntu ecosystem.
-                            </p>
-                            <div className="mt-md flex gap-sm flex-wrap">
-                                <Link to="/speakers" className="btn btn-primary">
-                                    Submit a UbuCon Talk
-                                </Link>
-                                <Link to="/attend" className="btn btn-secondary">
-                                    Attend UbuCon Track
-                                </Link>
-                            </div>
-                        </div>
-                        <div className="card" style={{ padding: 'var(--spacing-lg)' }}>
-                            <h3 style={{ marginBottom: 'var(--spacing-md)', color: 'var(--color-orange)' }}>UbuCon Track Highlights</h3>
-                            <ul style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-sm)' }}>
-                                <li style={{ display: 'flex', gap: 'var(--spacing-sm)' }}>
-                                    <span style={{ color: 'var(--color-orange)', fontWeight: 700 }}>01</span>
-                                    <div>
-                                        <strong>Ubuntu & Python</strong>
-                                        <p style={{ fontSize: '0.9rem', marginBottom: 0 }}>How Python powers Ubuntu development, packaging, and automation.</p>
-                                    </div>
-                                </li>
-                                <li style={{ display: 'flex', gap: 'var(--spacing-sm)' }}>
-                                    <span style={{ color: 'var(--color-orange)', fontWeight: 700 }}>02</span>
-                                    <div>
-                                        <strong>Open Source Contributions</strong>
-                                        <p style={{ fontSize: '0.9rem', marginBottom: 0 }}>Getting started with contributing to Ubuntu and open source projects.</p>
-                                    </div>
-                                </li>
-                                <li style={{ display: 'flex', gap: 'var(--spacing-sm)' }}>
-                                    <span style={{ color: 'var(--color-orange)', fontWeight: 700 }}>03</span>
-                                    <div>
-                                        <strong>Cloud & Infrastructure</strong>
-                                        <p style={{ fontSize: '0.9rem', marginBottom: 0 }}>Ubuntu Server, cloud-native development, and DevOps with Python.</p>
-                                    </div>
-                                </li>
-                                <li style={{ display: 'flex', gap: 'var(--spacing-sm)' }}>
-                                    <span style={{ color: 'var(--color-orange)', fontWeight: 700 }}>04</span>
-                                    <div>
-                                        <strong>Community & Networking</strong>
-                                        <p style={{ fontSize: '0.9rem', marginBottom: 0 }}>Meet the Ubuntu Cameroon community and connect with global contributors.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <TrackSection
+                id="ubucon"
+                logo="/images/partners/canonical-cm.webp"
+                logoAlt="UbuCon Cameroon"
+                title="UbuCon"
+                titleGradient="Cameroon"
+                color="var(--color-orange)"
+                ctaLabel="UbuCon"
+                highlights={ubuconHighlights}
+                description={[
+                    <>For the first time, PyCon Cameroon 2026 is partnering with <strong>UbuCon Cameroon</strong> to bring you a dedicated Ubuntu and open source track! This special track is co-organized by Python Cameroon and UbuCon Cameroon.</>,
+                    "Explore talks and workshops on Ubuntu, Linux system administration, open source contributions, cloud infrastructure, and how Python powers the Ubuntu ecosystem.",
+                ]}
+            />
 
             {/* Django Track */}
-            <section className="section bg-dark" id="django">
-                <div className="container">
-                    <div className="grid grid-2" style={{ alignItems: 'center', gap: 'var(--spacing-xl)' }}>
-                        <div>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-md)', marginBottom: 'var(--spacing-md)' }}>
-                                <img
-                                    src="/images/partners/djcmr.webp"
-                                    alt="Django Cameroon"
-                                    style={{ width: '80px', height: '80px', objectFit: 'contain', borderRadius: '12px', border: '2px solid var(--color-border)', padding: '6px', background: 'white' }}
-                                />
-                                <div>
-                                    <span style={{ fontSize: '0.85rem', color: 'var(--color-green)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px' }}>New Track</span>
-                                    <h2 style={{ margin: 0 }}>Django <span className="text-gradient">Track</span></h2>
-                                </div>
-                            </div>
-                            <p>
-                                PyCon Cameroon 2026 features a dedicated <strong>Django track</strong> for web developers!
-                                Dive into the world of Django — from building robust web applications to REST APIs,
-                                deployment best practices, and scaling Django in production.
-                            </p>
-                            <p>
-                                Whether you're just starting with Django or you're a seasoned developer, this track
-                                offers hands-on workshops, real-world case studies, and expert talks.
-                            </p>
-                            <div className="mt-md flex gap-sm flex-wrap">
-                                <Link to="/speakers" className="btn btn-primary" style={{ background: 'var(--color-green)' }}>
-                                    Submit a Django Talk
-                                </Link>
-                                <Link to="/attend" className="btn btn-secondary">
-                                    Attend Django Track
-                                </Link>
-                            </div>
-                        </div>
-                        <div className="card" style={{ padding: 'var(--spacing-lg)' }}>
-                            <h3 style={{ marginBottom: 'var(--spacing-md)', color: 'var(--color-green)' }}>Django Track Highlights</h3>
-                            <ul style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-sm)' }}>
-                                <li style={{ display: 'flex', gap: 'var(--spacing-sm)' }}>
-                                    <span style={{ color: 'var(--color-green)', fontWeight: 700 }}>01</span>
-                                    <div>
-                                        <strong>Django Web Development</strong>
-                                        <p style={{ fontSize: '0.9rem', marginBottom: 0 }}>Building modern web applications with Django and best practices.</p>
-                                    </div>
-                                </li>
-                                <li style={{ display: 'flex', gap: 'var(--spacing-sm)' }}>
-                                    <span style={{ color: 'var(--color-green)', fontWeight: 700 }}>02</span>
-                                    <div>
-                                        <strong>REST APIs & DRF</strong>
-                                        <p style={{ fontSize: '0.9rem', marginBottom: 0 }}>Designing and building APIs with Django REST Framework.</p>
-                                    </div>
-                                </li>
-                                <li style={{ display: 'flex', gap: 'var(--spacing-sm)' }}>
-                                    <span style={{ color: 'var(--color-green)', fontWeight: 700 }}>03</span>
-                                    <div>
-                                        <strong>Deployment & Scaling</strong>
-                                        <p style={{ fontSize: '0.9rem', marginBottom: 0 }}>Production deployment, performance optimization, and scaling strategies.</p>
-                                    </div>
-                                </li>
-                                <li style={{ display: 'flex', gap: 'var(--spacing-sm)' }}>
-                                    <span style={{ color: 'var(--color-green)', fontWeight: 700 }}>04</span>
-                                    <div>
-                                        <strong>Django & AI/ML</strong>
-                                        <p style={{ fontSize: '0.9rem', marginBottom: 0 }}>Integrating machine learning models and AI features into Django apps.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <TrackSection
+                id="django"
+                bgClass="bg-dark"
+                logo="/images/partners/djcmr.webp"
+                logoAlt="Django Cameroon"
+                logoBg="white"
+                title="Django"
+                titleGradient="Track"
+                color="var(--color-green)"
+                ctaLabel="Django"
+                highlights={djangoHighlights}
+                description={[
+                    <>PyCon Cameroon 2026 features a dedicated <strong>Django track</strong> for web developers! Dive into the world of Django — from building robust web applications to REST APIs, deployment best practices, and scaling Django in production.</>,
+                    "Whether you're just starting with Django or you're a seasoned developer, this track offers hands-on workshops, real-world case studies, and expert talks.",
+                ]}
+            />
 
             {/* Stats Section */}
             <section className="section bg-dark">

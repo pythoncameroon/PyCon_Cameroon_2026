@@ -2,119 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import useScrollAnimation from "../hooks/useScrollAnimation";
 import LazyImage from "../components/LazyImage";
+import TeamCard from "../components/TeamCard";
+import PartnerCard from "../components/PartnerCard";
+import { teamData } from "../data/team";
+import { valuesData } from "../data/values";
+import { partnerCommunities } from "../data/partners";
 
 const About = () => {
   useScrollAnimation();
-
-  const teamData = [
-    {
-      name: "Steve Yonkeu",
-      role: "Lead Python Cameroon",
-      image: "/images/organizers/Steve.webp",
-      linkedin: "https://www.linkedin.com/in/yokwejuste",
-      website: "https://yokwejuste.me",
-      color: "orange",
-      gradient: "yellow",
-    },
-    {
-      name: "Edmond Makolle",
-      role: "Co-Lead, Mentorship / Learning Coordinator",
-      image: "/images/organizers/edmond-makole.webp",
-      linkedin: "https://www.linkedin.com/in/edmondmakolle",
-      color: "green",
-      gradient: "teal",
-    },
-    {
-      name: "Ange Demanou",
-      role: "Social Media Manager",
-      image: "/images/organizers/ange-demanou.webp",
-      linkedin: "https://www.linkedin.com/in/ange-demanou-367466340",
-      color: "blue",
-      gradient: "teal",
-    },
-    {
-      name: "Djoko Christian",
-      role: "Open Source Coordinator",
-      image: "/images/organizers/Djoko.webp",
-      linkedin: "https://www.linkedin.com/in/djoko-christian",
-      color: "red",
-      gradient: "orange",
-    },
-    {
-      name: "Abuambou Evodia",
-      role: "Project Coordinator",
-      image: "/images/organizers/abuambou-evodia.webp",
-      linkedin: "https://www.linkedin.com/in/abuambou-evodia-ruth-6b1b51270",
-      color: "gold",
-      gradient: "orange",
-    },
-    {
-      name: "Essi Junior",
-      role: "UI/UX and Graphic Designer",
-      image: "/images/organizers/Essi.webp",
-      linkedin: "https://www.linkedin.com/in/essijunior/",
-      color: "teal",
-      gradient: "green",
-    },
-    {
-      name: "Patrick Muluh",
-      role: "Lead of Canonical User Group Cameroon",
-      image: "/images/organizers/patrick-muluh.webp",
-      linkedin: "https://www.linkedin.com/in/imajin14",
-      color: "purple",
-      gradient: "blue",
-    },
-  ];
-
-  const valuesData = [
-    {
-      title: "Building a Welcoming Community",
-      text: "We believe that diversity and inclusivity are essential for the growth and success of our community. Everyone is welcome here, regardless of background, experience level, or identity.",
-      image: "/images/general/2e243534d6899d8f474f419e1ac832c9.webp",
-      alt: "Platform",
-    },
-    {
-      title: "Inspiring Talks",
-      text: "From beginner tutorials to advanced deep dives, we offer a wide range of talks to cater to the needs of our diverse community. Learn from local and international Python experts.",
-      image: "/images/general/Unknown.webp",
-      alt: "Talks",
-    },
-    {
-      title: "Practical Workshops",
-      text: "We learn by doing. Our hands-on workshops are designed to help you build real skills that you can apply immediately in your projects and career.",
-      image: "/images/patterns/African.webp",
-      alt: "Workshops",
-    },
-    {
-      title: "Simple and All-Inclusive",
-      text: "We want to create a welcoming and inclusive environment for everyone, regardless of their background or experience. No gatekeeping, just community.",
-      image: "/images/general/aa8b76bc47ebdea99b84fa3a26a94ade.webp",
-      alt: "Networking",
-    },
-    {
-      title: "Innovation & Creativity",
-      text: "We encourage creative problem-solving and innovative thinking. PyCon Cameroon is a space where new ideas are born and nurtured.",
-      image: "/images/general/ac5ca270fe9d4f7c17c5b2bf97337208.webp",
-      alt: "Innovation",
-    },
-    {
-      title: "Growing Together",
-      text: "Whether you're mentoring others or learning yourself, we believe in the power of shared growth. Together, we're building the future of Python in Cameroon.",
-      image: "/images/general/5a266f7460a16bd5e7b0d2cabf54e874.webp",
-      alt: "Growth",
-    },
-  ];
-
-  const partnerCommunities = [
-    { name: "UbuCon Cameroon", image: "/images/partners/canonical-cm.webp", link: "#" },
-    { name: "Django Cameroon", image: "/images/partners/djcmr.webp", link: "https://djangocameroon.org" },
-    { name: "Angular Cameroon", image: "/images/partners/angular-cm.webp", link: "https://ngcameroon.org" },
-    { name: "AWS User Group Douala", image: "/images/partners/aws-ug-dla.webp", link: "https://dla.awscmr.com" },
-    { name: "GDG Yaounde", image: "/images/partners/gdg-yde.webp", link: "https://gdg.community.dev/gdg-yaounde" },
-    { name: "Onyani", image: "/images/partners/onyani.webp", link: "https://onyani.com" },
-    { name: "Reckot", image: "/images/partners/reckot.webp", link: "https://reckot.com" },
-    { name: "Microsoft User Group Cameroon", image: "/images/partners/msf-ug-cm.webp", link: "https://t.me/+uOFiAi93Sr42Nzhk" },
-  ];
 
   return (
     <>
@@ -183,7 +78,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Tribal Border */}
       <div className="tribal-border"></div>
 
       {/* PyCon Cameroon Mission Section */}
@@ -285,108 +179,22 @@ const About = () => {
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--spacing-lg)', justifyContent: 'center' }}>
             {teamData.map((member, index) => (
-              <div
-                className="card team-card animate-on-scroll slide-up"
-                key={index}
-                style={{ flex: '0 1 calc(33.333% - var(--spacing-lg))', minWidth: '280px' }}
-              >
-                <div
-                  className="team-card-img"
-                  style={{
-                    background: member.image
-                      ? "none"
-                      : `linear-gradient(135deg, var(--color-${member.color}), var(--color-${member.gradient}))`,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "3rem",
-                    padding: 0,
-                    overflow: "hidden",
-                  }}
-                >
-                  {member.image ? (
-                    <LazyImage
-                      src={member.image}
-                      alt={member.name}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                      }}
-                    />
-                  ) : (
-                    "👤"
-                  )}
-                </div>
-                <h4 className="team-card-name">{member.name}</h4>
-                <p className="team-card-role">{member.role}</p>
-                <div className="team-card-social">
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="LinkedIn"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                    </svg>
-                  </a>
-                  {member.website && (
-                    <a
-                      href={member.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title="Website"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="2" y1="12" x2="22" y2="12"></line>
-                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                      </svg>
-                    </a>
-                  )}
-                </div>
-              </div>
+              <TeamCard key={index} member={member} />
             ))}
           </div>
 
           <div className="text-center mt-lg">
-            <p
-              style={{
-                color: "var(--color-text-secondary)",
-                marginBottom: "var(--spacing-md)",
-              }}
-            >
+            <p style={{ color: "var(--color-text-secondary)", marginBottom: "var(--spacing-md)" }}>
               Interested in joining the organizing team? We're always looking
               for passionate volunteers!
             </p>
-            <a
-              href="mailto:organizers@pythoncameroon.org"
-              className="btn btn-primary"
-            >
+            <a href="mailto:organizers@pythoncameroon.org" className="btn btn-primary">
               Join Our Team
             </a>
           </div>
         </div>
       </section>
 
-      {/* Tribal Border */}
       <div className="tribal-border"></div>
 
       {/* Partner Communities */}
@@ -404,48 +212,12 @@ const About = () => {
 
           <div className="grid grid-4 stagger" style={{ alignItems: 'center', justifyItems: 'center' }}>
             {partnerCommunities.map((partner, index) => (
-              <a
-                key={index}
-                href={partner.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="card animate-on-scroll slide-up"
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  padding: 'var(--spacing-md)',
-                  textAlign: 'center',
-                  textDecoration: 'none',
-                  transition: 'transform 0.3s ease',
-                  width: '100%',
-                }}
-              >
-                <img
-                  src={partner.image}
-                  alt={partner.name}
-                  loading="lazy"
-                  style={{
-                    width: '120px',
-                    height: '120px',
-                    objectFit: 'contain',
-                    marginBottom: 'var(--spacing-sm)',
-                    border: '2px solid var(--color-border)',
-                    borderRadius: '20px',
-                    padding: '8px',
-                  }}
-                />
-                <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>
-                  {partner.name}
-                </span>
-              </a>
+              <PartnerCard key={index} partner={partner} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Tribal Border */}
       <div className="tribal-border"></div>
 
       {/* Code of Conduct */}

@@ -57,7 +57,7 @@ const UbuCon = () => {
                                 and automation to cloud infrastructure and beyond.
                             </p>
                             <div className="mt-md">
-                                <a href="https://sessionize.com/pycon-camerooon-2026" className="btn btn-lg"
+                                <a href="https://sessionize.com/pycon-camerooon-2026" target="_blank" rel="noopener noreferrer" className="btn btn-lg"
                                     style={{ background: UBUNTU_ORANGE, color: 'white', border: 'none' }}>
                                     Submit a UbuCon Talk
                                 </a>
@@ -168,7 +168,7 @@ const UbuCon = () => {
                         the UbuCon track has something for you.
                     </p>
                     <div className="flex justify-center gap-sm flex-wrap">
-                        <a href="https://sessionize.com/pycon-camerooon-2026" className="btn btn-lg"
+                        <a href="https://sessionize.com/pycon-camerooon-2026" target="_blank" rel="noopener noreferrer" className="btn btn-lg"
                             style={{ background: 'white', color: UBUNTU_ORANGE }}>
                             Submit a Talk
                         </a>
