@@ -79,17 +79,19 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                <button
-                    className="nav-toggle"
-                    id="navToggle"
-                    aria-label="Toggle navigation"
-                    aria-expanded={isOpen}
-                    onClick={() => setIsOpen(!isOpen)}
-                >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                {!isOpen && (
+                    <button
+                        className="nav-toggle"
+                        id="navToggle"
+                        aria-label="Toggle navigation"
+                        aria-expanded={isOpen}
+                        onClick={() => setIsOpen(true)}
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                )}
             </div>
             <div className="tribal-border"></div>
         </nav>
