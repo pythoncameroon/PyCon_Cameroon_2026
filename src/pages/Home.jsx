@@ -220,6 +220,9 @@ const Home = () => {
                         <Link to="/speakers" className="btn btn-lg btn-secondary" style={{ borderColor: 'white', color: 'white' }}>
                             Submit a Talk
                         </Link>
+                        <a href="https://ly.reckot.com/sponsor-pyconcm26" target="_blank" rel="noopener noreferrer" className="btn btn-lg btn-secondary" style={{ borderColor: 'white', color: 'white' }}>
+                            Sponsorship Deck
+                        </a>
                     </div>
                 </div>
             </section>

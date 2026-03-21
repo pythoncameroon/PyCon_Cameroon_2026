@@ -14,6 +14,9 @@ const Sponsor = () => {
                 <div className="container text-center">
                     <h1>Become a <span className="text-gradient">Sponsor</span></h1>
                     <p>Join us in shaping the future of Python in Cameroon and Central Africa</p>
+                    <a href="https://ly.reckot.com/sponsor-pyconcm26" target="_blank" rel="noopener noreferrer" className="btn btn-primary mt-md">
+                        View Sponsorship Deck
+                    </a>
                 </div>
             </header>
 
