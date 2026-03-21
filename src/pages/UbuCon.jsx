@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+
+const UbuConMap = lazy(() => import('../components/UbuConMap'));
 
 const UBUNTU_ORANGE = '#E95420';
 const UBUNTU_AUBERGINE = '#77216F';
@@ -152,6 +154,23 @@ const UbuCon = () => {
                             </p>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* UbuCons Around the World */}
+            <section className="section bg-dark">
+                <div className="container">
+                    <div className="section-header">
+                        <h2>UbuCons Around the <span style={{ color: UBUNTU_ORANGE }}>World</span></h2>
+                        <p>Discover UbuCon events happening globally</p>
+                    </div>
+                    <Suspense fallback={
+                        <div style={{ height: '450px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--color-dark-alt)', borderRadius: 'var(--radius-md)' }}>
+                            <p style={{ color: 'var(--color-text-secondary)' }}>Loading map...</p>
+                        </div>
+                    }>
+                        <UbuConMap />
+                    </Suspense>
                 </div>
             </section>
 

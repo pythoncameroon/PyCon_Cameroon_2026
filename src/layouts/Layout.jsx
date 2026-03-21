@@ -3,13 +3,16 @@ import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
+import RouteTransition from '../components/RouteTransition';
 
 const Layout = () => {
     return (
         <>
             <Navbar />
             <main>
-                <Outlet />
+                <RouteTransition>
+                    <Outlet />
+                </RouteTransition>
             </main>
             <Footer />
             <ScrollToTop />

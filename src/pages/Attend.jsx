@@ -33,7 +33,7 @@ const Attend = () => {
                         requiring financial assistance.
                     </p>
 
-                    <div className="grid grid-2 stagger" style={{ maxWidth: '800px', margin: '0 auto' }}>
+                    <div className="grid grid-3 stagger" style={{ maxWidth: '1100px', margin: '0 auto' }}>
                         {/* Early Bird Rate */}
                         <div className="card animate-on-scroll slide-up" style={{ borderTop: '4px solid var(--color-orange)' }}>
                             <h3 className="card-title">Early Bird</h3>
@@ -70,6 +70,25 @@ const Attend = () => {
                             <a href="https://ly.reckot.com/pycon-cameroon-2026-a4390c99-regular" target="_blank" rel="noopener noreferrer" className="btn btn-primary"
                                 style={{ width: '100%', background: 'var(--color-blue)', color: 'white' }}>Get Normal Ticket</a>
                         </div>
+
+                        {/* On-Site Rate */}
+                        <div className="card animate-on-scroll slide-up" style={{ borderTop: '4px solid var(--color-green)' }}>
+                            <h3 className="card-title">On-Site</h3>
+                            <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-green)', margin: 'var(--spacing-sm) 0' }}>
+                                10,000 XAF
+                            </div>
+                            <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--spacing-md)' }}>
+                                At the Door
+                            </p>
+
+                            <p className="card-text mb-md">
+                                Purchase your ticket on-site during the conference. Subject to
+                                availability — we recommend buying in advance!
+                            </p>
+
+                            <span className="btn btn-primary"
+                                style={{ width: '100%', background: 'var(--color-green)', color: 'white', cursor: 'default' }}>Available at Venue</span>
+                        </div>
                     </div>
 
 
@@ -85,7 +104,7 @@ const Attend = () => {
                             <p className="mb-md">Your registration gives you access to:</p>
 
                             <div className={`accordion-item ${activeAccordion === 0 ? 'active' : ''}`}>
-                                <div className="accordion-header" onClick={() => toggleAccordion(0)}>Main Conference Days (Aug 28-29)</div>
+                                <div className="accordion-header" onClick={() => toggleAccordion(0)}>Main Conference Days (Sep 17-19)</div>
                                 <div className="accordion-content">
                                     <div className="accordion-body">
                                         <ul>
@@ -104,7 +123,7 @@ const Attend = () => {
                                 <div className="accordion-content">
                                     <div className="accordion-body">
                                         <ul>
-                                            <li className="mb-sm">✓ Opening Reception (Aug 27 evening)</li>
+                                            <li className="mb-sm">✓ Opening Reception (Sep 16 evening)</li>
                                             <li className="mb-sm">✓ PyCon Official Dinner</li>
                                             <li>✓ Community networking sessions</li>
                                         </ul>
@@ -181,7 +200,7 @@ const Attend = () => {
                         <div className="card">
                             <h4>Cancellation Policy</h4>
                             <p className="card-text">
-                                Cancellations received by July 15, 2026, will receive a refund less a
+                                Cancellations received by August 15, 2026, will receive a refund less a
                                 processing fee. No refunds will be granted after this date unless for
                                 visa denial or health reasons.
                             </p>
@@ -191,7 +210,7 @@ const Attend = () => {
                             <h4>Ticket Transfers</h4>
                             <p className="card-text">
                                 You may transfer your ticket to another person by sending a written
-                                request to organizers@pythoncameroon.org before August 1, 2026.
+                                request to organizers@pythoncameroon.org before September 1, 2026.
                             </p>
                         </div>
                     </div>

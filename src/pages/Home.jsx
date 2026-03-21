@@ -4,6 +4,7 @@ import useScrollAnimation from '../hooks/useScrollAnimation';
 import LazyImage from '../components/LazyImage';
 import TrackSection from '../components/TrackSection';
 import { ubuconHighlights, djangoHighlights } from '../data/tracks';
+import { sponsorshipDeckUrl } from '../data/sponsors';
 
 const Home = () => {
     useScrollAnimation();
@@ -220,7 +221,7 @@ const Home = () => {
                         <Link to="/speakers" className="btn btn-lg btn-secondary" style={{ borderColor: 'white', color: 'white' }}>
                             Submit a Talk
                         </Link>
-                        <a href="https://ly.reckot.com/sponsor-pyconcm26" target="_blank" rel="noopener noreferrer" className="btn btn-lg btn-secondary" style={{ borderColor: 'white', color: 'white' }}>
+                        <a href={sponsorshipDeckUrl} target="_blank" rel="noopener noreferrer" className="btn btn-lg btn-secondary" style={{ borderColor: 'white', color: 'white' }}>
                             Sponsorship Deck
                         </a>
                     </div>

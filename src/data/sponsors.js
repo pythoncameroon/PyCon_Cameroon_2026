@@ -1,3 +1,5 @@
+export const sponsorshipDeckUrl = 'https://ly.reckot.com/sponsor-pyconcm26';
+
 export const internationalTiers = [
   {
     name: 'Diamond',
@@ -15,7 +17,7 @@ export const internationalTiers = [
       'Mention in all press releases',
     ],
     btnClass: 'btn btn-primary btn-diamond',
-    btnStyle: { width: '100%' },
+    btnStyle: { width: '100%', background: '#b9f2ff', color: 'var(--color-dark)', border: '1px solid #b9f2ff' },
   },
   {
     name: 'Gold',
@@ -44,7 +46,7 @@ export const internationalTiers = [
       'Tier 3 logo placement on website',
     ],
     btnClass: 'btn btn-primary btn-silver',
-    btnStyle: { width: '100%', background: 'var(--color-dark)', border: '1px solid var(--color-text-secondary)' },
+    btnStyle: { width: '100%', background: 'var(--color-dark)', border: '1px solid #c0c0c0', color: '#c0c0c0' },
   },
   {
     name: 'Bronze',
@@ -93,7 +95,7 @@ export const localTiers = [
       'Mention in all press releases',
     ],
     btnClass: 'btn btn-primary btn-diamond',
-    btnStyle: { width: '100%' },
+    btnStyle: { width: '100%', background: '#b9f2ff', color: 'var(--color-dark)', border: '1px solid #b9f2ff' },
   },
   {
     name: 'Gold',
@@ -125,7 +127,7 @@ export const localTiers = [
       'Tier 3 logo placement on website',
     ],
     btnClass: 'btn btn-primary btn-silver',
-    btnStyle: { width: '100%', background: 'var(--color-dark)', border: '1px solid var(--color-text-secondary)' },
+    btnStyle: { width: '100%', background: 'var(--color-dark)', border: '1px solid #c0c0c0', color: '#c0c0c0' },
   },
   {
     name: 'Bronze',

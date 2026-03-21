@@ -1544,6 +1544,18 @@ tr:hover td {
 }
 
 /* ===================================
+   UbuCon Map Markers
+   =================================== */
+.ubuntu-map-marker {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* ===================================
    Page Loader
    =================================== */
 .page-loader {

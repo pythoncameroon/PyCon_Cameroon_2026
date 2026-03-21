@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import useScrollAnimation from '../hooks/useScrollAnimation';
-import { internationalTiers, localTiers } from '../data/sponsors';
+import { internationalTiers, localTiers, sponsorshipDeckUrl } from '../data/sponsors';
 
 const Sponsor = () => {
     useScrollAnimation();
@@ -14,7 +14,7 @@ const Sponsor = () => {
                 <div className="container text-center">
                     <h1>Become a <span className="text-gradient">Sponsor</span></h1>
                     <p>Join us in shaping the future of Python in Cameroon and Central Africa</p>
-                    <a href="https://ly.reckot.com/sponsor-pyconcm26" target="_blank" rel="noopener noreferrer" className="btn btn-primary mt-md">
+                    <a href={sponsorshipDeckUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary mt-md">
                         View Sponsorship Deck
                     </a>
                 </div>
@@ -186,7 +186,7 @@ const Sponsor = () => {
                         ))}
                     </div>
 
-                    <div className="text-center mt-lg">
+                    <div className="text-center mt-lg" style={{ paddingBottom: 'var(--spacing-lg)' }}>
                         <p className="mb-md">
                             {isLocal
                                 ? 'Prices are listed in XAF (Cameroon Franc). USD equivalent shown for reference.'
