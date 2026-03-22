@@ -395,6 +395,21 @@ p {
     display: none;
 }
 
+@media (max-width: 1024px) {
+    .nav-links {
+        gap: var(--spacing-sm);
+    }
+
+    .nav-links a {
+        font-size: 0.875rem;
+        padding: var(--spacing-xs);
+    }
+
+    .nav-logo img {
+        height: 50px;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-toggle {
         display: flex;
@@ -1830,9 +1845,43 @@ img {
     animation: float 6s ease-in-out infinite;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    .hero {
+        padding-top: 80px;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 6vw, 4rem);
+    }
+
     .hero-logo {
         width: 140px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-logo {
+        width: 120px;
+    }
+}
+
+@media (max-height: 650px) {
+    .hero {
+        min-height: auto;
+        padding-top: 80px;
+        padding-bottom: var(--spacing-md);
+    }
+
+    .hero-logo {
+        width: 100px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.75rem, 5vw, 3rem);
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
     }
 }
 
