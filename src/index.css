@@ -1975,6 +1975,47 @@ img {
     margin-bottom: var(--spacing-xs);
 }
 
+/* Timeline status states */
+.timeline-past {
+    opacity: 0.5;
+}
+
+.timeline-past .timeline-content h4 {
+    text-decoration: line-through;
+}
+
+.timeline-past::before {
+    background: var(--color-green);
+}
+
+.timeline-active::before {
+    background: var(--color-green);
+    box-shadow: 0 0 0 4px rgba(0, 200, 83, 0.3);
+    animation: timeline-pulse 2s ease-in-out infinite;
+}
+
+@keyframes timeline-pulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(0, 200, 83, 0.3); }
+    50% { box-shadow: 0 0 0 8px rgba(0, 200, 83, 0.1); }
+}
+
+.timeline-badge {
+    display: inline-block;
+    margin-left: var(--spacing-xs);
+    padding: 2px 8px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: var(--radius-full);
+    background: var(--color-green);
+    color: white;
+    vertical-align: middle;
+}
+
+.timeline-badge-done {
+    background: var(--color-gray);
+}
+
 /* ===================================
    Sponsor Page Specific Styles
    =================================== */

@@ -1,8 +1,46 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+
+const TIMELINE_MILESTONES = [
+    { date: new Date('2026-03-30'), label: 'March 30th, 2026', title: 'CFP and Call for Sponsors Opens', description: 'Start submitting your talk and workshop proposals via Sessionize.' },
+    { date: new Date('2026-05-15T23:59:00+01:00'), label: 'May 15th, 2026, 11:59 PM WAT', title: 'CFP Closes', description: "Last day to submit your proposals. Don't wait until the last minute!" },
+    { date: new Date('2026-05-30'), label: 'May 30th, 2026', title: 'Announcement of Speakers', description: 'Selected speakers will be announced. All submitters will receive notifications.' },
+    { date: new Date('2026-06-15'), label: 'June 15th, 2026', title: 'Schedule Published', description: 'The full conference schedule is posted on the PyCon Cameroon website.' },
+    { date: new Date('2026-09-19'), label: 'September 17th-19th, 2026', title: 'PyCon Cameroon 2026', description: 'The main event in Yaoundé, Cameroon!' },
+];
+
+function getCfpStatus(now) {
+    const cfpOpen = TIMELINE_MILESTONES[0].date;
+    const cfpClose = TIMELINE_MILESTONES[1].date;
+    if (now < cfpOpen) return 'upcoming';
+    if (now <= cfpClose) return 'open';
+    return 'closed';
+}
+
+function getTimelineItemStatus(milestone, index, now) {
+    const nextMilestone = TIMELINE_MILESTONES[index + 1];
+    if (nextMilestone && now >= nextMilestone.date) return 'past';
+    if (now >= milestone.date) return 'active';
+    return 'upcoming';
+}
 
 const Speakers = () => {
     useScrollAnimation();
+
+    const now = useMemo(() => new Date(), []);
+    const cfpStatus = getCfpStatus(now);
+
+    const bannerContent = {
+        upcoming: { text: `📢 Call for Proposals will be OPEN on ${TIMELINE_MILESTONES[0].label}!`, alertClass: 'alert-success' },
+        open: { text: '📢 Call for Proposals is NOW OPEN!', alertClass: 'alert-success' },
+        closed: { text: '📢 Call for Proposals is now CLOSED. Thank you for your submissions!', alertClass: 'alert-warning' },
+    }[cfpStatus];
+
+    const ctaText = {
+        upcoming: `We can't wait to see your proposal. Submissions open ${TIMELINE_MILESTONES[0].label}!`,
+        open: `We can't wait to see your proposal. Submit before ${TIMELINE_MILESTONES[1].label}!`,
+        closed: 'The CFP is closed. Stay tuned for speaker announcements!',
+    }[cfpStatus];
 
     return (
         <>
@@ -28,13 +66,15 @@ const Speakers = () => {
                             submit your proposal and we'll review it with care.
                         </p>
 
-                        <div className="alert alert-success" style={{ textAlign: 'left', margin: 'var(--spacing-lg) 0' }}>
-                            <strong>📢 Call for Proposals will be OPEN this March 01 2026!</strong><br />
+                        <div className={`alert ${bannerContent.alertClass}`} style={{ textAlign: 'left', margin: 'var(--spacing-lg) 0' }}>
+                            <strong>{bannerContent.text}</strong><br />
                             We're inviting speakers of all experience levels and backgrounds to contribute
                             to our conference program. Don't be shy – your unique perspective matters!
                         </div>
 
-                        <a href="https://sessionize.com/pycon-camerooon-2026" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">Submit Your Proposal</a>
+                        {cfpStatus !== 'closed' && (
+                            <a href="https://sessionize.com/pycon-camerooon-2026" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">Submit Your Proposal</a>
+                        )}
                     </div>
                 </div>
             </section>
@@ -69,45 +109,22 @@ const Speakers = () => {
                         </h3>
 
                         <div className="timeline">
-                            <div className="timeline-item">
-                                <div className="timeline-date">March 30th, 2026</div>
-                                <div className="timeline-content">
-                                    <h4>CFP and Call for Sponsors Opens</h4>
-                                    <p>Start submitting your talk and workshop proposals via Sessionize.</p>
-                                </div>
-                            </div>
-
-                            <div className="timeline-item">
-                                <div className="timeline-date">May 15th, 2026, 11:59 PM WAT</div>
-                                <div className="timeline-content">
-                                    <h4>CFP Closes</h4>
-                                    <p>Last day to submit your proposals. Don't wait until the last minute!</p>
-                                </div>
-                            </div>
-
-                            <div className="timeline-item">
-                                <div className="timeline-date">May 30th, 2026</div>
-                                <div className="timeline-content">
-                                    <h4>Announcement of Speakers</h4>
-                                    <p>Selected speakers will be announced. All submitters will receive notifications.</p>
-                                </div>
-                            </div>
-
-                            <div className="timeline-item">
-                                <div className="timeline-date">June 15th, 2026</div>
-                                <div className="timeline-content">
-                                    <h4>Schedule Published</h4>
-                                    <p>The full conference schedule is posted on the PyCon Cameroon website.</p>
-                                </div>
-                            </div>
-
-                            <div className="timeline-item">
-                                <div className="timeline-date">September 17th-19th, 2026</div>
-                                <div className="timeline-content">
-                                    <h4>PyCon Cameroon 2026</h4>
-                                    <p>The main event in Yaoundé, Cameroon!</p>
-                                </div>
-                            </div>
+                            {TIMELINE_MILESTONES.map((milestone, index) => {
+                                const status = getTimelineItemStatus(milestone, index, now);
+                                return (
+                                    <div className={`timeline-item timeline-${status}`} key={index}>
+                                        <div className="timeline-date">
+                                            {milestone.label}
+                                            {status === 'active' && <span className="timeline-badge">Now</span>}
+                                            {status === 'past' && <span className="timeline-badge timeline-badge-done">Done</span>}
+                                        </div>
+                                        <div className="timeline-content">
+                                            <h4>{milestone.title}</h4>
+                                            <p>{milestone.description}</p>
+                                        </div>
+                                    </div>
+                                );
+                            })}
                         </div>
 
                         {/* Session Types */}
@@ -332,11 +349,13 @@ const Speakers = () => {
                 <div className="container text-center">
                     <h2 style={{ color: 'white', marginBottom: 'var(--spacing-sm)' }}>Ready to Share Your Knowledge?</h2>
                     <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.25rem', marginBottom: 'var(--spacing-md)' }}>
-                        We can't wait to see your proposal. Submit before May 31st, 2026!
+                        {ctaText}
                     </p>
-                    <a href="https://sessionize.com/pycon-camerooon-2026" target="_blank" rel="noopener noreferrer" className="btn btn-lg" style={{ background: 'white', color: 'var(--color-green)' }}>
-                        Submit Your Proposal Now
-                    </a>
+                    {cfpStatus !== 'closed' && (
+                        <a href="https://sessionize.com/pycon-camerooon-2026" target="_blank" rel="noopener noreferrer" className="btn btn-lg" style={{ background: 'white', color: 'var(--color-green)' }}>
+                            Submit Your Proposal Now
+                        </a>
+                    )}
                 </div>
             </section>
         </>
