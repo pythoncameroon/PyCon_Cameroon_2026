@@ -1847,7 +1847,7 @@ img {
 
 @media (max-width: 1024px) {
     .hero {
-        padding-top: 80px;
+        padding-top: 130px;
     }
 
     .hero-title {
@@ -1868,7 +1868,7 @@ img {
 @media (max-height: 650px) {
     .hero {
         min-height: auto;
-        padding-top: 80px;
+        padding-top: 100px;
         padding-bottom: var(--spacing-md);
     }
 
