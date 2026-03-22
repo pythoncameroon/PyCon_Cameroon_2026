@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import { internationalTiers, localTiers, sponsorshipDeckUrl } from '../data/sponsors';
 
 const Sponsor = () => {
     useScrollAnimation();
-    const [isLocal, setIsLocal] = useState(false);
+    const [searchParams, setSearchParams] = useSearchParams();
+    const isLocal = searchParams.get('deck') === 'local';
+
+    const handleToggle = (local) => {
+        setSearchParams({ deck: local ? 'local' : 'international' }, { replace: true });
+    };
     const tiers = isLocal ? localTiers : internationalTiers;
 
     return (
@@ -123,7 +128,7 @@ const Sponsor = () => {
                             border: '1px solid var(--color-border)',
                         }}>
                             <button
-                                onClick={() => setIsLocal(false)}
+                                onClick={() => handleToggle(false)}
                                 style={{
                                     padding: '0.6rem 1.5rem',
                                     borderRadius: '50px',
@@ -139,7 +144,7 @@ const Sponsor = () => {
                                 International (USD)
                             </button>
                             <button
-                                onClick={() => setIsLocal(true)}
+                                onClick={() => handleToggle(true)}
                                 style={{
                                     padding: '0.6rem 1.5rem',
                                     borderRadius: '50px',
