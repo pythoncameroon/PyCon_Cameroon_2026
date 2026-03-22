@@ -1045,6 +1045,21 @@ a {
     margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+    .page-header {
+        padding: 120px var(--spacing-sm) var(--spacing-lg);
+        min-height: 30vh;
+    }
+
+    .page-header h1 {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+    }
+
+    .page-header p {
+        font-size: 1rem;
+    }
+}
+
 /* Breadcrumb */
 .breadcrumb {
     display: flex;
