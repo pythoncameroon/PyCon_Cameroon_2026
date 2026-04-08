@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Languages } from 'lucide-react';
+import { Languages, Sun, Moon } from 'lucide-react';
+import { useTheme } from '../hooks/useTheme';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
     const { t, i18n } = useTranslation();
+    const { theme, toggleTheme } = useTheme();
 
     const toggleLanguage = () => {
         i18n.changeLanguage(i18n.language === 'en' ? 'fr' : 'en');
@@ -61,6 +63,9 @@ const Navbar = () => {
                         <Languages size={16} />
                         {i18n.language === 'en' ? 'FR' : 'EN'}
                     </button>
+                    <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle theme">
+                        {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+                    </button>
                 </div>
 
                 {/* Mobile drawer overlay */}
@@ -68,13 +73,19 @@ const Navbar = () => {
 
                 {/* Mobile drawer */}
                 <div className={`nav-drawer ${isOpen ? 'open' : ''}`}>
-                    <button
-                        className="nav-drawer-close"
-                        aria-label="Close menu"
-                        onClick={() => setIsOpen(false)}
-                    >
-                        &times;
-                    </button>
+                    <div className="nav-drawer-header">
+                        <Link to="/" className="nav-logo" onClick={() => setIsOpen(false)}>
+                            <img src="/images/branding/python-cameroon-logo.webp" alt="PyCon Cameroon Logo" />
+                            <span>PyCon CM</span>
+                        </Link>
+                        <button
+                            className="nav-drawer-close"
+                            aria-label="Close menu"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            &times;
+                        </button>
+                    </div>
                     <div className="nav-drawer-links">
                         <NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>{t('nav.about')}</NavLink>
                         <NavLink to="/speakers" className={({ isActive }) => isActive ? "active" : ""}>{t('nav.speakers')}</NavLink>
@@ -85,10 +96,15 @@ const Navbar = () => {
                             <img src="/images/partners/canonical-cm.webp" alt="" style={{ width: '22px', height: '22px', objectFit: 'contain', borderRadius: '50%' }} />
                             {t('nav.ubucon')}
                         </NavLink>
-                        <button onClick={toggleLanguage} className="lang-toggle" aria-label="Toggle language">
-                            <Languages size={16} />
-                            {i18n.language === 'en' ? 'FR' : 'EN'}
-                        </button>
+                        <div className="nav-drawer-actions">
+                            <button onClick={toggleLanguage} className="lang-toggle" aria-label="Toggle language">
+                                <Languages size={18} />
+                                {i18n.language === 'en' ? 'FR' : 'EN'}
+                            </button>
+                            <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle theme">
+                                {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+                            </button>
+                        </div>
                     </div>
                 </div>
 
