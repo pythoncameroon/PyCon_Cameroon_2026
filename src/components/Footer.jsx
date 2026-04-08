@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useLocalizedPath } from '../hooks/useLocalizedPath';
 
 const Footer = () => {
     const { t } = useTranslation();
+    const { l } = useLocalizedPath();
 
     return (
         <footer className="footer">
@@ -55,9 +57,9 @@ const Footer = () => {
                     <div>
                         <h4 className="footer-title">{t('footer.about')}</h4>
                         <div className="footer-links">
-                            <Link to="/about">{t('footer.overview')}</Link>
-                            <Link to="/about#team">{t('footer.team')}</Link>
-                            <Link to="/code-of-conduct">{t('footer.codeOfConduct')}</Link>
+                            <Link to={l('/about')}>{t('footer.overview')}</Link>
+                            <Link to={l('/about#team')}>{t('footer.team')}</Link>
+                            <Link to={l('/code-of-conduct')}>{t('footer.codeOfConduct')}</Link>
                             <a href="https://www.python.org/psf-landing/">{t('footer.psf')}</a>
                         </div>
                     </div>
@@ -65,9 +67,9 @@ const Footer = () => {
                     <div>
                         <h4 className="footer-title">{t('footer.program')}</h4>
                         <div className="footer-links">
-                            <Link to="/speakers">{t('footer.speakers')}</Link>
-                            <Link to="/speakers#guidelines">{t('footer.proposalGuidelines')}</Link>
-                            <Link to="/venue">{t('footer.venue')}</Link>
+                            <Link to={l('/speakers')}>{t('footer.speakers')}</Link>
+                            <Link to={l('/speakers#guidelines')}>{t('footer.proposalGuidelines')}</Link>
+                            <Link to={l('/venue')}>{t('footer.venue')}</Link>
                         </div>
                     </div>
 
@@ -75,8 +77,8 @@ const Footer = () => {
                         <h4 className="footer-title">{t('footer.contact')}</h4>
                         <div className="footer-links">
                             <a href="mailto:organizers@pythoncameroon.org">organizers@pythoncameroon.org</a>
-                            <Link to="/sponsor">{t('footer.sponsorship')}</Link>
-                            <Link to="/sponsor">{t('footer.support')}</Link>
+                            <Link to={l('/sponsor')}>{t('footer.sponsorship')}</Link>
+                            <Link to={l('/sponsor')}>{t('footer.support')}</Link>
                         </div>
                     </div>
                 </div>
@@ -89,11 +91,11 @@ const Footer = () => {
                         </p>
                     </div>
                     <div>
-                        <Link to="/terms">{t('footer.terms')}</Link>
+                        <Link to={l('/terms')}>{t('footer.terms')}</Link>
                         <span style={{ margin: '0 var(--spacing-sm)' }}>|</span>
-                        <Link to="/privacy">{t('footer.privacy')}</Link>
+                        <Link to={l('/privacy')}>{t('footer.privacy')}</Link>
                         <span style={{ margin: '0 var(--spacing-sm)' }}>|</span>
-                        <Link to="/health-safety">{t('footer.healthSafety')}</Link>
+                        <Link to={l('/health-safety')}>{t('footer.healthSafety')}</Link>
                     </div>
                 </div>
             </div>

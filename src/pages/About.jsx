@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useLocalizedPath } from "../hooks/useLocalizedPath";
 import { useTranslation } from "react-i18next";
 import useScrollAnimation from "../hooks/useScrollAnimation";
 import LazyImage from "../components/LazyImage";
@@ -12,6 +13,7 @@ import { partnerCommunities } from "../data/partners";
 const About = () => {
   useScrollAnimation();
   const { t } = useTranslation();
+  const { l } = useLocalizedPath();
   const translatedValues = t('data.values', { returnObjects: true });
   const teamRoles = t('data.team.roles', { returnObjects: true });
 
@@ -220,7 +222,7 @@ const About = () => {
             </p>
 
             <div className="mt-md">
-              <Link to="/code-of-conduct" className="btn btn-secondary">
+              <Link to={l('/code-of-conduct')} className="btn btn-secondary">
                 {t('about.readFullCoC')}
               </Link>
             </div>

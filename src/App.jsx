@@ -1,6 +1,7 @@
 import { lazy, Suspense, Component } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './layouts/Layout';
+import LanguageSync from './components/LanguageSync';
 import PageLoader from './components/PageLoader';
 
 const Home = lazy(() => import('./pages/Home'));
@@ -54,10 +55,19 @@ function LazyPage({ children }) {
   );
 }
 
+function RootRedirect() {
+  const lang = localStorage.getItem('pycon-lang') || 'en';
+  return <Navigate to={`/${lang}`} replace />;
+}
+
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      {/* Root redirect to default language */}
+      <Route index element={<RootRedirect />} />
+
+      {/* Language-prefixed routes */}
+      <Route path="/:lang" element={<LanguageSync><Layout /></LanguageSync>}>
         <Route index element={<LazyPage><Home /></LazyPage>} />
         <Route path="about" element={<LazyPage><About /></LazyPage>} />
         <Route path="speakers" element={<LazyPage><Speakers /></LazyPage>} />
@@ -69,8 +79,11 @@ function App() {
         <Route path="health-safety" element={<LazyPage><HealthSafety /></LazyPage>} />
         <Route path="code-of-conduct" element={<LazyPage><CodeOfConduct /></LazyPage>} />
         <Route path="ubucon" element={<LazyPage><UbuCon /></LazyPage>} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<RootRedirect />} />
       </Route>
+
+      {/* Catch-all */}
+      <Route path="*" element={<RootRedirect />} />
     </Routes>
   );
 }

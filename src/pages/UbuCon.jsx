@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
+import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { useTranslation } from 'react-i18next';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 
@@ -12,6 +13,7 @@ const UBUNTU_DARK = '#2C001E';
 const UbuCon = () => {
     useScrollAnimation();
     const { t } = useTranslation();
+    const { l } = useLocalizedPath();
 
     const topics = t('ubucon.topics', { returnObjects: true });
 
@@ -152,7 +154,7 @@ const UbuCon = () => {
                             style={{ background: 'white', color: UBUNTU_ORANGE }}>
                             {t('ubucon.ctaSubmit')}
                         </a>
-                        <Link to="/attend" className="btn btn-lg btn-secondary"
+                        <Link to={l('/attend')} className="btn btn-lg btn-secondary"
                             style={{ borderColor: 'white', color: 'white' }}>
                             {t('ubucon.ctaTicket')}
                         </Link>

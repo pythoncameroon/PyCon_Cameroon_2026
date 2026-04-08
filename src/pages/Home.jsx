@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { Calendar, MapPin, Mic, Ticket } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import useScrollAnimation from '../hooks/useScrollAnimation';
@@ -10,6 +11,7 @@ import { sponsorshipDeckUrl } from '../data/sponsors';
 const Home = () => {
     useScrollAnimation();
     const { t } = useTranslation();
+    const { l } = useLocalizedPath();
     const ubuconHighlights = t('data.tracks.ubucon', { returnObjects: true });
     const djangoHighlights = t('data.tracks.django', { returnObjects: true });
 
@@ -36,7 +38,7 @@ const Home = () => {
                         <a href="https://sessionize.com/pycon-camerooon-2026" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
                             <Mic size="1em" style={{ verticalAlign: '-0.125em' }} /> {t('home.callForSpeakers')}
                         </a>
-                        <Link to="/attend" className="btn btn-secondary btn-lg">
+                        <Link to={l('/attend')} className="btn btn-secondary btn-lg">
                             <Ticket size="1em" style={{ verticalAlign: '-0.125em' }} /> {t('home.getYourTicket')}
                         </Link>
                     </div>
@@ -194,10 +196,10 @@ const Home = () => {
                         {t('home.readyToJoinText')}
                     </p>
                     <div className="flex justify-center gap-sm flex-wrap">
-                        <Link to="/attend" className="btn btn-lg" style={{ background: 'white', color: 'var(--color-orange)' }}>
+                        <Link to={l('/attend')} className="btn btn-lg" style={{ background: 'white', color: 'var(--color-orange)' }}>
                             {t('home.getYourTicket')}
                         </Link>
-                        <Link to="/speakers" className="btn btn-lg btn-secondary" style={{ borderColor: 'white', color: 'white' }}>
+                        <Link to={l('/speakers')} className="btn btn-lg btn-secondary" style={{ borderColor: 'white', color: 'white' }}>
                             {t('home.submitATalk')}
                         </Link>
                         <a href={sponsorshipDeckUrl} target="_blank" rel="noopener noreferrer" className="btn btn-lg btn-secondary" style={{ borderColor: 'white', color: 'white' }}>

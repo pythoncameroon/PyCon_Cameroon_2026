@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useLocalizedPath } from '../hooks/useLocalizedPath';
 
 const TrackSection = ({ id, bgClass, logo, logoAlt, logoBg, title, titleGradient, color, description, highlights, ctaLabel }) => {
   const { t } = useTranslation();
+  const { l } = useLocalizedPath();
 
   return (
     <section className={`section ${bgClass || ''}`} id={id}>
@@ -28,10 +30,10 @@ const TrackSection = ({ id, bgClass, logo, logoAlt, logoBg, title, titleGradient
             </div>
             {description.map((p, i) => <p key={i}>{p}</p>)}
             <div className="mt-md flex gap-sm flex-wrap">
-              <Link to="/speakers" className="btn btn-primary" style={color !== 'var(--color-orange)' ? { background: color } : {}}>
+              <Link to={l('/speakers')} className="btn btn-primary" style={color !== 'var(--color-orange)' ? { background: color } : {}}>
                 {t('data.tracks.submitTalk', { label: ctaLabel })}
               </Link>
-              <Link to="/attend" className="btn btn-secondary">
+              <Link to={l('/attend')} className="btn btn-secondary">
                 {t('data.tracks.attendTrack', { label: ctaLabel })}
               </Link>
             </div>
