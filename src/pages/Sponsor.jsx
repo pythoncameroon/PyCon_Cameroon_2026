@@ -1,8 +1,11 @@
 import { useSearchParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { Sparkles, Megaphone, Handshake, Search } from 'lucide-react';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import { internationalTiers, localTiers, sponsorshipDeckUrl } from '../data/sponsors';
 
 const Sponsor = () => {
+    const { t } = useTranslation();
     useScrollAnimation();
     const [searchParams, setSearchParams] = useSearchParams();
     const isLocal = searchParams.get('deck') === 'local';
@@ -17,10 +20,10 @@ const Sponsor = () => {
             {/* Page Header */}
             <header className="page-header">
                 <div className="container text-center">
-                    <h1>Become a <span className="text-gradient">Sponsor</span></h1>
-                    <p>Join us in shaping the future of Python in Cameroon and Central Africa</p>
+                    <h1>{t('sponsor.title')} <span className="text-gradient">{t('sponsor.titleHighlight')}</span></h1>
+                    <p>{t('sponsor.subtitle')}</p>
                     <a href={sponsorshipDeckUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary mt-md">
-                        View Sponsorship Deck
+                        {t('sponsor.viewDeck')}
                     </a>
                 </div>
             </header>
@@ -30,51 +33,45 @@ const Sponsor = () => {
                 <div className="container">
                     <div className="grid grid-2" style={{ alignItems: 'center', gap: 'var(--spacing-xl)' }}>
                         <div>
-                            <h2 style={{ marginBottom: 'var(--spacing-md)' }}>Why Sponsor <span className="text-gradient">PyCon CM?</span></h2>
+                            <h2 style={{ marginBottom: 'var(--spacing-md)' }}>{t('sponsor.whySponsorTitle')} <span className="text-gradient">{t('sponsor.whySponsorHighlight')}</span></h2>
                             <p>
-                                PyCon Cameroon brings together developers, engineers, data scientists, and tech
-                                enthusiasts from across East and Central Africa for an unforgettable celebration
-                                of Python programming.
+                                {t('sponsor.whySponsorText')}
                             </p>
 
                             <ul style={{ marginTop: 'var(--spacing-md)', display: 'flex', flexDirection: 'column', gap: 'var(--spacing-sm)' }}>
                                 <li style={{ display: 'flex', gap: 'var(--spacing-sm)' }}>
-                                    <span style={{ color: 'var(--color-orange)', fontSize: '1.25rem' }}>✨</span>
+                                    <Sparkles size="1.25rem" style={{ color: 'var(--color-orange)', flexShrink: 0 }} />
                                     <div>
-                                        <strong>Connect with Top Talent</strong>
+                                        <strong>{t('sponsor.connectTalent')}</strong>
                                         <p style={{ fontSize: '0.9rem', marginBottom: 0 }}>
-                                            Engage directly with hundreds of passionate Python developers,
-                                            from beginners to experts.
+                                            {t('sponsor.connectTalentText')}
                                         </p>
                                     </div>
                                 </li>
                                 <li style={{ display: 'flex', gap: 'var(--spacing-sm)' }}>
-                                    <span style={{ color: 'var(--color-orange)', fontSize: '1.25rem' }}>📢</span>
+                                    <Megaphone size="1.25rem" style={{ color: 'var(--color-orange)', flexShrink: 0 }} />
                                     <div>
-                                        <strong>Build Brand Awareness</strong>
+                                        <strong>{t('sponsor.brandAwareness')}</strong>
                                         <p style={{ fontSize: '0.9rem', marginBottom: 0 }}>
-                                            Showcase your company to a highly engaged technical audience
-                                            in the growing African tech ecosystem.
+                                            {t('sponsor.brandAwarenessText')}
                                         </p>
                                     </div>
                                 </li>
                                 <li style={{ display: 'flex', gap: 'var(--spacing-sm)' }}>
-                                    <span style={{ color: 'var(--color-orange)', fontSize: '1.25rem' }}>🤝</span>
+                                    <Handshake size="1.25rem" style={{ color: 'var(--color-orange)', flexShrink: 0 }} />
                                     <div>
-                                        <strong>Support the Community</strong>
+                                        <strong>{t('sponsor.supportCommunity')}</strong>
                                         <p style={{ fontSize: '0.9rem', marginBottom: 0 }}>
-                                            Help foster the growth of Python programming in Cameroon and
-                                            contribute to technological advancement in the region.
+                                            {t('sponsor.supportCommunityText')}
                                         </p>
                                     </div>
                                 </li>
                                 <li style={{ display: 'flex', gap: 'var(--spacing-sm)' }}>
-                                    <span style={{ color: 'var(--color-orange)', fontSize: '1.25rem' }}>🔍</span>
+                                    <Search size="1.25rem" style={{ color: 'var(--color-orange)', flexShrink: 0 }} />
                                     <div>
-                                        <strong>Recruitment Opportunities</strong>
+                                        <strong>{t('sponsor.recruitment')}</strong>
                                         <p style={{ fontSize: '0.9rem', marginBottom: 0 }}>
-                                            Meet potential candidates face-to-face in a dynamic,
-                                            technology-focused environment.
+                                            {t('sponsor.recruitmentText')}
                                         </p>
                                     </div>
                                 </li>
@@ -83,23 +80,23 @@ const Sponsor = () => {
 
                         <div>
                             <div className="card" style={{ padding: 'var(--spacing-lg)', textAlign: 'center' }}>
-                                <h3 style={{ marginBottom: 'var(--spacing-lg)' }}>Our Impact</h3>
+                                <h3 style={{ marginBottom: 'var(--spacing-lg)' }}>{t('sponsor.ourImpact')}</h3>
                                 <div className="grid grid-2">
                                     <div className="mb-md">
                                         <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-orange)' }}>500+</div>
-                                        <div style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)' }}>Expected Attendees</div>
+                                        <div style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)' }}>{t('sponsor.expectedAttendees')}</div>
                                     </div>
                                     <div className="mb-md">
                                         <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-green)' }}>30+</div>
-                                        <div style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)' }}>Technical Talks</div>
+                                        <div style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)' }}>{t('sponsor.technicalTalks')}</div>
                                     </div>
                                     <div>
                                         <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-blue)' }}>10+</div>
-                                        <div style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)' }}>Countries Represented</div>
+                                        <div style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)' }}>{t('sponsor.countriesRepresented')}</div>
                                     </div>
                                     <div>
                                         <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-gold)' }}>1M+</div>
-                                        <div style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)' }}>Digital Reach</div>
+                                        <div style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)' }}>{t('sponsor.digitalReach')}</div>
                                     </div>
                                 </div>
                             </div>
@@ -114,8 +111,8 @@ const Sponsor = () => {
             <section className="section" id="tiers">
                 <div className="container">
                     <div className="section-header">
-                        <h2>Sponsorship <span className="text-gradient">Tiers</span></h2>
-                        <p>Choose the package that best fits your goals</p>
+                        <h2>{t('sponsor.tiersTitle')} <span className="text-gradient">{t('sponsor.tiersHighlight')}</span></h2>
+                        <p>{t('sponsor.tiersSubtitle')}</p>
                     </div>
 
                     {/* Toggle */}
@@ -141,7 +138,7 @@ const Sponsor = () => {
                                     color: !isLocal ? 'white' : 'var(--color-text-secondary)',
                                 }}
                             >
-                                International (USD)
+                                {t('sponsor.international')}
                             </button>
                             <button
                                 onClick={() => handleToggle(true)}
@@ -157,7 +154,7 @@ const Sponsor = () => {
                                     color: isLocal ? 'white' : 'var(--color-text-secondary)',
                                 }}
                             >
-                                Local (XAF)
+                                {t('sponsor.local')}
                             </button>
                         </div>
                     </div>
@@ -166,7 +163,7 @@ const Sponsor = () => {
                         {tiers.map((tier) => (
                             <div key={tier.name} className={`card sponsor-card ${tier.className} animate-on-scroll slide-up`}
                                 style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-                                <div className="sponsor-tier">{tier.name === 'Community' ? 'Community Package' : `${tier.name} Tier`}</div>
+                                <div className="sponsor-tier">{tier.name === 'Community' ? t('sponsor.communityPackage') : `${tier.name} ${t('sponsor.tier')}`}</div>
                                 <div className="sponsor-price">{tier.price}</div>
                                 {tier.priceNote && (
                                     <div style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', marginBottom: 'var(--spacing-md)' }}>
@@ -186,7 +183,7 @@ const Sponsor = () => {
 
                                 <a href={`mailto:organizers@pythoncameroon.org?subject=${tier.name} Sponsorship Inquiry`}
                                     className={tier.btnClass}
-                                    style={{ ...tier.btnStyle, marginTop: 'auto' }}>Select {tier.name}</a>
+                                    style={{ ...tier.btnStyle, marginTop: 'auto' }}>{t('sponsor.select')} {tier.name}</a>
                             </div>
                         ))}
                     </div>
@@ -194,12 +191,11 @@ const Sponsor = () => {
                     <div className="text-center mt-lg" style={{ paddingBottom: 'var(--spacing-lg)' }}>
                         <p className="mb-md">
                             {isLocal
-                                ? 'Prices are listed in XAF (Cameroon Franc). USD equivalent shown for reference.'
-                                : 'Prices are listed in USD. Payment in local currency (XAF) is also accepted.'}
+                                ? t('sponsor.pricesLocal')
+                                : t('sponsor.pricesInternational')}
                         </p>
                         <div className="alert alert-info">
-                            <strong>Custom Packages:</strong> Don't see a package that fits your needs?
-                            We're happy to discuss custom sponsorship opportunities!
+                            <strong>{t('sponsor.customPackages')}</strong> {t('sponsor.customPackagesText')}
                         </div>
                     </div>
                 </div>
@@ -209,12 +205,12 @@ const Sponsor = () => {
             <section className="section"
                 style={{ background: 'linear-gradient(135deg, var(--color-orange) 0%, var(--color-red) 100%)' }}>
                 <div className="container text-center">
-                    <h2 style={{ color: 'white', marginBottom: 'var(--spacing-sm)' }}>Get Involved Today</h2>
+                    <h2 style={{ color: 'white', marginBottom: 'var(--spacing-sm)' }}>{t('sponsor.getInvolved')}</h2>
                     <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.25rem', marginBottom: 'var(--spacing-md)' }}>
-                        Join companies that are leading the way in supporting the Python community in Africa.
+                        {t('sponsor.getInvolvedText')}
                     </p>
                     <a href="mailto:organizers@pythoncameroon.org" className="btn btn-lg" style={{ background: 'white', color: 'var(--color-orange)' }}>
-                        Contact Us for Sponsorship
+                        {t('sponsor.contactSponsor')}
                     </a>
                 </div>
             </section>

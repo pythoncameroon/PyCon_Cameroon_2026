@@ -1,12 +1,14 @@
 import React, { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Megaphone, Calendar, Target, AlertTriangle, ScrollText } from 'lucide-react';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 
 const TIMELINE_MILESTONES = [
-    { date: new Date('2026-03-30'), label: 'March 30th, 2026', title: 'CFP and Call for Sponsors Opens', description: 'Start submitting your talk and workshop proposals via Sessionize.' },
-    { date: new Date('2026-05-15T23:59:00+01:00'), label: 'May 15th, 2026, 11:59 PM WAT', title: 'CFP Closes', description: "Last day to submit your proposals. Don't wait until the last minute!" },
-    { date: new Date('2026-05-30'), label: 'May 30th, 2026', title: 'Announcement of Speakers', description: 'Selected speakers will be announced. All submitters will receive notifications.' },
-    { date: new Date('2026-06-15'), label: 'June 15th, 2026', title: 'Schedule Published', description: 'The full conference schedule is posted on the PyCon Cameroon website.' },
-    { date: new Date('2026-09-19'), label: 'September 17th-19th, 2026', title: 'PyCon Cameroon 2026', description: 'The main event in Yaoundé, Cameroon!' },
+    { date: new Date('2026-03-30') },
+    { date: new Date('2026-05-15T23:59:00+01:00') },
+    { date: new Date('2026-05-30') },
+    { date: new Date('2026-06-15') },
+    { date: new Date('2026-09-19') },
 ];
 
 function getCfpStatus(now) {
@@ -26,20 +28,30 @@ function getTimelineItemStatus(milestone, index, now) {
 
 const Speakers = () => {
     useScrollAnimation();
+    const { t } = useTranslation();
 
     const now = useMemo(() => new Date(), []);
     const cfpStatus = getCfpStatus(now);
 
+    const translatedMilestones = t('speakers.timelineMilestones', { returnObjects: true });
+
+    const milestones = TIMELINE_MILESTONES.map((m, i) => ({
+        ...m,
+        label: translatedMilestones[i].label,
+        title: translatedMilestones[i].title,
+        description: translatedMilestones[i].description,
+    }));
+
     const bannerContent = {
-        upcoming: { text: `📢 Call for Proposals will be OPEN on ${TIMELINE_MILESTONES[0].label}!`, alertClass: 'alert-success' },
-        open: { text: '📢 Call for Proposals is NOW OPEN!', alertClass: 'alert-success' },
-        closed: { text: '📢 Call for Proposals is now CLOSED. Thank you for your submissions!', alertClass: 'alert-warning' },
+        upcoming: { text: t('speakers.cfpUpcoming', { date: milestones[0].label }), alertClass: 'alert-success' },
+        open: { text: t('speakers.cfpOpen'), alertClass: 'alert-success' },
+        closed: { text: t('speakers.cfpClosed'), alertClass: 'alert-warning' },
     }[cfpStatus];
 
     const ctaText = {
-        upcoming: `We can't wait to see your proposal. Submissions open ${TIMELINE_MILESTONES[0].label}!`,
-        open: `We can't wait to see your proposal. Submit before ${TIMELINE_MILESTONES[1].label}!`,
-        closed: 'The CFP is closed. Stay tuned for speaker announcements!',
+        upcoming: t('speakers.ctaUpcoming', { date: milestones[0].label }),
+        open: t('speakers.ctaOpen', { date: milestones[1].label }),
+        closed: t('speakers.ctaClosed'),
     }[cfpStatus];
 
     return (
@@ -47,8 +59,8 @@ const Speakers = () => {
             {/* Page Header */}
             <header className="page-header">
                 <div className="container text-center">
-                    <h1>Call for <span className="text-gradient">Speakers</span></h1>
-                    <p>Share your expertise and inspire the Python community in Cameroon</p>
+                    <h1>{t('speakers.title')} <span className="text-gradient">{t('speakers.titleHighlight')}</span></h1>
+                    <p>{t('speakers.subtitle')}</p>
                 </div>
             </header>
 
@@ -59,21 +71,18 @@ const Speakers = () => {
                         <div className="card-icon" style={{ margin: '0 auto var(--spacing-md)' }}>
                             <img src="/images/general/Unknown.webp" alt="Speak" loading="lazy" />
                         </div>
-                        <h2>We're Excited to Have You!</h2>
+                        <h2>{t('speakers.excitedTitle')}</h2>
                         <p style={{ fontSize: '1.25rem', margin: 'var(--spacing-md) 0' }}>
-                            Whether you're a first-time speaker or a seasoned presenter, we want to hear from you!
-                            If you have an interesting Python topic, project, or experience to share,
-                            submit your proposal and we'll review it with care.
+                            {t('speakers.excitedText')}
                         </p>
 
                         <div className={`alert ${bannerContent.alertClass}`} style={{ textAlign: 'left', margin: 'var(--spacing-lg) 0' }}>
-                            <strong>{bannerContent.text}</strong><br />
-                            We're inviting speakers of all experience levels and backgrounds to contribute
-                            to our conference program. Don't be shy – your unique perspective matters!
+                            <strong><Megaphone size="1em" style={{ verticalAlign: '-0.125em', marginRight: '0.25rem' }} /> {bannerContent.text}</strong><br />
+                            {t('speakers.bannerInvite')}
                         </div>
 
                         {cfpStatus !== 'closed' && (
-                            <a href="https://sessionize.com/pycon-camerooon-2026" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">Submit Your Proposal</a>
+                            <a href="https://sessionize.com/pycon-camerooon-2026" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">{t('speakers.submitProposal')}</a>
                         )}
                     </div>
                 </div>
@@ -86,37 +95,33 @@ const Speakers = () => {
             <section className="section" id="guidelines">
                 <div className="container">
                     <div className="section-header">
-                        <h2>Proposal <span className="text-gradient">Guidelines</span></h2>
-                        <p>Everything you need to know to submit a successful proposal</p>
+                        <h2>{t('speakers.guidelinesTitle')} <span className="text-gradient">{t('speakers.guidelinesHighlight')}</span></h2>
+                        <p>{t('speakers.guidelinesSubtitle')}</p>
                     </div>
 
                     <div style={{ maxWidth: '900px', margin: '0 auto' }}>
                         <p>
-                            We are very excited to invite everyone to PyCon Cameroon 2026! We are seeking
-                            speakers of all experience levels and backgrounds to contribute to our conference
-                            program. If you use Python professionally, as a hobbyist, or are just excited
-                            about Python or programming and open source communities, we'd love to hear from you.
+                            {t('speakers.guidelinesIntro')}
                         </p>
 
                         <p>
-                            Please take the time to read the information below to help you submit an informed
-                            and successful proposal.
+                            {t('speakers.guidelinesNote')}
                         </p>
 
                         {/* Timeline */}
                         <h3 style={{ marginTop: 'var(--spacing-lg)', marginBottom: 'var(--spacing-md)' }}>
-                            📅 Timeline
+                            <Calendar size="1em" style={{ verticalAlign: '-0.125em', marginRight: '0.25rem' }} /> {t('speakers.timeline')}
                         </h3>
 
                         <div className="timeline">
-                            {TIMELINE_MILESTONES.map((milestone, index) => {
+                            {milestones.map((milestone, index) => {
                                 const status = getTimelineItemStatus(milestone, index, now);
                                 return (
                                     <div className={`timeline-item timeline-${status}`} key={index}>
                                         <div className="timeline-date">
                                             {milestone.label}
-                                            {status === 'active' && <span className="timeline-badge">Now</span>}
-                                            {status === 'past' && <span className="timeline-badge timeline-badge-done">Done</span>}
+                                            {status === 'active' && <span className="timeline-badge">{t('speakers.now')}</span>}
+                                            {status === 'past' && <span className="timeline-badge timeline-badge-done">{t('speakers.done')}</span>}
                                         </div>
                                         <div className="timeline-content">
                                             <h4>{milestone.title}</h4>
@@ -129,39 +134,35 @@ const Speakers = () => {
 
                         {/* Session Types */}
                         <h3 style={{ marginTop: 'var(--spacing-lg)', marginBottom: 'var(--spacing-md)' }}>
-                            🎯 Session Types
+                            <Target size="1em" style={{ verticalAlign: '-0.125em', marginRight: '0.25rem' }} /> {t('speakers.sessionTypes')}
                         </h3>
 
                         <div className="grid grid-2" style={{ marginBottom: 'var(--spacing-md)' }}>
                             <div className="card">
-                                <h4 style={{ color: 'var(--color-orange)' }}>Regular Talks (30 min)</h4>
+                                <h4 style={{ color: 'var(--color-orange)' }}>{t('speakers.regularTalks')}</h4>
                                 <p className="card-text">
-                                    Standard conference talks covering Python topics, case studies,
-                                    best practices, and technical deep-dives.
+                                    {t('speakers.regularTalksText')}
                                 </p>
                             </div>
 
                             <div className="card">
-                                <h4 style={{ color: 'var(--color-orange)' }}>Lightning Talks (5 min)</h4>
+                                <h4 style={{ color: 'var(--color-orange)' }}>{t('speakers.lightningTalks')}</h4>
                                 <p className="card-text">
-                                    Short, focused presentations on a single topic, idea, or project.
-                                    Great for first-time speakers!
+                                    {t('speakers.lightningTalksText')}
                                 </p>
                             </div>
 
                             <div className="card">
-                                <h4 style={{ color: 'var(--color-orange)' }}>Workshops (3 hours)</h4>
+                                <h4 style={{ color: 'var(--color-orange)' }}>{t('speakers.workshopsSessions')}</h4>
                                 <p className="card-text">
-                                    Hands-on tutorials where attendees learn by doing. Includes
-                                    coding exercises and practical projects.
+                                    {t('speakers.workshopsSessionsText')}
                                 </p>
                             </div>
 
                             <div className="card">
-                                <h4 style={{ color: 'var(--color-orange)' }}>Panel Discussions</h4>
+                                <h4 style={{ color: 'var(--color-orange)' }}>{t('speakers.panelDiscussions')}</h4>
                                 <p className="card-text">
-                                    Moderated discussions with multiple experts on trending Python
-                                    topics and industry trends.
+                                    {t('speakers.panelDiscussionsText')}
                                 </p>
                             </div>
                         </div>
@@ -174,72 +175,57 @@ const Speakers = () => {
                                     alt="UbuCon"
                                     style={{ width: '40px', height: '40px', objectFit: 'contain', borderRadius: '8px' }}
                                 />
-                                <strong style={{ fontSize: '1.1rem' }}>UbuCon Cameroon Track (New!)</strong>
+                                <strong style={{ fontSize: '1.1rem' }}>{t('speakers.ubuconTrackNew')}</strong>
                             </div>
                             <p style={{ marginBottom: 0 }}>
-                                In partnership with UbuCon Cameroon, we are accepting proposals for our dedicated
-                                Ubuntu &amp; open source track. Topics include Ubuntu development, Linux system
-                                administration, open source contributions, cloud infrastructure, and Python in
-                                the Ubuntu ecosystem. Select "UbuCon Track" when submitting on Sessionize.
+                                {t('speakers.ubuconTrackText')}
                             </p>
                         </div>
 
                         {/* Important Notes */}
                         <h3 style={{ marginTop: 'var(--spacing-lg)', marginBottom: 'var(--spacing-md)' }}>
-                            ⚠️ Important Notes
+                            <AlertTriangle size="1em" style={{ verticalAlign: '-0.125em', marginRight: '0.25rem' }} /> {t('speakers.importantNotes')}
                         </h3>
 
                         <div className="alert alert-warning">
-                            <strong>AI-Generated Content Policy</strong><br />
-                            Proposal submissions that are solely or largely written by AI tools (such as ChatGPT,
-                            Claude, etc.) will not be accepted. Your proposal should reflect your own thoughts
-                            and expertise.
+                            <strong>{t('speakers.aiPolicy')}</strong><br />
+                            {t('speakers.aiPolicyText')}
                         </div>
 
                         <div className="alert alert-info">
-                            <strong>Proposal Limit</strong><br />
+                            <strong>{t('speakers.proposalLimit')}</strong><br />
                             <ul style={{ marginTop: 'var(--spacing-xs)' }}>
-                                <li>• Each individual may submit a maximum of <strong>two proposals</strong></li>
-                                <li>• Each proposal may include a maximum of <strong>two speakers</strong></li>
-                                <li>• Co-speaking counts toward your submission limit</li>
+                                {t('speakers.proposalLimitItems', { returnObjects: true }).map((item, index) => (
+                                    <li key={index}>{'\u2022'} {item}</li>
+                                ))}
                             </ul>
                         </div>
 
                         <div className="alert alert-danger">
-                            <strong>Recording Notice</strong><br />
-                            All PyCon Cameroon talks and workshops will be recorded and released on our
-                            YouTube channel to help with Python education across Africa. By submitting,
-                            you agree to be recorded.
+                            <strong>{t('speakers.recordingNotice')}</strong><br />
+                            {t('speakers.recordingNoticeText')}
                         </div>
 
                         <div className="alert alert-warning">
-                            <strong>Speaker Support</strong><br />
-                            Please note that PyCon Cameroon is currently unable to provide financial
-                            assistance (travel, accommodation, etc.) to speakers. All selected speakers
-                            will receive a <strong>free conference ticket</strong> for the full event.
+                            <strong>{t('speakers.speakerSupport')}</strong><br />
+                            {t('speakers.speakerSupportText')}
                         </div>
 
                         {/* Code of Conduct */}
                         <h3 style={{ marginTop: 'var(--spacing-lg)', marginBottom: 'var(--spacing-md)' }}>
-                            📜 Code of Conduct
+                            <ScrollText size="1em" style={{ verticalAlign: '-0.125em', marginRight: '0.25rem' }} /> {t('speakers.codeOfConduct')}
                         </h3>
 
                         <p>
-                            All speakers are expected to have read and adhere to the conference
-                            <a href="#" style={{ color: 'var(--color-orange)' }}> Code of Conduct</a>.
-                            Slide contents and spoken material should be appropriate for a professional
-                            audience including people of many different backgrounds.
+                            {t('speakers.cocP1')}
                         </p>
 
                         <p>
-                            Sexual language and imagery are not appropriate, and neither is language or
-                            imagery that denigrates or demeans people based on race, gender, religion,
-                            sexual orientation, physical appearance, disability, or any other dimension
-                            of diversity.
+                            {t('speakers.cocP2')}
                         </p>
 
                         <div className="text-center mt-lg">
-                            <a href="https://sessionize.com/pycon-camerooon-2026" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">Submit on Sessionize</a>
+                            <a href="https://sessionize.com/pycon-camerooon-2026" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">{t('speakers.submitOnSessionize')}</a>
                         </div>
                     </div>
                 </div>
@@ -249,18 +235,17 @@ const Speakers = () => {
             <section className="section bg-dark" id="featured-speakers">
                 <div className="container">
                     <div className="section-header">
-                        <h2>Featured <span className="text-gradient">Speakers</span></h2>
-                        <p>Meet some of our confirmed speakers for PyCon Cameroon 2026</p>
+                        <h2>{t('speakers.featuredTitle')} <span className="text-gradient">{t('speakers.featuredHighlight')}</span></h2>
+                        <p>{t('speakers.featuredSubtitle')}</p>
                     </div>
 
                     <div style={{ textAlign: 'center', padding: 'var(--spacing-xl) 0' }}>
                         <div className="card-icon" style={{ margin: '0 auto var(--spacing-md)' }}>
                             <img src="/images/general/aa8b76bc47ebdea99b84fa3a26a94ade.webp" alt="Rocket" loading="lazy" />
                         </div>
-                        <h3>Coming Soon!</h3>
+                        <h3>{t('speakers.comingSoon')}</h3>
                         <p style={{ maxWidth: '500px', margin: '0 auto' }}>
-                            Our speaker lineup is currently being finalized. Check back soon to see
-                            the amazing speakers joining us at PyCon Cameroon 2026!
+                            {t('speakers.comingSoonText')}
                         </p>
                     </div>
                 </div>
@@ -270,7 +255,7 @@ const Speakers = () => {
             <section className="section">
                 <div className="container">
                     <div className="section-header">
-                        <h2>Why <span className="text-gradient">Speak</span> at PyCon Cameroon?</h2>
+                        <h2>{t('speakers.whySpeakTitle')} <span className="text-gradient">{t('speakers.whySpeakHighlight')}</span> {t('speakers.whySpeakSuffix')}</h2>
                     </div>
 
                     <div className="grid grid-3 stagger">
@@ -278,10 +263,9 @@ const Speakers = () => {
                             <div className="card-icon" style={{ margin: '0 auto var(--spacing-sm)' }}>
                                 <img src="/images/patterns/97568bbec02a103e305ee0d2bbaa6106.webp" alt="Travel" loading="lazy" />
                             </div>
-                            <h4>Reach a New Audience</h4>
+                            <h4>{t('speakers.reachAudience')}</h4>
                             <p className="card-text">
-                                Share your knowledge with the growing Python community in Cameroon
-                                and Central Africa.
+                                {t('speakers.reachAudienceText')}
                             </p>
                         </div>
 
@@ -289,10 +273,9 @@ const Speakers = () => {
                             <div className="card-icon" style={{ margin: '0 auto var(--spacing-sm)' }}>
                                 <img src="/images/general/5a266f7460a16bd5e7b0d2cabf54e874.webp" alt="Video" loading="lazy" />
                             </div>
-                            <h4>Recorded & Shared</h4>
+                            <h4>{t('speakers.recordedShared')}</h4>
                             <p className="card-text">
-                                Your talk will be recorded and shared on YouTube, reaching even more
-                                developers worldwide.
+                                {t('speakers.recordedSharedText')}
                             </p>
                         </div>
 
@@ -300,10 +283,9 @@ const Speakers = () => {
                             <div className="card-icon" style={{ margin: '0 auto var(--spacing-sm)' }}>
                                 <img src="/images/patterns/3b576d7a5b2e395a5741d81d07bdcfc8.webp" alt="Ticket" loading="lazy" />
                             </div>
-                            <h4>Free Conference Pass</h4>
+                            <h4>{t('speakers.freePass')}</h4>
                             <p className="card-text">
-                                Selected speakers receive a complimentary conference pass for
-                                both days of PyCon Cameroon.
+                                {t('speakers.freePassText')}
                             </p>
                         </div>
 
@@ -311,10 +293,9 @@ const Speakers = () => {
                             <div className="card-icon" style={{ margin: '0 auto var(--spacing-sm)' }}>
                                 <img src="/images/patterns/African.webp" alt="Networking" loading="lazy" />
                             </div>
-                            <h4>Networking</h4>
+                            <h4>{t('speakers.speakerNetworking')}</h4>
                             <p className="card-text">
-                                Connect with fellow speakers, industry leaders, and passionate
-                                developers from across Africa.
+                                {t('speakers.speakerNetworkingText')}
                             </p>
                         </div>
 
@@ -322,10 +303,9 @@ const Speakers = () => {
                             <div className="card-icon" style={{ margin: '0 auto var(--spacing-sm)' }}>
                                 <img src="/images/general/38d4f8046c74231baf303ee9c7a340bf.webp" alt="Networking" loading="lazy" />
                             </div>
-                            <h4>Build Your Brand</h4>
+                            <h4>{t('speakers.buildBrand')}</h4>
                             <p className="card-text">
-                                Establish yourself as an expert in your field and boost your
-                                professional profile.
+                                {t('speakers.buildBrandText')}
                             </p>
                         </div>
 
@@ -333,10 +313,9 @@ const Speakers = () => {
                             <div className="card-icon" style={{ margin: '0 auto var(--spacing-sm)' }}>
                                 <img src="/images/general/ac5ca270fe9d4f7c17c5b2bf97337208.webp" alt="Ideas" loading="lazy" />
                             </div>
-                            <h4>Give Back</h4>
+                            <h4>{t('speakers.giveBack')}</h4>
                             <p className="card-text">
-                                Help grow the Python community and inspire the next generation
-                                of African developers.
+                                {t('speakers.giveBackText')}
                             </p>
                         </div>
                     </div>
@@ -347,13 +326,13 @@ const Speakers = () => {
             <section className="section"
                 style={{ background: 'linear-gradient(135deg, var(--color-green) 0%, var(--color-teal) 100%)' }}>
                 <div className="container text-center">
-                    <h2 style={{ color: 'white', marginBottom: 'var(--spacing-sm)' }}>Ready to Share Your Knowledge?</h2>
+                    <h2 style={{ color: 'white', marginBottom: 'var(--spacing-sm)' }}>{t('speakers.readyToShare')}</h2>
                     <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.25rem', marginBottom: 'var(--spacing-md)' }}>
                         {ctaText}
                     </p>
                     {cfpStatus !== 'closed' && (
                         <a href="https://sessionize.com/pycon-camerooon-2026" target="_blank" rel="noopener noreferrer" className="btn btn-lg" style={{ background: 'white', color: 'var(--color-green)' }}>
-                            Submit Your Proposal Now
+                            {t('speakers.submitProposalNow')}
                         </a>
                     )}
                 </div>

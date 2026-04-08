@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { Check } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 
 const Attend = () => {
+    const { t } = useTranslation();
     useScrollAnimation();
     const [activeAccordion, setActiveAccordion] = useState(0);
 
@@ -9,13 +12,18 @@ const Attend = () => {
         setActiveAccordion(activeAccordion === index ? -1 : index);
     };
 
+    const mainConferenceItems = t('attend.mainConferenceItems', { returnObjects: true });
+    const socialEventsItems = t('attend.socialEventsItems', { returnObjects: true });
+    const conferenceSwagItems = t('attend.conferenceSwagItems', { returnObjects: true });
+    const paymentItems = t('attend.paymentItems', { returnObjects: true });
+
     return (
         <>
             {/* Page Header */}
             <header className="page-header">
                 <div className="container text-center">
-                    <h1>Attend <span className="text-gradient">PyCon</span></h1>
-                    <p>Everything you need to know about registration, travel, and your stay in Yaoundé</p>
+                    <h1>{t('attend.title')} <span className="text-gradient">{t('attend.titleHighlight')}</span></h1>
+                    <p>{t('attend.subtitle')}</p>
                 </div>
             </header>
 
@@ -23,71 +31,66 @@ const Attend = () => {
             <section className="section">
                 <div className="container">
                     <div className="section-header">
-                        <h2>Registration <span className="text-gradient">Information</span></h2>
-                        <p>Register today to secure your spot at Cameroon's premier Python event</p>
+                        <h2>{t('attend.registrationTitle')} <span className="text-gradient">{t('attend.registrationHighlight')}</span></h2>
+                        <p>{t('attend.registrationSubtitle')}</p>
                     </div>
 
                     <p className="text-center mb-lg" style={{ maxWidth: '800px', marginLeft: 'auto', marginRight: 'auto' }}>
-                        PyCon Cameroon trusts you to self-select a fair registration rate. By choosing the
-                        appropriate rate, you help keep the conference affordable for students and those
-                        requiring financial assistance.
+                        {t('attend.registrationText')}
                     </p>
 
                     <div className="grid grid-3 stagger" style={{ maxWidth: '1100px', margin: '0 auto' }}>
                         {/* Early Bird Rate */}
                         <div className="card animate-on-scroll slide-up" style={{ borderTop: '4px solid var(--color-orange)' }}>
-                            <h3 className="card-title">Early Bird</h3>
+                            <h3 className="card-title">{t('attend.earlyBird')}</h3>
                             <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-orange)', margin: 'var(--spacing-sm) 0' }}>
                                 3,000 XAF
                             </div>
                             <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--spacing-md)' }}>
-                                Limited Time Offer
+                                {t('attend.limitedTime')}
                             </p>
 
                             <p className="card-text mb-md">
-                                Secure your spot early at our special discounted rate. Available for all
-                                attendees for a limited time.
+                                {t('attend.earlyBirdText')}
                             </p>
 
-                            <a href="https://ly.reckot.com/pycon-cameroon-2026-a4390c99-early-birds" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ width: '100%' }}>Get Early Bird Ticket</a>
+                            <a href="https://ly.reckot.com/pycon-cameroon-2026-a4390c99-early-birds" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ width: '100%' }}>{t('attend.getEarlyBird')}</a>
                         </div>
 
                         {/* Normal Rate */}
                         <div className="card animate-on-scroll slide-up" style={{ borderTop: '4px solid var(--color-blue)' }}>
-                            <h3 className="card-title">Normal Rate</h3>
+                            <h3 className="card-title">{t('attend.normalRate')}</h3>
                             <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-blue)', margin: 'var(--spacing-sm) 0' }}>
                                 5,000 XAF
                             </div>
                             <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--spacing-md)' }}>
-                                Standard Admission
+                                {t('attend.standardAdmission')}
                             </p>
 
                             <p className="card-text mb-md">
-                                Standard ticket price for the two-day conference, including lunch,
-                                refreshments, and conference swag.
+                                {t('attend.normalRateText')}
                             </p>
 
                             <a href="https://ly.reckot.com/pycon-cameroon-2026-a4390c99-regular" target="_blank" rel="noopener noreferrer" className="btn btn-primary"
-                                style={{ width: '100%', background: 'var(--color-blue)', color: 'white' }}>Get Normal Ticket</a>
+                                style={{ width: '100%', background: 'var(--color-blue)', color: 'white' }}>{t('attend.getNormal')}</a>
                         </div>
 
                         {/* On-Site Rate */}
                         <div className="card animate-on-scroll slide-up" style={{ borderTop: '4px solid var(--color-green)' }}>
-                            <h3 className="card-title">On-Site</h3>
+                            <h3 className="card-title">{t('attend.onSite')}</h3>
                             <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-green)', margin: 'var(--spacing-sm) 0' }}>
                                 10,000 XAF
                             </div>
                             <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--spacing-md)' }}>
-                                At the Door
+                                {t('attend.atTheDoor')}
                             </p>
 
                             <p className="card-text mb-md">
-                                Purchase your ticket on-site during the conference. Subject to
-                                availability — we recommend buying in advance!
+                                {t('attend.onSiteText')}
                             </p>
 
                             <span className="btn btn-primary"
-                                style={{ width: '100%', background: 'var(--color-green)', color: 'white', cursor: 'default' }}>Available at Venue</span>
+                                style={{ width: '100%', background: 'var(--color-green)', color: 'white', cursor: 'default' }}>{t('attend.availableAtVenue')}</span>
                         </div>
                     </div>
 
@@ -100,45 +103,49 @@ const Attend = () => {
                 <div className="container">
                     <div className="grid grid-2" style={{ alignItems: 'flex-start', gap: 'var(--spacing-xl)' }}>
                         <div>
-                            <h2 style={{ marginBottom: 'var(--spacing-md)' }}>What's Included?</h2>
-                            <p className="mb-md">Your registration gives you access to:</p>
+                            <h2 style={{ marginBottom: 'var(--spacing-md)' }}>{t('attend.whatsIncluded')}</h2>
+                            <p className="mb-md">{t('attend.accessTo')}</p>
 
                             <div className={`accordion-item ${activeAccordion === 0 ? 'active' : ''}`}>
-                                <div className="accordion-header" onClick={() => toggleAccordion(0)}>Main Conference Days (Sep 17-19)</div>
+                                <div className="accordion-header" onClick={() => toggleAccordion(0)}>{t('attend.mainConference')}</div>
                                 <div className="accordion-content">
                                     <div className="accordion-body">
                                         <ul>
-                                            <li className="mb-sm">✓ Access to all keynote sessions and talk tracks</li>
-                                            <li className="mb-sm">✓ Morning coffee and refreshments</li>
-                                            <li className="mb-sm">✓ Delicious lunch on both days</li>
-                                            <li className="mb-sm">✓ Afternoon tea/coffee break</li>
-                                            <li>✓ Access to the Expo Hall and Job Fair</li>
+                                            {Array.isArray(mainConferenceItems) && mainConferenceItems.map((item, index) => (
+                                                <li key={index} className={index < mainConferenceItems.length - 1 ? 'mb-sm' : ''}>
+                                                    <Check size="1em" style={{ display: 'inline', verticalAlign: '-0.125em', marginRight: '0.25rem' }} />{item}
+                                                </li>
+                                            ))}
                                         </ul>
                                     </div>
                                 </div>
                             </div>
 
                             <div className={`accordion-item ${activeAccordion === 1 ? 'active' : ''}`}>
-                                <div className="accordion-header" onClick={() => toggleAccordion(1)}>Social Events</div>
+                                <div className="accordion-header" onClick={() => toggleAccordion(1)}>{t('attend.socialEvents')}</div>
                                 <div className="accordion-content">
                                     <div className="accordion-body">
                                         <ul>
-                                            <li className="mb-sm">✓ Opening Reception (Sep 16 evening)</li>
-                                            <li className="mb-sm">✓ PyCon Official Dinner</li>
-                                            <li>✓ Community networking sessions</li>
+                                            {Array.isArray(socialEventsItems) && socialEventsItems.map((item, index) => (
+                                                <li key={index} className={index < socialEventsItems.length - 1 ? 'mb-sm' : ''}>
+                                                    <Check size="1em" style={{ display: 'inline', verticalAlign: '-0.125em', marginRight: '0.25rem' }} />{item}
+                                                </li>
+                                            ))}
                                         </ul>
                                     </div>
                                 </div>
                             </div>
 
                             <div className={`accordion-item ${activeAccordion === 2 ? 'active' : ''}`}>
-                                <div className="accordion-header" onClick={() => toggleAccordion(2)}>Conference Swag</div>
+                                <div className="accordion-header" onClick={() => toggleAccordion(2)}>{t('attend.conferenceSwag')}</div>
                                 <div className="accordion-content">
                                     <div className="accordion-body">
                                         <ul>
-                                            <li className="mb-sm">✓ Official PyCon Cameroon T-shirt</li>
-                                            <li className="mb-sm">✓ Tote bag with sponsor goodies</li>
-                                            <li>✓ Stickers and other fun items</li>
+                                            {Array.isArray(conferenceSwagItems) && conferenceSwagItems.map((item, index) => (
+                                                <li key={index} className={index < conferenceSwagItems.length - 1 ? 'mb-sm' : ''}>
+                                                    <Check size="1em" style={{ display: 'inline', verticalAlign: '-0.125em', marginRight: '0.25rem' }} />{item}
+                                                </li>
+                                            ))}
                                         </ul>
                                     </div>
                                 </div>
@@ -146,17 +153,17 @@ const Attend = () => {
                         </div>
 
                         <div>
-                            <h2 style={{ marginBottom: 'var(--spacing-md)' }}>What does your payment support?</h2>
+                            <h2 style={{ marginBottom: 'var(--spacing-md)' }}>{t('attend.paymentSupport')}</h2>
                             <div className="card">
                                 <p className="card-text mb-md">
-                                    Your registration helps us keep PyCon Cameroon affordable. Costs go towards:
+                                    {t('attend.paymentSupportText')}
                                 </p>
                                 <ul style={{ listStyle: 'disc', marginLeft: 'var(--spacing-md)', color: 'var(--color-text-secondary)' }}>
-                                    <li className="mb-sm">Venue rental and audiovisual equipment</li>
-                                    <li className="mb-sm">Catering (lunch and breaks)</li>
-                                    <li className="mb-sm">Internet connectivity</li>
-                                    <li className="mb-sm">Travel grants for those who need assistance</li>
-                                    <li>Community infrastructure and future events</li>
+                                    {Array.isArray(paymentItems) && paymentItems.map((item, index) => (
+                                        <li key={index} className={index < paymentItems.length - 1 ? 'mb-sm' : ''}>
+                                            {item}
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                         </div>
@@ -171,22 +178,20 @@ const Attend = () => {
             <section className="section">
                 <div className="container">
                     <div className="section-header">
-                        <h2>International <span className="text-gradient">Travel & Visas</span></h2>
+                        <h2>{t('attend.travelTitle')} <span className="text-gradient">{t('attend.travelHighlight')}</span></h2>
                     </div>
 
                     <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-                        <h3>Visa Information</h3>
+                        <h3>{t('attend.visaInfo')}</h3>
                         <p className="mb-md">
-                            Most visitors to Cameroon require a visa. Please check with your local
-                            Cameroonian embassy or consulate for specific requirements.
+                            {t('attend.visaText')}
                         </p>
 
                         <div className="alert alert-warning">
-                            <strong>Visa Letters:</strong> We can provide an official invitation letter
-                            to support your visa application once you have a paid registration.
+                            <strong>{t('attend.visaLetters')}</strong> {t('attend.visaLettersText')}
                         </div>
 
-                        <a href="mailto:organizers@pythoncameroon.org?subject=Request%20for%20Invitation%20Letter%20-%20PyCon%20Cameroon%202026&body=Dear%20PyCon%20Cameroon%20Organizing%20Team%2C%0A%0AI%20am%20writing%20to%20request%20an%20official%20invitation%20letter%20for%20my%20visa%20application%20to%20attend%20PyCon%20Cameroon%202026.%0A%0AFull%20Name%3A%20%0APassport%20Number%3A%20%0ANationality%3A%20%0ADate%20of%20Birth%3A%20%0AEmail%3A%20%0APhone%3A%20%0AMailing%20Address%3A%20%0ARegistration%20Confirmation%20Number%3A%20%0A%0AThank%20you%20for%20your%20assistance.%0A%0ABest%20regards" className="btn btn-secondary mt-sm">Request Invitation Letter</a>
+                        <a href="mailto:organizers@pythoncameroon.org?subject=Request%20for%20Invitation%20Letter%20-%20PyCon%20Cameroon%202026&body=Dear%20PyCon%20Cameroon%20Organizing%20Team%2C%0A%0AI%20am%20writing%20to%20request%20an%20official%20invitation%20letter%20for%20my%20visa%20application%20to%20attend%20PyCon%20Cameroon%202026.%0A%0AFull%20Name%3A%20%0APassport%20Number%3A%20%0ANationality%3A%20%0ADate%20of%20Birth%3A%20%0AEmail%3A%20%0APhone%3A%20%0AMailing%20Address%3A%20%0ARegistration%20Confirmation%20Number%3A%20%0A%0AThank%20you%20for%20your%20assistance.%0A%0ABest%20regards" className="btn btn-secondary mt-sm">{t('attend.requestLetter')}</a>
                     </div>
                 </div>
             </section>
@@ -194,31 +199,28 @@ const Attend = () => {
             {/* Policies */}
             <section className="section bg-dark">
                 <div className="container">
-                    <h2 className="mb-lg">Policies</h2>
+                    <h2 className="mb-lg">{t('attend.policies')}</h2>
 
                     <div className="grid grid-2" style={{ gap: 'var(--spacing-md)' }}>
                         <div className="card">
-                            <h4>Cancellation Policy</h4>
+                            <h4>{t('attend.cancellation')}</h4>
                             <p className="card-text">
-                                Cancellations received by August 15, 2026, will receive a refund less a
-                                processing fee. No refunds will be granted after this date unless for
-                                visa denial or health reasons.
+                                {t('attend.cancellationText')}
                             </p>
                         </div>
 
                         <div className="card">
-                            <h4>Ticket Transfers</h4>
+                            <h4>{t('attend.ticketTransfers')}</h4>
                             <p className="card-text">
-                                You may transfer your ticket to another person by sending a written
-                                request to organizers@pythoncameroon.org before September 1, 2026.
+                                {t('attend.ticketTransfersText')}
                             </p>
                         </div>
                     </div>
 
                     <div className="text-center mt-lg">
-                        <p>Questions about registration?</p>
+                        <p>{t('attend.questionsRegistration')}</p>
                         <a href="mailto:organizers@pythoncameroon.org"
-                            style={{ color: 'var(--color-orange)', textDecoration: 'underline' }}>Contact our registration team</a>
+                            style={{ color: 'var(--color-orange)', textDecoration: 'underline' }}>{t('attend.contactRegistration')}</a>
                     </div>
                 </div>
             </section>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import useScrollAnimation from "../hooks/useScrollAnimation";
 import LazyImage from "../components/LazyImage";
 import TeamCard from "../components/TeamCard";
@@ -10,6 +11,7 @@ import { partnerCommunities } from "../data/partners";
 
 const About = () => {
   useScrollAnimation();
+  const { t } = useTranslation();
 
   return (
     <>
@@ -17,11 +19,10 @@ const About = () => {
       <header className="page-header">
         <div className="container text-center">
           <h1>
-            About <span className="text-gradient">PyCon Cameroon</span>
+            {t('about.title')} <span className="text-gradient">{t('about.titleHighlight')}</span>
           </h1>
           <p>
-            Discover who we are and our mission to grow the Python community in
-            Cameroon
+            {t('about.subtitle')}
           </p>
         </div>
       </header>
@@ -35,35 +36,24 @@ const About = () => {
           >
             <div>
               <h2 style={{ marginBottom: "var(--spacing-md)" }}>
-                Python Cameroon{" "}
-                <span className="text-gradient">User Group</span>
+                {t('about.userGroupTitle')}{" "}
+                <span className="text-gradient">{t('about.userGroupHighlight')}</span>
               </h2>
               <p>
-                The Python Cameroon User Group is a vibrant community of
-                software developers, data scientists, and tech enthusiasts in
-                Cameroon who are passionate about the Python programming
-                language. We are dedicated to sharing knowledge, fostering
-                innovation, and promoting the adoption of Python across all
-                sectors.
+                {t('about.userGroupP1')}
               </p>
               <p>
-                Our community meets regularly to discuss various topics related
-                to Python, including web development with Django and Flask,
-                scientific computing, machine learning with TensorFlow and
-                PyTorch, data science with Pandas, automation, DevOps, and much
-                more.
+                {t('about.userGroupP2')}
               </p>
               <p>
-                We organize speaker sessions, coding workshops, hackathons, and
-                mentorship programs to help members improve their Python skills
-                and build practical applications that solve real-world problems.
+                {t('about.userGroupP3')}
               </p>
               <div className="mt-md flex gap-sm flex-wrap">
                 <a
                   href="https://chat.whatsapp.com/Ckc80ophGEH0NJFmZAzDMr"
                   className="btn btn-primary"
                 >
-                  Join Our Community
+                  {t('about.joinCommunity')}
                 </a>
               </div>
             </div>
@@ -85,7 +75,7 @@ const About = () => {
         <div className="container">
           <div className="section-header">
             <h2>
-              Our <span className="text-gradient">Mission</span>
+              {t('about.missionTitle')} <span className="text-gradient">{t('about.missionHighlight')}</span>
             </h2>
           </div>
 
@@ -102,26 +92,16 @@ const About = () => {
             </div>
             <div>
               <h3 style={{ marginBottom: "var(--spacing-md)" }}>
-                PyCon Cameroon
+                {t('about.pyconCameroon')}
               </h3>
               <p>
-                PyCon Cameroon is a community-driven conference that aims to
-                provide a platform for the growth of the Python community in
-                Cameroon and across Central Africa. We believe that diversity
-                and inclusivity are essential for the growth and success of our
-                community.
+                {t('about.missionP1')}
               </p>
               <p>
-                We strive to create a welcoming and inclusive environment for
-                all attendees, regardless of their backgrounds, genders, ages,
-                or identities. Our conference is designed to inspire, educate,
-                and connect developers at every skill level.
+                {t('about.missionP2')}
               </p>
               <p>
-                Bringing together techies from across Africa and the globe,
-                startups, students, researchers, and seasoned professionals,
-                PyCon Cameroon is a unique opportunity to learn, network, and
-                collaborate with like-minded individuals.
+                {t('about.missionP3')}
               </p>
               <p
                 style={{
@@ -130,9 +110,7 @@ const About = () => {
                   fontSize: "1.1rem",
                 }}
               >
-                We invite you to join us in celebrating the power of Python and
-                its applications in shaping the future of technology in Cameroon
-                and beyond.
+                {t('about.missionInvite')}
               </p>
             </div>
           </div>
@@ -144,7 +122,7 @@ const About = () => {
         <div className="container">
           <div className="section-header">
             <h2>
-              Our <span className="text-gradient">Values</span>
+              {t('about.valuesTitle')} <span className="text-gradient">{t('about.valuesHighlight')}</span>
             </h2>
           </div>
 
@@ -167,13 +145,10 @@ const About = () => {
         <div className="container">
           <div className="section-header">
             <h2>
-              Meet the <span className="text-gradient">Team</span>
+              {t('about.teamTitle')} <span className="text-gradient">{t('about.teamHighlight')}</span>
             </h2>
             <p>
-              The PyCon Cameroon team is made up of a diverse group of
-              individuals with a wide range of experiences and skills. We are
-              committed to providing a supportive and inclusive environment for
-              all attendees, speakers, sponsors, and volunteers.
+              {t('about.teamSubtitle')}
             </p>
           </div>
 
@@ -185,11 +160,10 @@ const About = () => {
 
           <div className="text-center mt-lg">
             <p style={{ color: "var(--color-text-secondary)", marginBottom: "var(--spacing-md)" }}>
-              Interested in joining the organizing team? We're always looking
-              for passionate volunteers!
+              {t('about.volunteerText')}
             </p>
             <a href="mailto:organizers@pythoncameroon.org" className="btn btn-primary">
-              Join Our Team
+              {t('about.joinTeam')}
             </a>
           </div>
         </div>
@@ -202,11 +176,10 @@ const About = () => {
         <div className="container">
           <div className="section-header">
             <h2>
-              Partner <span className="text-gradient">Communities</span>
+              {t('about.partnersTitle')} <span className="text-gradient">{t('about.partnersHighlight')}</span>
             </h2>
             <p>
-              We are proud to collaborate with these amazing communities
-              across Africa and beyond.
+              {t('about.partnersSubtitle')}
             </p>
           </div>
 
@@ -225,37 +198,28 @@ const About = () => {
         <div className="container">
           <div className="section-header">
             <h2>
-              Code of <span className="text-gradient">Conduct</span>
+              {t('about.conductTitle')} <span className="text-gradient">{t('about.conductHighlight')}</span>
             </h2>
           </div>
 
           <div style={{ maxWidth: "800px", margin: "0 auto" }}>
             <div className="alert alert-info">
-              <strong>Our Commitment</strong>
+              <strong>{t('about.conductCommitment')}</strong>
               <br />
-              PyCon Cameroon is dedicated to providing a harassment-free
-              conference experience for everyone, regardless of gender, gender
-              identity and expression, age, sexual orientation, disability,
-              physical appearance, body size, race, ethnicity, religion (or lack
-              thereof), or technology choices.
+              {t('about.conductText')}
             </div>
 
             <p>
-              We do not tolerate harassment of conference participants in any
-              form. Sexual language and imagery is not appropriate for any
-              conference venue, including talks, workshops, parties, Twitter,
-              and other online media.
+              {t('about.conductP1')}
             </p>
 
             <p>
-              Conference participants violating these rules may be sanctioned or
-              expelled from the conference without a refund at the discretion of
-              the conference organizers.
+              {t('about.conductP2')}
             </p>
 
             <div className="mt-md">
               <Link to="/code-of-conduct" className="btn btn-secondary">
-                Read Full Code of Conduct
+                {t('about.readFullCoC')}
               </Link>
             </div>
           </div>

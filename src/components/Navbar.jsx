@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { Languages } from 'lucide-react';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
+    const { t, i18n } = useTranslation();
+
+    const toggleLanguage = () => {
+        i18n.changeLanguage(i18n.language === 'en' ? 'fr' : 'en');
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -41,16 +48,19 @@ const Navbar = () => {
                 </Link>
 
                 <div className={`nav-links ${isOpen ? 'active' : ''}`} id="navLinks">
-                    <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink>
-                    <NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>About</NavLink>
-                    <NavLink to="/speakers" className={({ isActive }) => isActive ? "active" : ""}>Speakers</NavLink>
-                    <NavLink to="/sponsor" className={({ isActive }) => isActive ? "active" : ""}>Sponsor</NavLink>
-                    <NavLink to="/attend" className={({ isActive }) => isActive ? "active" : ""}>Attend</NavLink>
-                    <NavLink to="/venue" className={({ isActive }) => isActive ? "active" : ""}>Venue</NavLink>
+                    <NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>{t('nav.about')}</NavLink>
+                    <NavLink to="/speakers" className={({ isActive }) => isActive ? "active" : ""}>{t('nav.speakers')}</NavLink>
+                    <NavLink to="/sponsor" className={({ isActive }) => isActive ? "active" : ""}>{t('nav.sponsor')}</NavLink>
+                    <NavLink to="/attend" className={({ isActive }) => isActive ? "active" : ""}>{t('nav.attend')}</NavLink>
+                    <NavLink to="/venue" className={({ isActive }) => isActive ? "active" : ""}>{t('nav.venue')}</NavLink>
                     <NavLink to="/ubucon" className={({ isActive }) => isActive ? "active" : ""} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                         <img src="/images/partners/canonical-cm.webp" alt="" style={{ width: '18px', height: '18px', objectFit: 'contain', borderRadius: '50%' }} />
-                        UbuCon
+                        {t('nav.ubucon')}
                     </NavLink>
+                    <button onClick={toggleLanguage} className="lang-toggle" aria-label="Toggle language">
+                        <Languages size={16} />
+                        {i18n.language === 'en' ? 'FR' : 'EN'}
+                    </button>
                 </div>
 
                 {/* Mobile drawer overlay */}
@@ -66,16 +76,19 @@ const Navbar = () => {
                         &times;
                     </button>
                     <div className="nav-drawer-links">
-                        <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink>
-                        <NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>About</NavLink>
-                        <NavLink to="/speakers" className={({ isActive }) => isActive ? "active" : ""}>Speakers</NavLink>
-                        <NavLink to="/sponsor" className={({ isActive }) => isActive ? "active" : ""}>Sponsor</NavLink>
-                        <NavLink to="/attend" className={({ isActive }) => isActive ? "active" : ""}>Attend</NavLink>
-                        <NavLink to="/venue" className={({ isActive }) => isActive ? "active" : ""}>Venue</NavLink>
+                        <NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>{t('nav.about')}</NavLink>
+                        <NavLink to="/speakers" className={({ isActive }) => isActive ? "active" : ""}>{t('nav.speakers')}</NavLink>
+                        <NavLink to="/sponsor" className={({ isActive }) => isActive ? "active" : ""}>{t('nav.sponsor')}</NavLink>
+                        <NavLink to="/attend" className={({ isActive }) => isActive ? "active" : ""}>{t('nav.attend')}</NavLink>
+                        <NavLink to="/venue" className={({ isActive }) => isActive ? "active" : ""}>{t('nav.venue')}</NavLink>
                         <NavLink to="/ubucon" className={({ isActive }) => isActive ? "active" : ""} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                             <img src="/images/partners/canonical-cm.webp" alt="" style={{ width: '22px', height: '22px', objectFit: 'contain', borderRadius: '50%' }} />
-                            UbuCon
+                            {t('nav.ubucon')}
                         </NavLink>
+                        <button onClick={toggleLanguage} className="lang-toggle" aria-label="Toggle language">
+                            <Languages size={16} />
+                            {i18n.language === 'en' ? 'FR' : 'EN'}
+                        </button>
                     </div>
                 </div>
 
