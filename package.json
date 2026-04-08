@@ -12,9 +12,12 @@
     "deploy:preview": "npm run build && firebase hosting:channel:deploy preview"
   },
   "dependencies": {
+    "i18next": "^26.0.3",
     "leaflet": "^1.9.4",
+    "lucide-react": "^1.7.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-i18next": "^17.0.2",
     "react-leaflet": "^5.0.0",
     "react-router-dom": "^7.13.0"
   },

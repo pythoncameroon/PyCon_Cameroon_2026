@@ -1,18 +1,24 @@
 import React from 'react';
+import { Check } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import VenueCard from '../components/VenueCard';
-import { venueData } from '../data/venues';
+import { venueData as venueImages } from '../data/venues';
 
 const Venue = () => {
+    const { t } = useTranslation();
     useScrollAnimation();
+
+    const facilityItems = t('venue.facilityItems', { returnObjects: true });
+    const translatedVenues = t('data.venues', { returnObjects: true });
 
     return (
         <>
             {/* Page Header */}
             <header className="page-header">
                 <div className="container text-center">
-                    <h1>The <span className="text-gradient">Venue</span></h1>
-                    <p>Join us in the beautiful city of Yaoundé, the political capital of Cameroon</p>
+                    <h1>{t('venue.title')} <span className="text-gradient">{t('venue.titleHighlight')}</span></h1>
+                    <p>{t('venue.subtitle')}</p>
                 </div>
             </header>
 
@@ -21,29 +27,24 @@ const Venue = () => {
                 <div className="container">
                     <div className="grid grid-2" style={{ alignItems: 'center', gap: 'var(--spacing-xl)' }}>
                         <div>
-                            <h2 style={{ marginBottom: 'var(--spacing-md)' }}>Conference <span className="text-gradient">Location</span></h2>
+                            <h2 style={{ marginBottom: 'var(--spacing-md)' }}>{t('venue.locationTitle')} <span className="text-gradient">{t('venue.locationHighlight')}</span></h2>
 
                             <div className="card" style={{ marginBottom: 'var(--spacing-md)' }}>
-                                <h3 className="card-title" style={{ color: 'var(--color-orange)' }}>PyCon CM Venue (TBD)</h3>
+                                <h3 className="card-title" style={{ color: 'var(--color-orange)' }}>{t('venue.venueName')}</h3>
                                 <p className="card-text">
-                                    Yaoundé, Cameroon<br />
-                                    Address Details Coming Soon
+                                    {t('venue.venueCity')}<br />
+                                    {t('venue.addressSoon')}
                                 </p>
                             </div>
 
-                            <p>
-                                We are currently finalizing the perfect venue to host PyCon Cameroon 2026.
-                                We're looking for a space that embodies the spirit of our community—modern,
-                                accessible, and vibrant.
-                            </p>
+                            <p>{t('venue.finalizingVenue')}</p>
 
-                            <p>Expect a state-of-the-art facility with:</p>
+                            <p>{t('venue.expectFacility')}</p>
 
                             <ul style={{ marginTop: 'var(--spacing-sm)', display: 'flex', flexDirection: 'column', gap: 'var(--spacing-xs)' }}>
-                                <li>✓ High-speed internet connectivity</li>
-                                <li>✓ Modern audiovisual equipment</li>
-                                <li>✓ Comfortable seating and workspaces</li>
-                                <li>✓ Accessible facilities for all attendees</li>
+                                {Array.isArray(facilityItems) && facilityItems.map((item, index) => (
+                                    <li key={index}><Check size="1em" style={{ display: 'inline', verticalAlign: '-0.125em', marginRight: '0.25rem' }} />{item}</li>
+                                ))}
                             </ul>
                         </div>
 
@@ -62,7 +63,7 @@ const Venue = () => {
             <section className="section">
                 <div className="container">
                     <div className="section-header">
-                        <h2>Plan Your <span className="text-gradient">Trip</span></h2>
+                        <h2>{t('venue.planTripTitle')} <span className="text-gradient">{t('venue.planTripHighlight')}</span></h2>
                     </div>
 
                     <div className="grid grid-2" style={{ gap: 'var(--spacing-lg)' }}>
@@ -70,17 +71,15 @@ const Venue = () => {
                             <div className="card-icon">
                                 <img src="/images/general/5a266f7460a16bd5e7b0d2cabf54e874.webp" alt="Accommodation" loading="lazy" />
                             </div>
-                            <h3>Accommodation</h3>
+                            <h3>{t('venue.accommodation')}</h3>
                             <p className="mb-md">
-                                We will be partnering with several hotels near the conference venue
-                                to offer special rates for attendees.
+                                {t('venue.accommodationText')}
                             </p>
                             <div className="alert alert-info">
-                                <strong>Official Hotels:</strong> List coming soon once venue is confirmed!
+                                <strong>{t('venue.officialHotels')}</strong> {t('venue.hotelsSoon')}
                             </div>
                             <p className="card-text">
-                                Yaoundé offers a range of accommodation options from luxury hotels
-                                to budget-friendly guesthouses.
+                                {t('venue.accommodationRange')}
                             </p>
                         </div>
 
@@ -88,18 +87,15 @@ const Venue = () => {
                             <div className="card-icon">
                                 <img src="/images/general/4f58e509d7713f4e1f5ec84e95175c61.webp" alt="Travel" loading="lazy" />
                             </div>
-                            <h3>Getting There</h3>
+                            <h3>{t('venue.gettingThere')}</h3>
                             <p className="mb-md">
-                                <strong>By Air:</strong> Yaoundé Nsimalen International Airport (NSI)
-                                is the main airport serving the city.
+                                <strong>{t('venue.byAir')}</strong> {t('venue.byAirText')}
                             </p>
                             <p className="mb-md">
-                                <strong>By Bus:</strong> Several reliable bus companies operate
-                                routes connecting Yaoundé to other major cities like Douala.
+                                <strong>{t('venue.byBus')}</strong> {t('venue.byBusText')}
                             </p>
                             <p className="card-text">
-                                Ride-hailing apps like Yango and local taxis are widely available
-                                for getting around the city.
+                                {t('venue.rideHailing')}
                             </p>
                         </div>
                     </div>
@@ -110,13 +106,13 @@ const Venue = () => {
             <section className="section bg-dark">
                 <div className="container">
                     <div className="section-header">
-                        <h2>Explore <span className="text-gradient">Yaoundé</span></h2>
-                        <p>Enjoy the city of seven hills during your stay</p>
+                        <h2>{t('venue.exploreTitle')} <span className="text-gradient">{t('venue.exploreHighlight')}</span></h2>
+                        <p>{t('venue.exploreSubtitle')}</p>
                     </div>
 
                     <div className="grid grid-3 stagger">
-                        {venueData.map((venue, index) => (
-                            <VenueCard key={index} venue={venue} />
+                        {venueImages.map((venue, index) => (
+                            <VenueCard key={index} venue={{ ...venue, name: translatedVenues[index]?.name || venue.name, description: translatedVenues[index]?.description || venue.description }} />
                         ))}
                     </div>
                 </div>

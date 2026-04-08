@@ -1,13 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Calendar, MapPin, Mic, Ticket } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import LazyImage from '../components/LazyImage';
 import TrackSection from '../components/TrackSection';
-import { ubuconHighlights, djangoHighlights } from '../data/tracks';
 import { sponsorshipDeckUrl } from '../data/sponsors';
 
 const Home = () => {
     useScrollAnimation();
+    const { t } = useTranslation();
+    const ubuconHighlights = t('data.tracks.ubucon', { returnObjects: true });
+    const djangoHighlights = t('data.tracks.django', { returnObjects: true });
 
     return (
         <>
@@ -22,18 +26,18 @@ const Home = () => {
                         <span className="highlight">PyCon</span> Cameroon 2026
                     </h1>
 
-                    <p className="hero-subtitle">Africa's Python Conference, Reimagined in the Heart of Africa</p>
+                    <p className="hero-subtitle">{t('home.heroSubtitle')}</p>
 
                     <div className="hero-date">
-                        📅 September 17th-19th, 2026 | 📍 Yaoundé, Cameroon
+                        <Calendar size="1em" style={{ verticalAlign: '-0.125em' }} /> {t('home.heroDate')} | <MapPin size="1em" style={{ verticalAlign: '-0.125em' }} /> {t('home.heroLocation')}
                     </div>
 
                     <div className="hero-buttons">
                         <a href="https://sessionize.com/pycon-camerooon-2026" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
-                            🎤 Call For Speakers
+                            <Mic size="1em" style={{ verticalAlign: '-0.125em' }} /> {t('home.callForSpeakers')}
                         </a>
                         <Link to="/attend" className="btn btn-secondary btn-lg">
-                            🎟️ Get Your Ticket
+                            <Ticket size="1em" style={{ verticalAlign: '-0.125em' }} /> {t('home.getYourTicket')}
                         </Link>
                     </div>
                 </div>
@@ -45,13 +49,9 @@ const Home = () => {
             <section className="section bg-dark">
                 <div className="container">
                     <div className="section-header">
-                        <h2>Welcome to <span className="text-gradient">PyCon Cameroon 2026</span></h2>
+                        <h2>{t('home.welcomeTitle')} <span className="text-gradient">{t('home.welcomeTitleHighlight')}</span></h2>
                         <p className="mt-md" style={{ maxWidth: '800px', marginLeft: 'auto', marginRight: 'auto' }}>
-                            Join us for Cameroon's first-ever PyCon — a celebration of Python, technology, and African
-                            innovation.
-                            Experience two days of inspiring talks, hands-on workshops, and unforgettable networking
-                            opportunities
-                            in the vibrant city of Yaoundé.
+                            {t('home.welcomeText')}
                         </p>
                     </div>
 
@@ -60,33 +60,24 @@ const Home = () => {
                             <div className="card-icon">
                                 <LazyImage src="/images/patterns/97568bbec02a103e305ee0d2bbaa6106.webp" alt="African Innovation" />
                             </div>
-                            <h3 className="card-title">African Innovation Hub</h3>
-                            <p className="card-text">
-                                Connect with developers, entrepreneurs, and tech enthusiasts from across Africa
-                                and the world. Experience the unique blend of Cameroonian culture and cutting-edge technology.
-                            </p>
+                            <h3 className="card-title">{t('home.card1Title')}</h3>
+                            <p className="card-text">{t('home.card1Text')}</p>
                         </div>
 
                         <div className="card animate-slide-up" style={{ transitionDelay: '100ms' }}>
                             <div className="card-icon">
                                 <LazyImage src="/images/general/50b4bb72bcda16fbabf50f8ca87ca412.webp" alt="Python for Everyone" />
                             </div>
-                            <h3 className="card-title">Python for Everyone</h3>
-                            <p className="card-text">
-                                Whether you're a beginner taking your first steps or an expert pushing boundaries,
-                                our diverse program caters to all skill levels and interests.
-                            </p>
+                            <h3 className="card-title">{t('home.card2Title')}</h3>
+                            <p className="card-text">{t('home.card2Text')}</p>
                         </div>
 
                         <div className="card animate-slide-up" style={{ transitionDelay: '200ms' }}>
                             <div className="card-icon">
                                 <LazyImage src="/images/patterns/African.webp" alt="Community" />
                             </div>
-                            <h3 className="card-title">Community Driven</h3>
-                            <p className="card-text">
-                                We believe in building a welcoming, inclusive community where everyone feels valued.
-                                Diversity and collaboration are at the heart of everything we do.
-                            </p>
+                            <h3 className="card-title">{t('home.card3Title')}</h3>
+                            <p className="card-text">{t('home.card3Text')}</p>
                         </div>
                     </div>
                 </div>
@@ -96,7 +87,7 @@ const Home = () => {
             <section className="section features">
                 <div className="container">
                     <div className="section-header">
-                        <h2>What to Expect</h2>
+                        <h2>{t('home.whatToExpect')}</h2>
                     </div>
 
                     <div className="grid grid-4 stagger">
@@ -104,44 +95,32 @@ const Home = () => {
                             <div className="feature-icon">
                                 <LazyImage src="/images/general/5a266f7460a16bd5e7b0d2cabf54e874.webp" alt="Talks" />
                             </div>
-                            <h4>Inspiring Talks</h4>
-                            <p className="card-text">
-                                From beginner to expert, our diverse range of talks covers web development,
-                                data science, machine learning, DevOps, and more.
-                            </p>
+                            <h4>{t('home.inspiringTalks')}</h4>
+                            <p className="card-text">{t('home.inspiringTalksText')}</p>
                         </div>
 
                         <div className="card animate-bounce-in text-center">
                             <div className="feature-icon">
                                 <LazyImage src="/images/general/5e7ef535d7837d92dc28625166cc2568.webp" alt="Workshops" />
                             </div>
-                            <h4>Hands-on Workshops</h4>
-                            <p className="card-text">
-                                Learn by doing with practical workshops led by industry experts.
-                                Build real projects and gain valuable skills.
-                            </p>
+                            <h4>{t('home.workshops')}</h4>
+                            <p className="card-text">{t('home.workshopsText')}</p>
                         </div>
 
                         <div className="card animate-bounce-in text-center">
                             <div className="feature-icon">
                                 <LazyImage src="/images/general/Unknown.webp" alt="Networking" />
                             </div>
-                            <h4>Networking</h4>
-                            <p className="card-text">
-                                Connect with fellow Pythonistas, potential employers, and collaborators
-                                in a friendly, supportive environment.
-                            </p>
+                            <h4>{t('home.networking')}</h4>
+                            <p className="card-text">{t('home.networkingText')}</p>
                         </div>
 
                         <div className="card animate-bounce-in text-center">
                             <div className="feature-icon">
                                 <LazyImage src="/images/general/ac5ca270fe9d4f7c17c5b2bf97337208.webp" alt="Fun" />
                             </div>
-                            <h4>Fun Activities</h4>
-                            <p className="card-text">
-                                Lightning talks, sprints, cultural experiences, and social events
-                                make PyCon Cameroon an unforgettable experience.
-                            </p>
+                            <h4>{t('home.funActivities')}</h4>
+                            <p className="card-text">{t('home.funActivitiesText')}</p>
                         </div>
                     </div>
                 </div>
@@ -159,8 +138,8 @@ const Home = () => {
                 ctaLabel="UbuCon"
                 highlights={ubuconHighlights}
                 description={[
-                    <>For the first time, PyCon Cameroon 2026 is partnering with <strong>UbuCon Cameroon</strong> to bring you a dedicated Ubuntu and open source track! This special track is co-organized by Python Cameroon and UbuCon Cameroon.</>,
-                    "Explore talks and workshops on Ubuntu, Linux system administration, open source contributions, cloud infrastructure, and how Python powers the Ubuntu ecosystem.",
+                    <>{t('home.ubuconDesc1Start')} <strong>{t('home.ubuconDesc1Bold')}</strong> {t('home.ubuconDesc1End')}</>,
+                    t('home.ubuconDesc2'),
                 ]}
             />
 
@@ -177,8 +156,8 @@ const Home = () => {
                 ctaLabel="Django"
                 highlights={djangoHighlights}
                 description={[
-                    <>PyCon Cameroon 2026 features a dedicated <strong>Django track</strong> for web developers! Dive into the world of Django — from building robust web applications to REST APIs, deployment best practices, and scaling Django in production.</>,
-                    "Whether you're just starting with Django or you're a seasoned developer, this track offers hands-on workshops, real-world case studies, and expert talks.",
+                    <>{t('home.djangoDesc1Start')} <strong>{t('home.djangoDesc1Bold')}</strong> {t('home.djangoDesc1End')}</>,
+                    t('home.djangoDesc2'),
                 ]}
             />
 
@@ -188,19 +167,19 @@ const Home = () => {
                     <div className="stats-grid">
                         <div className="stat-item animate-fade-scale">
                             <div className="stat-number">500+</div>
-                            <div className="stat-label">Expected Attendees</div>
+                            <div className="stat-label">{t('home.expectedAttendees')}</div>
                         </div>
                         <div className="stat-item animate-fade-scale">
                             <div className="stat-number">30+</div>
-                            <div className="stat-label">Technical Sessions</div>
+                            <div className="stat-label">{t('home.technicalSessions')}</div>
                         </div>
                         <div className="stat-item animate-fade-scale">
                             <div className="stat-number">10+</div>
-                            <div className="stat-label">Workshops</div>
+                            <div className="stat-label">{t('home.workshopsStat')}</div>
                         </div>
                         <div className="stat-item animate-fade-scale">
                             <div className="stat-number">2</div>
-                            <div className="stat-label">Days of Learning</div>
+                            <div className="stat-label">{t('home.daysOfLearning')}</div>
                         </div>
                     </div>
                 </div>
@@ -210,19 +189,19 @@ const Home = () => {
             <section className="section"
                 style={{ background: 'linear-gradient(135deg, var(--color-orange) 0%, var(--color-red) 100%)' }}>
                 <div className="container text-center">
-                    <h2 style={{ color: 'white', marginBottom: 'var(--spacing-sm)' }}>Ready to Join Us?</h2>
+                    <h2 style={{ color: 'white', marginBottom: 'var(--spacing-sm)' }}>{t('home.readyToJoin')}</h2>
                     <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.25rem', marginBottom: 'var(--spacing-md)' }}>
-                        Be part of Cameroon's first PyCon and help shape the future of Python in Africa.
+                        {t('home.readyToJoinText')}
                     </p>
                     <div className="flex justify-center gap-sm flex-wrap">
                         <Link to="/attend" className="btn btn-lg" style={{ background: 'white', color: 'var(--color-orange)' }}>
-                            Get Your Ticket
+                            {t('home.getYourTicket')}
                         </Link>
                         <Link to="/speakers" className="btn btn-lg btn-secondary" style={{ borderColor: 'white', color: 'white' }}>
-                            Submit a Talk
+                            {t('home.submitATalk')}
                         </Link>
                         <a href={sponsorshipDeckUrl} target="_blank" rel="noopener noreferrer" className="btn btn-lg btn-secondary" style={{ borderColor: 'white', color: 'white' }}>
-                            Sponsorship Deck
+                            {t('home.sponsorshipDeck')}
                         </a>
                     </div>
                 </div>
