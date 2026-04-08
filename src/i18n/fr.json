@@ -290,5 +290,78 @@
     "exploreTitle": "Explorez",
     "exploreHighlight": "Yaound\u00e9",
     "exploreSubtitle": "Profitez de la ville aux sept collines pendant votre s\u00e9jour"
+  },
+  "data": {
+    "tracks": {
+      "newTrack": "Nouveau Track",
+      "submitTalk": "Soumettre une conf\u00e9rence {{label}}",
+      "attendTrack": "Participer au track {{label}}",
+      "trackHighlights": "Points forts du track {{label}}",
+      "ubucon": [
+        { "title": "Ubuntu & Python", "text": "Comment Python alimente le d\u00e9veloppement Ubuntu, le packaging et l'automatisation." },
+        { "title": "Contributions Open Source", "text": "D\u00e9buter avec les contributions \u00e0 Ubuntu et aux projets open source." },
+        { "title": "Cloud & Infrastructure", "text": "Ubuntu Server, d\u00e9veloppement cloud-native et DevOps avec Python." },
+        { "title": "Communaut\u00e9 & R\u00e9seautage", "text": "Rencontrez la communaut\u00e9 Ubuntu Cameroun et connectez-vous avec des contributeurs mondiaux." }
+      ],
+      "django": [
+        { "title": "D\u00e9veloppement web Django", "text": "Cr\u00e9ation d'applications web modernes avec Django et bonnes pratiques." },
+        { "title": "API REST & DRF", "text": "Conception et cr\u00e9ation d'API avec Django REST Framework." },
+        { "title": "D\u00e9ploiement & Mise \u00e0 l'\u00e9chelle", "text": "D\u00e9ploiement en production, optimisation des performances et strat\u00e9gies de mise \u00e0 l'\u00e9chelle." },
+        { "title": "Django & IA/ML", "text": "Int\u00e9gration de mod\u00e8les de machine learning et de fonctionnalit\u00e9s IA dans les applications Django." }
+      ]
+    },
+    "values": [
+      { "title": "Construire une communaut\u00e9 accueillante", "text": "Nous croyons que la diversit\u00e9 et l'inclusivit\u00e9 sont essentielles \u00e0 la croissance et au succ\u00e8s de notre communaut\u00e9. Tout le monde est le bienvenu ici, ind\u00e9pendamment de son parcours, de son niveau d'exp\u00e9rience ou de son identit\u00e9." },
+      { "title": "Conf\u00e9rences inspirantes", "text": "Des tutoriels pour d\u00e9butants aux analyses approfondies, nous offrons un large \u00e9ventail de conf\u00e9rences pour r\u00e9pondre aux besoins de notre communaut\u00e9 diversifi\u00e9e. Apprenez aupr\u00e8s d'experts Python locaux et internationaux." },
+      { "title": "Ateliers pratiques", "text": "Nous apprenons en faisant. Nos ateliers pratiques sont con\u00e7us pour vous aider \u00e0 d\u00e9velopper de vraies comp\u00e9tences que vous pouvez appliquer imm\u00e9diatement dans vos projets et votre carri\u00e8re." },
+      { "title": "Simple et tout inclus", "text": "Nous voulons cr\u00e9er un environnement accueillant et inclusif pour tous, ind\u00e9pendamment de leur parcours ou de leur exp\u00e9rience. Pas de barri\u00e8res, juste de la communaut\u00e9." },
+      { "title": "Innovation & Cr\u00e9ativit\u00e9", "text": "Nous encourageons la r\u00e9solution cr\u00e9ative de probl\u00e8mes et la pens\u00e9e innovante. PyCon Cameroun est un espace o\u00f9 de nouvelles id\u00e9es naissent et sont nourries." },
+      { "title": "Grandir ensemble", "text": "Que vous encadriez les autres ou que vous appreniez vous-m\u00eame, nous croyons au pouvoir de la croissance partag\u00e9e. Ensemble, nous construisons l'avenir de Python au Cameroun." }
+    ],
+    "venues": [
+      { "name": "Mus\u00e9e National", "description": "Explorez la riche histoire et la culture du Cameroun dans cet ancien palais pr\u00e9sidentiel." },
+      { "name": "Bois Sainte Anastasie", "description": "Un magnifique parc urbain parfait pour une promenade relaxante au c\u0153ur de la nature en centre-ville." },
+      { "name": "Monument de la R\u00e9unification", "description": "Un monument embl\u00e9matique symbolisant la r\u00e9unification des Cameroun fran\u00e7ais et britannique." },
+      { "name": "Palais Charles Atangana", "description": "Palais historique de l'\u00e9poque coloniale d'un chef paramount, aujourd'hui un site du patrimoine culturel \u00e0 Yaound\u00e9." },
+      { "name": "Zoo de Mvog-Betsi", "description": "Le zoo et jardin botanique de Yaound\u00e9, abritant la faune locale dont des primates et des oiseaux tropicaux." },
+      { "name": "Lac Municipal de Yaound\u00e9", "description": "Un lac artificiel pittoresque en centre-ville, populaire pour les promenades, les balades en bateau et la d\u00e9tente." },
+      { "name": "Eco Park Yaound\u00e9", "description": "Un parc de loisirs verdoyant offrant des sentiers naturels, des aires de pique-nique et des activit\u00e9s de plein air pour les familles." },
+      { "name": "Basilique Marie-Reine-des-Ap\u00f4tres", "description": "Basilique impressionnante au sommet d'une colline avec vue panoramique, l'une des plus belles \u00e9glises d'Afrique centrale." },
+      { "name": "Dade Park", "description": "Un parc r\u00e9cr\u00e9atif populaire \u00e0 Yaound\u00e9 avec des espaces verts, des aires de jeux et des divertissements le week-end." }
+    ],
+    "sponsors": {
+      "diamond": {
+        "description": "Le forfait de sponsoring ultime pour une visibilit\u00e9 et un impact maximum.",
+        "features": ["Emplacement de stand premium", "Opportunit\u00e9 de conf\u00e9rence pl\u00e9ni\u00e8re", "2 cr\u00e9neaux de conf\u00e9rence", "10 billets de conf\u00e9rence", "Grande visibilit\u00e9 de marque sur la signal\u00e9tique et les supports", "Placement de logo au premier niveau sur le site web", "Page sponsor d\u00e9di\u00e9e sur le site web", "Mention dans tous les communiqu\u00e9s de presse"]
+      },
+      "gold": {
+        "description": "Excellente visibilit\u00e9 et opportunit\u00e9s d'engagement.",
+        "features": ["Stand d'exposition", "1 cr\u00e9neau de conf\u00e9rence", "5 billets de conf\u00e9rence", "Visibilit\u00e9 de marque moyenne sur la signal\u00e9tique et les supports", "Placement de logo de niveau 2 sur le site web", "Mention dans les communiqu\u00e9s de presse"]
+      },
+      "silver": {
+        "description": "Excellent rapport qualit\u00e9-prix pour les entreprises souhaitant soutenir la communaut\u00e9.",
+        "features": ["1 cr\u00e9neau de conf\u00e9rence", "3 billets de conf\u00e9rence", "Placement de logo de niveau 3 sur le site web"],
+        "featuresLocal": ["1 cr\u00e9neau de conf\u00e9rence", "3 billets de conf\u00e9rence", "Signal\u00e9tique de conf\u00e9rence avec branding", "Placement de logo de niveau 3 sur le site web"]
+      },
+      "bronze": {
+        "description": "Id\u00e9al pour les startups et les petites organisations.",
+        "features": ["1 cr\u00e9neau de conf\u00e9rence", "1 billet de conf\u00e9rence", "Logo de l'entreprise sur le site web", "Branding sur des supports s\u00e9lectionn\u00e9s"]
+      },
+      "community": {
+        "description": "Id\u00e9al pour les startups et les petites organisations.",
+        "features": ["1 billet de conf\u00e9rence", "Logo de l'entreprise sur le site web", "Branding sur des supports s\u00e9lectionn\u00e9s"]
+      }
+    },
+    "team": {
+      "roles": [
+        "Responsable Python Cameroun",
+        "Co-responsable, Coordinateur mentorat / apprentissage",
+        "Responsable r\u00e9seaux sociaux",
+        "Coordinateur open source",
+        "Coordinatrice de projet",
+        "Designer UI/UX et graphique",
+        "Responsable du groupe d'utilisateurs Canonical Cameroun"
+      ]
+    }
   }
 }

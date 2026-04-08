@@ -13,7 +13,17 @@ const Sponsor = () => {
     const handleToggle = (local) => {
         setSearchParams({ deck: local ? 'local' : 'international' }, { replace: true });
     };
-    const tiers = isLocal ? localTiers : internationalTiers;
+    const rawTiers = isLocal ? localTiers : internationalTiers;
+    const tiers = rawTiers.map(tier => {
+        const key = tier.name.toLowerCase();
+        const translated = t(`data.sponsors.${key}`, { returnObjects: true });
+        const featuresKey = isLocal && translated?.featuresLocal ? 'featuresLocal' : 'features';
+        return {
+            ...tier,
+            description: translated?.description || tier.description,
+            features: Array.isArray(translated?.[featuresKey]) ? translated[featuresKey] : tier.features,
+        };
+    });
 
     return (
         <>

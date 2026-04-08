@@ -41,7 +41,7 @@ const Attend = () => {
 
                     <div className="grid grid-3 stagger" style={{ maxWidth: '1100px', margin: '0 auto' }}>
                         {/* Early Bird Rate */}
-                        <div className="card animate-on-scroll slide-up" style={{ borderTop: '4px solid var(--color-orange)' }}>
+                        <div className="card animate-on-scroll slide-up" style={{ borderTop: '4px solid var(--color-orange)', display: 'flex', flexDirection: 'column', height: '100%' }}>
                             <h3 className="card-title">{t('attend.earlyBird')}</h3>
                             <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-orange)', margin: 'var(--spacing-sm) 0' }}>
                                 3,000 XAF
@@ -54,11 +54,11 @@ const Attend = () => {
                                 {t('attend.earlyBirdText')}
                             </p>
 
-                            <a href="https://ly.reckot.com/pycon-cameroon-2026-a4390c99-early-birds" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ width: '100%' }}>{t('attend.getEarlyBird')}</a>
+                            <a href="https://ly.reckot.com/pycon-cameroon-2026-a4390c99-early-birds" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ width: '100%', marginTop: 'auto' }}>{t('attend.getEarlyBird')}</a>
                         </div>
 
                         {/* Normal Rate */}
-                        <div className="card animate-on-scroll slide-up" style={{ borderTop: '4px solid var(--color-blue)' }}>
+                        <div className="card animate-on-scroll slide-up" style={{ borderTop: '4px solid var(--color-blue)', display: 'flex', flexDirection: 'column', height: '100%' }}>
                             <h3 className="card-title">{t('attend.normalRate')}</h3>
                             <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-blue)', margin: 'var(--spacing-sm) 0' }}>
                                 5,000 XAF
@@ -72,11 +72,11 @@ const Attend = () => {
                             </p>
 
                             <a href="https://ly.reckot.com/pycon-cameroon-2026-a4390c99-regular" target="_blank" rel="noopener noreferrer" className="btn btn-primary"
-                                style={{ width: '100%', background: 'var(--color-blue)', color: 'white' }}>{t('attend.getNormal')}</a>
+                                style={{ width: '100%', background: 'var(--color-blue)', color: 'white', marginTop: 'auto' }}>{t('attend.getNormal')}</a>
                         </div>
 
                         {/* On-Site Rate */}
-                        <div className="card animate-on-scroll slide-up" style={{ borderTop: '4px solid var(--color-green)' }}>
+                        <div className="card animate-on-scroll slide-up" style={{ borderTop: '4px solid var(--color-green)', display: 'flex', flexDirection: 'column', height: '100%' }}>
                             <h3 className="card-title">{t('attend.onSite')}</h3>
                             <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-green)', margin: 'var(--spacing-sm) 0' }}>
                                 10,000 XAF
@@ -90,7 +90,7 @@ const Attend = () => {
                             </p>
 
                             <span className="btn btn-primary"
-                                style={{ width: '100%', background: 'var(--color-green)', color: 'white', cursor: 'default' }}>{t('attend.availableAtVenue')}</span>
+                                style={{ width: '100%', background: 'var(--color-green)', color: 'white', cursor: 'default', marginTop: 'auto' }}>{t('attend.availableAtVenue')}</span>
                         </div>
                     </div>
 

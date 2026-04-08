@@ -5,12 +5,13 @@ import { useTranslation } from 'react-i18next';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import LazyImage from '../components/LazyImage';
 import TrackSection from '../components/TrackSection';
-import { ubuconHighlights, djangoHighlights } from '../data/tracks';
 import { sponsorshipDeckUrl } from '../data/sponsors';
 
 const Home = () => {
     useScrollAnimation();
     const { t } = useTranslation();
+    const ubuconHighlights = t('data.tracks.ubucon', { returnObjects: true });
+    const djangoHighlights = t('data.tracks.django', { returnObjects: true });
 
     return (
         <>

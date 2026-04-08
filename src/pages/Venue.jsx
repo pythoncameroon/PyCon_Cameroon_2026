@@ -3,13 +3,14 @@ import { Check } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import VenueCard from '../components/VenueCard';
-import { venueData } from '../data/venues';
+import { venueData as venueImages } from '../data/venues';
 
 const Venue = () => {
     const { t } = useTranslation();
     useScrollAnimation();
 
     const facilityItems = t('venue.facilityItems', { returnObjects: true });
+    const translatedVenues = t('data.venues', { returnObjects: true });
 
     return (
         <>
@@ -110,8 +111,8 @@ const Venue = () => {
                     </div>
 
                     <div className="grid grid-3 stagger">
-                        {venueData.map((venue, index) => (
-                            <VenueCard key={index} venue={venue} />
+                        {venueImages.map((venue, index) => (
+                            <VenueCard key={index} venue={{ ...venue, name: translatedVenues[index]?.name || venue.name, description: translatedVenues[index]?.description || venue.description }} />
                         ))}
                     </div>
                 </div>

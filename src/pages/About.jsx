@@ -6,12 +6,14 @@ import LazyImage from "../components/LazyImage";
 import TeamCard from "../components/TeamCard";
 import PartnerCard from "../components/PartnerCard";
 import { teamData } from "../data/team";
-import { valuesData } from "../data/values";
+import { valuesData as valuesImages } from "../data/values";
 import { partnerCommunities } from "../data/partners";
 
 const About = () => {
   useScrollAnimation();
   const { t } = useTranslation();
+  const translatedValues = t('data.values', { returnObjects: true });
+  const teamRoles = t('data.team.roles', { returnObjects: true });
 
   return (
     <>
@@ -127,13 +129,13 @@ const About = () => {
           </div>
 
           <div className="grid grid-3 stagger">
-            {valuesData.map((value, index) => (
+            {valuesImages.map((value, index) => (
               <div className="card animate-on-scroll slide-up" key={index}>
                 <div className="card-icon">
                   <LazyImage src={value.image} alt={value.alt} />
                 </div>
-                <h3 className="card-title">{value.title}</h3>
-                <p className="card-text">{value.text}</p>
+                <h3 className="card-title">{translatedValues[index]?.title}</h3>
+                <p className="card-text">{translatedValues[index]?.text}</p>
               </div>
             ))}
           </div>
@@ -154,7 +156,7 @@ const About = () => {
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--spacing-lg)', justifyContent: 'center' }}>
             {teamData.map((member, index) => (
-              <TeamCard key={index} member={member} />
+              <TeamCard key={index} member={{ ...member, role: Array.isArray(teamRoles) ? teamRoles[index] || member.role : member.role }} />
             ))}
           </div>
 

@@ -290,5 +290,78 @@
     "exploreTitle": "Explore",
     "exploreHighlight": "Yaound\u00e9",
     "exploreSubtitle": "Enjoy the city of seven hills during your stay"
+  },
+  "data": {
+    "tracks": {
+      "newTrack": "New Track",
+      "submitTalk": "Submit a {{label}} Talk",
+      "attendTrack": "Attend {{label}} Track",
+      "trackHighlights": "{{label}} Track Highlights",
+      "ubucon": [
+        { "title": "Ubuntu & Python", "text": "How Python powers Ubuntu development, packaging, and automation." },
+        { "title": "Open Source Contributions", "text": "Getting started with contributing to Ubuntu and open source projects." },
+        { "title": "Cloud & Infrastructure", "text": "Ubuntu Server, cloud-native development, and DevOps with Python." },
+        { "title": "Community & Networking", "text": "Meet the Ubuntu Cameroon community and connect with global contributors." }
+      ],
+      "django": [
+        { "title": "Django Web Development", "text": "Building modern web applications with Django and best practices." },
+        { "title": "REST APIs & DRF", "text": "Designing and building APIs with Django REST Framework." },
+        { "title": "Deployment & Scaling", "text": "Production deployment, performance optimization, and scaling strategies." },
+        { "title": "Django & AI/ML", "text": "Integrating machine learning models and AI features into Django apps." }
+      ]
+    },
+    "values": [
+      { "title": "Building a Welcoming Community", "text": "We believe that diversity and inclusivity are essential for the growth and success of our community. Everyone is welcome here, regardless of background, experience level, or identity." },
+      { "title": "Inspiring Talks", "text": "From beginner tutorials to advanced deep dives, we offer a wide range of talks to cater to the needs of our diverse community. Learn from local and international Python experts." },
+      { "title": "Practical Workshops", "text": "We learn by doing. Our hands-on workshops are designed to help you build real skills that you can apply immediately in your projects and career." },
+      { "title": "Simple and All-Inclusive", "text": "We want to create a welcoming and inclusive environment for everyone, regardless of their background or experience. No gatekeeping, just community." },
+      { "title": "Innovation & Creativity", "text": "We encourage creative problem-solving and innovative thinking. PyCon Cameroon is a space where new ideas are born and nurtured." },
+      { "title": "Growing Together", "text": "Whether you're mentoring others or learning yourself, we believe in the power of shared growth. Together, we're building the future of Python in Cameroon." }
+    ],
+    "venues": [
+      { "name": "National Museum", "description": "Explore the rich history and culture of Cameroon in this former presidential palace." },
+      { "name": "Bois Sainte Anastasie", "description": "A beautiful urban park perfect for a relaxing walk amidst nature in the city center." },
+      { "name": "Monument de la R\u00e9unification", "description": "An iconic monument symbolizing the reunification of French and British Cameroons." },
+      { "name": "Palais Charles Atangana", "description": "Historic colonial-era palace of a paramount chief, now a cultural heritage landmark in Yaound\u00e9." },
+      { "name": "Mvog-Betsi Zoo", "description": "Yaound\u00e9's zoo and botanical garden, home to native wildlife including primates and tropical birds." },
+      { "name": "Lac Municipal de Yaound\u00e9", "description": "A scenic artificial lake in the city center, popular for walks, boat rides, and relaxation." },
+      { "name": "Eco Park Yaound\u00e9", "description": "A green leisure park offering nature trails, picnic areas, and outdoor activities for families." },
+      { "name": "Basilique Marie-Reine-des-Ap\u00f4tres", "description": "Striking hilltop basilica with panoramic views, one of Central Africa's most impressive churches." },
+      { "name": "Dade Park", "description": "A popular recreational park in Yaound\u00e9 with green spaces, playgrounds, and weekend entertainment." }
+    ],
+    "sponsors": {
+      "diamond": {
+        "description": "The ultimate sponsorship package for maximum visibility and impact.",
+        "features": ["Premium booth placement", "Keynote speaking opportunity", "2 speaking slots", "10 conference tickets", "Large branding on signage & materials", "Top-tier logo placement on website", "Dedicated sponsor page on website", "Mention in all press releases"]
+      },
+      "gold": {
+        "description": "Excellent visibility and engagement opportunities.",
+        "features": ["Exhibition booth", "1 speaking slot", "5 conference tickets", "Medium branding on signage & materials", "Tier 2 logo placement on website", "Mention in press releases"]
+      },
+      "silver": {
+        "description": "Great value for companies looking to support the community.",
+        "features": ["1 speaking slot", "3 conference tickets", "Tier 3 logo placement on website"],
+        "featuresLocal": ["1 speaking slot", "3 conference tickets", "Conference signage with branding", "Tier 3 logo placement on website"]
+      },
+      "bronze": {
+        "description": "Ideal for startups and smaller organizations.",
+        "features": ["1 speaking slot", "1 conference ticket", "Company logo on website", "Branding on select materials"]
+      },
+      "community": {
+        "description": "Ideal for startups and smaller organizations.",
+        "features": ["1 conference ticket", "Company logo on website", "Branding on select materials"]
+      }
+    },
+    "team": {
+      "roles": [
+        "Lead Python Cameroon",
+        "Co-Lead, Mentorship / Learning Coordinator",
+        "Social Media Manager",
+        "Open Source Coordinator",
+        "Project Coordinator",
+        "UI/UX and Graphic Designer",
+        "Lead of Canonical User Group Cameroon"
+      ]
+    }
   }
 }
