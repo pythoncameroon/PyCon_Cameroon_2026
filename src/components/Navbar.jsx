@@ -73,18 +73,18 @@ const Navbar = () => {
 
                 {/* Mobile drawer */}
                 <div className={`nav-drawer ${isOpen ? 'open' : ''}`}>
+                    <button
+                        className="nav-drawer-close"
+                        aria-label="Close menu"
+                        onClick={() => setIsOpen(false)}
+                    >
+                        &times;
+                    </button>
                     <div className="nav-drawer-header">
                         <Link to="/" className="nav-logo" onClick={() => setIsOpen(false)}>
                             <img src="/images/branding/python-cameroon-logo.webp" alt="PyCon Cameroon Logo" />
                             <span>PyCon CM</span>
                         </Link>
-                        <button
-                            className="nav-drawer-close"
-                            aria-label="Close menu"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            &times;
-                        </button>
                     </div>
                     <div className="nav-drawer-links">
                         <NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>{t('nav.about')}</NavLink>
