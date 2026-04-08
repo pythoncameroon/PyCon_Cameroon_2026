@@ -1,5 +1,5 @@
 import { lazy, Suspense, Component } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Layout from './layouts/Layout';
 import LanguageSync from './components/LanguageSync';
 import PageLoader from './components/PageLoader';
@@ -55,16 +55,18 @@ function LazyPage({ children }) {
   );
 }
 
-function RootRedirect() {
+function LegacyRedirect() {
+  const location = useLocation();
   const lang = localStorage.getItem('pycon-lang') || 'en';
-  return <Navigate to={`/${lang}`} replace />;
+  const path = location.pathname === '/' ? '' : location.pathname;
+  return <Navigate to={`/${lang}${path}${location.search}${location.hash}`} replace />;
 }
 
 function App() {
   return (
     <Routes>
       {/* Root redirect to default language */}
-      <Route index element={<RootRedirect />} />
+      <Route index element={<LegacyRedirect />} />
 
       {/* Language-prefixed routes */}
       <Route path="/:lang" element={<LanguageSync><Layout /></LanguageSync>}>
@@ -79,11 +81,11 @@ function App() {
         <Route path="health-safety" element={<LazyPage><HealthSafety /></LazyPage>} />
         <Route path="code-of-conduct" element={<LazyPage><CodeOfConduct /></LazyPage>} />
         <Route path="ubucon" element={<LazyPage><UbuCon /></LazyPage>} />
-        <Route path="*" element={<RootRedirect />} />
+        <Route path="*" element={<LegacyRedirect />} />
       </Route>
 
       {/* Catch-all */}
-      <Route path="*" element={<RootRedirect />} />
+      <Route path="*" element={<LegacyRedirect />} />
     </Routes>
   );
 }

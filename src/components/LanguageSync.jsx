@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 const SUPPORTED_LANGS = ['en', 'fr'];
 
 const LanguageSync = ({ children }) => {
-    const { lang } = useParams();
+    const { lang, '*': rest } = useParams();
     const { i18n } = useTranslation();
     const navigate = useNavigate();
     const location = useLocation();
@@ -13,8 +13,7 @@ const LanguageSync = ({ children }) => {
     useEffect(() => {
         if (!SUPPORTED_LANGS.includes(lang)) {
             const savedLang = localStorage.getItem('pycon-lang') || 'en';
-            const rest = location.pathname.replace(`/${lang}`, '') || '/';
-            navigate(`/${savedLang}${rest}${location.search}${location.hash}`, { replace: true });
+            navigate(`/${savedLang}${location.pathname}${location.search}${location.hash}`, { replace: true });
             return;
         }
 
