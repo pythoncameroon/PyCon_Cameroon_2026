@@ -13,10 +13,30 @@ const ubuntuIcon = new L.DivIcon({
 
 const CAMEROON_CENTER = [5.9631, 10.1591];
 
+const TILES = {
+    dark: {
+        url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+        attribution: '&copy; <a href="https://carto.com/">CARTO</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    },
+    light: {
+        url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+        attribution: '&copy; <a href="https://carto.com/">CARTO</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    },
+};
+
 const UbuConMap = () => {
     const [events, setEvents] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [theme, setTheme] = useState(document.documentElement.getAttribute('data-theme') || 'dark');
+
+    useEffect(() => {
+        const observer = new MutationObserver(() => {
+            setTheme(document.documentElement.getAttribute('data-theme') || 'dark');
+        });
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+        return () => observer.disconnect();
+    }, []);
 
     useEffect(() => {
         fetch('https://ubucon.org/events.json')
@@ -34,6 +54,8 @@ const UbuConMap = () => {
                 setLoading(false);
             });
     }, []);
+
+    const tile = TILES[theme] || TILES.dark;
 
     if (loading) {
         return (
@@ -55,12 +77,13 @@ const UbuConMap = () => {
         <MapContainer
             center={CAMEROON_CENTER}
             zoom={4}
-            style={{ height: '450px', width: '100%', borderRadius: 'var(--radius-md)' }}
+            style={{ height: '450px', width: '100%', borderRadius: 'var(--radius-md)', zIndex: 0 }}
             scrollWheelZoom={true}
         >
             <TileLayer
-                attribution='&copy; <a href="https://carto.com/">CARTO</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+                key={theme}
+                attribution={tile.attribution}
+                url={tile.url}
             />
             {events.map((evt, i) => (
                 <Marker key={i} position={evt.coordinates} icon={ubuntuIcon}>

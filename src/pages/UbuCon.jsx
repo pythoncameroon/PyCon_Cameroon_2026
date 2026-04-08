@@ -18,7 +18,7 @@ const UbuCon = () => {
     return (
         <>
             {/* Page Header */}
-            <header className="page-header" style={{
+            <header className="page-header page-header-dark" style={{
                 background: `linear-gradient(160deg, ${UBUNTU_DARK} 0%, ${UBUNTU_AUBERGINE} 50%, ${UBUNTU_ORANGE} 100%)`,
             }}>
                 <div className="container text-center">
