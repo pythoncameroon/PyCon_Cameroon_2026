@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback } from 'react';
 function getInitialTheme() {
   const saved = localStorage.getItem('pycon-theme');
   if (saved === 'light' || saved === 'dark') return saved;
+  if (window.matchMedia?.('(prefers-color-scheme: light)').matches) return 'light';
   return 'dark';
 }
 

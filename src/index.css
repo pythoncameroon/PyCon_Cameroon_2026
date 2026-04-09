@@ -126,18 +126,22 @@
 }
 
 [data-theme="light"] .hero-background {
-    opacity: 0.15;
-    filter: blur(2px) saturate(0.6);
+    opacity: 0.45;
+    filter: blur(2px) saturate(0.85);
 }
 
 [data-theme="light"] .hero-overlay {
-    background: rgba(245, 245, 245, 0.75) !important;
+    background: linear-gradient(180deg,
+            rgba(245, 245, 245, 0.55) 0%,
+            rgba(245, 245, 245, 0.7) 50%,
+            rgba(245, 245, 245, 0.9) 100%) !important;
 }
 
 [data-theme="light"] .hero-title,
 [data-theme="light"] .hero-subtitle,
 [data-theme="light"] .hero-date {
     color: #1a1a1a;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
 }
 
 [data-theme="light"] .hero-title .highlight {
@@ -259,7 +263,69 @@
 
 [data-theme="light"] .sponsor-card {
     background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .sponsor-card.diamond {
+    border-color: #00b8d4;
+}
+
+[data-theme="light"] .sponsor-card.diamond .sponsor-tier {
+    color: #00838f;
+}
+
+[data-theme="light"] .sponsor-card.gold {
+    border-color: #c9a800;
+}
+
+[data-theme="light"] .sponsor-card.gold .sponsor-tier {
+    color: #b8860b;
+}
+
+[data-theme="light"] .sponsor-card.silver {
+    border-color: #909090;
+}
+
+[data-theme="light"] .sponsor-card.silver .sponsor-tier {
+    color: #666666;
+}
+
+[data-theme="light"] .sponsor-card.bronze {
+    border-color: #cd7f32;
+}
+
+[data-theme="light"] .sponsor-card.bronze .sponsor-tier {
+    color: #8b5a2b;
+}
+
+[data-theme="light"] .btn-tier.btn-diamond {
+    background: #00b8d4;
+    color: #ffffff;
+    border-color: #00b8d4;
+}
+
+[data-theme="light"] .btn-tier.btn-gold {
+    background: #b8860b;
+    color: #ffffff;
+    border-color: #b8860b;
+}
+
+[data-theme="light"] .btn-tier.btn-silver {
+    background: #666666;
+    color: #ffffff;
+    border-color: #666666;
+}
+
+[data-theme="light"] .btn-tier.btn-bronze {
+    background: #8b5a2b;
+    color: #ffffff;
+    border-color: #8b5a2b;
+}
+
+[data-theme="light"] .btn-tier.btn-community {
+    background: #2d8f4e;
+    color: #ffffff;
+    border-color: #2d8f4e;
 }
 
 [data-theme="light"] .timeline-item {
@@ -886,6 +952,40 @@ p {
 }
 
 /* Specific Tier Buttons */
+.btn-tier {
+    width: 100%;
+}
+
+.btn-tier.btn-diamond {
+    background: #b9f2ff;
+    color: #0d0d0d;
+    border-color: #b9f2ff;
+}
+
+.btn-tier.btn-gold {
+    background: #1a1a1a;
+    color: #d4aa00;
+    border-color: #d4aa00;
+}
+
+.btn-tier.btn-silver {
+    background: #1a1a1a;
+    color: #c0c0c0;
+    border-color: #c0c0c0;
+}
+
+.btn-tier.btn-bronze {
+    background: #1a1a1a;
+    color: #cd7f32;
+    border-color: #cd7f32;
+}
+
+.btn-tier.btn-community {
+    background: #1a1a1a;
+    color: #2d8f4e;
+    border-color: #2d8f4e;
+}
+
 .btn-diamond::before {
     background-image: var(--bg-beaded);
 }
@@ -2484,6 +2584,18 @@ img {
     font-weight: 700;
     color: var(--color-text-primary);
     margin-bottom: var(--spacing-sm);
+}
+
+.sponsor-price .price-hover {
+    display: none;
+}
+
+.sponsor-card:hover .price-hover {
+    display: inline;
+}
+
+.sponsor-card:hover .price-hover ~ .price-default {
+    display: none;
 }
 
 .sponsor-features {

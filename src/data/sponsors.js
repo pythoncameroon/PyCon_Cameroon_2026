@@ -5,6 +5,7 @@ export const internationalTiers = [
     name: 'Diamond',
     className: 'diamond',
     price: 'USD 5,000',
+    xafEquivalent: 'XAF 2,625,000',
     description: 'The ultimate sponsorship package for maximum visibility and impact.',
     features: [
       'Premium booth placement',
@@ -16,13 +17,13 @@ export const internationalTiers = [
       'Dedicated sponsor page on website',
       'Mention in all press releases',
     ],
-    btnClass: 'btn btn-primary btn-diamond',
-    btnStyle: { width: '100%', background: '#b9f2ff', color: 'var(--color-dark)', border: '1px solid #b9f2ff' },
+    btnClass: 'btn btn-tier btn-diamond',
   },
   {
     name: 'Gold',
     className: 'gold',
     price: 'USD 3,500',
+    xafEquivalent: 'XAF 1,837,500',
     description: 'Excellent visibility and engagement opportunities.',
     features: [
       'Exhibition booth',
@@ -32,26 +33,26 @@ export const internationalTiers = [
       'Tier 2 logo placement on website',
       'Mention in press releases',
     ],
-    btnClass: 'btn btn-primary btn-gold',
-    btnStyle: { width: '100%', background: 'var(--color-dark)', border: '1px solid var(--color-gold)', color: 'var(--color-gold)' },
+    btnClass: 'btn btn-tier btn-gold',
   },
   {
     name: 'Silver',
     className: 'silver',
     price: 'USD 2,000',
+    xafEquivalent: 'XAF 1,050,000',
     description: 'Great value for companies looking to support the community.',
     features: [
       '1 speaking slot',
       '3 conference tickets',
       'Tier 3 logo placement on website',
     ],
-    btnClass: 'btn btn-primary btn-silver',
-    btnStyle: { width: '100%', background: 'var(--color-dark)', border: '1px solid #c0c0c0', color: '#c0c0c0' },
+    btnClass: 'btn btn-tier btn-silver',
   },
   {
     name: 'Bronze',
     className: 'bronze',
     price: 'USD 1,000',
+    xafEquivalent: 'XAF 525,000',
     description: 'Ideal for startups and smaller organizations.',
     features: [
       '1 speaking slot',
@@ -59,21 +60,20 @@ export const internationalTiers = [
       'Company logo on website',
       'Branding on select materials',
     ],
-    btnClass: 'btn btn-primary btn-bronze',
-    btnStyle: { width: '100%', background: 'var(--color-dark)', border: '1px solid #cd7f32', color: '#cd7f32' },
+    btnClass: 'btn btn-tier btn-bronze',
   },
   {
     name: 'Community',
     className: 'community',
     price: 'USD 500',
+    xafEquivalent: 'XAF 262,500',
     description: 'Ideal for startups and smaller organizations.',
     features: [
       '1 conference ticket',
       'Company logo on website',
       'Branding on select materials',
     ],
-    btnClass: 'btn btn-primary',
-    btnStyle: { width: '100%', background: 'var(--color-dark)', border: '1px solid var(--color-green)', color: 'var(--color-green)' },
+    btnClass: 'btn btn-tier btn-community',
   },
 ];
 
@@ -94,8 +94,7 @@ export const localTiers = [
       'Dedicated sponsor page on website',
       'Mention in all press releases',
     ],
-    btnClass: 'btn btn-primary btn-diamond',
-    btnStyle: { width: '100%', background: '#b9f2ff', color: 'var(--color-dark)', border: '1px solid #b9f2ff' },
+    btnClass: 'btn btn-tier btn-diamond',
   },
   {
     name: 'Gold',
@@ -111,8 +110,7 @@ export const localTiers = [
       'Tier 2 logo placement on website',
       'Mention in press releases',
     ],
-    btnClass: 'btn btn-primary btn-gold',
-    btnStyle: { width: '100%', background: 'var(--color-dark)', border: '1px solid var(--color-gold)', color: 'var(--color-gold)' },
+    btnClass: 'btn btn-tier btn-gold',
   },
   {
     name: 'Silver',
@@ -126,8 +124,7 @@ export const localTiers = [
       'Conference signage with branding',
       'Tier 3 logo placement on website',
     ],
-    btnClass: 'btn btn-primary btn-silver',
-    btnStyle: { width: '100%', background: 'var(--color-dark)', border: '1px solid #c0c0c0', color: '#c0c0c0' },
+    btnClass: 'btn btn-tier btn-silver',
   },
   {
     name: 'Bronze',
@@ -141,8 +138,7 @@ export const localTiers = [
       'Company logo on website',
       'Branding on select materials',
     ],
-    btnClass: 'btn btn-primary btn-bronze',
-    btnStyle: { width: '100%', background: 'var(--color-dark)', border: '1px solid #cd7f32', color: '#cd7f32' },
+    btnClass: 'btn btn-tier btn-bronze',
   },
   {
     name: 'Community',
@@ -155,7 +151,6 @@ export const localTiers = [
       'Company logo on website',
       'Branding on select materials',
     ],
-    btnClass: 'btn btn-primary',
-    btnStyle: { width: '100%', background: 'var(--color-dark)', border: '1px solid var(--color-green)', color: 'var(--color-green)' },
+    btnClass: 'btn btn-tier btn-community',
   },
 ];

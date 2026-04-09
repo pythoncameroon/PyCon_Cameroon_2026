@@ -174,7 +174,12 @@ const Sponsor = () => {
                             <div key={tier.name} className={`card sponsor-card ${tier.className} animate-on-scroll slide-up`}
                                 style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
                                 <div className="sponsor-tier">{tier.name === 'Community' ? t('sponsor.communityPackage') : `${tier.name} ${t('sponsor.tier')}`}</div>
-                                <div className="sponsor-price">{tier.price}</div>
+                                <div className="sponsor-price">
+                                    {tier.xafEquivalent && (
+                                        <span className="price-hover">{tier.price} ≈ {tier.xafEquivalent}</span>
+                                    )}
+                                    <span className="price-default">{tier.price}</span>
+                                </div>
                                 {tier.priceNote && (
                                     <div style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', marginBottom: 'var(--spacing-md)' }}>
                                         ({tier.priceNote})
@@ -193,7 +198,7 @@ const Sponsor = () => {
 
                                 <a href={`mailto:organizers@pythoncameroon.org?subject=${tier.name} Sponsorship Inquiry`}
                                     className={tier.btnClass}
-                                    style={{ ...tier.btnStyle, marginTop: 'auto' }}>{t('sponsor.select')} {tier.name}</a>
+                                    style={{ marginTop: 'auto' }}>{t('sponsor.select')} {tier.name}</a>
                             </div>
                         ))}
                     </div>
