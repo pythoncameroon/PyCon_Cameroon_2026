@@ -209,9 +209,9 @@ const Sponsor = () => {
                                 ? t('sponsor.pricesLocal')
                                 : t('sponsor.pricesInternational')}
                         </p>
-                        <div className="alert alert-info">
+                        <p>
                             <strong>{t('sponsor.customPackages')}</strong> {t('sponsor.customPackagesText')}
-                        </div>
+                        </p>
                     </div>
                 </div>
             </section>

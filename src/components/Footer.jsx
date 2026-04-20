@@ -79,6 +79,7 @@ const Footer = () => {
                             <a href="mailto:organizers@pythoncameroon.org">organizers@pythoncameroon.org</a>
                             <Link to={l('/sponsor')}>{t('footer.sponsorship')}</Link>
                             <Link to={l('/sponsor')}>{t('footer.support')}</Link>
+                            <Link to={l('/financial-aid')}>{t('footer.financialAid')}</Link>
                         </div>
                     </div>
                 </div>

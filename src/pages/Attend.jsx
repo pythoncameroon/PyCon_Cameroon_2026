@@ -187,9 +187,9 @@ const Attend = () => {
                             {t('attend.visaText')}
                         </p>
 
-                        <div className="alert alert-warning">
+                        <p>
                             <strong>{t('attend.visaLetters')}</strong> {t('attend.visaLettersText')}
-                        </div>
+                        </p>
 
                         <a href="mailto:organizers@pythoncameroon.org?subject=Request%20for%20Invitation%20Letter%20-%20PyCon%20Cameroon%202026&body=Dear%20PyCon%20Cameroon%20Organizing%20Team%2C%0A%0AI%20am%20writing%20to%20request%20an%20official%20invitation%20letter%20for%20my%20visa%20application%20to%20attend%20PyCon%20Cameroon%202026.%0A%0AFull%20Name%3A%20%0APassport%20Number%3A%20%0ANationality%3A%20%0ADate%20of%20Birth%3A%20%0AEmail%3A%20%0APhone%3A%20%0AMailing%20Address%3A%20%0ARegistration%20Confirmation%20Number%3A%20%0A%0AThank%20you%20for%20your%20assistance.%0A%0ABest%20regards" className="btn btn-secondary mt-sm">{t('attend.requestLetter')}</a>
                     </div>

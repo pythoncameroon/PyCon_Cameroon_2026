@@ -1,5 +1,5 @@
 :root {
-    /* Primary Colors (Dark theme — default) */
+    /* Primary Colors (Dark theme, default) */
     --color-black: #0d0d0d;
     --color-dark: #1a1a1a;
     --color-dark-alt: #242424;
@@ -2670,4 +2670,153 @@ img {
 .legal-content ul {
     list-style: disc;
     margin-left: var(--spacing-lg);
+}
+
+/* ===================================
+   Tourist Site Drawer
+   =================================== */
+.site-drawer-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    z-index: 9998;
+    animation: site-drawer-fade-in 0.2s ease forwards;
+}
+
+.site-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100dvh;
+    width: 100%;
+    max-width: min(760px, 90vw);
+    background: var(--color-dark);
+    z-index: 9999;
+    overflow-y: auto;
+    box-shadow: -8px 0 24px rgba(0, 0, 0, 0.5);
+    transform: translateX(100%);
+    animation: site-drawer-slide-in 0.25s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    display: flex;
+    flex-direction: column;
+}
+
+.site-drawer-close {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: background var(--transition-fast);
+}
+
+.site-drawer-close:hover {
+    background: var(--color-orange);
+}
+
+.site-drawer-img {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.site-drawer-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.site-drawer-body {
+    padding: var(--spacing-md);
+}
+
+.site-drawer-body h2 {
+    font-size: 1.5rem;
+    line-height: 1.25;
+}
+
+.site-drawer-body h3 {
+    font-size: 1.05rem;
+    line-height: 1.3;
+}
+
+.site-drawer-body p,
+.site-drawer-body li {
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
+.site-drawer-costs {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.site-drawer-costs td {
+    padding: var(--spacing-xs) 0;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+}
+
+.site-drawer-costs td:last-child {
+    text-align: right;
+    color: var(--color-text-primary);
+}
+
+.site-drawer-costs-total td {
+    border-bottom: none;
+    padding-top: var(--spacing-sm);
+    color: var(--color-orange) !important;
+    font-size: 1.05rem;
+}
+
+@keyframes site-drawer-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes site-drawer-slide-in {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+@media (max-width: 768px) {
+    .site-drawer {
+        max-width: 100%;
+    }
+
+    .site-drawer-img {
+        height: 200px;
+    }
+
+    .site-drawer-body {
+        padding: var(--spacing-sm);
+    }
+
+    .site-drawer-body h2 {
+        font-size: 1.25rem;
+    }
+
+    .site-drawer-body h3 {
+        font-size: 1rem;
+    }
+
+    .site-drawer-body p,
+    .site-drawer-body li {
+        font-size: 0.9rem;
+    }
+
+    .site-drawer-close {
+        top: var(--spacing-xs);
+        right: var(--spacing-xs);
+    }
 }

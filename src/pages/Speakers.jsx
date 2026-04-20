@@ -1,7 +1,9 @@
 import React, { useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Megaphone, Calendar, Target, AlertTriangle, ScrollText } from 'lucide-react';
+import { Megaphone, Calendar, Target, AlertTriangle, ScrollText, HelpingHand } from 'lucide-react';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import { useLocalizedPath } from '../hooks/useLocalizedPath';
 
 const TIMELINE_MILESTONES = [
     { date: new Date('2026-03-30') },
@@ -29,6 +31,7 @@ function getTimelineItemStatus(milestone, index, now) {
 const Speakers = () => {
     useScrollAnimation();
     const { t } = useTranslation();
+    const { l } = useLocalizedPath();
 
     const now = useMemo(() => new Date(), []);
     const cfpStatus = getCfpStatus(now);
@@ -43,9 +46,9 @@ const Speakers = () => {
     }));
 
     const bannerContent = {
-        upcoming: { text: t('speakers.cfpUpcoming', { date: milestones[0].label }), alertClass: 'alert-success' },
-        open: { text: t('speakers.cfpOpen'), alertClass: 'alert-success' },
-        closed: { text: t('speakers.cfpClosed'), alertClass: 'alert-warning' },
+        upcoming: { text: t('speakers.cfpUpcoming', { date: milestones[0].label }) },
+        open: { text: t('speakers.cfpOpen') },
+        closed: { text: t('speakers.cfpClosed') },
     }[cfpStatus];
 
     const ctaText = {
@@ -76,14 +79,22 @@ const Speakers = () => {
                             {t('speakers.excitedText')}
                         </p>
 
-                        <div className={`alert ${bannerContent.alertClass}`} style={{ textAlign: 'left', margin: 'var(--spacing-lg) 0' }}>
+                        <p style={{ textAlign: 'left', margin: 'var(--spacing-lg) 0' }}>
                             <strong><Megaphone size="1em" style={{ verticalAlign: '-0.125em', marginRight: '0.25rem' }} /> {bannerContent.text}</strong><br />
                             {t('speakers.bannerInvite')}
-                        </div>
+                        </p>
 
                         {cfpStatus !== 'closed' && (
                             <a href="https://sessionize.com/pycon-camerooon-2026" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">{t('speakers.submitProposal')}</a>
                         )}
+
+                        <p style={{ marginTop: 'var(--spacing-lg)', fontSize: '1rem' }}>
+                            <HelpingHand size="1em" style={{ verticalAlign: '-0.125em', marginRight: '0.25rem' }} />
+                            {t('speakers.financialAidNote')}{' '}
+                            <Link to={l('/financial-aid')} style={{ color: 'var(--color-orange)', fontWeight: 600, textDecoration: 'underline' }}>
+                                {t('speakers.financialAidLink')}
+                            </Link>
+                        </p>
                     </div>
                 </div>
             </section>
@@ -168,7 +179,7 @@ const Speakers = () => {
                         </div>
 
                         {/* UbuCon Track */}
-                        <div className="alert alert-success" style={{ marginTop: 'var(--spacing-md)' }}>
+                        <div style={{ marginTop: 'var(--spacing-md)' }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-sm)', marginBottom: 'var(--spacing-sm)' }}>
                                 <img
                                     src="/images/partners/canonical-cm.webp"
@@ -177,9 +188,7 @@ const Speakers = () => {
                                 />
                                 <strong style={{ fontSize: '1.1rem' }}>{t('speakers.ubuconTrackNew')}</strong>
                             </div>
-                            <p style={{ marginBottom: 0 }}>
-                                {t('speakers.ubuconTrackText')}
-                            </p>
+                            <p>{t('speakers.ubuconTrackText')}</p>
                         </div>
 
                         {/* Important Notes */}
@@ -187,28 +196,28 @@ const Speakers = () => {
                             <AlertTriangle size="1em" style={{ verticalAlign: '-0.125em', marginRight: '0.25rem' }} /> {t('speakers.importantNotes')}
                         </h3>
 
-                        <div className="alert alert-warning">
-                            <strong>{t('speakers.aiPolicy')}</strong><br />
-                            {t('speakers.aiPolicyText')}
+                        <div style={{ marginTop: 'var(--spacing-md)' }}>
+                            <h4 style={{ marginBottom: 'var(--spacing-xs)' }}>{t('speakers.aiPolicy')}</h4>
+                            <p>{t('speakers.aiPolicyText')}</p>
                         </div>
 
-                        <div className="alert alert-info">
-                            <strong>{t('speakers.proposalLimit')}</strong><br />
-                            <ul style={{ marginTop: 'var(--spacing-xs)' }}>
+                        <div style={{ marginTop: 'var(--spacing-md)' }}>
+                            <h4 style={{ marginBottom: 'var(--spacing-xs)' }}>{t('speakers.proposalLimit')}</h4>
+                            <ul style={{ paddingLeft: '1.5rem' }}>
                                 {t('speakers.proposalLimitItems', { returnObjects: true }).map((item, index) => (
-                                    <li key={index}>{'\u2022'} {item}</li>
+                                    <li key={index}>{item}</li>
                                 ))}
                             </ul>
                         </div>
 
-                        <div className="alert alert-danger">
-                            <strong>{t('speakers.recordingNotice')}</strong><br />
-                            {t('speakers.recordingNoticeText')}
+                        <div style={{ marginTop: 'var(--spacing-md)' }}>
+                            <h4 style={{ marginBottom: 'var(--spacing-xs)' }}>{t('speakers.recordingNotice')}</h4>
+                            <p>{t('speakers.recordingNoticeText')}</p>
                         </div>
 
-                        <div className="alert alert-warning">
-                            <strong>{t('speakers.speakerSupport')}</strong><br />
-                            {t('speakers.speakerSupportText')}
+                        <div style={{ marginTop: 'var(--spacing-md)' }}>
+                            <h4 style={{ marginBottom: 'var(--spacing-xs)' }}>{t('speakers.speakerSupport')}</h4>
+                            <p>{t('speakers.speakerSupportText')}</p>
                         </div>
 
                         {/* Code of Conduct */}

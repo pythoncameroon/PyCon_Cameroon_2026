@@ -35,9 +35,9 @@ const Home = () => {
                     </div>
 
                     <div className="hero-buttons">
-                        <a href="https://sessionize.com/pycon-camerooon-2026" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
+                        <Link to={l('/speakers#call-for-speakers')} className="btn btn-primary btn-lg">
                             <Mic size="1em" style={{ verticalAlign: '-0.125em' }} /> {t('home.callForSpeakers')}
-                        </a>
+                        </Link>
                         <Link to={l('/attend')} className="btn btn-secondary btn-lg">
                             <Ticket size="1em" style={{ verticalAlign: '-0.125em' }} /> {t('home.getYourTicket')}
                         </Link>

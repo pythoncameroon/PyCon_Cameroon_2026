@@ -207,11 +207,11 @@ const About = () => {
           </div>
 
           <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-            <div className="alert alert-info">
+            <p>
               <strong>{t('about.conductCommitment')}</strong>
               <br />
               {t('about.conductText')}
-            </div>
+            </p>
 
             <p>
               {t('about.conductP1')}

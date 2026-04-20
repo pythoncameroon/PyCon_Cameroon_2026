@@ -1,8 +1,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Mail } from 'lucide-react';
+
+const ORGANIZERS_EMAIL = 'organizers@pythoncameroon.org';
 
 const FinancialAid = () => {
     const { t } = useTranslation();
+
+    const subject = t('financialAid.emailSubject');
+    const body = t('financialAid.emailBody');
+    const mailto = `mailto:${ORGANIZERS_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     return (
         <>
@@ -14,78 +21,27 @@ const FinancialAid = () => {
             </header>
 
             <section className="section">
-                <div className="container legal-content">
-                    <h2>{t('financialAid.aboutTitle')}</h2>
-                    <p>{t('financialAid.aboutText')}</p>
+                <div className="container" style={{ maxWidth: '800px' }}>
+                    <p style={{ fontSize: '1.125rem' }}>{t('financialAid.intro')}</p>
 
-                    <h3>{t('financialAid.grantTitle')}</h3>
-                    <p>{t('financialAid.grantText')}</p>
+                    <h2 style={{ marginTop: 'var(--spacing-lg)' }}>{t('financialAid.noTransportTitle')}</h2>
+                    <p>{t('financialAid.noTransportText')}</p>
 
-                    <h3>{t('financialAid.applicationTitle')}</h3>
-                    <p>{t('financialAid.applicationP1')}</p>
-                    <p>{t('financialAid.applicationP2')}</p>
-                    <p>{t('financialAid.applicationP3')}</p>
+                    <h2 style={{ marginTop: 'var(--spacing-lg)' }}>{t('financialAid.waiverTitle')}</h2>
+                    <p>{t('financialAid.waiverText')}</p>
 
-                    <h2>{t('financialAid.whoTitle')}</h2>
-                    <p>{t('financialAid.whoP1')}</p>
-                    <p>{t('financialAid.whoP2')}</p>
-                    <ul>
-                        {t('financialAid.whoItems', { returnObjects: true }).map((item, index) => (
-                            <li key={index}>{item}</li>
-                        ))}
-                    </ul>
-                    <p>{t('financialAid.whoP3')}</p>
+                    <h2 style={{ marginTop: 'var(--spacing-lg)' }}>{t('financialAid.howToRequestTitle')}</h2>
+                    <p>{t('financialAid.howToRequestText')}</p>
 
-                    <h2>{t('financialAid.howTitle')}</h2>
-                    <p>{t('financialAid.howP1')}</p>
-                    <p>{t('financialAid.howP2')}</p>
-
-                    <h3>{t('financialAid.whatRequestTitle')}</h3>
-                    <p>{t('financialAid.whatRequestText')}</p>
-
-                    <h3>{t('financialAid.howMuchTitle')}</h3>
-                    <p>{t('financialAid.howMuchP1')}</p>
-                    <p>{t('financialAid.howMuchP2')}</p>
-                    <ul>
-                        {t('financialAid.howMuchItems', { returnObjects: true }).map((item, index) => (
-                            <li key={index}>{item}</li>
-                        ))}
-                    </ul>
-                    <p>{t('financialAid.howMuchP3')}</p>
-
-                    <h2>{t('financialAid.calculateTitle')}</h2>
-                    <p>{t('financialAid.calculateIntro')}</p>
-                    <ul>
-                        {t('financialAid.calculateItems', { returnObjects: true }).map((item, index) => (
-                            <li key={index}>{item}</li>
-                        ))}
-                    </ul>
-
-                    <h3>{t('financialAid.travelTitle')}</h3>
-                    <p>{t('financialAid.travelText')}</p>
-
-                    <h3>{t('financialAid.accommodationTitle')}</h3>
-                    <p>{t('financialAid.accommodationP1')}</p>
-                    <p>{t('financialAid.accommodationP2')}</p>
-
-                    <h3>{t('financialAid.subsistenceTitle')}</h3>
-                    <p>{t('financialAid.subsistenceText')}</p>
-
-                    <h2>{t('financialAid.timelineTitle')}</h2>
-                    <p>{t('financialAid.timelineIntro')}</p>
-                    <ul>
-                        {t('financialAid.timelineItems', { returnObjects: true }).map((item, index) => (
-                            <li key={index}>{item}</li>
-                        ))}
-                    </ul>
-
-                    <h2>{t('financialAid.fundsTitle')}</h2>
-                    <p>{t('financialAid.fundsP1')}</p>
-                    <p>{t('financialAid.fundsP2')}</p>
-                    <p>{t('financialAid.fundsP3')}</p>
-
-                    <p>{t('financialAid.organizedBy')}</p>
-                    <p>{t('financialAid.contactUs')} <a href="mailto:organizers@pythoncameroon.org" style={{ color: 'var(--color-orange)' }}>organizers@pythoncameroon.org</a></p>
+                    <div className="text-center mt-lg">
+                        <a href={mailto} className="btn btn-primary btn-lg">
+                            <Mail size="1em" style={{ verticalAlign: '-0.125em', marginRight: '0.5rem' }} />
+                            {t('financialAid.requestButton')}
+                        </a>
+                        <p style={{ marginTop: 'var(--spacing-sm)', fontSize: '0.9rem', color: 'var(--color-text-secondary)' }}>
+                            {t('financialAid.clickNote')} <a href={`mailto:${ORGANIZERS_EMAIL}`} style={{ color: 'var(--color-orange)' }}>{ORGANIZERS_EMAIL}</a>
+                        </p>
+                    </div>
                 </div>
             </section>
         </>

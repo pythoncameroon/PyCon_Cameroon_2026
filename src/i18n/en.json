@@ -21,6 +21,7 @@
     "contact": "Contact",
     "sponsorship": "Sponsorship",
     "support": "Support",
+    "financialAid": "Financial Aid",
     "copyright": "\u00a9 2026 PyCon Cameroon. All rights reserved.",
     "builtBy": "Built by",
     "terms": "Terms and Conditions",
@@ -35,7 +36,7 @@
     "getYourTicket": "Get Your Ticket",
     "welcomeTitle": "Welcome to",
     "welcomeTitleHighlight": "PyCon Cameroon 2026",
-    "welcomeText": "Join us for Cameroon's first-ever PyCon \u2014 a celebration of Python, technology, and African innovation. Experience two days of inspiring talks, hands-on workshops, and unforgettable networking opportunities in the vibrant city of Yaound\u00e9.",
+    "welcomeText": "Join us for Cameroon's first-ever PyCon, a celebration of Python, technology, and African innovation. Experience two days of inspiring talks, hands-on workshops, and unforgettable networking opportunities in the vibrant city of Yaound\u00e9.",
     "card1Title": "African Innovation Hub",
     "card1Text": "Connect with developers, entrepreneurs, and tech enthusiasts from across Africa and the world. Experience the unique blend of Cameroonian culture and cutting-edge technology.",
     "card2Title": "Python for Everyone",
@@ -57,7 +58,7 @@
     "ubuconDesc2": "Explore talks and workshops on Ubuntu, Linux system administration, open source contributions, cloud infrastructure, and how Python powers the Ubuntu ecosystem.",
     "djangoDesc1Start": "PyCon Cameroon 2026 features a dedicated",
     "djangoDesc1Bold": "Django track",
-    "djangoDesc1End": "for web developers! Dive into the world of Django \u2014 from building robust web applications to REST APIs, deployment best practices, and scaling Django in production.",
+    "djangoDesc1End": "for web developers! Dive into the world of Django: from building robust web applications to REST APIs, deployment best practices, and scaling Django in production.",
     "djangoDesc2": "Whether you're just starting with Django or you're a seasoned developer, this track offers hands-on workshops, real-world case studies, and expert talks.",
     "expectedAttendees": "Expected Attendees",
     "technicalSessions": "Technical Sessions",
@@ -109,7 +110,7 @@
     "subtitle": "Share your expertise and inspire the Python community in Cameroon",
     "excitedTitle": "We're Excited to Have You!",
     "excitedText": "Whether you're a first-time speaker or a seasoned presenter, we want to hear from you! If you have an interesting Python topic, project, or experience to share, submit your proposal and we'll review it with care.",
-    "bannerInvite": "We're inviting speakers of all experience levels and backgrounds to contribute to our conference program. Don't be shy \u2013 your unique perspective matters!",
+    "bannerInvite": "We're inviting speakers of all experience levels and backgrounds to contribute to our conference program. Don't be shy. Your unique perspective matters!",
     "submitProposal": "Submit Your Proposal",
     "cfpUpcoming": "Call for Proposals will be OPEN on {{date}}!",
     "cfpOpen": "Call for Proposals is NOW OPEN!",
@@ -142,7 +143,9 @@
     "recordingNotice": "Recording Notice",
     "recordingNoticeText": "All PyCon Cameroon talks and workshops will be recorded and released on our YouTube channel to help with Python education across Africa. By submitting, you agree to be recorded.",
     "speakerSupport": "Speaker Support",
-    "speakerSupportText": "Please note that PyCon Cameroon is currently unable to provide financial assistance (travel, accommodation, etc.) to speakers. All selected speakers will receive a free conference ticket for the full event.",
+    "speakerSupportText": "PyCon Cameroon is unable to provide financial assistance (transport, accommodation, meals, etc.) to speakers. The only support we can offer selected speakers is a free 3-day ticket to the full event.",
+    "financialAidNote": "Need help with the ticket fee?",
+    "financialAidLink": "Read our Financial Aid policy \u2192",
     "codeOfConduct": "Code of Conduct",
     "cocP1": "All speakers are expected to have read and adhere to the conference Code of Conduct. Slide contents and spoken material should be appropriate for a professional audience including people of many different backgrounds.",
     "cocP2": "Sexual language and imagery are not appropriate, and neither is language or imagery that denigrates or demeans people based on race, gender, religion, sexual orientation, physical appearance, disability, or any other dimension of diversity.",
@@ -234,7 +237,7 @@
     "getNormal": "Get Normal Ticket",
     "onSite": "On-Site",
     "atTheDoor": "At the Door",
-    "onSiteText": "Purchase your ticket on-site during the conference. Subject to availability \u2014 we recommend buying in advance!",
+    "onSiteText": "Purchase your ticket on-site during the conference. Subject to availability. We recommend buying in advance!",
     "availableAtVenue": "Available at Venue",
     "whatsIncluded": "What's Included?",
     "accessTo": "Your registration gives you access to:",
@@ -270,8 +273,10 @@
     "locationHighlight": "Location",
     "venueName": "PyCon CM Venue (TBD)",
     "venueCity": "Yaound\u00e9, Cameroon",
+    "openInMaps": "Open in Google Maps",
+    "exploreMore": "Discover more tourist sites in Yaound\u00e9",
     "addressSoon": "Address Details Coming Soon",
-    "finalizingVenue": "We are currently finalizing the perfect venue to host PyCon Cameroon 2026. We're looking for a space that embodies the spirit of our community\u2014modern, accessible, and vibrant.",
+    "finalizingVenue": "We are currently finalizing the perfect venue to host PyCon Cameroon 2026. We're looking for a space that embodies the spirit of our community: modern, accessible, and vibrant.",
     "expectFacility": "Expect a state-of-the-art facility with:",
     "facilityItems": ["High-speed internet connectivity", "Modern audiovisual equipment", "Comfortable seating and workspaces", "Accessible facilities for all attendees"],
     "planTripTitle": "Plan Your",
@@ -416,7 +421,7 @@
     "adviceIntro": "Please read this information carefully. Some of it is crucial and it will help you have a better travel experience.",
     "adviceItems": [
       { "label": "Visa:", "text": "You may need a visa to enter Cameroon. Check this well in advance, as failing to do so may result in denied entry or being unable to board your flight. Contact us if you have any questions." },
-      { "label": "Yellow Fever Certificate:", "text": "A valid yellow fever vaccination certificate is required to enter Cameroon. Please ensure you have this before travelling \u2014 do not leave it until the last minute." },
+      { "label": "Yellow Fever Certificate:", "text": "A valid yellow fever vaccination certificate is required to enter Cameroon. Please ensure you have this before travelling. Do not leave it until the last minute." },
       { "label": "Other vaccinations:", "text": "Optional but recommended vaccinations include Hepatitis A, Tetanus, and Typhoid." },
       { "label": "Malaria precautions:", "text": "Malaria precautions are strongly advised. Seek medical advice on whether you should be taking anti-malarial medication before and during your visit." }
     ],
@@ -424,7 +429,7 @@
     "habitsP1": "Hand sanitizing stations will be placed throughout PyCon Cameroon venues to encourage frequent hand sanitization.",
     "habitsP2": "We will issue best practices for attendees that include avoiding close-contact greetings where possible and how exhibitors can best manage product demonstrations.",
     "disclaimerTitle": "DISCLAIMER",
-    "disclaimerText": "PyCon Cameroon takes these Health and Safety Guidelines very seriously and will enforce a 3-strike rule. Anyone who violates these guidelines on three separate occasions \u2014 such as continuing to not wear a proper mask or disregarding safe distancing \u2014 is subject to removal from the conference. Anyone who provides false vaccination verification will not be admitted to PyCon Cameroon.",
+    "disclaimerText": "PyCon Cameroon takes these Health and Safety Guidelines very seriously and will enforce a 3-strike rule. Anyone who violates these guidelines on three separate occasions, such as continuing to not wear a proper mask or disregarding safe distancing, is subject to removal from the conference. Anyone who provides false vaccination verification will not be admitted to PyCon Cameroon.",
     "organizedBy": "PyCon Cameroon 2026 is organised by a team of volunteers on behalf of the Python community in Cameroon.",
     "contactUs": "Contact us:"
   },
@@ -472,7 +477,7 @@
     "whatIsTitle": "What is",
     "whatIsHighlight": "UbuCon?",
     "whatIsP1": "UbuCon (Ubuntu Conference) is a community-driven event that brings together Ubuntu enthusiasts, developers, and open source advocates. For the first time in Cameroon, we're co-hosting a UbuCon track within PyCon Cameroon 2026.",
-    "whatIsP2": "This partnership between Python Cameroon and UbuCon Cameroon celebrates the deep relationship between Python and the Ubuntu ecosystem \u2014 from system tools and automation to cloud infrastructure and beyond.",
+    "whatIsP2": "This partnership between Python Cameroon and UbuCon Cameroon celebrates the deep relationship between Python and the Ubuntu ecosystem: from system tools and automation to cloud infrastructure and beyond.",
     "submitTalk": "Submit a UbuCon Talk",
     "glanceTitle": "UbuCon at a Glance",
     "dedicatedDay": "Dedicated Day",
@@ -500,69 +505,32 @@
     "ctaTicket": "Get Your Ticket"
   },
   "financialAid": {
-    "title": "Financial Aid",
-    "titleHighlight": "Programme",
+    "title": "Financial",
+    "titleHighlight": "Aid",
     "subtitle": "PyCon Cameroon 2026",
-    "aboutTitle": "About the Financial Assistance Programme",
-    "aboutText": "We are delighted you are interested in attending PyCon Cameroon 2026, which will be held in Yaound\u00e9, Cameroon. As part of our commitment to fostering an inclusive community, we recognize that some individuals may need financial assistance to make conference participation possible.",
-    "grantTitle": "Grant Availability and Coverage",
-    "grantText": "Due to budget limitations, we can only support a small number of attendees with financial aid grants. These grants will be awarded based on financial need and responses provided in the application form. Please note that approved grants may only cover certain expenses (e.g. conference ticket but not accommodation). Any expenses not covered by your specific grant would remain your responsibility.",
-    "applicationTitle": "Application Details",
-    "applicationP1": "Please complete the form to provide details on your financial needs and circumstances. This information is essential for the grants review committee to evaluate applicants and make fair and informed decisions on grant recipients.",
-    "applicationP2": "We welcome your open and honest responses, even for basic needs. Our goal is to make the conference accessible to as many Python enthusiasts as possible.",
-    "applicationP3": "Your application will be treated in complete confidence.",
-    "whoTitle": "Who Will Receive Financial Assistance?",
-    "whoP1": "We'd love to be able to help all those who submit applications, but our funds are not unlimited, so sadly we won't be able to meet all requests.",
-    "whoP2": "The financial assistance programme will prioritise:",
-    "whoItems": [
-      "Speakers",
-      "Those who will contribute back to their local communities",
-      "Those who will help increase diversity at the event and in Cameroonian and African programming"
-    ],
-    "whoP3": "We will do our best to maximise the impact of our financial assistance funding.",
-    "howTitle": "How to Apply",
-    "howP1": "Please complete our form before the application deadline (to be announced). We will not accept applications after the stated date.",
-    "howP2": "Read the questions on the form carefully and answer them as best you can.",
-    "whatRequestTitle": "What Can I Request?",
-    "whatRequestText": "You can request a free ticket only, or a grant as well as a free ticket. Anyone who is allocated a grant will automatically receive a free ticket.",
-    "howMuchTitle": "How Much Should I Request?",
-    "howMuchP1": "Our budget is limited, and we will have to make some hard decisions. Generally, it is easier for us to accept smaller requests, as a single large request could consume most of our budget. The lower your request, the more likely it is that we will be able to accept it.",
-    "howMuchP2": "You need to consider:",
-    "howMuchItems": [
-      "How much you will need to spend in total in order to attend the conference",
-      "How much of this you can contribute yourself"
-    ],
-    "howMuchP3": "The difference between these two figures is the amount you should request.",
-    "calculateTitle": "How Should I Calculate How Much to Request?",
-    "calculateIntro": "You will need to budget for:",
-    "calculateItems": [
-      "Travel",
-      "Visa, if necessary",
-      "Accommodation",
-      "Subsistence (evening meals, local transport, etc.) while in Yaound\u00e9"
-    ],
-    "travelTitle": "Travel",
-    "travelText": "Spend a little time researching your options. If you will need to travel by air, use websites such as Skyscanner to estimate the cost of airfare. Be aware that a little flexibility with dates or routes can make a huge difference to the price of an air ticket.",
-    "accommodationTitle": "Accommodation",
-    "accommodationP1": "There are many websites that will allow you to estimate the cost of accommodation, such as Hotels.com or Booking.com. If you know someone else who is also travelling, you can share a room to lower costs. If you are willing to share a room, let us know in your application.",
-    "accommodationP2": "Be reasonable \u2014 we want you to stay somewhere clean, safe, and comfortable, but we cannot afford to place you in a luxury hotel!",
-    "subsistenceTitle": "Subsistence",
-    "subsistenceText": "You will have lunch and refreshments each day as part of the conference. In Yaound\u00e9, you can get a decent evening meal for a very affordable price. Local transport by taxi or moto-taxi is also inexpensive.",
-    "timelineTitle": "Timeline",
-    "timelineIntro": "Exact dates will be announced \u2014 the structure will follow this general pattern:",
-    "timelineItems": [
-      "Financial aid application opens: To be announced",
-      "Financial aid application closes: To be announced",
-      "Financial aid grants awarded: To be announced",
-      "Deadline to accept/decline financial aid: To be announced",
-      "Disbursement sessions at PyCon Cameroon: At the conference venue, Yaound\u00e9"
-    ],
-    "fundsTitle": "When Will I Receive the Funds?",
-    "fundsP1": "Funds will be provided to successful applicants on attendance at the conference.",
-    "fundsP2": "Unfortunately, applicants for financial assistance who have received funds in advance and have failed to attend have damaged previous events. Our financial situation cannot withstand this kind of abuse.",
-    "fundsP3": "In exceptional circumstances, we may be able to provide funds in advance to those who would otherwise find it impossible to attend. Please contact us as soon as possible if this is the case.",
-    "organizedBy": "PyCon Cameroon 2026 is organised by a team of volunteers on behalf of the Python community in Cameroon.",
-    "contactUs": "Contact us:"
+    "intro": "We know that attending a conference can involve real costs, and we want to be upfront about what we can and cannot help with this year.",
+    "noTransportTitle": "No transport or travel aid",
+    "noTransportText": "Due to our limited budget, PyCon Cameroon 2026 is unable to provide financial aid for transport (flights, buses, taxis), accommodation, or daily expenses. Attendees are responsible for covering their own travel and stay.",
+    "waiverTitle": "Optional ticket fee waiver",
+    "waiverText": "If the ticket fee is a barrier to your participation, we can, on a case-by-case basis, offer a ticket fee waiver. Priority goes to students, community organisers, and contributors who would otherwise be unable to attend.",
+    "howToRequestTitle": "How to request a ticket fee waiver",
+    "howToRequestText": "Send an email to the organizers describing your situation and why a waiver would help you attend. Use the button below to open a pre-filled email template, then edit the placeholders with your own details before sending.",
+    "requestButton": "Request a ticket fee waiver",
+    "clickNote": "The button opens your email client. If it doesn't, email us directly at",
+    "emailSubject": "PyCon Cameroon 2026: Ticket Fee Waiver Request",
+    "emailBody": "Hello PyCon Cameroon Organizers,\n\nI would like to request a ticket fee waiver to attend PyCon Cameroon 2026.\n\nFull name: \nCity / Country: \nRole (student / early-career / community contributor / other): \nPython community involvement (clubs, meetups, open source, etc.): \n\nWhy I am requesting a waiver:\n(A few sentences explaining your situation and why the ticket fee is a barrier.)\n\nHow I plan to contribute back to the community:\n(Sharing learnings at a local meetup, writing a blog post, volunteering, etc.)\n\nThank you for considering my request.\n\nBest regards,\n[Your Name]"
+  },
+  "touristSites": {
+    "title": "Tourist Sites in",
+    "titleHighlight": "Yaound\u00e9",
+    "subtitle": "Explore the capital beyond the conference",
+    "intro": "A few ideas for exploring Yaound\u00e9 before or after PyCon Cameroon. Click any card to see more details, how long to plan for, and practical tips.",
+    "viewDetails": "View details",
+    "close": "Close",
+    "duration": "Time to spend",
+    "durationHours": "About {{hours}} hour(s)",
+    "gettingThere": "Getting there",
+    "highlights": "Highlights & tips"
   },
   "data": {
     "tracks": {
@@ -602,6 +570,107 @@
       { "name": "Basilique Marie-Reine-des-Ap\u00f4tres", "description": "Striking hilltop basilica with panoramic views, one of Central Africa's most impressive churches." },
       { "name": "Dade Park", "description": "A popular recreational park in Yaound\u00e9 with green spaces, playgrounds, and weekend entertainment." }
     ],
+    "touristSites": {
+      "national-museum": {
+        "name": "National Museum of Cameroon",
+        "description": "Explore the rich history and culture of Cameroon in this former presidential palace.",
+        "longDescription": "Housed in the former presidential palace, the National Museum walks you through Cameroon's pre-colonial kingdoms, colonial era, and modern identity through art, artefacts, and royal regalia.",
+        "gettingThere": "Central Yaound\u00e9, near Boulevard du 20 Mai. A short taxi ride from most hotels in the city centre.",
+        "highlights": [
+          "Usually closed on Mondays. Check hours before you go.",
+          "Allow 1 to 2 hours for a relaxed visit.",
+          "Photography inside may require an additional fee."
+        ]
+      },
+      "bois-sainte-anastasie": {
+        "name": "Bois Sainte Anastasie",
+        "description": "A beautiful urban park perfect for a relaxing walk amidst nature in the city center.",
+        "longDescription": "A small, quiet urban forest in the heart of Yaound\u00e9. Popular with locals for a short walk, a jog, or to escape the noise of the city for an hour.",
+        "gettingThere": "Near Bastos, central Yaound\u00e9. Easily reachable by taxi or ride-hail.",
+        "highlights": [
+          "Go early morning for the coolest weather.",
+          "Wear comfortable walking shoes.",
+          "Not much shelter. Bring water and a cap."
+        ]
+      },
+      "monument-reunification": {
+        "name": "Monument de la R\u00e9unification",
+        "description": "An iconic monument symbolizing the reunification of French and British Cameroons.",
+        "longDescription": "A striking spiral tower and sculpture group commemorating the 1961 reunification of French and British Cameroons. One of the most photographed spots in the city.",
+        "gettingThere": "Ngoa-Ekell\u00e9 neighbourhood, central Yaound\u00e9. Most taxi drivers know the site by name.",
+        "highlights": [
+          "Best light for photos is late afternoon.",
+          "Combine with a visit to the nearby National Museum.",
+          "Keep an eye on personal belongings in busy moments."
+        ]
+      },
+      "palais-charles-atangana": {
+        "name": "Palais Charles Atangana",
+        "description": "Historic colonial-era palace of a paramount chief, now a cultural heritage landmark.",
+        "longDescription": "The restored palace of Charles Atangana, paramount chief of the Ewondo and Bane people during the early 20th century. A good introduction to the political history of central Cameroon.",
+        "gettingThere": "Efoulan area of Yaound\u00e9. Short taxi ride from the city centre.",
+        "highlights": [
+          "Guided visits are often possible. Ask at the entrance.",
+          "A small tip for the guide is appreciated.",
+          "Pairs well with the National Museum for a history-focused day."
+        ]
+      },
+      "mvog-betsi-zoo": {
+        "name": "Mvog-Betsi Zoo",
+        "description": "Yaound\u00e9's zoo and botanical garden, home to native wildlife including primates and tropical birds.",
+        "longDescription": "Also known as the Mefou Primate Sanctuary, this is a rescue and rehabilitation site for primates native to Cameroon, including gorillas, chimpanzees, and mandrills, set in a lush forest.",
+        "gettingThere": "Mvog-Betsi, southwest Yaound\u00e9. Taxi is the easiest option.",
+        "highlights": [
+          "Morning visits offer the most animal activity.",
+          "Bring cash. Card payments are rare.",
+          "Do not feed the animals; follow staff instructions."
+        ]
+      },
+      "lac-municipal": {
+        "name": "Lac Municipal de Yaound\u00e9",
+        "description": "A scenic artificial lake in the city center, popular for walks, boat rides, and relaxation.",
+        "longDescription": "A man-made lake at the foot of Mont F\u00e9bu, surrounded by a promenade, small cafes, and often impromptu street food vendors. A good spot to unwind at sunset.",
+        "gettingThere": "Central Yaound\u00e9, walkable from many downtown hotels.",
+        "highlights": [
+          "Weekends are lively. Weekdays are quieter.",
+          "Boat rides are available for a small fee.",
+          "Try the grilled fish from nearby vendors."
+        ]
+      },
+      "eco-park": {
+        "name": "Eco Park Yaound\u00e9",
+        "description": "A green leisure park offering nature trails, picnic areas, and outdoor activities for families.",
+        "longDescription": "A family-friendly eco-leisure park on the outskirts of Yaound\u00e9, with walking trails, picnic spots, and simple outdoor activities. A relaxing break from the city.",
+        "gettingThere": "Outside central Yaound\u00e9. Agree on a fare with the taxi before leaving, and ask them to come back.",
+        "highlights": [
+          "Bring water, snacks, and sunscreen.",
+          "Best visited on a weekend morning.",
+          "Phone signal may be patchy. Download your map first."
+        ]
+      },
+      "basilique": {
+        "name": "Basilique Marie-Reine-des-Ap\u00f4tres",
+        "description": "Striking hilltop basilica with panoramic views, one of Central Africa's most impressive churches.",
+        "longDescription": "A modern basilica perched on a hill, with distinctive architecture and sweeping views over Yaound\u00e9. Peaceful outside of mass times.",
+        "gettingThere": "Mvolye neighbourhood, southern Yaound\u00e9. Taxi ride from the city centre.",
+        "highlights": [
+          "Dress modestly. This is an active place of worship.",
+          "Sunset views from the forecourt are excellent.",
+          "Donations for the upkeep of the site are welcome."
+        ]
+      },
+      "dade-park": {
+        "name": "Dade Park",
+        "description": "A popular recreational park in Yaound\u00e9 with green spaces, playgrounds, and weekend entertainment.",
+        "longDescription": "A local favourite for weekend relaxation, with green spaces, playgrounds, and sometimes live music or events.",
+        "gettingThere": "Central Yaound\u00e9. Easy to reach by taxi or ride-hail.",
+        "highlights": [
+          "Busier on weekends. Quieter on weekday mornings.",
+          "Food stalls on site; bring small cash.",
+          "Great spot for a short break between other visits."
+        ]
+      }
+    },
     "sponsors": {
       "diamond": {
         "description": "The ultimate sponsorship package for maximum visibility and impact.",

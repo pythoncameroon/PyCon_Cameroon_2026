@@ -21,6 +21,7 @@
     "contact": "Contact",
     "sponsorship": "Sponsoring",
     "support": "Soutien",
+    "financialAid": "Aide financi\u00e8re",
     "copyright": "\u00a9 2026 PyCon Cameroun. Tous droits r\u00e9serv\u00e9s.",
     "builtBy": "Cr\u00e9\u00e9 par",
     "terms": "Conditions g\u00e9n\u00e9rales",
@@ -35,7 +36,7 @@
     "getYourTicket": "Obtenez votre billet",
     "welcomeTitle": "Bienvenue \u00e0",
     "welcomeTitleHighlight": "PyCon Cameroun 2026",
-    "welcomeText": "Rejoignez-nous pour le tout premier PyCon du Cameroun \u2014 une c\u00e9l\u00e9bration de Python, de la technologie et de l'innovation africaine. Vivez deux jours de conf\u00e9rences inspirantes, d'ateliers pratiques et d'opportunit\u00e9s de r\u00e9seautage inoubliables dans la ville dynamique de Yaound\u00e9.",
+    "welcomeText": "Rejoignez-nous pour le tout premier PyCon du Cameroun, une c\u00e9l\u00e9bration de Python, de la technologie et de l'innovation africaine. Vivez deux jours de conf\u00e9rences inspirantes, d'ateliers pratiques et d'opportunit\u00e9s de r\u00e9seautage inoubliables dans la ville dynamique de Yaound\u00e9.",
     "card1Title": "P\u00f4le d'innovation africain",
     "card1Text": "Connectez-vous avec des d\u00e9veloppeurs, entrepreneurs et passionn\u00e9s de tech de toute l'Afrique et du monde. D\u00e9couvrez le m\u00e9lange unique de culture camerounaise et de technologie de pointe.",
     "card2Title": "Python pour tous",
@@ -57,7 +58,7 @@
     "ubuconDesc2": "D\u00e9couvrez des conf\u00e9rences et ateliers sur Ubuntu, l'administration syst\u00e8me Linux, les contributions open source, l'infrastructure cloud et comment Python alimente l'\u00e9cosyst\u00e8me Ubuntu.",
     "djangoDesc1Start": "PyCon Cameroun 2026 propose un",
     "djangoDesc1Bold": "track Django",
-    "djangoDesc1End": "d\u00e9di\u00e9 aux d\u00e9veloppeurs web ! Plongez dans le monde de Django \u2014 de la cr\u00e9ation d'applications web robustes aux API REST, en passant par les bonnes pratiques de d\u00e9ploiement et la mise \u00e0 l'\u00e9chelle de Django en production.",
+    "djangoDesc1End": "d\u00e9di\u00e9 aux d\u00e9veloppeurs web ! Plongez dans le monde de Django : de la cr\u00e9ation d'applications web robustes aux API REST, en passant par les bonnes pratiques de d\u00e9ploiement et la mise \u00e0 l'\u00e9chelle de Django en production.",
     "djangoDesc2": "Que vous d\u00e9butiez avec Django ou que vous soyez un d\u00e9veloppeur chevronn\u00e9, ce track offre des ateliers pratiques, des \u00e9tudes de cas r\u00e9elles et des conf\u00e9rences d'experts.",
     "expectedAttendees": "Participants attendus",
     "technicalSessions": "Sessions techniques",
@@ -109,7 +110,7 @@
     "subtitle": "Partagez votre expertise et inspirez la communaut\u00e9 Python au Cameroun",
     "excitedTitle": "Nous sommes ravis de vous accueillir !",
     "excitedText": "Que vous soyez un intervenant d\u00e9butant ou exp\u00e9riment\u00e9, nous voulons vous entendre ! Si vous avez un sujet Python int\u00e9ressant, un projet ou une exp\u00e9rience \u00e0 partager, soumettez votre proposition et nous l'examinerons avec soin.",
-    "bannerInvite": "Nous invitons des intervenants de tous niveaux d'exp\u00e9rience et d'horizons divers \u00e0 contribuer \u00e0 notre programme. N'h\u00e9sitez pas \u2013 votre perspective unique compte !",
+    "bannerInvite": "Nous invitons des intervenants de tous niveaux d'exp\u00e9rience et d'horizons divers \u00e0 contribuer \u00e0 notre programme. N'h\u00e9sitez pas. Votre perspective unique compte !",
     "submitProposal": "Soumettre votre proposition",
     "cfpUpcoming": "L'appel \u00e0 propositions sera OUVERT le {{date}} !",
     "cfpOpen": "L'appel \u00e0 propositions est OUVERT !",
@@ -142,7 +143,9 @@
     "recordingNotice": "Avis d'enregistrement",
     "recordingNoticeText": "Toutes les conf\u00e9rences et ateliers PyCon Cameroun seront enregistr\u00e9s et publi\u00e9s sur notre cha\u00eene YouTube pour aider \u00e0 l'\u00e9ducation Python en Afrique. En soumettant, vous acceptez d'\u00eatre enregistr\u00e9.",
     "speakerSupport": "Soutien aux intervenants",
-    "speakerSupportText": "Veuillez noter que PyCon Cameroun n'est actuellement pas en mesure de fournir une aide financi\u00e8re (voyage, h\u00e9bergement, etc.) aux intervenants. Tous les intervenants s\u00e9lectionn\u00e9s recevront un billet gratuit pour l'ensemble de l'\u00e9v\u00e9nement.",
+    "speakerSupportText": "PyCon Cameroun n'est pas en mesure de fournir une aide financi\u00e8re (transport, h\u00e9bergement, repas, etc.) aux intervenants. Le seul soutien que nous pouvons offrir aux intervenants s\u00e9lectionn\u00e9s est un billet gratuit de 3 jours pour l'ensemble de l'\u00e9v\u00e9nement.",
+    "financialAidNote": "Besoin d'aide avec le prix du billet ?",
+    "financialAidLink": "Consultez notre politique d'aide financi\u00e8re \u2192",
     "codeOfConduct": "Code de conduite",
     "cocP1": "Tous les intervenants doivent avoir lu et respecter le Code de conduite de la conf\u00e9rence. Le contenu des diapositives et le mat\u00e9riel parl\u00e9 doivent \u00eatre appropri\u00e9s pour un public professionnel incluant des personnes d'horizons tr\u00e8s divers.",
     "cocP2": "Le langage et les images \u00e0 caract\u00e8re sexuel ne sont pas appropri\u00e9s, de m\u00eame que le langage ou les images qui d\u00e9nigrent ou rabaissent les personnes en fonction de leur race, genre, religion, orientation sexuelle, apparence physique, handicap ou toute autre dimension de la diversit\u00e9.",
@@ -234,7 +237,7 @@
     "getNormal": "Obtenir un billet normal",
     "onSite": "Sur place",
     "atTheDoor": "\u00c0 la porte",
-    "onSiteText": "Achetez votre billet sur place pendant la conf\u00e9rence. Sous r\u00e9serve de disponibilit\u00e9 \u2014 nous recommandons d'acheter \u00e0 l'avance !",
+    "onSiteText": "Achetez votre billet sur place pendant la conf\u00e9rence. Sous r\u00e9serve de disponibilit\u00e9. Nous recommandons d'acheter \u00e0 l'avance !",
     "availableAtVenue": "Disponible sur place",
     "whatsIncluded": "Qu'est-ce qui est inclus ?",
     "accessTo": "Votre inscription vous donne acc\u00e8s \u00e0 :",
@@ -270,8 +273,10 @@
     "locationHighlight": "Conf\u00e9rence",
     "venueName": "Lieu PyCon CM (\u00e0 d\u00e9terminer)",
     "venueCity": "Yaound\u00e9, Cameroun",
+    "openInMaps": "Ouvrir dans Google Maps",
+    "exploreMore": "D\u00e9couvrir plus de sites touristiques \u00e0 Yaound\u00e9",
     "addressSoon": "D\u00e9tails de l'adresse bient\u00f4t disponibles",
-    "finalizingVenue": "Nous finalisons actuellement le lieu parfait pour accueillir PyCon Cameroun 2026. Nous recherchons un espace qui incarne l'esprit de notre communaut\u00e9 \u2014 moderne, accessible et dynamique.",
+    "finalizingVenue": "Nous finalisons actuellement le lieu parfait pour accueillir PyCon Cameroun 2026. Nous recherchons un espace qui incarne l'esprit de notre communaut\u00e9 : moderne, accessible et dynamique.",
     "expectFacility": "Attendez-vous \u00e0 un \u00e9tablissement de pointe avec :",
     "facilityItems": ["Connectivit\u00e9 internet haut d\u00e9bit", "\u00c9quipement audiovisuel moderne", "Si\u00e8ges confortables et espaces de travail", "Installations accessibles pour tous les participants"],
     "planTripTitle": "Planifiez votre",
@@ -411,7 +416,7 @@
     "adviceIntro": "Voici quelques conseils pratiques pour votre séjour à Yaoundé :",
     "adviceItems": [
       { "label": "Eau", "text": "Buvez uniquement de l'eau en bouteille ou purifiée. Évitez l'eau du robinet et les glaçons de source inconnue." },
-      { "label": "Alimentation", "text": "Privilégiez les aliments bien cuits et servis chauds. La cuisine camerounaise est délicieuse et variée — profitez-en en toute sécurité dans des restaurants réputés." },
+      { "label": "Alimentation", "text": "Privilégiez les aliments bien cuits et servis chauds. La cuisine camerounaise est délicieuse et variée. Profitez-en en toute sécurité dans des restaurants réputés." },
       { "label": "Soleil et chaleur", "text": "Yaoundé est une ville tropicale. Portez de la crème solaire, un chapeau et des vêtements légers. Restez hydraté en buvant régulièrement de l'eau." },
       { "label": "Moustiques", "text": "Le paludisme est présent au Cameroun. Utilisez un répulsif anti-moustiques, portez des manches longues le soir et consultez votre médecin au sujet d'un traitement antipaludéen préventif." },
       { "label": "Sécurité personnelle", "text": "Yaoundé est généralement sûre, mais comme dans toute grande ville, restez vigilant, évitez de montrer des objets de valeur et utilisez des moyens de transport fiables." },
@@ -493,7 +498,7 @@
     ],
     "worldTitle": "UbuCon dans le",
     "worldHighlight": "monde",
-    "worldSubtitle": "Rejoignez le mouvement mondial UbuCon — des conférences Ubuntu sont organisées sur tous les continents",
+    "worldSubtitle": "Rejoignez le mouvement mondial UbuCon : des conférences Ubuntu sont organisées sur tous les continents",
     "loadingMap": "Chargement de la carte...",
     "ctaTitle": "Participez au track UbuCon",
     "ctaText": "Que vous souhaitiez présenter une conférence sur Ubuntu, animer un atelier open source ou simplement apprendre des meilleurs, le track UbuCon à PyCon Cameroun est fait pour vous.",
@@ -504,72 +509,29 @@
     "title": "Aide",
     "titleHighlight": "Financière",
     "subtitle": "PyCon Cameroun 2026",
-    "aboutTitle": "À propos du programme",
-    "aboutText": "PyCon Cameroun s'engage à rendre la conférence accessible à tous. Notre programme d'aide financière fournit des subventions pour aider à couvrir les frais de voyage, d'hébergement et de subsistance des participants qui en ont besoin. Nous croyons que la diversité de notre communauté est notre plus grande force, et nous voulons nous assurer que les contraintes financières ne soient pas un obstacle à la participation.",
-    "grantTitle": "Disponibilité des subventions",
-    "grantText": "Les subventions sont attribuées en fonction des fonds disponibles et du mérite des candidatures. Le montant et le nombre de subventions accordées dépendent du soutien de nos sponsors et des dons reçus. Nous nous efforçons d'aider le plus grand nombre de participants possible.",
-    "applicationTitle": "Détails de la candidature",
-    "applicationP1": "Le processus de candidature est simple et confidentiel. Toutes les informations fournies seront utilisées exclusivement pour l'évaluation de votre demande d'aide financière.",
-    "applicationP2": "Les candidatures sont évaluées par un comité dédié qui prend en compte plusieurs critères, notamment votre implication dans la communauté Python, votre situation financière et l'impact potentiel de votre participation à la conférence.",
-    "applicationP3": "Nous encourageons vivement les candidatures de personnes issues de groupes sous-représentés dans la technologie, y compris les femmes, les personnes non binaires, les personnes en situation de handicap et les participants de pays en développement.",
-    "whoTitle": "Qui peut bénéficier de l'aide financière ?",
-    "whoP1": "L'aide financière est ouverte à toute personne souhaitant participer à PyCon Cameroun 2026 et ayant besoin d'un soutien financier.",
-    "whoP2": "Nous encourageons particulièrement les candidatures des groupes suivants :",
-    "whoP3": "L'aide financière n'est pas réservée aux intervenants. Tout participant peut postuler.",
-    "whoItems": [
-      "Étudiants et jeunes professionnels",
-      "Participants venant de régions éloignées du Cameroun",
-      "Participants internationaux de pays en développement",
-      "Membres de communautés sous-représentées dans la technologie",
-      "Contributeurs actifs à des projets open source",
-      "Enseignants et éducateurs utilisant Python"
-    ],
-    "howTitle": "Comment postuler",
-    "howP1": "Pour postuler à l'aide financière, remplissez le formulaire de candidature en ligne avant la date limite. Assurez-vous de fournir toutes les informations demandées pour que votre candidature soit prise en compte.",
-    "howP2": "Les candidatures incomplètes ne seront pas examinées. Vous recevrez une confirmation de réception par e-mail après votre soumission.",
-    "whatRequestTitle": "Que pouvez-vous demander ?",
-    "whatRequestText": "Vous pouvez demander une aide financière pour couvrir tout ou partie des frais suivants : billet de conférence, voyage (transport aérien, terrestre ou ferroviaire), hébergement et frais de subsistance pendant la conférence. Veuillez indiquer clairement vos besoins dans votre candidature.",
-    "howMuchTitle": "Combien demander ?",
-    "howMuchP1": "Demandez uniquement le montant dont vous avez réellement besoin. Des demandes réalistes et bien justifiées ont plus de chances d'être approuvées.",
-    "howMuchP2": "Nous vous encourageons à rechercher les options les plus économiques pour le voyage et l'hébergement avant de soumettre votre demande.",
-    "howMuchP3": "Voici quelques lignes directrices pour estimer vos besoins :",
-    "howMuchItems": [
-      "Billet de conférence : indiquez si vous avez besoin d'une exonération totale ou partielle.",
-      "Voyage : estimez le coût du transport le plus économique depuis votre lieu de résidence.",
-      "Hébergement : indiquez le nombre de nuits et le type d'hébergement souhaité.",
-      "Subsistance : estimez vos frais quotidiens de repas et de transport local."
-    ],
-    "calculateTitle": "Calculez votre budget",
-    "calculateIntro": "Pour vous aider à préparer votre candidature, voici les éléments à prendre en compte :",
-    "calculateItems": [
-      "Coût du transport aller-retour depuis votre ville d'origine",
-      "Coût de l'hébergement pour la durée de la conférence (2-3 nuits)",
-      "Frais de repas quotidiens (si non couverts par la conférence)",
-      "Frais de transport local (aéroport-hôtel, hôtel-lieu de conférence)",
-      "Autres frais éventuels (visa, assurance voyage, etc.)"
-    ],
-    "travelTitle": "Voyage",
-    "travelText": "L'aide au voyage couvre les frais de transport depuis votre lieu de résidence jusqu'à Yaoundé. Nous privilégions les options les plus économiques (bus, train, vol en classe économique). Les reçus et justificatifs de voyage seront requis pour le remboursement.",
-    "accommodationTitle": "Hébergement",
-    "accommodationP1": "L'aide à l'hébergement couvre les frais d'hôtel ou de maison d'hôtes pendant la durée de la conférence. Nous recommandons les hébergements partenaires de la conférence pour bénéficier de tarifs préférentiels.",
-    "accommodationP2": "La chambre partagée est encouragée pour maximiser le nombre de bénéficiaires de l'aide financière.",
-    "subsistenceTitle": "Subsistance",
-    "subsistenceText": "L'aide à la subsistance couvre les frais de repas et de transport local pendant la conférence. Notez que les déjeuners et les pauses café sont inclus dans le billet de conférence.",
-    "timelineTitle": "Calendrier",
-    "timelineIntro": "Voici les dates clés du programme d'aide financière :",
-    "timelineItems": [
-      { "label": "1er avril 2026", "text": "Ouverture des candidatures pour l'aide financière." },
-      { "label": "30 juin 2026", "text": "Date limite de soumission des candidatures." },
-      { "label": "15 juillet 2026", "text": "Notification des résultats aux candidats." },
-      { "label": "1er août 2026", "text": "Date limite de confirmation par les bénéficiaires." },
-      { "label": "Après la conférence", "text": "Remboursement des frais sur présentation des justificatifs." }
-    ],
-    "fundsTitle": "Versement des fonds",
-    "fundsP1": "Les subventions pour les billets de conférence seront appliquées directement à votre inscription. Pour les frais de voyage et d'hébergement, le remboursement sera effectué après la conférence sur présentation des justificatifs originaux.",
-    "fundsP2": "Dans certains cas, un paiement anticipé partiel peut être accordé pour les frais de voyage, notamment pour les participants internationaux. Cette décision est prise au cas par cas.",
-    "fundsP3": "Les bénéficiaires doivent participer effectivement à la conférence pour recevoir le remboursement. En cas d'annulation sans motif valable, les subventions déjà versées devront être restituées.",
-    "organizedBy": "Organisé par Python Cameroun",
-    "contactUs": "Nous contacter"
+    "intro": "Nous savons que participer à une conférence implique de vraies dépenses, et nous voulons être transparents sur ce que nous pouvons et ne pouvons pas prendre en charge cette année.",
+    "noTransportTitle": "Pas d'aide pour le transport ou le voyage",
+    "noTransportText": "En raison de notre budget limité, PyCon Cameroun 2026 n'est pas en mesure de fournir une aide financière pour le transport (vols, bus, taxis), l'hébergement ou les frais quotidiens. Les participants sont responsables de leur propre voyage et séjour.",
+    "waiverTitle": "Exonération optionnelle des frais de billet",
+    "waiverText": "Si le prix du billet est un frein à votre participation, nous pouvons, au cas par cas, accorder une exonération des frais de billet. La priorité est donnée aux étudiants, aux organisateurs de communautés et aux contributeurs qui ne pourraient autrement pas assister.",
+    "howToRequestTitle": "Comment demander une exonération",
+    "howToRequestText": "Envoyez un e-mail aux organisateurs en décrivant votre situation et les raisons pour lesquelles une exonération vous aiderait à participer. Utilisez le bouton ci-dessous pour ouvrir un modèle d'e-mail pré-rempli, puis modifiez les champs avec vos informations avant l'envoi.",
+    "requestButton": "Demander une exonération de billet",
+    "clickNote": "Le bouton ouvre votre client de messagerie. Si cela ne fonctionne pas, écrivez-nous directement à",
+    "emailSubject": "PyCon Cameroun 2026 : Demande d'exon\u00e9ration de billet",
+    "emailBody": "Bonjour l'\u00e9quipe organisatrice de PyCon Cameroun,\n\nJe souhaite demander une exon\u00e9ration des frais de billet pour participer \u00e0 PyCon Cameroun 2026.\n\nNom complet : \nVille / Pays : \nProfil (\u00e9tudiant / d\u00e9butant / contributeur communautaire / autre) : \nImplication dans la communaut\u00e9 Python (clubs, meetups, open source, etc.) : \n\nPourquoi je demande une exon\u00e9ration :\n(Quelques phrases pour expliquer votre situation et pourquoi le co\u00fbt du billet est un frein.)\n\nComment je compte contribuer en retour \u00e0 la communaut\u00e9 :\n(Partager les apprentissages lors d'un meetup local, r\u00e9diger un article, faire du b\u00e9n\u00e9volat, etc.)\n\nMerci d'avance pour votre consid\u00e9ration.\n\nCordialement,\n[Votre nom]"
+  },
+  "touristSites": {
+    "title": "Sites touristiques \u00e0",
+    "titleHighlight": "Yaound\u00e9",
+    "subtitle": "D\u00e9couvrez la capitale au-del\u00e0 de la conf\u00e9rence",
+    "intro": "Quelques id\u00e9es pour explorer Yaound\u00e9 avant ou apr\u00e8s PyCon Cameroun. Cliquez sur une carte pour voir plus de d\u00e9tails, le temps \u00e0 pr\u00e9voir et quelques conseils pratiques.",
+    "viewDetails": "Voir les d\u00e9tails",
+    "close": "Fermer",
+    "duration": "Temps \u00e0 pr\u00e9voir",
+    "durationHours": "Environ {{hours}} heure(s)",
+    "gettingThere": "S'y rendre",
+    "highlights": "\u00c0 retenir"
   },
   "data": {
     "tracks": {
@@ -609,6 +571,107 @@
       { "name": "Basilique Marie-Reine-des-Ap\u00f4tres", "description": "Basilique impressionnante au sommet d'une colline avec vue panoramique, l'une des plus belles \u00e9glises d'Afrique centrale." },
       { "name": "Dade Park", "description": "Un parc r\u00e9cr\u00e9atif populaire \u00e0 Yaound\u00e9 avec des espaces verts, des aires de jeux et des divertissements le week-end." }
     ],
+    "touristSites": {
+      "national-museum": {
+        "name": "Mus\u00e9e National du Cameroun",
+        "description": "D\u00e9couvrez la richesse de l'histoire et de la culture du Cameroun dans cet ancien palais pr\u00e9sidentiel.",
+        "longDescription": "Install\u00e9 dans l'ancien palais pr\u00e9sidentiel, le Mus\u00e9e National retrace les royaumes pr\u00e9coloniaux, la p\u00e9riode coloniale et l'identit\u00e9 contemporaine du Cameroun \u00e0 travers l'art, les artefacts et les insignes royaux.",
+        "gettingThere": "Centre de Yaound\u00e9, pr\u00e8s du Boulevard du 20 Mai. Un court trajet en taxi depuis la plupart des h\u00f4tels du centre-ville.",
+        "highlights": [
+          "Souvent ferm\u00e9 le lundi. V\u00e9rifiez les horaires avant votre visite.",
+          "Pr\u00e9voyez 1 \u00e0 2 heures pour une visite tranquille.",
+          "La prise de photos \u00e0 l'int\u00e9rieur peut faire l'objet d'un suppl\u00e9ment."
+        ]
+      },
+      "bois-sainte-anastasie": {
+        "name": "Bois Sainte Anastasie",
+        "description": "Un bel espace vert urbain, id\u00e9al pour une promenade au c\u0153ur de la nature en pleine ville.",
+        "longDescription": "Une petite for\u00eat urbaine tranquille au c\u0153ur de Yaound\u00e9. Appr\u00e9ci\u00e9e des habitants pour une marche, un footing ou simplement pour \u00e9chapper au bruit de la ville.",
+        "gettingThere": "Pr\u00e8s de Bastos, centre de Yaound\u00e9. Facilement accessible en taxi ou VTC.",
+        "highlights": [
+          "Pr\u00e9f\u00e9rez le matin pour profiter de la fra\u00eeeur.",
+          "Portez des chaussures de marche confortables.",
+          "Peu d'abris. Emportez de l'eau et une casquette."
+        ]
+      },
+      "monument-reunification": {
+        "name": "Monument de la R\u00e9unification",
+        "description": "Un monument embl\u00e9matique symbolisant la r\u00e9unification des Cameroun fran\u00e7ais et britannique.",
+        "longDescription": "Une tour en spirale et un groupe de sculptures comm\u00e9morant la r\u00e9unification de 1961 des Cameroun fran\u00e7ais et britannique. L'un des lieux les plus photographi\u00e9s de la ville.",
+        "gettingThere": "Quartier Ngoa-Ekell\u00e9, centre de Yaound\u00e9. La plupart des taxis connaissent le site par son nom.",
+        "highlights": [
+          "Lumi\u00e8re optimale pour les photos en fin d'apr\u00e8s-midi.",
+          "\u00c0 combiner avec la visite du Mus\u00e9e National tout proche.",
+          "Surveillez vos effets personnels aux heures d'affluence."
+        ]
+      },
+      "palais-charles-atangana": {
+        "name": "Palais Charles Atangana",
+        "description": "Palais colonial historique d'un chef sup\u00e9rieur, aujourd'hui site du patrimoine culturel.",
+        "longDescription": "Le palais restaur\u00e9 de Charles Atangana, chef sup\u00e9rieur des peuples Ewondo et B\u00e9n\u00e9 au d\u00e9but du XXe si\u00e8cle. Une bonne introduction \u00e0 l'histoire politique du centre du Cameroun.",
+        "gettingThere": "Quartier Efoulan de Yaound\u00e9. Court trajet en taxi depuis le centre-ville.",
+        "highlights": [
+          "Des visites guid\u00e9es sont souvent possibles. Renseignez-vous \u00e0 l'entr\u00e9e.",
+          "Un petit pourboire pour le guide est appr\u00e9ci\u00e9.",
+          "Compl\u00e9mentaire au Mus\u00e9e National pour une journ\u00e9e ax\u00e9e sur l'histoire."
+        ]
+      },
+      "mvog-betsi-zoo": {
+        "name": "Zoo de Mvog-Betsi",
+        "description": "Le zoo et jardin botanique de Yaound\u00e9, abritant la faune locale dont des primates et oiseaux tropicaux.",
+        "longDescription": "\u00c9galement connu comme sanctuaire des primates de la M\u00e9fou, ce lieu accueille et r\u00e9habilite des primates originaires du Cameroun, notamment des gorilles, chimpanz\u00e9s et mandrills, dans un cadre forestier.",
+        "gettingThere": "Mvog-Betsi, sud-ouest de Yaound\u00e9. Le taxi est l'option la plus simple.",
+        "highlights": [
+          "Les visites matinales offrent le plus d'activit\u00e9 animale.",
+          "Pr\u00e9voyez des esp\u00e8ces. Le paiement par carte est rare.",
+          "Ne nourrissez pas les animaux ; suivez les consignes du personnel."
+        ]
+      },
+      "lac-municipal": {
+        "name": "Lac Municipal de Yaound\u00e9",
+        "description": "Un lac artificiel pittoresque en centre-ville, appr\u00e9ci\u00e9 pour les promenades et les sorties en barque.",
+        "longDescription": "Un lac artificiel au pied du Mont F\u00e9bu, bord\u00e9 d'une promenade, de petits caf\u00e9s et souvent de vendeurs de nourriture de rue. Un bon endroit pour se d\u00e9tendre au coucher du soleil.",
+        "gettingThere": "Centre de Yaound\u00e9, accessible \u00e0 pied depuis de nombreux h\u00f4tels.",
+        "highlights": [
+          "Les week-ends sont anim\u00e9s. Plus calme en semaine.",
+          "Sorties en barque disponibles pour une somme modique.",
+          "Go\u00fbtez au poisson grill\u00e9 des vendeurs \u00e0 proximit\u00e9."
+        ]
+      },
+      "eco-park": {
+        "name": "Eco Park Yaound\u00e9",
+        "description": "Un parc de loisirs vert proposant sentiers, aires de pique-nique et activit\u00e9s en plein air.",
+        "longDescription": "Un parc \u00e9cologique familial en p\u00e9riph\u00e9rie de Yaound\u00e9, avec des sentiers, des aires de pique-nique et quelques activit\u00e9s de plein air. Une pause agr\u00e9able loin de la ville.",
+        "gettingThere": "Hors du centre de Yaound\u00e9. N\u00e9gociez le tarif avec le taxi avant de partir et demandez-lui de revenir vous chercher.",
+        "highlights": [
+          "Pr\u00e9voyez eau, snacks et cr\u00e8me solaire.",
+          "Id\u00e9al pour une matin\u00e9e de week-end.",
+          "Le r\u00e9seau peut \u00eatre faible. T\u00e9l\u00e9chargez votre carte au pr\u00e9alable."
+        ]
+      },
+      "basilique": {
+        "name": "Basilique Marie-Reine-des-Ap\u00f4tres",
+        "description": "Basilique impressionnante sur une colline, offrant une vue panoramique sur Yaound\u00e9.",
+        "longDescription": "Basilique moderne perch\u00e9e sur une colline, \u00e0 l'architecture marquante et offrant une vue imprenable sur Yaound\u00e9. Paisible en dehors des heures de messe.",
+        "gettingThere": "Quartier Mvolye, au sud de Yaound\u00e9. Trajet en taxi depuis le centre-ville.",
+        "highlights": [
+          "Tenue vestimentaire sobre. C'est un lieu de culte actif.",
+          "Superbes couchers de soleil depuis le parvis.",
+          "Les dons pour l'entretien du site sont bienvenus."
+        ]
+      },
+      "dade-park": {
+        "name": "Dade Park",
+        "description": "Un parc r\u00e9cr\u00e9atif populaire avec espaces verts, aires de jeux et divertissements le week-end.",
+        "longDescription": "Un lieu appr\u00e9ci\u00e9 des habitants pour les week-ends, avec espaces verts, aires de jeux et parfois de la musique ou des \u00e9v\u00e9nements en direct.",
+        "gettingThere": "Centre de Yaound\u00e9. Facilement accessible en taxi ou VTC.",
+        "highlights": [
+          "Plus anim\u00e9 les week-ends. Plus calme en matin\u00e9e de semaine.",
+          "Petits stands de nourriture sur place ; pr\u00e9voyez de la monnaie.",
+          "Un bon arr\u00eat court entre deux visites."
+        ]
+      }
+    },
     "sponsors": {
       "diamond": {
         "description": "Le forfait de sponsoring ultime pour une visibilit\u00e9 et un impact maximum.",

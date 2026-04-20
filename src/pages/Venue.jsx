@@ -1,12 +1,15 @@
 import React from 'react';
-import { Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Check, MapPin } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import VenueCard from '../components/VenueCard';
+import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { venueData as venueImages } from '../data/venues';
 
 const Venue = () => {
     const { t } = useTranslation();
+    const { l } = useLocalizedPath();
     useScrollAnimation();
 
     const facilityItems = t('venue.facilityItems', { returnObjects: true });
@@ -75,9 +78,9 @@ const Venue = () => {
                             <p className="mb-md">
                                 {t('venue.accommodationText')}
                             </p>
-                            <div className="alert alert-info">
+                            <p>
                                 <strong>{t('venue.officialHotels')}</strong> {t('venue.hotelsSoon')}
-                            </div>
+                            </p>
                             <p className="card-text">
                                 {t('venue.accommodationRange')}
                             </p>
@@ -111,9 +114,16 @@ const Venue = () => {
                     </div>
 
                     <div className="grid grid-3 stagger">
-                        {venueImages.map((venue, index) => (
+                        {venueImages.slice(0, 3).map((venue, index) => (
                             <VenueCard key={index} venue={{ ...venue, name: translatedVenues[index]?.name || venue.name, description: translatedVenues[index]?.description || venue.description }} />
                         ))}
+                    </div>
+
+                    <div className="text-center" style={{ marginTop: 'var(--spacing-lg)' }}>
+                        <Link to={l('/tourist-sites')} className="btn btn-secondary">
+                            <MapPin size="1em" style={{ verticalAlign: '-0.125em', marginRight: '0.5rem' }} />
+                            {t('venue.exploreMore')}
+                        </Link>
                     </div>
                 </div>
             </section>
