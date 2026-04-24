@@ -138,6 +138,8 @@
     "importantNotes": "Important Notes",
     "aiPolicy": "AI-Generated Content Policy",
     "aiPolicyText": "Proposal submissions that are solely or largely written by AI tools (such as ChatGPT, Claude, etc.) will not be accepted. Your proposal should reflect your own thoughts and expertise.",
+    "inPersonOnly": "In-Person Only (Sorry, Webcams!)",
+    "inPersonOnlyText": "All PyCon Cameroon talks happen live and on stage at our Yaoundé venue. We do not accept remote or online sessions. Presenting through a webcam just kills the fun. The magic lives in the hallway chats, the post-talk high-fives, the shared laughs over a plate of ndolé, and that unmistakable buzz of a room packed with Pythonistas. If you are selected, pack your bags and come see us IRL!",
     "proposalLimit": "Proposal Limit",
     "proposalLimitItems": ["Each individual may submit a maximum of two proposals", "Each proposal may include a maximum of two speakers", "Co-speaking counts toward your submission limit"],
     "recordingNotice": "Recording Notice",

@@ -202,6 +202,11 @@ const Speakers = () => {
                         </div>
 
                         <div style={{ marginTop: 'var(--spacing-md)' }}>
+                            <h4 style={{ marginBottom: 'var(--spacing-xs)' }}>{t('speakers.inPersonOnly')}</h4>
+                            <p>{t('speakers.inPersonOnlyText')}</p>
+                        </div>
+
+                        <div style={{ marginTop: 'var(--spacing-md)' }}>
                             <h4 style={{ marginBottom: 'var(--spacing-xs)' }}>{t('speakers.proposalLimit')}</h4>
                             <ul style={{ paddingLeft: '1.5rem' }}>
                                 {t('speakers.proposalLimitItems', { returnObjects: true }).map((item, index) => (

@@ -138,6 +138,8 @@
     "importantNotes": "Notes importantes",
     "aiPolicy": "Politique sur le contenu g\u00e9n\u00e9r\u00e9 par IA",
     "aiPolicyText": "Les soumissions de propositions \u00e9crites enti\u00e8rement ou principalement par des outils d'IA (comme ChatGPT, Claude, etc.) ne seront pas accept\u00e9es. Votre proposition doit refl\u00e9ter vos propres pens\u00e9es et expertise.",
+    "inPersonOnly": "Uniquement en pr\u00e9sentiel (d\u00e9sol\u00e9, les webcams !)",
+    "inPersonOnlyText": "Toutes les conf\u00e9rences PyCon Cameroun se d\u00e9roulent en direct, sur sc\u00e8ne, \u00e0 notre lieu de Yaound\u00e9. Nous n'acceptons pas les sessions \u00e0 distance ou en ligne. Pr\u00e9senter derri\u00e8re une webcam, \u00e7a tue carr\u00e9ment l'ambiance. La magie se vit dans les discussions de couloir, les high-fives apr\u00e8s les talks, les \u00e9clats de rire autour d'un bon ndol\u00e9, et cette \u00e9nergie unique d'une salle remplie de Pythonistes. Si vous \u00eates s\u00e9lectionn\u00e9(e), faites vos valises et venez nous rejoindre pour de vrai !",
     "proposalLimit": "Limite de propositions",
     "proposalLimitItems": ["Chaque personne peut soumettre un maximum de deux propositions", "Chaque proposition peut inclure un maximum de deux intervenants", "La co-intervention compte dans votre limite de soumission"],
     "recordingNotice": "Avis d'enregistrement",
