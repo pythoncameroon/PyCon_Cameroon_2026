@@ -13,6 +13,7 @@ export const teamData = [
     role: "Co-Lead, Mentorship / Learning Coordinator",
     image: "/images/organizers/edmond-makole.webp",
     linkedin: "https://www.linkedin.com/in/edmondmakolle",
+    website: "https://landing.edmondmakolle.com",
     color: "green",
     gradient: "teal",
   },
