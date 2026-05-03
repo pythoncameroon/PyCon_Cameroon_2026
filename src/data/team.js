@@ -57,4 +57,12 @@ export const teamData = [
     color: "purple",
     gradient: "blue",
   },
+  {
+    name: "Emy Njong",
+    role: "Organizer",
+    image: "/images/organizers/emy.webp",
+    linkedin: "https://www.linkedin.com/in/njong-emy",
+    color: "pink",
+    gradient: "purple",
+  },
 ];
