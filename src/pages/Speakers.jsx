@@ -22,9 +22,9 @@ function getCfpStatus(now) {
 }
 
 function getTimelineItemStatus(milestone, index, now) {
-    const nextMilestone = TIMELINE_MILESTONES[index + 1];
-    if (nextMilestone && now >= nextMilestone.date) return 'past';
-    if (now >= milestone.date) return 'active';
+    if (now >= milestone.date) return 'past';
+    const prevMilestone = TIMELINE_MILESTONES[index - 1];
+    if (!prevMilestone || now >= prevMilestone.date) return 'active';
     return 'upcoming';
 }
 
