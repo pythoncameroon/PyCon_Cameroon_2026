@@ -1,6 +1,7 @@
 {
   "nav": {
     "about": "\u00c0 propos",
+    "agenda": "Agenda",
     "speakers": "Intervenants",
     "sponsor": "Sponsoriser",
     "attend": "Participer",
@@ -15,6 +16,7 @@
     "codeOfConduct": "Code de conduite",
     "psf": "Python Software Foundation",
     "program": "Programme",
+    "agenda": "Agenda",
     "speakers": "Intervenants",
     "proposalGuidelines": "Guide de soumission",
     "venue": "Lieu",
@@ -32,6 +34,7 @@
     "heroSubtitle": "La conf\u00e9rence Python de l'Afrique, r\u00e9imagin\u00e9e au c\u0153ur de l'Afrique",
     "heroDate": "17-19 septembre 2026",
     "heroLocation": "Yaound\u00e9, Cameroun",
+    "viewAgenda": "Voir l'agenda",
     "callForSpeakers": "Appel aux intervenants",
     "getYourTicket": "Obtenez votre billet",
     "welcomeTitle": "Bienvenue \u00e0",
@@ -505,7 +508,15 @@
     "ctaTitle": "Participez au track UbuCon",
     "ctaText": "Que vous souhaitiez présenter une conférence sur Ubuntu, animer un atelier open source ou simplement apprendre des meilleurs, le track UbuCon à PyCon Cameroun est fait pour vous.",
     "ctaSubmit": "Soumettre une proposition",
-    "ctaTicket": "Obtenir votre billet"
+    "ctaTicket": "Obtenir votre billet",
+    "agendaTitle": "Programme",
+    "agendaHighlight": "UbuCon"
+  },
+  "agenda": {
+    "title": "Agenda de la",
+    "titleHighlight": "Conférence",
+    "subtitle": "Trois jours de Python, Ubuntu et open source — 17-19 septembre 2026",
+    "note": "Le programme est susceptible de changer. Tous les horaires sont locaux (WAT, UTC+1)."
   },
   "financialAid": {
     "title": "Aide",

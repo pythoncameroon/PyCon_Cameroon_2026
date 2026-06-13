@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
-import { Calendar, MapPin, Mic, Ticket } from 'lucide-react';
+import { Calendar, MapPin, CalendarDays, Ticket } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import LazyImage from '../components/LazyImage';
@@ -35,8 +35,8 @@ const Home = () => {
                     </div>
 
                     <div className="hero-buttons">
-                        <Link to={l('/speakers#call-for-speakers')} className="btn btn-primary btn-lg">
-                            <Mic size="1em" style={{ verticalAlign: '-0.125em' }} /> {t('home.callForSpeakers')}
+                        <Link to={l('/agenda')} className="btn btn-primary btn-lg">
+                            <CalendarDays size="1em" style={{ verticalAlign: '-0.125em' }} /> {t('home.viewAgenda')}
                         </Link>
                         <Link to={l('/attend')} className="btn btn-secondary btn-lg">
                             <Ticket size="1em" style={{ verticalAlign: '-0.125em' }} /> {t('home.getYourTicket')}

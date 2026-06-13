@@ -17,6 +17,7 @@ const CodeOfConduct = lazy(() => import('./pages/CodeOfConduct'));
 const UbuCon = lazy(() => import('./pages/UbuCon'));
 const FinancialAid = lazy(() => import('./pages/FinancialAid'));
 const TouristSites = lazy(() => import('./pages/TouristSites'));
+const Agenda = lazy(() => import('./pages/Agenda'));
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -86,6 +87,7 @@ function App() {
         <Route path="ubucon" element={<LazyPage><UbuCon /></LazyPage>} />
         <Route path="financial-aid" element={<LazyPage><FinancialAid /></LazyPage>} />
         <Route path="tourist-sites" element={<LazyPage><TouristSites /></LazyPage>} />
+        <Route path="agenda" element={<LazyPage><Agenda /></LazyPage>} />
         <Route path="*" element={<LegacyRedirect />} />
       </Route>
 

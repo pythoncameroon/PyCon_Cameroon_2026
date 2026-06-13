@@ -67,6 +67,7 @@ const Footer = () => {
                     <div>
                         <h4 className="footer-title">{t('footer.program')}</h4>
                         <div className="footer-links">
+                            <Link to={l('/agenda')}>{t('footer.agenda')}</Link>
                             <Link to={l('/speakers')}>{t('footer.speakers')}</Link>
                             <Link to={l('/speakers#guidelines')}>{t('footer.proposalGuidelines')}</Link>
                             <Link to={l('/venue')}>{t('footer.venue')}</Link>
