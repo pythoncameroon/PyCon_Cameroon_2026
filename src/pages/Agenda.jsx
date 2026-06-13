@@ -119,34 +119,15 @@ const Agenda = () => {
 
             <section className="section bg-dark">
                 <div className="container">
-                    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 'var(--spacing-xl)' }}>
-                        <div style={{
-                            display: 'inline-flex',
-                            background: 'var(--color-dark-alt)',
-                            borderRadius: '20px',
-                            padding: '6px',
-                            border: '1px solid var(--color-border)',
-                            gap: '4px',
-                        }}>
+                    <div className="agenda-toggle-wrap">
+                        <div className="agenda-toggle">
                             {DAYS.map((day) => {
                                 const isActive = activeDay === day.key;
                                 return (
                                     <button
                                         key={day.key}
                                         onClick={() => handleDayChange(day.key)}
-                                        style={{
-                                            padding: '0.65rem 0',
-                                            borderRadius: '14px',
-                                            border: 'none',
-                                            cursor: 'pointer',
-                                            transition: 'all 0.3s ease',
-                                            background: isActive ? 'var(--color-orange)' : 'transparent',
-                                            color: isActive ? 'white' : 'var(--color-text-secondary)',
-                                            width: '200px',
-                                            fontWeight: 700,
-                                            fontSize: '1.05rem',
-                                            fontFamily: 'var(--font-ui)',
-                                        }}
+                                        className={`agenda-toggle-btn ${isActive ? 'active' : ''}`}
                                     >
                                         {day.label}
                                     </button>

@@ -99,7 +99,7 @@ const SpeakerDetail = () => {
 
             <section className="section bg-dark">
                 <div className="container">
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 300px', gap: 'var(--spacing-xl)', alignItems: 'start' }}>
+                    <div className="speaker-detail-grid">
                         {speaker.talk && (
                             <div>
                                 <div className="card" style={{ borderTop: '3px solid var(--color-orange)', padding: 'var(--spacing-lg)', marginBottom: 'var(--spacing-md)' }}>
