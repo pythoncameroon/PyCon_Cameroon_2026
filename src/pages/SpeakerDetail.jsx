@@ -31,14 +31,11 @@ const SpeakerDetail = () => {
 
     return (
         <>
-            <div className="container" style={{ paddingTop: 'var(--spacing-md)' }}>
-                <Link to={l('/speakers')} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: 'var(--color-orange)', fontFamily: 'var(--font-ui)', fontSize: '0.9rem', fontWeight: 600 }}>
-                    <ArrowLeft size={16} /> {t('speakers.backToSpeakers')}
-                </Link>
-            </div>
-
-            <header className="page-header" style={{ paddingTop: 'var(--spacing-md)' }}>
-                <div className="container">
+            <header className="page-header" style={{ display: 'block' }}>
+                <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'left' }}>
+                    <Link to={l('/speakers')} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: 'var(--color-orange)', fontFamily: 'var(--font-ui)', fontSize: '0.9rem', fontWeight: 600, marginBottom: 'var(--spacing-md)' }}>
+                        <ArrowLeft size={16} /> {t('speakers.backToSpeakers')}
+                    </Link>
                     <div style={{ display: 'flex', gap: 'var(--spacing-lg)', alignItems: 'center', flexWrap: 'wrap' }}>
                         {speaker.photo ? (
                             <img
@@ -71,15 +68,15 @@ const SpeakerDetail = () => {
                                 {speaker.name.charAt(0)}
                             </div>
                         )}
-                        <div>
+                        <div style={{ textAlign: 'left' }}>
                             <h1 style={{ margin: '0 0 4px' }}>{speaker.name}</h1>
                             {speaker.title && (
-                                <p style={{ color: 'var(--color-orange)', fontWeight: 600, fontSize: '1rem', margin: '0 0 8px' }}>
+                                <p style={{ color: 'var(--color-orange)', fontWeight: 600, fontSize: '1rem', margin: '0 0 8px', maxWidth: 'none' }}>
                                     {speaker.title}
                                 </p>
                             )}
                             {speaker.country && (
-                                <p style={{ display: 'flex', alignItems: 'center', gap: '5px', color: 'var(--color-text-secondary)', fontSize: '0.9rem', margin: '0 0 var(--spacing-sm)' }}>
+                                <p style={{ display: 'flex', alignItems: 'center', gap: '5px', color: 'var(--color-text-secondary)', fontSize: '0.9rem', margin: '0 0 var(--spacing-sm)', maxWidth: 'none' }}>
                                     <MapPin size={14} /> {speaker.country}
                                 </p>
                             )}
@@ -99,8 +96,6 @@ const SpeakerDetail = () => {
                     </div>
                 </div>
             </header>
-
-            <div className="tribal-border"></div>
 
             <section className="section bg-dark">
                 <div className="container">

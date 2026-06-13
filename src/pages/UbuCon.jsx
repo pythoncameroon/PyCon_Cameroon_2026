@@ -155,7 +155,7 @@ const UbuCon = () => {
                                     </div>
                                     {isBreak ? (
                                         <div style={{ flex: 1, borderTop: '1px dashed var(--color-border)', paddingTop: '0.5rem', fontSize: '0.9rem', color: 'var(--color-text-muted)' }}>
-                                            {session.title}{session.room ? ` — ${session.room}` : ''}
+                                            {session.title}{session.room ? `, ${session.room}` : ''}
                                         </div>
                                     ) : (
                                         <div className="card" style={{ flex: 1, padding: 'var(--spacing-md)', borderLeft: `4px solid ${style.color}`, margin: 0 }}>

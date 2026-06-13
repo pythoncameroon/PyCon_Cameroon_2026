@@ -13,7 +13,7 @@ export const speakers = [
             category: 'Community',
             day: 'day1',
             track: 'Main Hall',
-            abstract: 'In this talk, Steve shares the story of building Python Cameroon from scratch — the challenges, the wins, and the lessons learned along the way. He covers community organizing strategies, how to engage developers in regions with limited resources, and what it takes to organize a PyCon in a country where it has never been done before. Attendees will leave with practical insights for growing tech communities in emerging markets.',
+            abstract: 'In this talk, Steve shares the story of building Python Cameroon from scratch, covering the challenges, the wins, and the lessons learned along the way. He walks through community organizing strategies, how to engage developers in regions with limited resources, and what it takes to organize a PyCon in a country where it has never been done before. Attendees will leave with practical insights for growing tech communities in emerging markets.',
         },
     },
     {
@@ -30,7 +30,7 @@ export const speakers = [
             category: 'Data Science',
             day: 'day3',
             track: 'Track A',
-            abstract: 'Africa faces unique challenges — from agriculture and healthcare to education and financial inclusion. In this talk, Edmond explores how Python is being used by developers and organizations across the continent to tackle these problems head-on. Through real case studies and live demos, he demonstrates how accessible Python tooling can drive meaningful impact even in resource-constrained environments.',
+            abstract: 'Africa faces unique challenges, from agriculture and healthcare to education and financial inclusion. In this talk, Edmond explores how Python is being used by developers and organizations across the continent to tackle these problems head-on. Through real case studies and live demos, he demonstrates how accessible Python tooling can drive meaningful impact even in resource-constrained environments.',
         },
     },
 ];
