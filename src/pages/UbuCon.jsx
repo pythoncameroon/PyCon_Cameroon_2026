@@ -62,12 +62,6 @@ const UbuCon = () => {
                             <p>
                                 {t('ubucon.whatIsP2')}
                             </p>
-                            <div className="mt-md">
-                                <a href="https://sessionize.com/pycon-camerooon-2026" target="_blank" rel="noopener noreferrer" className="btn btn-lg"
-                                    style={{ background: UBUNTU_ORANGE, color: 'white', border: 'none' }}>
-                                    {t('ubucon.submitTalk')}
-                                </a>
-                            </div>
                         </div>
                         <div className="card" style={{
                             padding: 'var(--spacing-lg)',
@@ -204,12 +198,8 @@ const UbuCon = () => {
                         {t('ubucon.ctaText')}
                     </p>
                     <div className="flex justify-center gap-sm flex-wrap">
-                        <a href="https://sessionize.com/pycon-camerooon-2026" target="_blank" rel="noopener noreferrer" className="btn btn-lg"
+                        <Link to={l('/attend')} className="btn btn-lg"
                             style={{ background: 'white', color: UBUNTU_ORANGE }}>
-                            {t('ubucon.ctaSubmit')}
-                        </a>
-                        <Link to={l('/attend')} className="btn btn-lg btn-secondary"
-                            style={{ borderColor: 'white', color: 'white' }}>
                             {t('ubucon.ctaTicket')}
                         </Link>
                     </div>

@@ -160,6 +160,10 @@
     "featuredSubtitle": "D\u00e9couvrez nos intervenants confirm\u00e9s pour PyCon Cameroun 2026",
     "comingSoon": "Bient\u00f4t disponible !",
     "comingSoonText": "Notre liste d'intervenants est en cours de finalisation. Revenez bient\u00f4t pour d\u00e9couvrir les intervenants incroyables qui nous rejoindront \u00e0 PyCon Cameroun 2026 !",
+    "backToSpeakers": "Retour aux intervenants",
+    "aboutSpeaker": "\u00c0 propos de l'intervenant",
+    "talkDetails": "D\u00e9tails de la conf\u00e9rence",
+    "notFound": "Intervenant introuvable.",
     "whySpeakTitle": "Pourquoi",
     "whySpeakHighlight": "Intervenir",
     "whySpeakSuffix": "\u00e0 PyCon Cameroun ?",
@@ -549,7 +553,7 @@
   "data": {
     "tracks": {
       "newTrack": "Nouveau Track",
-      "submitTalk": "Soumettre une conf\u00e9rence {{label}}",
+      "viewSpeakers": "Intervenants {{label}}",
       "attendTrack": "Participer au track {{label}}",
       "trackHighlights": "Points forts du track {{label}}",
       "ubucon": [

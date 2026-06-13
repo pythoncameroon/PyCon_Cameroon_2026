@@ -199,9 +199,6 @@ const Home = () => {
                         <Link to={l('/attend')} className="btn btn-lg" style={{ background: 'white', color: 'var(--color-orange)' }}>
                             {t('home.getYourTicket')}
                         </Link>
-                        <Link to={l('/speakers')} className="btn btn-lg btn-secondary" style={{ borderColor: 'white', color: 'white' }}>
-                            {t('home.submitATalk')}
-                        </Link>
                         <a href={sponsorshipDeckUrl} target="_blank" rel="noopener noreferrer" className="btn btn-lg btn-secondary" style={{ borderColor: 'white', color: 'white' }}>
                             {t('home.sponsorshipDeck')}
                         </a>

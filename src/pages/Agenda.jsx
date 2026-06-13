@@ -135,27 +135,20 @@ const Agenda = () => {
                                         key={day.key}
                                         onClick={() => handleDayChange(day.key)}
                                         style={{
-                                            padding: '1.1rem 3rem',
+                                            padding: '0.65rem 0',
                                             borderRadius: '14px',
                                             border: 'none',
                                             cursor: 'pointer',
                                             transition: 'all 0.3s ease',
                                             background: isActive ? 'var(--color-orange)' : 'transparent',
                                             color: isActive ? 'white' : 'var(--color-text-secondary)',
-                                            display: 'flex',
-                                            flexDirection: 'column',
-                                            alignItems: 'center',
-                                            gap: '3px',
-                                            minWidth: '160px',
+                                            width: '200px',
+                                            fontWeight: 700,
+                                            fontSize: '1.05rem',
+                                            fontFamily: 'var(--font-ui)',
                                         }}
                                     >
-                                        <span style={{ fontWeight: 700, fontSize: '1.15rem', fontFamily: 'var(--font-ui)' }}>{day.label}</span>
-                                        <span style={{
-                                            fontSize: '0.85rem',
-                                            fontWeight: 500,
-                                            opacity: isActive ? 0.9 : 0.6,
-                                            fontFamily: 'var(--font-ui)',
-                                        }}>{day.sublabel}</span>
+                                        {day.label}
                                     </button>
                                 );
                             })}
