@@ -13,7 +13,8 @@ const LanguageSync = ({ children }) => {
     useEffect(() => {
         if (!SUPPORTED_LANGS.includes(lang)) {
             const savedLang = localStorage.getItem('pycon-lang') || 'en';
-            navigate(`/${savedLang}${location.pathname}${location.search}${location.hash}`, { replace: true });
+            const stripped = location.pathname.replace(/^\/(en|fr)(\/|$)/, '/');
+            navigate(`/${savedLang}${stripped === '/' ? '' : stripped}${location.search}${location.hash}`, { replace: true });
             return;
         }
 

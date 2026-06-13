@@ -60,7 +60,8 @@ function LazyPage({ children }) {
 function LegacyRedirect() {
   const location = useLocation();
   const lang = localStorage.getItem('pycon-lang') || 'en';
-  const path = location.pathname === '/' ? '' : location.pathname;
+  const stripped = location.pathname.replace(/^\/(en|fr)(\/|$)/, '/');
+  const path = stripped === '/' ? '' : stripped;
   return <Navigate to={`/${lang}${path}${location.search}${location.hash}`} replace />;
 }
 
