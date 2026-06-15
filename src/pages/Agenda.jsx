@@ -1,6 +1,6 @@
 import { useSearchParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Clock, MapPin, User, Users, Languages } from 'lucide-react';
+import { Clock, MapPin, User, Languages } from 'lucide-react';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { DAYS, agenda, TYPE_STYLES, LANG_LABELS } from '../data/agenda';
@@ -81,7 +81,7 @@ const BreakRow = ({ session }) => (
     </div>
 );
 
-const SessionCard = ({ session, parallel }) => {
+const SessionCard = ({ session }) => {
     const { l } = useLocalizedPath();
     const style = TYPE_STYLES[session.type] || TYPE_STYLES.talk;
     const speakerId = session.speaker ? resolveSpeakerId(session.speaker) : null;
@@ -109,34 +109,29 @@ const SessionCard = ({ session, parallel }) => {
                     {style.label}
                 </span>
             </div>
-            <div style={{ display: 'flex', gap: 'var(--spacing-md)', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                 {session.speaker && (
                     speakerId ? (
                         <Link
                             to={l(`/speakers/${speakerId}`)}
                             style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-orange)', fontFamily: 'var(--font-ui)', fontWeight: 600, textDecoration: 'none' }}
                         >
-                            <User size={13} style={{ color: 'var(--color-orange)' }} /> {session.speaker}
+                            <User size={13} style={{ color: 'var(--color-orange)', flexShrink: 0 }} /> {session.speaker}
                         </Link>
                     ) : (
                         <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
-                            <User size={13} style={{ color: 'var(--color-orange)' }} /> {session.speaker}
+                            <User size={13} style={{ color: 'var(--color-orange)', flexShrink: 0 }} /> {session.speaker}
                         </span>
                     )
                 )}
                 {session.room && (
                     <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
-                        <MapPin size={13} style={{ color: 'var(--color-orange)' }} /> {session.room}{session.track ? ` · ${session.track}` : ''}
+                        <MapPin size={13} style={{ color: 'var(--color-orange)', flexShrink: 0 }} /> {session.room}{session.track ? ` · ${session.track}` : ''}
                     </span>
                 )}
                 {session.lang && (
                     <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
-                        <Languages size={13} style={{ color: 'var(--color-orange)' }} /> {LANG_LABELS[session.lang]}
-                    </span>
-                )}
-                {parallel && (
-                    <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.78rem', color: 'var(--color-text-muted)', fontFamily: 'var(--font-ui)' }}>
-                        <Users size={12} /> Parallel session
+                        <Languages size={13} style={{ color: 'var(--color-orange)', flexShrink: 0 }} /> {LANG_LABELS[session.lang]}
                     </span>
                 )}
             </div>
@@ -155,7 +150,7 @@ const TimeSlot = ({ slot }) => {
             </div>
             <div className={`agenda-slot-tracks${parallel ? ' is-parallel' : ''}`}>
                 {slot.sessions.map((session, i) => (
-                    <SessionCard key={i} session={session} parallel={parallel} />
+                    <SessionCard key={i} session={session} />
                 ))}
             </div>
         </div>
