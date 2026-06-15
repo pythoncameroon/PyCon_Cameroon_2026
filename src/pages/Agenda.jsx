@@ -1,8 +1,40 @@
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Clock, MapPin, User, Users, Languages } from 'lucide-react';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { DAYS, agenda, TYPE_STYLES, LANG_LABELS } from '../data/agenda';
+import { speakers } from '../data/speakers';
+
+const normalizeName = (s) =>
+    (s || '')
+        .normalize('NFKD')
+        .replace(/[̀-ͯ]/g, '')
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, ' ')
+        .trim();
+
+const NAME_ALIASES = {
+    'kamdem ulrich': 'kamdem-yamen-ulrich-laress-ulrich',
+    'tayo tate desmond': 'tayo-tate-desmond-corentin',
+};
+
+const speakerIdByName = {};
+speakers.forEach((sp) => {
+    speakerIdByName[normalizeName(sp.name)] = sp.id;
+});
+
+const resolveSpeakerId = (name) => {
+    const key = normalizeName(name);
+    if (NAME_ALIASES[key]) return NAME_ALIASES[key];
+    if (speakerIdByName[key]) return speakerIdByName[key];
+    const tokens = key.split(' ').filter(Boolean);
+    const match = speakers.find((sp) => {
+        const spKey = normalizeName(sp.name);
+        return tokens.length > 1 && tokens.every((t) => spKey.includes(t));
+    });
+    return match ? match.id : null;
+};
 
 const groupByTimeSlot = (sessions) => {
     const slots = [];
@@ -50,7 +82,9 @@ const BreakRow = ({ session }) => (
 );
 
 const SessionCard = ({ session, parallel }) => {
+    const { l } = useLocalizedPath();
     const style = TYPE_STYLES[session.type] || TYPE_STYLES.talk;
+    const speakerId = session.speaker ? resolveSpeakerId(session.speaker) : null;
 
     return (
         <div className="card animate-on-scroll slide-up agenda-session-card" style={{
@@ -59,7 +93,7 @@ const SessionCard = ({ session, parallel }) => {
             margin: 0,
         }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 'var(--spacing-sm)', flexWrap: 'wrap', marginBottom: 'var(--spacing-xs)' }}>
-                <h4 style={{ margin: 0, fontSize: '1rem', color: 'var(--color-text-primary)' }}>{session.title}</h4>
+                <h4 style={{ margin: 0, fontSize: '1rem', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontWeight: 700, lineHeight: 1.35 }}>{session.title}</h4>
                 <span style={{
                     fontSize: '0.72rem',
                     fontWeight: 700,
@@ -77,9 +111,18 @@ const SessionCard = ({ session, parallel }) => {
             </div>
             <div style={{ display: 'flex', gap: 'var(--spacing-md)', flexWrap: 'wrap' }}>
                 {session.speaker && (
-                    <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
-                        <User size={13} style={{ color: 'var(--color-orange)' }} /> {session.speaker}
-                    </span>
+                    speakerId ? (
+                        <Link
+                            to={l(`/speakers/${speakerId}`)}
+                            style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-orange)', fontFamily: 'var(--font-ui)', fontWeight: 600, textDecoration: 'none' }}
+                        >
+                            <User size={13} style={{ color: 'var(--color-orange)' }} /> {session.speaker}
+                        </Link>
+                    ) : (
+                        <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
+                            <User size={13} style={{ color: 'var(--color-orange)' }} /> {session.speaker}
+                        </span>
+                    )
                 )}
                 {session.room && (
                     <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
