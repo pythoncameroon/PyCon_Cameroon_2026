@@ -21,7 +21,7 @@ export const speakers = [    {
         photo: '/speakers/Ariane_Djeupang_J.webp',
         country: 'Cameroon',
         title: 'ML Engineer',
-        bio: 'Ariane Djeupang is a ML Engineer and Project/Program Manager, a Microsoft MVP Awardee passionate about fostering community growth and innovation in the tech industry. She is dedicated to promoting diversity and inclusion, actively participating in the tech and non-tech communities and other initiatives that empower underrepresented groups in technology. Her commitment to mentorship and community-driven change drives her efforts to create supportive environments where everyone can thrive and excel, and have a sincere sense of belonging.',
+        bio: 'ML Engineer, Project/Program Manager, and Microsoft MVP awardee passionate about community growth and innovation. She champions diversity and inclusion, actively empowering underrepresented groups in tech through mentorship and community-driven change, building supportive environments where everyone can thrive and feel a genuine sense of belonging.',
         talk: {
             title: 'Open Documentation Academy: Your First Open Source Contribution',
             category: 'Ubuntu & Linux',
@@ -36,7 +36,7 @@ export const speakers = [    {
         photo: '/speakers/Sema_Kumbela_Fombutu.webp',
         country: 'Cameroon',
         title: 'People-Systems-Legacy : building resilient people and durable systems designed to outlast a single generation',
-        bio: 'Sema Kumbela Fombutu works at the intersection of human development, mental health, and institutional systems. His work is grounded in a clear conviction: sustainable systems are built by healthy, well-structured people. He is the Founder, Director General, and Lead Psychotherapist at Sanity Global Foundation, where he advances mental health research, advocacy, and access to support systems, with a strong focus on the African context. His work addresses youth mental health, workplace wellbeing, and community-based interventions, developed as part of an integrated and scalable ecosystem. He is also the founder of Gold Rock Commissions Global Inc, where he provides oversight across a multi-sector network spanning church leadership, media, humanitarian initiatives, and enterprise development—aligning mission with governance, structure, and long-term continuity. Sema also leads KF Offices Ltd, a business development and consulting firm, and MATSEL Corporation Ltd, which focuses on media and creative systems—extending his impact into enterprise advisory and institutional communication. Across all his work, he is focused on one core outcome: building resilient people and durable systems designed to outlast a single generation. He continues to study and apply principles of governance, psychology, and systems thinking to strengthen both individuals and the institutions they sustain.',
+        bio: 'Works at the intersection of human development, mental health, and institutional systems. Founder and Lead Psychotherapist at Sanity Global Foundation, advancing mental health research and advocacy in the African context. He also leads several enterprises, focused on building resilient people and durable systems designed to outlast a single generation.',
         linkedin: 'https://www.linkedin.com/in/sema-kumbela-fombutu-2765b091?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
         talk: {
             title: 'The Silent Bugs in Tech: Debugging Burnout, Anxiety,and Cognitive Overload in High-Performance Teams',
@@ -52,7 +52,7 @@ export const speakers = [    {
         photo: '/speakers/Vanessa_Manessong.webp',
         country: 'Cameroon',
         title: 'Investigative Data Analyst',
-        bio: 'Vanessa Manessong is an investigative data analyst specialising in the analysis of disinformation campaigns and coordinated inauthentic behaviour (CIB). At the intersection of data analysis and open-source intelligence (OSINT), she detects and documents influence operations, identifies the actors involved, and unpacks the tactics, techniques and procedures (TTPs) used to manipulate information ecosystems. She is also the founder of an organisation dedicated to guiding young people towards careers in the digital sector and enhancing their employability.',
+        bio: 'Investigative data analyst specialising in disinformation campaigns and coordinated inauthentic behaviour. Working at the intersection of data analysis and OSINT, she detects influence operations, identifies the actors, and unpacks their tactics. She also founded an organisation guiding young people toward digital careers and stronger employability.',
         linkedin: 'https://www.linkedin.com/in/vanessa-manessong/',
         website: 'https://disinfo.africa/',
         talk: {
@@ -69,7 +69,7 @@ export const speakers = [    {
         photo: '/speakers/Patrick_Nounga.webp',
         country: 'Cameroon',
         title: 'Law & HR professional, Head of board of Directors, Human Resource Volunteers Association',
-        bio: 'To offer my skills and showcase Cameroonian excellence across the world, out of love for the homeland that taught me everything."This profession of faith, established as a life principle, embodies the trajectory of Patrick NOUNGA, whose personal and professional journey is resolutely part of the dynamic of nation-building and the promotion of Cameroonian excellence.His path is first and foremost one of academic distinction. Valedictorian of his cohort at the National School of Administration and Magistracy (ENAM), a true breeding ground for the Nation\'s elite, he drew from there the foundations of a calling: to serve the State and work for social justice. This success follows a university curriculum in law and management at the University of Yaoundé II, enriched by governance training at the University of Queensland, Australia, and multiple certifications in management and social security.Building on significant early experience in the financial and humanitarian sectors, Patrick NOUNGA now puts his versatility at the service of public administration. As a Labor Administrator, he provides a decisive contribution to strategic national projects. His expertise is sought after in the context of extractive industries governance, the legal safeguarding of local content in major projects, and the modernization of legislative and regulatory frameworks. As a leading consultant and trainer for public, private, and international institutions, he also enriches professional doctrine through his publications dedicated to social policies and the promotion of fundamental human rights.Beyond his institutional responsibilities, Patrick NOUNGA embodies a civic leadership of rare intensity. In his capacity as Chairman of the Board of Directors of the association Human Resource Volunteers, he has designed and led large-scale national programs. These initiatives have provided concrete support to several hundred young people from all ten regions of Cameroon, guiding them toward professional integration, vocational training, and career security. Whether graduates seeking their first job, professionals undergoing retraining, or emerging talents: all have found, through his actions, critical support for their future.Thus, through the rigor of his career, the loftiness of his vision, and the consistency of his social commitment, Patrick NOUNGA stands out as a prominent figure among the young generation of nation-builders. He embodies this new elite which, combining academic excellence, technical competence, and a sharp sense of the general interest, works daily toward the building of an emerging, united, prosperous, and solidary Cameroon.',
+        bio: 'Law and HR professional, ENAM valedictorian, and Labor Administrator contributing to strategic national projects in extractive industries governance and local content. As Chairman of the Board of Human Resource Volunteers, he has led national programs supporting hundreds of young Cameroonians toward professional integration and training.',
         linkedin: 'https://www.linkedin.com/in/patrick-n-688058173/',
         talk: {
             title: 'Patrick\'s Tips to get easly a job/intership as a developer',
@@ -85,7 +85,7 @@ export const speakers = [    {
         photo: '/speakers/Leslye_Nkwa.webp',
         country: 'Cameroon',
         title: 'Alea jacta est.',
-        bio: 'Leslye Nkwa est étudiante en statistiques et économie. Elle s\'intéresse aux applications de la data science aux enjeux de développement, en particulier autour de la jeunesse, de l\'emploi décent et de l\'innovation en Afrique (ODD 8 et 9). Elle est volontaire chez WiMLDS Yaoundé, où elle contribue à rendre la data science plus accessible aux jeunes femmes africaines, et participe au programme Les Pépites de Sénégalaises in Tech. Elle travaille actuellement sur des projets d\'analyse de données d\'enquête, notamment autour des enquêtes ménages africaines.',
+        bio: 'Étudiante en statistiques et économie, elle applique la data science aux enjeux de développement : jeunesse, emploi décent et innovation en Afrique. Volontaire chez WiMLDS Yaoundé, elle rend la data science accessible aux jeunes femmes africaines et travaille sur l\'analyse de données d\'enquêtes ménages africaines.',
         linkedin: 'https://www.linkedin.com/in/leslyenkwatp/',
         talk: {
             title: 'L\'importance de la cohérence des données: 03 bonnes pratiques',
@@ -101,7 +101,7 @@ export const speakers = [    {
         photo: '/speakers/Yunwen_Eric.webp',
         country: 'Cameroon',
         title: 'Building the Future with Flutter | Web Developer | Community Lead | STEM Advocate',
-        bio: 'Software developer with a keen interest in both Flutter and web development. Originating from Africa, I\'m deeply passionate about leveraging technology to make a difference, particularly in Africa\'s development. Beyond coding, I actively engage in community initiatives, striving to foster growth and collaboration within the tech ecosystem. I\'m particularly passionate about promoting STEM education in Africa. Whether it\'s through building software, community engagements, or advocating for STEM education, I\'m dedicated to making a positive impact in the world.',
+        bio: 'Software developer focused on Flutter and web development, passionate about leveraging technology for Africa\'s growth. Beyond coding, he actively engages in community initiatives and advocates for STEM education, dedicated to making a positive impact through software, community engagement, and education.',
         linkedin: 'https://www.linkedin.com/in/yunweneric',
         website: 'https://neero.io/',
         talk: {
@@ -118,7 +118,7 @@ export const speakers = [    {
         photo: '/speakers/Claude_Ndanda.webp',
         country: 'Cameroon',
         title: 'Software Engineer',
-        bio: 'Claude Ndanda, alias TrixX, est software engineer et contributeur open source basé à Douala. Avec une expertise couvrant le développement web et mobile (Angular, React, Flask) et la sécurité informatique, il combine les deux pour construire des solutions robustes adaptées au contexte africain. Bug Hunter actif sur HackerOne et développeur chez Zen Africa, il a contribué à sécuriser plusieurs applications camerounaises et internationales. Parmi ses projets : une extension Chrome de dictée vocale en temps réel, un bot IA pour WhatsApp, et une application Android intégrant ML Kit pour l\'automatisation du KYC. Engagé dans la communauté tech, il croit fermement en un numérique "Made in Africa, Built to Last" et partage régulièrement ses découvertes pour inspirer la prochaine génération de développeurs africains.',
+        bio: 'Software engineer et contributeur open source basé à Douala, alias TrixX. Il combine développement web et mobile (Angular, React, Flask) et sécurité informatique pour bâtir des solutions adaptées au contexte africain. Bug Hunter actif sur HackerOne et développeur chez Zen Africa, il défend un numérique "Made in Africa, Built to Last".',
         linkedin: 'https://www.linkedin.com/in/claude-ndanda-trixx-6aa606302/',
         website: 'https://zen.africa/',
         talk: {
@@ -135,7 +135,7 @@ export const speakers = [    {
         photo: '/speakers/Parkson_Tano_Daniel.webp',
         country: 'Cameroon',
         title: 'QUICKERPAY, CTO',
-        bio: 'Seasoned backend-focused full-stack developer with over 7 years of experience, specializing in Python and Django. Previously worked as a Senior Developer at Paysika, contributing to the development of financial systems, and currently serve as CTO at QuickerPay, where I lead the design and development of scalable technology solutions. With a strong background in FinTech, I focus on building reliable, secure, and high-performance systems. I am also a former computer science educator, passionate about sharing knowledge and supporting developers\' growth in the Python ecosystem.',
+        bio: 'Backend-focused full-stack developer with over 7 years of experience specializing in Python and Django. Formerly Senior Developer at Paysika and now CTO at QuickerPay, he builds reliable, secure, high-performance FinTech systems. A former computer science educator, he is passionate about sharing knowledge across the Python ecosystem.',
         linkedin: 'https://www.linkedin.com/in/daniel-parkson-tano/',
         website: 'https://quickerpay.co/',
         talk: {
@@ -152,7 +152,7 @@ export const speakers = [    {
         photo: '/speakers/Linuce_Demanou.webp',
         country: 'Cameroon',
         title: 'Camertronix, ML Engineer',
-        bio: 'With a background in Mathematics, Linuce Demanou is a lady of 23 years old making her way in Data Science and AI. She\'s has a particular interest in mentorship because she believes great destiny and achievements start with Hope, she\'s actually working on a book "Where Hope meet dreams" where she shares her journey and aims to inspire young women to believe in their potential and pursue impactful paths in technology.',
+        bio: 'With a background in Mathematics, Linuce Demanou is a 23-year-old making her way in Data Science and AI. Passionate about mentorship, she is writing a book, "Where Hope Meets Dreams," to inspire young women to believe in their potential and pursue impactful paths in technology.',
         linkedin: 'https://www.linkedin.com/in/linuce-demanou-kitio-b88822267/',
         talk: {
             title: 'From Belief to Impact: Why Skills Alone Are Not Enough in Tech',
@@ -168,7 +168,7 @@ export const speakers = [    {
         photo: '/speakers/Adrien_Sani.webp',
         country: 'Cameroon',
         title: 'Développeur Fullstack spécialisé en architectures backend modernes, APIs REST et microservices avec Django, FastAPI et React.',
-        bio: 'Sani Adrien est un développeur passionné par la conception d’architectures backend performantes et évolutives. Il travaille sur des projets incluant des APIs REST avec Django et FastAPI, des systèmes de simulation métier, ainsi que des plateformes web complètes intégrant React et TailwindCSS. Il s’intéresse particulièrement aux microservices, à la communication inter-services (RabbitMQ) et à l’optimisation des systèmes distribués. À travers ses projets, il met l’accent sur les bonnes pratiques, la scalabilité et la qualité du code.',
+        bio: 'Développeur fullstack passionné par les architectures backend performantes et évolutives. Il conçoit des APIs REST avec Django et FastAPI, des systèmes de simulation métier et des plateformes web avec React et TailwindCSS. Il s\'intéresse aux microservices, à RabbitMQ, à la scalabilité et aux bonnes pratiques de code.',
         linkedin: 'https://www.linkedin.com/in/adrien-sani-673b7b394/',
         website: 'https://portfolio.adrien-dev.me/',
         talk: {
@@ -202,7 +202,7 @@ export const speakers = [    {
         photo: '/speakers/Caleb_Jephuneh.webp',
         country: 'Cameroon',
         title: 'Founder BricklabsAI',
-        bio: 'I am a tech entrepreneur with two successful exits, driven by a relentless passion for building impactful technology. With over seven years of hands-on experience in software engineering, I have worked across innovative startups, large enterprises, and award-winning agencies, building a strong foundation in both software and AI. As a global AI speaker, I focus on inspiring the next generation of innovators to think beyond limitations and challenge conventional approaches to technology. I am passionate about empowering young innovators to think out of the box, build boldly, and create solutions that drive real-world impact. In 2025, I was honored with the Young Africa CEO of the Year award by the CIO 100 Awards, and my company was recognized as one of the fastest-growing companies in Africa—milestones that reflect both my entrepreneurial journey and commitment to innovation. I am dedicated to shaping the future of technology in Africa and beyond by fostering creativity, pushing boundaries, and turning ideas into scalable impact.',
+        bio: 'Tech entrepreneur with two successful exits and 7+ years in software and AI across startups, enterprises, and agencies. A global AI speaker, he empowers young innovators to build boldly and create real-world impact. In 2025 he won the Young Africa CEO of the Year award at the CIO 100 Awards.',
         linkedin: 'https://www.linkedin.com/in/caleb-jephunneh-a96aa81b0/',
         website: 'https://www.bricklabsai.org/',
         talk: {
@@ -252,7 +252,7 @@ export const speakers = [    {
         photo: '/speakers/Petr_Andreev.webp',
         country: 'Cameroon',
         title: 'Moscow Institute of Physics and Technology, Innopolis',
-        bio: 'Specializes in CPython internals, optimization, and high-performance computing. Driven by GPU acceleration, CPU vectorization. Evolved from ML systems to CPython core research engineer. 8+ years leading teams in AI, maths, and physics. PyCon speaker: Free Threading: Future of CPython. Lecturer at Moscow Institute of Physics and Technology – top 1 Russian university. Open to talks and collaboration.',
+        bio: 'Specializes in CPython internals, optimization, and high-performance computing through GPU acceleration and CPU vectorization. With 8+ years leading teams in AI, maths, and physics, he is a PyCon speaker and lecturer at the Moscow Institute of Physics and Technology, open to talks and collaboration.',
         linkedin: 'https://linkedin.com/in/petr-andreev-b0b326125',
         website: 'https://t.me/petrpy',
         talk: {
@@ -285,7 +285,7 @@ export const speakers = [    {
         photo: '/speakers/Muluh_Azinwi_Success_Ndahili.webp',
         country: 'Cameroon',
         title: 'ABOVE & BEYOND',
-        bio: 'Muluh Azinwi Success is a Cameroonian software developer, community architect, and Google Gemini API Global Winner who believes the most powerful technology is the kind that opens doors for others. At an age when most are still figuring out where to start, Success is already building. He serves as Technical Lead of the AWS Cloud Club UBa, Web Developer Intern at Python Cameroon, where he helped design the very website hosting this conference, Community Engagement Lead at Nervtek, and Community Coordinator at LaunchPad Community, a platform connecting 1,000+ young Africans aged 15–30 to scholarships, fellowships, and tech opportunities. He also coordinates TiC Foundation ambassadors across the Northwest Region, mobilizing secondary schools into Cameroon\'s premier student tech innovation program. An Open Dreams Scholar and aspiring mechatronics engineer, Success blends engineering precision with creative vision, he is equally at home writing code, crafting fiction, or sketching on a canvas. He is driven by a single conviction: that imagination and technology, working together, can reshape Africa\'s future. He is currently based in Bamenda and is a pro',
+        bio: 'Cameroonian software developer, community architect, and Google Gemini API Global Winner. He is Technical Lead of AWS Cloud Club UBa, Web Developer Intern at Python Cameroon (where he helped build this conference website), and an Open Dreams Scholar driven by the belief that imagination and technology can reshape Africa\'s future.',
         linkedin: 'https://www.linkedin.com/in/success-muluh25',
         website: 'https://ndahi.net',
         talk: {
@@ -302,7 +302,7 @@ export const speakers = [    {
         photo: '/speakers/Kafui_Alordo.webp',
         country: 'Cameroon',
         title: 'Software Developer',
-        bio: 'Asoftware engineer, community builder, and tech organizer from Ho, focused on Python, Django, and practical technology for real-world impact. He is the founder and lead organizer of Python User Group Ho, where he has helped grow developer communities through workshops, meetups, and conferences such as PyHo Conference and Django Girls Ho.',
+        bio: 'Software engineer, community builder, and tech organizer from Ho focused on Python, Django, and practical technology for real-world impact. He is founder and lead organizer of Python User Group Ho, growing developer communities through workshops, meetups, and conferences such as PyHo Conference and Django Girls Ho.',
         linkedin: 'https://www.linkedin.com/in/kafui-alordo/',
         talk: {
             title: 'HTM(X) at the Intersection of the Web',
@@ -334,7 +334,7 @@ export const speakers = [    {
         photo: '/speakers/Mveng_Mboda_Pascal_Franck.webp',
         country: 'Cameroon',
         title: 'Hack The Ambassador and pen pentester',
-        bio: 'Je suis MVENG PASCAL, Enthousiaste en cybersecurité notamment du pentest et de la securité défensive. Je suis certifié en cybersecurité de l’ISC2; Actuelle ambassadeur de la plateforme mondiale Hack The Box dans la ville de Yaoundé au Cameroun , je pratique egalement du développement python -Django quelques fois. - Formateur en administration réseau systèmes sécurité et cloud',
+        bio: 'Enthousiaste en cybersécurité, spécialisé en pentest et sécurité défensive, certifié par l\'ISC2. Ambassadeur de la plateforme mondiale Hack The Box à Yaoundé, il pratique aussi le développement Python-Django et forme en administration réseau, systèmes, sécurité et cloud.',
         linkedin: 'https://www.linkedin.com/in/mveng?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
         talk: {
             title: 'Pentest d’une application Django avec Python : attaques réelles et corrections',
@@ -350,7 +350,7 @@ export const speakers = [    {
         photo: '/speakers/Hypolit_Zeuchieu.webp',
         country: 'Cameroon',
         title: 'Trust Consulting, Backend Developer',
-        bio: 'I\'m a self-taught Python developer based in Yaoundé, Cameroon. With a background in mathematics, I came to programming through curiosity, wanting to understand the simulation tools I used during my undergraduate studies at the University of Dschang. Over the past two years, I have built web projects, automation scripts, and personal tools documented on GitHub. I\'m currently working in the tech industry and am passionate about making Python more accessible to developers worldwide.',
+        bio: 'Self-taught Python developer based in Yaoundé with a background in mathematics. He came to programming through curiosity about simulation tools during his studies at the University of Dschang. Over two years he has built web projects, automation scripts, and tools, and is passionate about making Python more accessible.',
         linkedin: 'https://www.linkedin.com/in/hypolit-zeuchieu-a159392b7',
         talk: {
             title: 'Python in the Browser: No install, No barrier',
@@ -366,7 +366,7 @@ export const speakers = [    {
         photo: '/speakers/Kamdem_Yamen_Ulrich_Laress_Ulrich.webp',
         country: 'Cameroon',
         title: 'Freelancer',
-        bio: 'Je suis ingénieur des télécommunications de formation spécialisé en sécurité des systèmes et réseaux. Dès mes débuts je me suis fortement intéressé aux technologies backend et j\'ai travaillé en freelance avec de nombreux clients, des boîtes comme des particuliers. Puis j\'ai réalisé que je voulais plus que développer, l\'administration système Linux avait suscité un intérêt en moi. Il était donc question de trouver un domaine qui d\'une certaine façon fusionne les deux mondes. Et lors d\'un exposé en classe j\'entends parler du DevOps. Directement j\'accroche. Puis je me forme, je me certifie, d\'abord sur Terraform de HashiCorp, puis Solutions Architect de AWS. Aujourd\'hui je suis freelance en tant que DevOps et développeur backend.',
+        bio: 'Ingénieur télécommunications spécialisé en sécurité des systèmes et réseaux. D\'abord développeur backend en freelance, il découvre l\'administration système Linux puis le DevOps, qui fusionne ses deux passions. Certifié sur Terraform et AWS Solutions Architect, il travaille aujourd\'hui en freelance comme DevOps et développeur backend.',
         linkedin: 'https://www.linkedin.com/in/ulrich-laress-kamdem-yamen/',
         website: 'https://itindepth.odoo.com/blog',
         talk: {
@@ -399,7 +399,7 @@ export const speakers = [    {
         photo: '/speakers/Tayo_Tate_Desmond_Corentin.webp',
         country: 'Cameroon',
         title: 'ISDEV EXPERTS, IA & Data, Data scientist',
-        bio: 'Ingénieur en informatique et spécialiste IT passionné par l\'IA, Desmond Tayo est actif dans le développement de solutions full-stack et l\'intégration de modèles de langage (LLM). Actuellement engagé dans des projets de recherche en Data Science, il se concentre sur l\'optimisation des systèmes RAG et l\'automatisation des infrastructures cloud pour rendre l\'IA plus accessible et performante.',
+        bio: 'Ingénieur en informatique et spécialiste IT passionné par l\'IA, Desmond Tayo développe des solutions full-stack et intègre des modèles de langage (LLM). Engagé dans des projets de recherche en Data Science, il optimise les systèmes RAG et automatise les infrastructures cloud pour une IA plus accessible et performante.',
         linkedin: 'https://www.linkedin.com/in/tayo-tate/',
         website: 'https://medium.com/@desmondtayes6',
         talk: {
@@ -416,7 +416,7 @@ export const speakers = [    {
         photo: '/speakers/Fabiol_Dikongue.webp',
         country: 'Cameroon',
         title: 'DevOps Engineer',
-        bio: 'Senior Software & DevOps Engineer with over 7 years of experience, specializing in the design, deployment, and securing of distributed systems and high-availability microservices architectures. Holding a Master\'s degree in Operational Cybersecurity, I integrate security practices from the ground up (DevSecOps) to ensure infrastructure resilience and compliance. Experienced in CI/CD automation, containerization, Infrastructure as Code (IaC), and production system monitoring for clients in the banking sector. Passionate about knowledge sharing, I have trained multiple cohorts of developers in Spring Boot and ReactJS. CTO of the Klivar solution (www.klivar.fr).',
+        bio: 'Senior Software & DevOps Engineer with 7+ years designing, deploying, and securing distributed systems and high-availability microservices. Holding a Master\'s in Operational Cybersecurity, he applies DevSecOps from the ground up and specializes in CI/CD, containerization, and Infrastructure as Code. He is CTO of the Klivar solution.',
         linkedin: 'https://www.linkedin.com/in/samuel-dikongue-76b719198/',
         website: 'https://dikotech.com',
         talk: {
@@ -433,7 +433,7 @@ export const speakers = [    {
         photo: '/speakers/Marcela_Djoukouo_Talotsing.webp',
         country: 'Cameroon',
         title: 'Prévoir la panne aujourd’hui, sauver une vie demain.',
-        bio: 'Marcela DJOUKOUO TALOTSING est doctorante en Mécanique Énergétique à l’Université de Dschang, au Cameroun. Ses travaux de recherche portent sur l’intégration de l’intelligence artificielle explicable dans le diagnostic et le pronostic des véhicules particuliers. Elle s’intéresse particulièrement à la maintenance prédictive, aux systèmes intelligents, à l’analyse de données et à l’application de Python dans les solutions technologiques. Passionnée par l’innovation, l’enseignement et le partage de connaissances, elle travaille à rendre les outils d’intelligence artificielle plus compréhensibles, utiles et accessibles pour les techniciens, ingénieurs et décideurs.',
+        bio: 'Doctorante en Mécanique Énergétique à l\'Université de Dschang, ses recherches portent sur l\'intégration de l\'IA explicable dans le diagnostic et le pronostic des véhicules. Passionnée par la maintenance prédictive et l\'enseignement, elle œuvre à rendre les outils d\'IA plus compréhensibles et accessibles aux techniciens et ingénieurs.',
         linkedin: 'https://linkedin.com/in/marcela-djoukouo-talotsing-8a8815273',
         talk: {
             title: 'AutoXAI : Rendre le diagnostic automobile intelligent et explicable avec Python',
@@ -449,7 +449,7 @@ export const speakers = [    {
         photo: '/speakers/Marielle_Daha.webp',
         country: 'Cameroon',
         title: 'CS student & Aspiring ML engineer | University of Yaoundé 1',
-        bio: 'I am a Computer Science sophomore at the university of yaoundé 1 with data science as a speciallity and a self taught UI designer. I build with Python across projects ranging from data visualization to AI-powered tools, including KALARA, an offline-first AAC platform designed for non-verbal autistic students in Cameroon. My design background is what shapes my relationship with Matplotlib. I came to the library not just to plot data, but to make things people actually want to look at. I believe the most underrated Python skill is knowing how to make your output beautiful, and this talk is my attempt to pass that on.',
+        bio: 'Computer Science sophomore at the University of Yaoundé 1, specializing in data science, and a self-taught UI designer. She builds with Python across data visualization and AI tools, including KALARA, an offline-first AAC platform for non-verbal autistic students, and believes beautiful output is an underrated Python skill.',
         linkedin: 'https://www.linkedin.com/in/marielle-daha-670b39336/',
         talk: {
             title: 'Creative coding with matplotlib : turning data into art.',
@@ -465,7 +465,7 @@ export const speakers = [    {
         photo: '/speakers/Harmony_Elendu.webp',
         country: 'Cameroon',
         title: 'Technical Project and Product Manager | Open Source is the Future!',
-        bio: 'I\'m Harmony Elendu, a Technical Product and Project Manager with over three years of active experience and more than six years in the technical industry. Holding a degree in administration and skilled in program management, writing, research, and speaking, I have built various products, contributed to open source, and led community oriented initiatives. I find great fulfillments in contributing to global improvement through technology and security, while doing my own quota in making the world a better place.',
+        bio: 'Technical Product and Project Manager with over three years of active experience and six in the technical industry. Skilled in program management, writing, research, and speaking, she has built products, contributed to open source, and led community initiatives, finding fulfillment in improving the world through technology and security.',
         linkedin: 'https://www.linkedin.com/in/harmonyelendu/',
         website: 'https://linktr.ee/ogaharmony',
         talk: {
@@ -497,7 +497,7 @@ export const speakers = [    {
         photo: '/speakers/Lobga_Julius.webp',
         country: 'Cameroon',
         title: 'AI and Software Engineer at InchTechs and ICISTEM',
-        bio: 'Lobga Julius is an AI and Software Engineer with over four years of experience bridging software development and machine learning research. He currently works as an AI and Software Developer at InchTechs Sarl and as an AI/ML Researcher at the ICISTEM Foundation in Yaoundé. Lobga holds an M.Sc. in Data Science and was part of the winning team at the AIMS Sustainable Development Hackathon. His journey into machine learning began during his university days with a project implementing TF-IDF for document search, a foundation that inspires his passion for open-source semantic retrieval systems.',
+        bio: 'AI and Software Engineer with 4+ years bridging software development and machine learning research. He works at InchTechs and as an AI/ML researcher at the ICISTEM Foundation in Yaoundé, holds an M.Sc. in Data Science, and was part of the winning team at the AIMS Sustainable Development Hackathon.',
         linkedin: 'https://www.linkedin.com/in/lobga-julius-647b55234',
         website: 'https://inchtechs.com/',
         talk: {
@@ -514,7 +514,7 @@ export const speakers = [    {
         photo: '/speakers/Emambou_Ulrich.webp',
         country: 'Cameroon',
         title: 'Chief Product Officer NOVA HEALTHTECH',
-        bio: 'Emambou Ulrich is a Cameroonian product strategist, UX/UI designer, and UX Educator at Friends of Figma Yaoundé, and a technology professional passionate about building human-centered digital products with real-world impact. He currently serves as Chief Product Officer at NOVA-HEALTHTECH, where i contributes to health-tech innovation through product strategy, user research, and experience design. With a strong interest in AI, education, and emerging technologies, Ulrich has worked on projects spanning health-tech, AI-powered education, and community-driven digital solutions. His expertise includes UX strategy, onboarding experience design, product thinking, and creating intuitive user experiences that bridge technology and human needs. Beyond product design, he is actively involved in Cameroon’s tech ecosystem through workshops, mentorship, hackathons, and developer communities. He has facilitated UI/UX sessions at events such as DevFest Yaoundé and contributed to youth-oriented initiatives focused on technology, innovation, and career guidance. I\'m also the Product Designer of Atlas at TiC Foundation, an AI-powered educational platform aimed at transforming learning experiences in Cameroon through personalization, cognitive psychology, and accessible technology.',
+        bio: 'Cameroonian product strategist, UX/UI designer, and UX Educator at Friends of Figma Yaoundé. As Chief Product Officer at NOVA-HEALTHTECH, he drives health-tech innovation through product strategy, user research, and experience design, and actively supports Cameroon\'s tech ecosystem through workshops, mentorship, and hackathons.',
         linkedin: 'https://www.linkedin.com/in/dev-guy-uix/',
         talk: {
             title: 'AI Is Not a Tool: It\'s a Workflow: Designing with Claude, Codex & Figma',
@@ -530,7 +530,7 @@ export const speakers = [    {
         photo: '/speakers/Ayuk_Princelen_Tanyi.webp',
         country: 'Cameroon',
         title: 'Group leader and ml developer',
-        bio: 'Ayuk Princelen Tanyi is a passionate young tech enthusiast and innovator based in Douala with strong interests in software development, emerging technologies, medicine, and intelligent systems. He enjoys building practical technology solutions that address real-world problems, particularly in smart agriculture and automation. Beyond tech, Ayuk is a dedicated football lover and an avid gamer who uses video games as a creative way to relax and manage stress. He is also a passionate reader and book enthusiast who enjoys exploring new ideas, science, and innovation through literature. With a growing background in coding and engineering projects, he aims to contribute to the future of African technological innovation through creativity, research, and problem-solving.',
+        bio: 'Young tech enthusiast and ML developer based in Douala with interests in software development, emerging technologies, medicine, and intelligent systems. He builds practical solutions in smart agriculture and automation, aiming to contribute to African technological innovation through creativity, research, and problem-solving.',
         linkedin: 'https://www.linkedin.com/feed',
         website: 'https://topgamingtips.com',
         talk: {

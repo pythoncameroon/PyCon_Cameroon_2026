@@ -9,7 +9,6 @@ export const agenda = {
         { time: '08:30', title: 'Registration & Welcome Coffee', type: 'break', room: '' },
         { time: '09:00', title: 'Opening + Keynote 1', type: 'keynote', room: 'Plenary — all attendees', lang: 'enfr' },
         { time: '10:00', title: 'Coffee break', type: 'break', room: '' },
-        { time: '10:20', title: "CPython's Memory Engine: Allocation, Deallocation & Free-List Tricks", type: 'talk', room: 'Track A', track: 'Web / Security', speaker: 'Petr Andreev', lang: 'en' },
         { time: '11:05', title: 'From WSGI to ASGI: Modernizing Django', type: 'talk', room: 'Track A', track: 'Web / Security', speaker: 'Parkson Tano Daniel', lang: 'fr' },
         { time: '11:05', title: 'Turning Python Projects into AI-Powered Tools', type: 'talk', room: 'Track B', track: 'AI / Data Science', speaker: 'Caleb Jephuneh', lang: 'enfr' },
         { time: '11:05', title: 'Architecture à budget zéro : cloud design decisions', type: 'talk', room: 'Track C', track: 'DevOps / Cloud', speaker: 'Jerry Davis Ndjana Mengue', lang: 'fr' },
