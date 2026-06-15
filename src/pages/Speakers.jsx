@@ -36,20 +36,15 @@ const Speakers = () => {
         <>
             <header className="page-header">
                 <div className="container text-center">
-                    <h1>{t('speakers.title')} <span className="text-gradient">{t('speakers.titleHighlight')}</span></h1>
-                    <p>{t('speakers.subtitle')}</p>
+                    <h1>{t('speakers.featuredTitle')} <span className="text-gradient">{t('speakers.featuredHighlight')}</span></h1>
+                    <p>{t('speakers.featuredSubtitle')}</p>
                 </div>
             </header>
-
-            <div className="tribal-border"></div>
 
             <section className="section bg-dark" id="speakers-list">
                 <div className="container">
                     {hasConfirmed ? (
                         <>
-                            <div className="section-header">
-                                <h2>{t('speakers.featuredTitle')} <span className="text-gradient">{t('speakers.featuredHighlight')}</span></h2>
-                            </div>
                             <div className="grid grid-4 stagger">
                                 {confirmedSpeakers.map(speaker => (
                                     <SpeakerCard
