@@ -58,8 +58,8 @@ const groupByTimeSlot = (sessions) => {
 };
 
 const BreakRow = ({ session }) => (
-    <div style={{ display: 'flex', gap: 'var(--spacing-md)', alignItems: 'center', padding: '0.75rem 0', opacity: 0.55 }}>
-        <span style={{ minWidth: '60px', fontSize: '0.82rem', fontWeight: 600, color: 'var(--color-text-muted)', fontFamily: 'var(--font-ui)' }}>
+    <div style={{ display: 'flex', gap: 'var(--spacing-md)', alignItems: 'center', padding: '0.75rem 0' }}>
+        <span style={{ minWidth: '60px', fontSize: '0.82rem', fontWeight: 600, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
             {session.time}
         </span>
         <div style={{ flex: 1, height: '1px', background: 'var(--color-border)', position: 'relative' }}>
@@ -68,10 +68,11 @@ const BreakRow = ({ session }) => (
                 left: '1rem',
                 top: '50%',
                 transform: 'translateY(-50%)',
-                background: 'var(--color-dark)',
+                background: 'var(--color-black)',
                 padding: '0 0.75rem',
                 fontSize: '0.8rem',
-                color: 'var(--color-text-muted)',
+                fontWeight: 500,
+                color: 'var(--color-text-secondary)',
                 fontFamily: 'var(--font-ui)',
                 whiteSpace: 'nowrap',
             }}>
