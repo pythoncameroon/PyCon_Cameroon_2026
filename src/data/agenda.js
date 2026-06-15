@@ -63,7 +63,7 @@ export const agenda = {
         { time: '13:45', title: 'Authentification 2FA : TOTP avec Django', type: 'talk', room: 'Track C', track: 'Web / Community', speaker: 'Jean Marc Wogue', lang: 'fr' },
         { time: '14:30', title: 'AutoXAI : Diagnostic automobile intelligent avec Python', type: 'talk', room: 'Track A', track: 'Python / Security', speaker: 'Marcela Djoukouo Talotsing', lang: 'fr' },
         { time: '14:30', title: 'AI-Powered Smart Agriculture: Greenhouse & Poultry Systems', type: 'talk', room: 'Track B', track: 'AI / Data Science', speaker: 'Ayuk Princelen Tanyi', lang: 'en' },
-        { time: '14:30', title: 'The Silent Bugs in Tech: Debugging Burnout & Cognitive Overload', type: 'talk', room: 'Track C', track: 'Web / Community', speaker: 'Sema Kumbela Fombutu', lang: 'en' },
+        { time: '14:30', title: 'The Silent Bugs in Tech: Debugging Burnout & Cognitive Overload', type: 'workshop', room: 'Track C', track: 'Web / Community', speaker: 'Sema Kumbela Fombutu', lang: 'en' },
         { time: '15:15', title: 'Coffee break', type: 'break', room: '' },
         { time: '15:30', title: 'Lightning talks — open floor (5-min slots, all attendees welcome)', type: 'lightning', room: 'Plenary', lang: 'enfr' },
         { time: '16:00', title: 'Closing ceremony + community games — awards, photos, networking', type: 'social', room: '' },
