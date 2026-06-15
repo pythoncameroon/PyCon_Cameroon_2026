@@ -2561,11 +2561,21 @@ img {
 /* ===================================
    Speaker Cards
    =================================== */
+.speaker-card-link {
+    display: flex;
+    height: 100%;
+}
+
 .speaker-card {
     cursor: pointer;
     text-align: center;
     padding: var(--spacing-md);
     transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 .speaker-card:hover {
@@ -2610,6 +2620,10 @@ img {
     color: var(--color-text-secondary);
     font-family: var(--font-ui);
     margin-bottom: 6px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .speaker-card-talk {
@@ -2621,6 +2635,7 @@ img {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    margin-bottom: var(--spacing-sm);
 }
 
 .speaker-card-tag {
@@ -2633,7 +2648,7 @@ img {
     color: var(--color-text-secondary);
     border: 1px solid var(--color-border);
     font-family: var(--font-ui);
-    margin-top: 6px;
+    margin-top: auto;
     text-transform: uppercase;
     letter-spacing: 0.04em;
 }

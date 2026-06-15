@@ -7,7 +7,7 @@ import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { speakers } from '../data/speakers';
 
 const SpeakerCard = ({ speaker, linkTo }) => (
-    <Link to={linkTo} style={{ textDecoration: 'none', color: 'inherit' }}>
+    <Link to={linkTo} className="speaker-card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
         <div className="card speaker-card animate-on-scroll slide-up">
             {speaker.photo ? (
                 <img src={speaker.photo} alt={speaker.name} className="speaker-card-photo" />
