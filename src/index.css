@@ -2506,7 +2506,7 @@ img {
 }
 
 .agenda-slot-tracks.is-parallel {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 .agenda-session-card {

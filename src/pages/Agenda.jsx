@@ -1,8 +1,8 @@
 import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Clock, MapPin, User, Users } from 'lucide-react';
+import { Clock, MapPin, User, Users, Languages } from 'lucide-react';
 import useScrollAnimation from '../hooks/useScrollAnimation';
-import { DAYS, agenda, TYPE_STYLES } from '../data/agenda';
+import { DAYS, agenda, TYPE_STYLES, LANG_LABELS } from '../data/agenda';
 
 const groupByTimeSlot = (sessions) => {
     const slots = [];
@@ -83,7 +83,12 @@ const SessionCard = ({ session, parallel }) => {
                 )}
                 {session.room && (
                     <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
-                        <MapPin size={13} style={{ color: 'var(--color-orange)' }} /> {session.room}
+                        <MapPin size={13} style={{ color: 'var(--color-orange)' }} /> {session.room}{session.track ? ` · ${session.track}` : ''}
+                    </span>
+                )}
+                {session.lang && (
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
+                        <Languages size={13} style={{ color: 'var(--color-orange)' }} /> {LANG_LABELS[session.lang]}
                     </span>
                 )}
                 {parallel && (
