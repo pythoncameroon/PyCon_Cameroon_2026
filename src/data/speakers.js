@@ -456,23 +456,6 @@ export const speakers = [    {
         },
     },
     {
-        id: 'petr-andreev',
-        name: 'Petr Andreev',
-        photo: '/speakers/Petr_Andreev.webp',
-        country: 'Cameroon',
-        title: 'Moscow Institute of Physics and Technology, Innopolis',
-        bio: 'Specializes in CPython internals, optimization, and high-performance computing through GPU acceleration and CPU vectorization. With 8+ years leading teams in AI, maths, and physics, he is a PyCon speaker and lecturer at the Moscow Institute of Physics and Technology, open to talks and collaboration.',
-        linkedin: 'https://linkedin.com/in/petr-andreev-b0b326125',
-        website: 'https://t.me/petrpy',
-        talk: {
-            title: 'CPython’s Memory Engine: Allocation, Deallocation, and Free-List Tricks',
-            category: 'Python Core',
-            day: 'day1',
-            track: 'Web / Security',
-            abstract: 'How does CPython really handle memory? This talk follows an object’s full journey: allocation, refcounting, deallocation, freelists, and allocator swaps. You’ll see why memory seems to `stick`, how pymalloc and mimalloc differ, and what actually happens in hot loops. Leave with a sharp mental model for debugging performance, fragmentation, and apparent leaks.',
-        },
-    },
-    {
         id: 'sema-kumbela-fombutu',
         name: 'Sema Kumbela Fombutu',
         photo: '/speakers/Sema_Kumbela_Fombutu.webp',
