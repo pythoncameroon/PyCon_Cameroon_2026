@@ -2480,7 +2480,49 @@ img {
     color: white;
 }
 
+.agenda-slot {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: var(--spacing-md);
+    align-items: start;
+}
+
+.agenda-slot-time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding-top: calc(var(--spacing-md) + 2px);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--color-orange);
+    font-family: var(--font-ui);
+}
+
+.agenda-slot-tracks {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+}
+
+.agenda-slot-tracks.is-parallel {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.agenda-session-card {
+    height: 100%;
+}
+
 @media (max-width: 768px) {
+    .agenda-slot {
+        grid-template-columns: 48px 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .agenda-slot-tracks.is-parallel {
+        grid-template-columns: 1fr;
+    }
+
     .agenda-toggle-wrap {
         margin-bottom: var(--spacing-lg);
     }

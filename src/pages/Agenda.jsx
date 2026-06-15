@@ -1,93 +1,114 @@
 import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Clock, MapPin, User } from 'lucide-react';
+import { Clock, MapPin, User, Users } from 'lucide-react';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import { DAYS, agenda, TYPE_STYLES } from '../data/agenda';
 
-const SessionRow = ({ session }) => {
-    const style = TYPE_STYLES[session.type] || TYPE_STYLES.talk;
-    const isBreak = session.type === 'break' || session.type === 'social';
+const groupByTimeSlot = (sessions) => {
+    const slots = [];
+    const indexByTime = new Map();
 
-    if (isBreak) {
-        return (
-            <div style={{ display: 'flex', gap: 'var(--spacing-md)', alignItems: 'center', padding: '0.75rem 0', opacity: 0.55 }}>
-                <span style={{ minWidth: '60px', fontSize: '0.82rem', fontWeight: 600, color: 'var(--color-text-muted)', fontFamily: 'var(--font-ui)' }}>
-                    {session.time}
-                </span>
-                <div style={{ flex: 1, height: '1px', background: 'var(--color-border)', position: 'relative' }}>
-                    <span style={{
-                        position: 'absolute',
-                        left: '1rem',
-                        top: '50%',
-                        transform: 'translateY(-50%)',
-                        background: 'var(--color-dark)',
-                        padding: '0 0.75rem',
-                        fontSize: '0.8rem',
-                        color: 'var(--color-text-muted)',
-                        fontFamily: 'var(--font-ui)',
-                        whiteSpace: 'nowrap',
-                    }}>
-                        {session.title}{session.room ? ` · ${session.room}` : ''}
-                    </span>
-                </div>
-            </div>
-        );
-    }
+    sessions.forEach((session) => {
+        const isBreak = session.type === 'break' || session.type === 'social';
+        if (isBreak) {
+            slots.push({ time: session.time, kind: 'break', sessions: [session] });
+            return;
+        }
+        if (indexByTime.has(session.time)) {
+            slots[indexByTime.get(session.time)].sessions.push(session);
+            return;
+        }
+        indexByTime.set(session.time, slots.length);
+        slots.push({ time: session.time, kind: 'sessions', sessions: [session] });
+    });
+
+    return slots;
+};
+
+const BreakRow = ({ session }) => (
+    <div style={{ display: 'flex', gap: 'var(--spacing-md)', alignItems: 'center', padding: '0.75rem 0', opacity: 0.55 }}>
+        <span style={{ minWidth: '60px', fontSize: '0.82rem', fontWeight: 600, color: 'var(--color-text-muted)', fontFamily: 'var(--font-ui)' }}>
+            {session.time}
+        </span>
+        <div style={{ flex: 1, height: '1px', background: 'var(--color-border)', position: 'relative' }}>
+            <span style={{
+                position: 'absolute',
+                left: '1rem',
+                top: '50%',
+                transform: 'translateY(-50%)',
+                background: 'var(--color-dark)',
+                padding: '0 0.75rem',
+                fontSize: '0.8rem',
+                color: 'var(--color-text-muted)',
+                fontFamily: 'var(--font-ui)',
+                whiteSpace: 'nowrap',
+            }}>
+                {session.title}{session.room ? ` · ${session.room}` : ''}
+            </span>
+        </div>
+    </div>
+);
+
+const SessionCard = ({ session, parallel }) => {
+    const style = TYPE_STYLES[session.type] || TYPE_STYLES.talk;
 
     return (
-        <div className="card animate-on-scroll slide-up" style={{
-            display: 'flex',
-            gap: 'var(--spacing-md)',
+        <div className="card animate-on-scroll slide-up agenda-session-card" style={{
             padding: 'var(--spacing-md)',
             borderLeft: `4px solid ${style.color}`,
             margin: 0,
-            alignItems: 'flex-start',
         }}>
-            <div style={{
-                minWidth: '60px',
-                fontSize: '0.82rem',
-                fontWeight: 700,
-                color: style.color,
-                fontFamily: 'var(--font-ui)',
-                paddingTop: '2px',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                gap: '2px',
-            }}>
-                <Clock size={13} style={{ opacity: 0.7 }} />
-                {session.time}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 'var(--spacing-sm)', flexWrap: 'wrap', marginBottom: 'var(--spacing-xs)' }}>
+                <h4 style={{ margin: 0, fontSize: '1rem', color: 'var(--color-text-primary)' }}>{session.title}</h4>
+                <span style={{
+                    fontSize: '0.72rem',
+                    fontWeight: 700,
+                    padding: '3px 12px',
+                    borderRadius: '50px',
+                    background: style.color,
+                    color: 'white',
+                    whiteSpace: 'nowrap',
+                    fontFamily: 'var(--font-ui)',
+                    letterSpacing: '0.05em',
+                    textTransform: 'uppercase',
+                }}>
+                    {style.label}
+                </span>
             </div>
-            <div style={{ flex: 1 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 'var(--spacing-sm)', flexWrap: 'wrap', marginBottom: 'var(--spacing-xs)' }}>
-                    <h4 style={{ margin: 0, fontSize: '1rem', color: 'var(--color-text-primary)' }}>{session.title}</h4>
-                    <span style={{
-                        fontSize: '0.72rem',
-                        fontWeight: 700,
-                        padding: '3px 12px',
-                        borderRadius: '50px',
-                        background: style.color,
-                        color: 'white',
-                        whiteSpace: 'nowrap',
-                        fontFamily: 'var(--font-ui)',
-                        letterSpacing: '0.05em',
-                        textTransform: 'uppercase',
-                    }}>
-                        {style.label}
+            <div style={{ display: 'flex', gap: 'var(--spacing-md)', flexWrap: 'wrap' }}>
+                {session.speaker && (
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
+                        <User size={13} style={{ color: 'var(--color-orange)' }} /> {session.speaker}
                     </span>
-                </div>
-                <div style={{ display: 'flex', gap: 'var(--spacing-md)', flexWrap: 'wrap' }}>
-                    {session.speaker && (
-                        <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
-                            <User size={13} style={{ color: 'var(--color-orange)' }} /> {session.speaker}
-                        </span>
-                    )}
-                    {session.room && (
-                        <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
-                            <MapPin size={13} style={{ color: 'var(--color-orange)' }} /> {session.room}
-                        </span>
-                    )}
-                </div>
+                )}
+                {session.room && (
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
+                        <MapPin size={13} style={{ color: 'var(--color-orange)' }} /> {session.room}
+                    </span>
+                )}
+                {parallel && (
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.78rem', color: 'var(--color-text-muted)', fontFamily: 'var(--font-ui)' }}>
+                        <Users size={12} /> Parallel session
+                    </span>
+                )}
+            </div>
+        </div>
+    );
+};
+
+const TimeSlot = ({ slot }) => {
+    const parallel = slot.sessions.length > 1;
+
+    return (
+        <div className="agenda-slot">
+            <div className="agenda-slot-time">
+                <Clock size={13} style={{ opacity: 0.7 }} />
+                <span>{slot.time}</span>
+            </div>
+            <div className={`agenda-slot-tracks${parallel ? ' is-parallel' : ''}`}>
+                {slot.sessions.map((session, i) => (
+                    <SessionCard key={i} session={session} parallel={parallel} />
+                ))}
             </div>
         </div>
     );
@@ -106,6 +127,7 @@ const Agenda = () => {
     };
 
     const sessions = agenda[activeDay] || [];
+    const slots = groupByTimeSlot(sessions);
     const activeDayData = DAYS.find(d => d.key === activeDay);
 
     return (
@@ -144,8 +166,10 @@ const Agenda = () => {
                     )}
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-sm)' }}>
-                        {sessions.map((session, i) => (
-                            <SessionRow key={i} session={session} />
+                        {slots.map((slot, i) => (
+                            slot.kind === 'break'
+                                ? <BreakRow key={i} session={slot.sessions[0]} />
+                                : <TimeSlot key={i} slot={slot} />
                         ))}
                     </div>
                 </div>
