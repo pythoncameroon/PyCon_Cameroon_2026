@@ -1514,6 +1514,7 @@ a {
     .page-header {
         padding: 120px var(--spacing-sm) var(--spacing-lg);
         min-height: 30vh;
+        margin-bottom: var(--spacing-sm);
     }
 
     .page-header h1 {

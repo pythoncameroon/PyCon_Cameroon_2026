@@ -88,7 +88,7 @@ const SessionCard = ({ session }) => {
     const speakerId = session.speaker ? resolveSpeakerId(session.speaker) : null;
 
     return (
-        <div className="card animate-on-scroll slide-up agenda-session-card" style={{
+        <div className="card agenda-session-card" style={{
             padding: 'var(--spacing-md)',
             borderLeft: `4px solid ${style.color}`,
             margin: 0,
