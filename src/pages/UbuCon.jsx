@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { useTranslation } from 'react-i18next';
 import useScrollAnimation from '../hooks/useScrollAnimation';
-import { Clock, MapPin, User } from 'lucide-react';
-import { agenda, TYPE_STYLES } from '../data/agenda';
+import { agenda } from '../data/agenda';
+import AgendaSchedule from '../components/AgendaSchedule';
 
 const UbuConMap = lazy(() => import('../components/UbuConMap'));
 
@@ -144,45 +144,7 @@ const UbuCon = () => {
                         <h2>{t('ubucon.agendaTitle')} <span style={{ color: UBUNTU_ORANGE }}>{t('ubucon.agendaHighlight')}</span></h2>
                         <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem' }}>September 18, 2026</p>
                     </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-sm)' }}>
-                        {agenda.day2.map((session, i) => {
-                            const style = TYPE_STYLES[session.type] || TYPE_STYLES.talk;
-                            const isBreak = session.type === 'break' || session.type === 'social';
-                            return (
-                                <div key={i} style={{ display: 'flex', gap: 'var(--spacing-md)', alignItems: 'flex-start', padding: isBreak ? 'var(--spacing-sm) 0' : undefined, opacity: isBreak ? 0.6 : 1 }}>
-                                    <div style={{ minWidth: '60px', fontSize: '0.85rem', fontWeight: 600, color: 'var(--color-text-secondary)', paddingTop: isBreak ? 0 : '1rem' }}>
-                                        {session.time}
-                                    </div>
-                                    {isBreak ? (
-                                        <div style={{ flex: 1, borderTop: '1px dashed var(--color-border)', paddingTop: '0.5rem', fontSize: '0.9rem', color: 'var(--color-text-muted)' }}>
-                                            {session.title}{session.room ? `, ${session.room}` : ''}
-                                        </div>
-                                    ) : (
-                                        <div className="card" style={{ flex: 1, padding: 'var(--spacing-md)', borderLeft: `4px solid ${style.color}`, margin: 0 }}>
-                                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 'var(--spacing-sm)', flexWrap: 'wrap' }}>
-                                                <h4 style={{ margin: 0, fontSize: '1rem' }}>{session.title}</h4>
-                                                <span style={{ fontSize: '0.75rem', fontWeight: 700, padding: '2px 10px', borderRadius: '50px', background: style.color, color: 'white', whiteSpace: 'nowrap' }}>
-                                                    {style.label}
-                                                </span>
-                                            </div>
-                                            <div style={{ display: 'flex', gap: 'var(--spacing-md)', marginTop: 'var(--spacing-xs)', flexWrap: 'wrap' }}>
-                                                {session.speaker && (
-                                                    <span style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.85rem', color: 'var(--color-text-secondary)' }}>
-                                                        <User size={13} /> {session.speaker}
-                                                    </span>
-                                                )}
-                                                {session.room && (
-                                                    <span style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.85rem', color: 'var(--color-text-secondary)' }}>
-                                                        <MapPin size={13} /> {session.room}
-                                                    </span>
-                                                )}
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
-                            );
-                        })}
-                    </div>
+                    <AgendaSchedule sessions={agenda.day2} />
                 </div>
             </section>
 
