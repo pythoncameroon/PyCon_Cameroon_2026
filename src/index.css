@@ -131,10 +131,7 @@
 }
 
 [data-theme="light"] .hero-overlay {
-    background: linear-gradient(180deg,
-            rgba(245, 245, 245, 0.55) 0%,
-            rgba(245, 245, 245, 0.7) 50%,
-            rgba(245, 245, 245, 0.9) 100%) !important;
+    background: rgba(245, 245, 245, 0.7) !important;
 }
 
 [data-theme="light"] .hero-title,
@@ -2269,7 +2266,7 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: -1;
+    z-index: 0;
     background-image: url('/images/patterns/African.webp');
     background-size: 400px;
     background-repeat: repeat;
@@ -2284,10 +2281,7 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(180deg,
-            rgba(13, 13, 13, 0.5) 0%,
-            rgba(13, 13, 13, 0.7) 50%,
-            rgba(13, 13, 13, 0.95) 100%);
+    background: rgba(13, 13, 13, 0.6);
     backdrop-filter: blur(2px);
 }
 
