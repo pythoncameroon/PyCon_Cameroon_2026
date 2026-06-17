@@ -447,6 +447,14 @@
 
 html {
     scroll-behavior: smooth;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    background-color: var(--color-black);
+}
+
+[data-theme="light"] html {
+    background-color: #ffffff;
 }
 
 body {
@@ -454,7 +462,9 @@ body {
     background-color: var(--color-black);
     color: var(--color-text-primary);
     line-height: 1.6;
-    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
     font-size: 1.1rem;
     /* Slightly larger for Kalam readability */
 }
