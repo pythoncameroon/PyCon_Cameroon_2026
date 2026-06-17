@@ -27,7 +27,7 @@ const SpeakerDetail = () => {
         );
     }
 
-    const day = speaker.talk?.day ? DAYS.find(d => d.key === speaker.talk.day) : null;
+    const talks = speaker.talks ?? (speaker.talk ? [speaker.talk] : []);
 
     return (
         <>
@@ -100,38 +100,43 @@ const SpeakerDetail = () => {
             <section className="section bg-dark">
                 <div className="container">
                     <div className="speaker-detail-grid">
-                        {speaker.talk && (
+                        {talks.length > 0 && (
                             <div>
-                                <div className="card" style={{ borderTop: '3px solid var(--color-orange)', padding: 'var(--spacing-lg)', marginBottom: 'var(--spacing-md)' }}>
-                                    <p style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-orange)', fontFamily: 'var(--font-ui)', marginBottom: 'var(--spacing-xs)' }}>
-                                        {t('speakers.talkDetails')}
-                                    </p>
-                                    <h2 style={{ marginBottom: 'var(--spacing-sm)', lineHeight: 1.35 }}>{speaker.talk.title}</h2>
+                                {talks.map((talk, i) => {
+                                    const day = talk.day ? DAYS.find(d => d.key === talk.day) : null;
+                                    return (
+                                        <div key={i} className="card" style={{ borderTop: '3px solid var(--color-orange)', padding: 'var(--spacing-lg)', marginBottom: 'var(--spacing-md)' }}>
+                                            <p style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-orange)', fontFamily: 'var(--font-ui)', marginBottom: 'var(--spacing-xs)' }}>
+                                                {t('speakers.talkDetails')}
+                                            </p>
+                                            <h2 style={{ marginBottom: 'var(--spacing-sm)', lineHeight: 1.35 }}>{talk.title}</h2>
 
-                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: 'var(--spacing-md)' }}>
-                                        {speaker.talk.category && (
-                                            <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
-                                                <Tag size={13} style={{ color: 'var(--color-orange)' }} /> {speaker.talk.category}
-                                            </span>
-                                        )}
-                                        {day && (
-                                            <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
-                                                <Calendar size={13} style={{ color: 'var(--color-orange)' }} /> {day.label} · {day.date}
-                                            </span>
-                                        )}
-                                        {speaker.talk.track && (
-                                            <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
-                                                <MapPin size={13} style={{ color: 'var(--color-orange)' }} /> {speaker.talk.track}
-                                            </span>
-                                        )}
-                                    </div>
+                                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: 'var(--spacing-md)' }}>
+                                                {talk.category && (
+                                                    <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
+                                                        <Tag size={13} style={{ color: 'var(--color-orange)' }} /> {talk.category}
+                                                    </span>
+                                                )}
+                                                {day && (
+                                                    <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
+                                                        <Calendar size={13} style={{ color: 'var(--color-orange)' }} /> {day.label} · {day.date}
+                                                    </span>
+                                                )}
+                                                {talk.track && (
+                                                    <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
+                                                        <MapPin size={13} style={{ color: 'var(--color-orange)' }} /> {talk.track}
+                                                    </span>
+                                                )}
+                                            </div>
 
-                                    {speaker.talk.abstract && (
-                                        <p style={{ lineHeight: 1.8, color: 'var(--color-text-secondary)', margin: 0 }}>
-                                            {speaker.talk.abstract}
-                                        </p>
-                                    )}
-                                </div>
+                                            {talk.abstract && (
+                                                <p style={{ lineHeight: 1.8, color: 'var(--color-text-secondary)', margin: 0 }}>
+                                                    {talk.abstract}
+                                                </p>
+                                            )}
+                                        </div>
+                                    );
+                                })}
                             </div>
                         )}
 

@@ -39,13 +39,22 @@ export const speakers = [    {
         country: 'Cameroon',
         title: 'ML Engineer',
         bio: 'ML Engineer, Project/Program Manager, and Microsoft MVP awardee passionate about community growth and innovation. She champions diversity and inclusion, actively empowering underrepresented groups in tech through mentorship and community-driven change, building supportive environments where everyone can thrive and feel a genuine sense of belonging.',
-        talk: {
-            title: 'Open Documentation Academy: Your First Open Source Contribution',
-            category: 'Ubuntu & Linux',
-            day: 'day3',
-            track: 'AI / Data Science',
-            abstract: 'Documentation is an accessible entry point for open source newcomers. This workshop uses the Open Documentation Academy to guide participants through finding their first issue, applying basic documentation principles, and submitting a contribution to a real project.',
-        },
+        talks: [
+            {
+                title: 'Open Documentation Academy: Your First Open Source Contribution',
+                category: 'Ubuntu & Linux',
+                day: 'day2',
+                track: 'UbuCon Track',
+                abstract: 'Documentation is an accessible entry point for open source newcomers. This workshop uses the Open Documentation Academy to guide participants through finding their first issue, applying basic documentation principles, and submitting a contribution to a real project.',
+            },
+            {
+                title: 'Zero-Touch Dashboards: Django + Metabase for Per-User Data Governance',
+                category: 'Machine Learning & AI',
+                day: 'day3',
+                track: 'AI / Data Science',
+                abstract: 'Based on a project I implemented at work: Django handles authentication, and when a user requests a dashboard, per-user data governance is enforced automatically. When our affiliate network grew to thousands, Metabase forced a rethink of how we scoped data access. This talk walks through combining Django and Metabase for zero-touch, per-user dashboards.',
+            },
+        ],
     },
     {
         id: 'ayuk-princelen-tanyi',
@@ -480,13 +489,22 @@ export const speakers = [    {
         bio: 'Ingénieur en informatique et spécialiste IT passionné par l\'IA, Desmond Tayo développe des solutions full-stack et intègre des modèles de langage (LLM). Engagé dans des projets de recherche en Data Science, il optimise les systèmes RAG et automatise les infrastructures cloud pour une IA plus accessible et performante.',
         linkedin: 'https://www.linkedin.com/in/tayo-tate/',
         website: 'https://medium.com/@desmondtayes6',
-        talk: {
-            title: 'Du Notebook à la production : Déployer ses modèles d\'IA avec FastAPI et Docker',
-            category: 'Machine Learning & AI',
-            day: 'day3',
-            track: 'AI / Data Science',
-            abstract: 'Beaucoup de projets de Data Science ne voient jamais le jour car le passage à la production semble complexe. Ce talk casse cette barrière en proposant un guide pratique : de la création d\'une API avec FastAPI à la conteneurisation avec Docker. On verra comment transformer un simple script de prédiction en un service web robuste, prêt à être intégré dans n\'importe quelle application.',
-        },
+        talks: [
+            {
+                title: 'Du Notebook à la production : Déployer ses modèles d\'IA avec FastAPI et Docker',
+                category: 'Machine Learning & AI',
+                day: 'day3',
+                track: 'AI / Data Science',
+                abstract: 'Beaucoup de projets de Data Science ne voient jamais le jour car le passage à la production semble complexe. Ce talk casse cette barrière en proposant un guide pratique : de la création d\'une API avec FastAPI à la conteneurisation avec Docker. On verra comment transformer un simple script de prédiction en un service web robuste, prêt à être intégré dans n\'importe quelle application.',
+            },
+            {
+                title: 'Thinking Like a Data Scientist: Mastering Methodology to Build Better Python Projects',
+                category: 'Python Core',
+                day: 'day3',
+                track: 'AI / Data Science',
+                abstract: 'We often think Data Science is just about importing a library and running "model.fit()". However, most projects fail not because of the algorithm, but because of the methodology. This talk presents a structured way of thinking, from problem framing to data understanding and evaluation, that helps you build better, more reliable Python projects.',
+            },
+        ],
     },
     {
         id: 'vanessa-manessong',

@@ -6,23 +6,28 @@ import useScrollAnimation from '../hooks/useScrollAnimation';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { speakers } from '../data/speakers';
 
-const SpeakerCard = ({ speaker, linkTo }) => (
-    <Link to={linkTo} className="speaker-card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
-        <div className="card speaker-card animate-on-scroll slide-up">
-            {speaker.photo ? (
-                <img src={speaker.photo} alt={speaker.name} className="speaker-card-photo" />
-            ) : (
-                <div className="speaker-card-photo-placeholder">
-                    <User size={48} />
-                </div>
-            )}
-            <div className="speaker-card-name">{speaker.name}</div>
-            {speaker.title && <div className="speaker-card-title">{speaker.title}</div>}
-            {speaker.talk?.title && <div className="speaker-card-talk">{speaker.talk.title}</div>}
-            {speaker.talk?.category && <span className="speaker-card-tag">{speaker.talk.category}</span>}
-        </div>
-    </Link>
-);
+const SpeakerCard = ({ speaker, linkTo }) => {
+    const talks = speaker.talks ?? (speaker.talk ? [speaker.talk] : []);
+    const primaryTalk = talks[0];
+    return (
+        <Link to={linkTo} className="speaker-card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <div className="card speaker-card animate-on-scroll slide-up">
+                {speaker.photo ? (
+                    <img src={speaker.photo} alt={speaker.name} className="speaker-card-photo" />
+                ) : (
+                    <div className="speaker-card-photo-placeholder">
+                        <User size={48} />
+                    </div>
+                )}
+                <div className="speaker-card-name">{speaker.name}</div>
+                {speaker.title && <div className="speaker-card-title">{speaker.title}</div>}
+                {primaryTalk?.title && <div className="speaker-card-talk">{primaryTalk.title}</div>}
+                {primaryTalk?.category && <span className="speaker-card-tag">{primaryTalk.category}</span>}
+                {talks.length > 1 && <span className="speaker-card-tag">+{talks.length - 1} more</span>}
+            </div>
+        </Link>
+    );
+};
 
 const Speakers = () => {
     useScrollAnimation();

@@ -9,7 +9,6 @@ export const agenda = {
         { time: '08:30', title: 'Registration & Welcome Coffee', type: 'break', room: '' },
         { time: '09:00', title: 'Opening + Keynote 1', type: 'keynote', room: 'Plenary — all attendees', lang: 'enfr' },
         { time: '09:45', title: 'Coffee break', type: 'break', room: '' },
-        { time: '10:05', title: 'The Silent Bugs in Tech: Debugging Burnout & Cognitive Overload', type: 'workshop', room: 'Plenary — all attendees', speaker: 'Sema Kumbela Fombutu', lang: 'en' },
         { time: '11:10', title: 'From WSGI to ASGI: Modernizing Django', type: 'talk', room: 'Track A', track: 'Web / Security', speaker: 'Parkson Tano Daniel', lang: 'fr' },
         { time: '11:10', title: 'Turning Python Projects into AI-Powered Tools', type: 'talk', room: 'Track B', track: 'AI / Data Science', speaker: 'Caleb Jephuneh', lang: 'enfr' },
         { time: '11:10', title: 'Architecture à budget zéro : cloud design decisions', type: 'talk', room: 'Track C', track: 'DevOps / Cloud', speaker: 'Jerry Davis Ndjana Mengue', lang: 'fr' },
@@ -27,7 +26,8 @@ export const agenda = {
         { time: '15:00', title: 'From Belief to Impact: Why Skills Alone Are Not Enough', type: 'talk', room: 'Track A', track: 'Web / Security', speaker: 'Linuce Demanou', lang: 'en' },
         { time: '15:00', title: "Patrick's Tips to Get a Job/Internship as a Developer", type: 'talk', room: 'Track B', track: 'AI / Data Science', speaker: 'Patrick Nounga', lang: 'fren' },
         { time: '15:00', title: 'Python, Dart and Flutter: Native Performance with FFI', type: 'talk', room: 'Track C', track: 'DevOps / Cloud', speaker: 'Yunwen Eric', lang: 'en' },
-        { time: '15:35', title: 'Community games & social hour — quizzes, networking, ice-breakers', type: 'social', room: '' },
+        { time: '15:35', title: 'The Silent Bugs in Tech: Debugging Burnout & Cognitive Overload', type: 'workshop', room: 'Plenary — all attendees', speaker: 'Sema Kumbela Fombutu', lang: 'en' },
+        { time: '16:40', title: 'Community games & social hour — quizzes, networking, ice-breakers', type: 'social', room: '' },
         { time: '17:00', title: 'End of Day 1', type: 'break', room: '' },
     ],
     day2: [
