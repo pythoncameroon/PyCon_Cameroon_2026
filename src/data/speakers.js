@@ -225,7 +225,7 @@ export const speakers = [    {
         id: 'kafui-alordo',
         name: 'Kafui Alordo',
         photo: '/speakers/Kafui_Alordo.webp',
-        country: 'Cameroon',
+        country: 'Ghana',
         title: 'Software Developer',
         bio: 'Software engineer, community builder, and tech organizer from Ho focused on Python, Django, and practical technology for real-world impact. He is founder and lead organizer of Python User Group Ho, growing developer communities through workshops, meetups, and conferences such as PyHo Conference and Django Girls Ho.',
         linkedin: 'https://www.linkedin.com/in/kafui-alordo/',
