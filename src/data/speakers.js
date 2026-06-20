@@ -107,21 +107,6 @@ export const speakers = [    {
         },
     },
     {
-        id: 'dorothee-maa',
-        name: 'Dr. Dorothée MAA',
-        photo: '/speakers/Dorothee_Maa.webp',
-        country: 'Cameroon',
-        title: 'Médecin Bucco-Dentiste, Master en Management des Organisations Publiques',
-        bio: 'Médecin Bucco-Dentiste depuis une dizaine d\'années, elle évolue à l\'intersection de la promotion de la santé, du leadership humain et de la transformation sociale. Engagée pour la santé mentale et le bien-être au travail, elle est Présidente-Fondatrice de l\'Association COHPE et du Hub MEHAH, et auteure d\'ouvrages.',
-        linkedin: 'https://www.linkedin.com/in/doroth%C3%A9emaa/',
-        talk: {
-            title: 'Prévention et gestion du stress chronique au travail',
-            category: 'Social Impact',
-            day: 'day1',
-            abstract: 'Cet atelier porte sur la prévention et la gestion du stress chronique au travail, un enjeu majeur ayant des répercussions sur la santé comme sur la performance. Conçu dans une approche interactive et participative, il favorise les échanges, la réflexion collective et le partage d\'expériences concrètes. L\'objectif est de créer un espace dynamique, accessible et humain, propice à la prise de conscience et au développement de stratégies de mieux-être au travail.',
-        },
-    },
-    {
         id: 'emambou-ulrich',
         name: 'Emambou Ulrich',
         photo: '/speakers/Emambou_Ulrich.webp',
