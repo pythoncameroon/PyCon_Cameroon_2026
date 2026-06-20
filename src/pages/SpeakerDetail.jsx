@@ -4,7 +4,16 @@ import { ArrowLeft, Globe, MapPin, Tag, Calendar } from 'lucide-react';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import { speakers } from '../data/speakers';
-import { DAYS } from '../data/agenda';
+import { DAYS, agenda } from '../data/agenda';
+
+const roomLookup = Object.values(agenda)
+    .flat()
+    .reduce((acc, item) => {
+        if (!item.room) return acc;
+        if (item.title) acc[item.title] = item.room;
+        if (item.speaker) acc[item.speaker] = item.room;
+        return acc;
+    }, {});
 
 const SpeakerDetail = () => {
     useScrollAnimation();
@@ -104,6 +113,7 @@ const SpeakerDetail = () => {
                             <div>
                                 {talks.map((talk, i) => {
                                     const day = talk.day ? DAYS.find(d => d.key === talk.day) : null;
+                                    const hall = roomLookup[talk.title] ?? roomLookup[speaker.name];
                                     return (
                                         <div key={i} className="card" style={{ borderTop: '3px solid var(--color-orange)', padding: 'var(--spacing-lg)', marginBottom: 'var(--spacing-md)' }}>
                                             <p style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-orange)', fontFamily: 'var(--font-ui)', marginBottom: 'var(--spacing-xs)' }}>
@@ -122,9 +132,14 @@ const SpeakerDetail = () => {
                                                         <Calendar size={13} style={{ color: 'var(--color-orange)' }} /> {day.label} · {day.date}
                                                     </span>
                                                 )}
+                                                {hall && (
+                                                    <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
+                                                        <MapPin size={13} style={{ color: 'var(--color-orange)' }} /> {hall}
+                                                    </span>
+                                                )}
                                                 {talk.track && (
                                                     <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
-                                                        <MapPin size={13} style={{ color: 'var(--color-orange)' }} /> {talk.track}
+                                                        <Tag size={13} style={{ color: 'var(--color-orange)' }} /> {talk.track}
                                                     </span>
                                                 )}
                                             </div>
