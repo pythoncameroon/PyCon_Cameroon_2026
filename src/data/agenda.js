@@ -64,7 +64,6 @@ export const agenda = {
         { time: '13:00', title: 'Authentification 2FA : TOTP avec Django', type: 'talk', room: 'Track C', track: 'Web / Community', speaker: 'Jean Marc Wogue', lang: 'fr' },
         { time: '13:35', title: 'AutoXAI : Diagnostic automobile intelligent avec Python', type: 'talk', room: 'Track A', track: 'Python / Security', speaker: 'Marcela Djoukouo Talotsing', lang: 'fr' },
         { time: '13:35', title: 'AI-Powered Smart Agriculture: Greenhouse & Poultry Systems', type: 'talk', room: 'Track B', track: 'AI / Data Science', speaker: 'Ayuk Princelen Tanyi', lang: 'en' },
-        { time: '14:10', title: 'Prévention et gestion du stress chronique au travail', type: 'workshop', room: 'Plenary — all attendees', speaker: 'Dr. Dorothée MAA', lang: 'fr' },
         { time: '15:15', title: 'Coffee break', type: 'break', room: '' },
         { time: '15:35', title: 'Lightning talks — open floor (5-min slots, all attendees welcome)', type: 'lightning', room: 'Plenary', lang: 'enfr' },
         { time: '16:05', title: 'Closing ceremony + community games — awards, photos, networking', type: 'social', room: '' },
