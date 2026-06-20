@@ -291,8 +291,8 @@ export const speakers = [    {
         name: 'Lobga Julius',
         photo: '/speakers/Lobga_Julius.webp',
         country: 'Cameroon',
-        title: 'AI and Software Engineer at InchTechs and ICISTEM',
-        bio: 'AI and Software Engineer with 4+ years bridging software development and machine learning research. He works at InchTechs and as an AI/ML researcher at the ICISTEM Foundation in Yaoundé, holds an M.Sc. in Data Science, and was part of the winning team at the AIMS Sustainable Development Hackathon.',
+        title: 'AI and Software Engineer at InchTechs',
+        bio: 'AI and Software Engineer with 4+ years bridging software development and machine learning research. He works at InchTechs, holds an M.Sc. in Data Science, and was part of the winning team at the AIMS Sustainable Development Hackathon.',
         linkedin: 'https://www.linkedin.com/in/lobga-julius-647b55234',
         website: 'https://inchtechs.com/',
         talk: {
