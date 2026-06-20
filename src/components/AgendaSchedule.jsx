@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Clock, MapPin, User, Languages } from 'lucide-react';
+import { Clock, MapPin, User, Languages, Tag } from 'lucide-react';
 import { TYPE_STYLES, LANG_LABELS } from '../data/agenda';
 import { speakers } from '../data/speakers';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
@@ -126,7 +126,25 @@ const SessionCard = ({ session, accentColor }) => {
                 )}
                 {session.room && (
                     <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
-                        <MapPin size={13} style={{ color: 'var(--color-orange)', flexShrink: 0 }} /> {session.room}{session.track ? ` · ${session.track}` : ''}
+                        <MapPin size={13} style={{ color: 'var(--color-orange)', flexShrink: 0 }} /> {session.room}
+                    </span>
+                )}
+                {session.track && (
+                    <span style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '5px',
+                        alignSelf: 'flex-start',
+                        padding: '2px 9px',
+                        borderRadius: '50px',
+                        border: '1px solid var(--color-orange)',
+                        fontSize: '0.72rem',
+                        fontWeight: 600,
+                        color: 'var(--color-orange)',
+                        fontFamily: 'var(--font-ui)',
+                        letterSpacing: '0.03em',
+                    }}>
+                        <Tag size={11} style={{ flexShrink: 0 }} /> {session.track}
                     </span>
                 )}
                 {session.lang && (
