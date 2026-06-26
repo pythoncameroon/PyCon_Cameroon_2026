@@ -53,6 +53,7 @@ const Navbar = () => {
 
                 <div className={`nav-links ${isOpen ? 'active' : ''}`} id="navLinks">
                     <NavLink to={l('/about')} className={({ isActive }) => isActive ? "active" : ""}>{t('nav.about')}</NavLink>
+                    <NavLink to={l('/agenda')} className={({ isActive }) => isActive ? "active" : ""}>{t('nav.agenda')}</NavLink>
                     <NavLink to={l('/speakers')} className={({ isActive }) => isActive ? "active" : ""}>{t('nav.speakers')}</NavLink>
                     <NavLink to={l('/sponsor')} className={({ isActive }) => isActive ? "active" : ""}>{t('nav.sponsor')}</NavLink>
                     <NavLink to={l('/attend')} className={({ isActive }) => isActive ? "active" : ""}>{t('nav.attend')}</NavLink>
@@ -90,6 +91,7 @@ const Navbar = () => {
                     </div>
                     <div className="nav-drawer-links">
                         <NavLink to={l('/about')} className={({ isActive }) => isActive ? "active" : ""}>{t('nav.about')}</NavLink>
+                        <NavLink to={l('/agenda')} className={({ isActive }) => isActive ? "active" : ""}>{t('nav.agenda')}</NavLink>
                         <NavLink to={l('/speakers')} className={({ isActive }) => isActive ? "active" : ""}>{t('nav.speakers')}</NavLink>
                         <NavLink to={l('/sponsor')} className={({ isActive }) => isActive ? "active" : ""}>{t('nav.sponsor')}</NavLink>
                         <NavLink to={l('/attend')} className={({ isActive }) => isActive ? "active" : ""}>{t('nav.attend')}</NavLink>

@@ -1,6 +1,7 @@
 {
   "nav": {
     "about": "About",
+    "agenda": "Agenda",
     "speakers": "Speakers",
     "sponsor": "Sponsor",
     "attend": "Attend",
@@ -15,6 +16,7 @@
     "codeOfConduct": "Code of Conduct",
     "psf": "Python Software Foundation",
     "program": "Program",
+    "agenda": "Agenda",
     "speakers": "Speakers",
     "proposalGuidelines": "Proposal Guidelines",
     "venue": "Venue",
@@ -32,6 +34,7 @@
     "heroSubtitle": "Africa's Python Conference, Reimagined in the Heart of Africa",
     "heroDate": "September 17th-19th, 2026",
     "heroLocation": "Yaound\u00e9, Cameroon",
+    "viewAgenda": "View Agenda",
     "callForSpeakers": "Call For Speakers",
     "getYourTicket": "Get Your Ticket",
     "welcomeTitle": "Welcome to",
@@ -157,6 +160,10 @@
     "featuredSubtitle": "Meet some of our confirmed speakers for PyCon Cameroon 2026",
     "comingSoon": "Coming Soon!",
     "comingSoonText": "Our speaker lineup is currently being finalized. Check back soon to see the amazing speakers joining us at PyCon Cameroon 2026!",
+    "backToSpeakers": "Back to Speakers",
+    "aboutSpeaker": "About the Speaker",
+    "talkDetails": "Talk Details",
+    "notFound": "Speaker not found.",
     "whySpeakTitle": "Why",
     "whySpeakHighlight": "Speak",
     "whySpeakSuffix": "at PyCon Cameroon?",
@@ -504,7 +511,15 @@
     "ctaTitle": "Join the UbuCon Track",
     "ctaText": "Whether you're an Ubuntu power user or just getting started with Linux, the UbuCon track has something for you.",
     "ctaSubmit": "Submit a Talk",
-    "ctaTicket": "Get Your Ticket"
+    "ctaTicket": "Get Your Ticket",
+    "agendaTitle": "UbuCon",
+    "agendaHighlight": "Schedule"
+  },
+  "agenda": {
+    "title": "Conference",
+    "titleHighlight": "Agenda",
+    "subtitle": "Three days of Python, Ubuntu, and open source. September 17 to 19, 2026",
+    "note": "Schedule is subject to change. All times are local (WAT, UTC+1)."
   },
   "financialAid": {
     "title": "Financial",
@@ -537,7 +552,7 @@
   "data": {
     "tracks": {
       "newTrack": "New Track",
-      "submitTalk": "Submit a {{label}} Talk",
+      "viewSpeakers": "{{label}} Speakers",
       "attendTrack": "Attend {{label}} Track",
       "trackHighlights": "{{label}} Track Highlights",
       "ubucon": [

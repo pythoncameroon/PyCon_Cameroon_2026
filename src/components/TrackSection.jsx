@@ -31,7 +31,7 @@ const TrackSection = ({ id, bgClass, logo, logoAlt, logoBg, title, titleGradient
             {description.map((p, i) => <p key={i}>{p}</p>)}
             <div className="mt-md flex gap-sm flex-wrap">
               <Link to={l('/speakers')} className="btn btn-primary" style={color !== 'var(--color-orange)' ? { background: color } : {}}>
-                {t('data.tracks.submitTalk', { label: ctaLabel })}
+                {t('data.tracks.viewSpeakers', { label: ctaLabel })}
               </Link>
               <Link to={l('/attend')} className="btn btn-secondary">
                 {t('data.tracks.attendTrack', { label: ctaLabel })}

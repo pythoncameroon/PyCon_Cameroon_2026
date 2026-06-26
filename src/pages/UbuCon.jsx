@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { useTranslation } from 'react-i18next';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import { agenda } from '../data/agenda';
+import AgendaSchedule from '../components/AgendaSchedule';
 
 const UbuConMap = lazy(() => import('../components/UbuConMap'));
 
@@ -60,12 +62,6 @@ const UbuCon = () => {
                             <p>
                                 {t('ubucon.whatIsP2')}
                             </p>
-                            <div className="mt-md">
-                                <a href="https://sessionize.com/pycon-camerooon-2026" target="_blank" rel="noopener noreferrer" className="btn btn-lg"
-                                    style={{ background: UBUNTU_ORANGE, color: 'white', border: 'none' }}>
-                                    {t('ubucon.submitTalk')}
-                                </a>
-                            </div>
                         </div>
                         <div className="card" style={{
                             padding: 'var(--spacing-lg)',
@@ -141,6 +137,20 @@ const UbuCon = () => {
             {/* Tribal Border */}
             <div className="tribal-border"></div>
 
+            {/* UbuCon Agenda */}
+            <section className="section bg-dark" id="agenda">
+                <div className="container">
+                    <div className="section-header">
+                        <h2>{t('ubucon.agendaTitle')} <span style={{ color: UBUNTU_ORANGE }}>{t('ubucon.agendaHighlight')}</span></h2>
+                        <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem' }}>September 18, 2026</p>
+                    </div>
+                    <AgendaSchedule sessions={agenda.day2} />
+                </div>
+            </section>
+
+            {/* Tribal Border */}
+            <div className="tribal-border"></div>
+
             {/* CTA */}
             <section className="section"
                 style={{ background: `linear-gradient(135deg, ${UBUNTU_ORANGE} 0%, ${UBUNTU_AUBERGINE} 100%)` }}>
@@ -150,12 +160,8 @@ const UbuCon = () => {
                         {t('ubucon.ctaText')}
                     </p>
                     <div className="flex justify-center gap-sm flex-wrap">
-                        <a href="https://sessionize.com/pycon-camerooon-2026" target="_blank" rel="noopener noreferrer" className="btn btn-lg"
+                        <Link to={l('/attend')} className="btn btn-lg"
                             style={{ background: 'white', color: UBUNTU_ORANGE }}>
-                            {t('ubucon.ctaSubmit')}
-                        </a>
-                        <Link to={l('/attend')} className="btn btn-lg btn-secondary"
-                            style={{ borderColor: 'white', color: 'white' }}>
                             {t('ubucon.ctaTicket')}
                         </Link>
                     </div>
