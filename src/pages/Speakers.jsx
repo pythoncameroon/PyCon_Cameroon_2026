@@ -5,9 +5,10 @@ import { User } from 'lucide-react';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { speakers } from '../data/speakers';
+import { sessionsById } from '../data/agenda';
 
 const SpeakerCard = ({ speaker, linkTo }) => {
-    const talks = speaker.talks ?? (speaker.talk ? [speaker.talk] : []);
+    const talks = (speaker.talkIds ?? []).map(id => sessionsById[id]).filter(Boolean);
     const primaryTalk = talks[0];
     return (
         <Link to={linkTo} className="speaker-card-link" style={{ textDecoration: 'none', color: 'inherit' }}>

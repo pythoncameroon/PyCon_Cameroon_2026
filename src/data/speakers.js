@@ -1,4 +1,5 @@
-export const speakers = [    {
+export const speakers = [
+    {
         id: 'adonis-simo',
         name: 'Adonis Simo',
         photo: '/speakers/Adonis_Simo.webp',
@@ -7,13 +8,7 @@ export const speakers = [    {
         bio: 'I\'m a cloud and software engineer with 9+ years of experience. I build products at Martha AI as a Product Builder while working as a Senior Full Stack Web Developer (Node.js & Python). Technically proficient in Python, JavaScript, AWS, and modern web frameworks. I\'m passionate about writing, mentoring, and sharing knowledge with tech communities.',
         linkedin: 'https://www.linkedin.com/in/adonis-simo/',
         website: 'https://marthaia.com',
-        talk: {
-            title: 'Stay in Django, Go Reactive',
-            category: 'Web Development',
-            day: 'day3',
-            track: 'Web / Community',
-            abstract: 'What if you could build reactive, SPA-like web experiences without ever leaving Django?',
-        },
+        talkIds: ['stay-in-django-go-reactive-django-unicorn'],
     },
     {
         id: 'adrien-sani',
@@ -24,13 +19,7 @@ export const speakers = [    {
         bio: 'Développeur fullstack passionné par les architectures backend performantes et évolutives. Il conçoit des APIs REST avec Django et FastAPI, des systèmes de simulation métier et des plateformes web avec React et TailwindCSS. Il s\'intéresse aux microservices, à RabbitMQ, à la scalabilité et aux bonnes pratiques de code.',
         linkedin: 'https://www.linkedin.com/in/adrien-sani-673b7b394/',
         website: 'https://portfolio.adrien-dev.me/',
-        talk: {
-            title: 'Concevoir une architecture microservices performante avec Django, FastAPI, RabbitMQ et Traefik',
-            category: 'Web Development',
-            day: 'day3',
-            track: 'Web / Community',
-            abstract: 'Découvrez comment combiner Django et FastAPI pour construire des APIs performantes et évolutives, prêtes pour une architecture microservices.',
-        },
+        talkIds: ['architecture-microservices-avec-django-fastapi-rabbitmq'],
     },
     {
         id: 'ariane-djeupang-j',
@@ -39,22 +28,7 @@ export const speakers = [    {
         country: 'Cameroon',
         title: 'ML Engineer',
         bio: 'ML Engineer, Project/Program Manager, and Microsoft MVP awardee passionate about community growth and innovation. She champions diversity and inclusion, actively empowering underrepresented groups in tech through mentorship and community-driven change, building supportive environments where everyone can thrive and feel a genuine sense of belonging.',
-        talks: [
-            {
-                title: 'Open Documentation Academy: Your First Open Source Contribution',
-                category: 'Ubuntu & Linux',
-                day: 'day2',
-                track: 'UbuCon Track',
-                abstract: 'Documentation is an accessible entry point for open source newcomers. This workshop uses the Open Documentation Academy to guide participants through finding their first issue, applying basic documentation principles, and submitting a contribution to a real project.',
-            },
-            {
-                title: 'Zero-Touch Dashboards: Django + Metabase for Per-User Data Governance',
-                category: 'Machine Learning & AI',
-                day: 'day3',
-                track: 'AI / Data Science',
-                abstract: 'Based on a project I implemented at work: Django handles authentication, and when a user requests a dashboard, per-user data governance is enforced automatically. When our affiliate network grew to thousands, Metabase forced a rethink of how we scoped data access. This talk walks through combining Django and Metabase for zero-touch, per-user dashboards.',
-            },
-        ],
+        talkIds: ['open-documentation-academy', 'zero-touch-dashboards-django-metabase-per-user-governance'],
     },
     {
         id: 'ayuk-princelen-tanyi',
@@ -65,14 +39,9 @@ export const speakers = [    {
         bio: 'Young tech enthusiast and ML developer based in Douala with interests in software development, emerging technologies, medicine, and intelligent systems. He builds practical solutions in smart agriculture and automation, aiming to contribute to African technological innovation through creativity, research, and problem-solving.',
         linkedin: 'https://www.linkedin.com/feed',
         website: 'https://topgamingtips.com',
-        talk: {
-            title: 'AI-Powered Smart Agriculture: Building Intelligent Greenhouse and Poultry Systems for Africa',
-            category: 'IoT & Hardware',
-            day: 'day3',
-            track: 'AI / Data Science',
-            abstract: 'Agriculture in Africa faces major challenges including climate instability, disease outbreaks, inefficient resource management, and limited access to affordable smart farming technologies. This session presents the development of an AI-powered smart greenhouse and poultry monitoring system designed to address these problems using IoT, automation, and machine learning.',
-        },
-    },    {
+        talkIds: ['ai-powered-smart-agriculture-greenhouse-poultry-systems'],
+    },
+    {
         id: 'caleb-jephuneh',
         name: 'Caleb Jephuneh',
         photo: '/speakers/Caleb_Jephuneh.webp',
@@ -81,13 +50,7 @@ export const speakers = [    {
         bio: 'Tech entrepreneur with two successful exits and 7+ years in software and AI across startups, enterprises, and agencies. A global AI speaker, he empowers young innovators to build boldly and create real-world impact. In 2025 he won the Young Africa CEO of the Year award at the CIO 100 Awards.',
         linkedin: 'https://www.linkedin.com/in/caleb-jephunneh-a96aa81b0/',
         website: 'https://www.bricklabsai.org/',
-        talk: {
-            title: 'Turning Python Projects into AI-Powered Tools',
-            category: 'Machine Learning & AI',
-            day: 'day1',
-            track: 'AI / Data Science',
-            abstract: 'What if your existing Python scripts could think, adapt, and make decisions? In this session, we explore practical ways to integrate AI into everyday Python projects without needing a PhD in machine learning. We’ll start with familiar tools like data processing scripts and gradually layer in capabilities such as natural language understanding, predictions, and automation. By the end, you’ll have a clear roadmap for upgrading your current projects into smarter, AI-driven systems.',
-        },
+        talkIds: ['turning-python-projects-into-ai-powered-tools'],
     },
     {
         id: 'claude-ndanda',
@@ -98,13 +61,7 @@ export const speakers = [    {
         bio: 'Software engineer et contributeur open source basé à Douala, alias TrixX. Il combine développement web et mobile (Angular, React, Flask) et sécurité informatique pour bâtir des solutions adaptées au contexte africain. Bug Hunter actif sur HackerOne et développeur chez Zen Africa, il défend un numérique "Made in Africa, Built to Last".',
         linkedin: 'https://www.linkedin.com/in/claude-ndanda-trixx-6aa606302/',
         website: 'https://zen.africa/',
-        talk: {
-            title: 'Construire son propre serveur MCP avec Python : donner des mains à l\'IA',
-            category: 'Machine Learning & AI',
-            day: 'day1',
-            track: 'AI / Data Science',
-            abstract: 'MCP (Model Context Protocol) est le protocole qui permet à un LLM de communiquer avec des outils externes de façon standardisée. Avec FastMCP en Python et Ollama en local, vous pouvez construire un agent IA custom qui raisonne sur vos propres données sans cloud, sans abonnement, sans outils no-code. Ce talk montre comment construire ce serveur from scratch, avec une démo live et des cas d\'usage concrets adaptés au contexte africain.',
-        },
+        talkIds: ['construire-son-propre-serveur-mcp-avec-python'],
     },
     {
         id: 'emambou-ulrich',
@@ -114,13 +71,7 @@ export const speakers = [    {
         title: 'Chief Product Officer NOVA HEALTHTECH',
         bio: 'Cameroonian product strategist, UX/UI designer, and UX Educator at Friends of Figma Yaoundé. As Chief Product Officer at NOVA-HEALTHTECH, he drives health-tech innovation through product strategy, user research, and experience design, and actively supports Cameroon\'s tech ecosystem through workshops, mentorship, and hackathons.',
         linkedin: 'https://www.linkedin.com/in/dev-guy-uix/',
-        talk: {
-            title: 'AI Is Not a Tool: It\'s a Workflow: Designing with Claude, Codex & Figma',
-            category: 'Machine Learning & AI',
-            day: 'day3',
-            track: 'AI / Data Science',
-            abstract: 'A practical, honest breakdown of the AI design workflow that actually works — Claude, Codex, Figma MCP, and when to use each.',
-        },
+        talkIds: ['ai-is-not-a-tool-it-s-a-workflow-claude-codex-figma'],
     },
     {
         id: 'fabiol-dikongue',
@@ -131,13 +82,7 @@ export const speakers = [    {
         bio: 'Senior Software & DevOps Engineer with 7+ years designing, deploying, and securing distributed systems and high-availability microservices. Holding a Master\'s in Operational Cybersecurity, he applies DevSecOps from the ground up and specializes in CI/CD, containerization, and Infrastructure as Code. He is CTO of the Klivar solution.',
         linkedin: 'https://www.linkedin.com/in/samuel-dikongue-76b719198/',
         website: 'https://dikotech.com',
-        talk: {
-            title: 'Security in Web Development: Best Practices for Building Safer Applications',
-            category: 'DevOps & Infrastructure',
-            day: 'day1',
-            track: 'DevOps / Cloud',
-            abstract: 'A practical overview of web security essentials — covering OWASP Top 10, secure coding, API protection, and DevSecOps practices — to help developers build safer applications from the ground up.',
-        },
+        talkIds: ['security-in-web-dev-devsecops-best-practices'],
     },
     {
         id: 'harmony-elendu',
@@ -148,13 +93,7 @@ export const speakers = [    {
         bio: 'Technical Product and Project Manager with over three years of active experience and six in the technical industry. Skilled in program management, writing, research, and speaking, she has built products, contributed to open source, and led community initiatives, finding fulfillment in improving the world through technology and security.',
         linkedin: 'https://www.linkedin.com/in/harmonyelendu/',
         website: 'https://linktr.ee/ogaharmony',
-        talk: {
-            title: 'Your First Pull Request Won\'t Be Perfect: A Case Study in finding your own Open Source Seat',
-            category: 'Education',
-            day: 'day2',
-            track: 'UbuCon Track',
-            abstract: 'Open source is a powerful yet often misunderstood career accelerator for software practitioners in Africa, and it is not limited to senior engineers. This talk draws on Harmony Elendu’s journey, from discovering communities to making contributions, overcoming imposter syndrome, and building a public portfolio that led to real opportunities. Whether you code, write docs, design, or support projects, this session shows there is a place for you in open source.',
-        },
+        talkIds: ['your-first-pull-request-won-t-be-perfect'],
     },
     {
         id: 'hypolit-zeuchieu',
@@ -164,13 +103,7 @@ export const speakers = [    {
         title: 'Trust Consulting, Backend Developer',
         bio: 'Self-taught Python developer based in Yaoundé with a background in mathematics. He came to programming through curiosity about simulation tools during his studies at the University of Dschang. Over two years he has built web projects, automation scripts, and tools, and is passionate about making Python more accessible.',
         linkedin: 'https://www.linkedin.com/in/hypolit-zeuchieu-a159392b7',
-        talk: {
-            title: 'Python in the Browser: No install, No barrier',
-            category: 'Python Core',
-            day: 'day3',
-            track: 'Python / Security',
-            abstract: 'What if your Python script could run in the browser, no installation, no server, no barriers? As a Python developer, I asked this question and discovered a whole new world. This talk is about that discovery shared.',
-        },
+        talkIds: ['python-in-the-browser-no-install-no-barrier'],
     },
     {
         id: 'jean-marc-wogue',
@@ -180,13 +113,7 @@ export const speakers = [    {
         title: 'web devellopper',
         bio: 'developpeur web avec 1 ans d\'experience, tech adventurer, tech researcher, software engineer student',
         linkedin: 'https://www.linkedin.com/in/jean-marc-wogue-deffo-562756383/',
-        talk: {
-            title: 'l\'authentification avec la 2FA : implementation de TOTP avec django',
-            category: 'Web Development',
-            day: 'day3',
-            track: 'Web / Community',
-            abstract: 'creer une authentification securisée avec django et la 2FA',
-        },
+        talkIds: ['authentification-2fa-totp-avec-django'],
     },
     {
         id: 'jerry-davis-ndjana-mengue',
@@ -196,13 +123,7 @@ export const speakers = [    {
         title: 'IT MANAGER',
         bio: 'just a tech guy',
         linkedin: 'https://www.linkedin.com/in/jerry-davis-ndjana-mengue-89229627a?utm_source=share_via&utm_content=profile&utm_medium=member_android',
-        talk: {
-            title: 'Architecture à budget zéro : Les décisions de design qui divisent votre facture cloud',
-            category: 'DevOps & Infrastructure',
-            day: 'day1',
-            track: 'DevOps / Cloud',
-            abstract: 'Le vrai problème Le coût du cloud n\'est pas un problème d\'outil, c\'est un problème de design. Deux applications identiques en fonctionnalités peuvent avoir une facture qui varie de 1 à 50 selon les choix d\'architecture faits au départ. Ce talk présente les principes de conception que j\'ai appris en déployant des applications en production avec un budget quasi nul — pas comme exercice académique, mais par contrainte réelle.',
-        },
+        talkIds: ['architecture-a-budget-zero-cloud-design-decisions'],
     },
     {
         id: 'johnpaul-hampo',
@@ -213,13 +134,7 @@ export const speakers = [    {
         bio: 'I am a data scientist and a researcher. I program with Python and PHP. For more visit my links [https://GitHub.com/hamplustech | https://LinkedIn.com/in/hamplustech | https://x.com/hamplustech]',
         linkedin: 'https://linkedin.com/in/hamplustech',
         website: 'https://hamplustech.com',
-        talk: {
-            title: 'Open Source Impact: How Python Communities Are Solving Real Problems',
-            category: 'Open Source',
-            day: 'day2',
-            track: 'UbuCon Track',
-            abstract: 'Open source is not just about code—it’s about communities solving meaningful problems together. In this talk, the impact of open source via python communities on real problems will be shown and discussed, thereby encouraging the listeners to engage in open source projects and also to leverage python communities.',
-        },
+        talkIds: ['open-source-impact-how-python-communities-solve-real-problems'],
     },
     {
         id: 'kafui-alordo',
@@ -229,13 +144,7 @@ export const speakers = [    {
         title: 'Software Developer',
         bio: 'Software engineer, community builder, and tech organizer from Ho focused on Python, Django, and practical technology for real-world impact. He is founder and lead organizer of Python User Group Ho, growing developer communities through workshops, meetups, and conferences such as PyHo Conference and Django Girls Ho.',
         linkedin: 'https://www.linkedin.com/in/kafui-alordo/',
-        talk: {
-            title: 'HTM(X) at the Intersection of the Web',
-            category: 'Web Development',
-            day: 'day1',
-            track: 'Web / Security',
-            abstract: 'This talk traces the web development journey - from simple server-rendered HTML to the complexity of modern SPAs, how it reshaped the Python/Django developer’s workflow. We revisit what was gained and lost along the way, exploring HTMX as a hypermedia revival that will bring interactivity back to the server, allowing backend-focused developers build modern, dynamic UIs without heavy JavaScript.',
-        },
+        talkIds: ['htm-x-at-the-intersection-of-the-web'],
     },
     {
         id: 'kamdem-yamen-ulrich-laress-ulrich',
@@ -246,13 +155,7 @@ export const speakers = [    {
         bio: 'Ingénieur télécommunications spécialisé en sécurité des systèmes et réseaux. D\'abord développeur backend en freelance, il découvre l\'administration système Linux puis le DevOps, qui fusionne ses deux passions. Certifié sur Terraform et AWS Solutions Architect, il travaille aujourd\'hui en freelance comme DevOps et développeur backend.',
         linkedin: 'https://www.linkedin.com/in/ulrich-laress-kamdem-yamen/',
         website: 'https://itindepth.odoo.com/blog',
-        talk: {
-            title: 'K3s : The Kubernetes for gentle apps',
-            category: 'DevOps & Infrastructure',
-            day: 'day1',
-            track: 'DevOps / Cloud',
-            abstract: 'Déployer un système tournant sur python mais ne nécessitant pas toute la complexité de Kubernetes, d\'où le choix de k3s from Rancher Labs',
-        },
+        talkIds: ['k3s-the-kubernetes-for-gentle-apps'],
     },
     {
         id: 'leslye-nkwa',
@@ -262,13 +165,7 @@ export const speakers = [    {
         title: 'Alea jacta est.',
         bio: 'Étudiante en statistiques et économie, elle applique la data science aux enjeux de développement : jeunesse, emploi décent et innovation en Afrique. Volontaire chez WiMLDS Yaoundé, elle rend la data science accessible aux jeunes femmes africaines et travaille sur l\'analyse de données d\'enquêtes ménages africaines.',
         linkedin: 'https://www.linkedin.com/in/leslyenkwatp/',
-        talk: {
-            title: 'L\'importance de la cohérence des données: 03 bonnes pratiques',
-            category: 'Machine Learning & AI',
-            day: 'day3',
-            track: 'AI / Data Science',
-            abstract: 'L\'atelier s\'inspire de mon expérience personnelle en gestion de la cohérence des données d\'enquête sur l\'enquête ménages du Nigeria (GHS-Panel, Banque mondiale) pendant un projet de cours. À travers le cas de la mesure du foncier agricole, nous verrons trois bonnes pratiques essentielles pour tout débutant.',
-        },
+        talkIds: ['l-importance-de-la-coherence-des-donnees-03-bonnes-pratiques'],
     },
     {
         id: 'linuce-demanou',
@@ -278,13 +175,7 @@ export const speakers = [    {
         title: 'Camertronix, ML Engineer',
         bio: 'With a background in Mathematics, Linuce Demanou is a 23-year-old making her way in Data Science and AI. Passionate about mentorship, she is writing a book, "Where Hope Meets Dreams," to inspire young women to believe in their potential and pursue impactful paths in technology.',
         linkedin: 'https://www.linkedin.com/in/linuce-demanou-kitio-b88822267/',
-        talk: {
-            title: 'From Belief to Impact: Why Skills Alone Are Not Enough in Tech',
-            category: 'Community',
-            day: 'day1',
-            track: 'Web / Security',
-            abstract: 'Success in tech is often reduced to one thing: skills. But in reality, many talented people never reach their potential, not because they lack ability, but because of limiting beliefs shaped by their environment, education, and self-perception. This talk explores the invisible factors that influence growth in tech, from mindset to confidence and exposure. Through personal insights and relatable stories, it highlights why belief is the true starting point of impact.',
-        },
+        talkIds: ['from-belief-to-impact-why-skills-alone-are-not-enough'],
     },
     {
         id: 'lobga-julius',
@@ -295,13 +186,7 @@ export const speakers = [    {
         bio: 'AI and Software Engineer with 4+ years bridging software development and machine learning research. He works at InchTechs, holds an M.Sc. in Data Science, and was part of the winning team at the AIMS Sustainable Development Hackathon.',
         linkedin: 'https://www.linkedin.com/in/lobga-julius-647b55234',
         website: 'https://inchtechs.com/',
-        talk: {
-            title: 'Beyond Keywords: Building a Vector Search Engine From Scratch',
-            category: 'Machine Learning & AI',
-            day: 'day1',
-            track: 'AI / Data Science',
-            abstract: 'Traditional search engines rely heavily on keyword matching, which completely fails the moment a user types a synonym. Modern AI applications solve this using semantic vector search, but the inner workings are often hidden inside complex third-party libraries and black-box neural networks. In this talk, we will demystify semantic search by stepping away from heavy frameworks and building a vector search engine from scratch using pure Python and NumPy.',
-        },
+        talkIds: ['beyond-keywords-vector-search-engine-from-scratch'],
     },
     {
         id: 'marcela-djoukouo-talotsing',
@@ -311,13 +196,7 @@ export const speakers = [    {
         title: 'Prévoir la panne aujourd’hui, sauver une vie demain.',
         bio: 'Doctorante en Mécanique Énergétique à l\'Université de Dschang, ses recherches portent sur l\'intégration de l\'IA explicable dans le diagnostic et le pronostic des véhicules. Passionnée par la maintenance prédictive et l\'enseignement, elle œuvre à rendre les outils d\'IA plus compréhensibles et accessibles aux techniciens et ingénieurs.',
         linkedin: 'https://linkedin.com/in/marcela-djoukouo-talotsing-8a8815273',
-        talk: {
-            title: 'AutoXAI : Rendre le diagnostic automobile intelligent et explicable avec Python',
-            category: 'IoT & Hardware',
-            day: 'day3',
-            track: 'Python / Security',
-            abstract: 'AutoXAI , un projet combinant matériel, IoT et Python embarqué pour le diagnostic automobile intelligent. À partir de capteurs connectés à des cartes comme ESP32, les données du véhicule sont collectées, traitées et analysées afin de détecter les anomalies et faciliter la maintenance prédictive.',
-        },
+        talkIds: ['autoxai-diagnostic-automobile-intelligent-avec-python'],
     },
     {
         id: 'marielle-daha',
@@ -327,13 +206,7 @@ export const speakers = [    {
         title: 'CS student & Aspiring ML engineer | University of Yaoundé 1',
         bio: 'Computer Science sophomore at the University of Yaoundé 1, specializing in data science, and a self-taught UI designer. She builds with Python across data visualization and AI tools, including KALARA, an offline-first AAC platform for non-verbal autistic students, and believes beautiful output is an underrated Python skill.',
         linkedin: 'https://www.linkedin.com/in/marielle-daha-670b39336/',
-        talk: {
-            title: 'Creative coding with matplotlib : turning data into art.',
-            category: 'Python Core',
-            day: 'day3',
-            track: 'Python / Security',
-            abstract: 'Matplotlib can do more than homework plots. This talk walks through concrete techniques : custom styles, generative patterns, artistic compositions, that turn the library into a creative medium.',
-        },
+        talkIds: ['creative-coding-with-matplotlib-turning-data-into-art'],
     },
     {
         id: 'muluh-azinwi-success-ndahi-li',
@@ -344,13 +217,7 @@ export const speakers = [    {
         bio: 'Cameroonian software developer, community architect, and Google Gemini API Global Winner. He is Technical Lead of AWS Cloud Club UBa, Web Developer Intern at Python Cameroon (where he helped build this conference website), and an Open Dreams Scholar driven by the belief that imagination and technology can reshape Africa\'s future.',
         linkedin: 'https://www.linkedin.com/in/success-muluh25',
         website: 'https://ndahi.net',
-        talk: {
-            title: 'Built by Us: A Young Cameroonian\'s Roadmap to Open Source Contribution',
-            category: 'Open Source',
-            day: 'day2',
-            track: 'UbuCon Track',
-            abstract: 'Most Cameroonian developers have complained about broken school portals and local platforms that never work, then gone home and done nothing. This talk asks Why? Open source has an image problem: it feels like unmonetized labour. But ignoring local problems has a cost. This talk reframes contribution as the smartest investment a young Cameroonian dev can make.',
-        },
+        talkIds: ['built-by-us-a-cameroonian-s-roadmap-to-open-source'],
     },
     {
         id: 'mveng-mboda-pascal-franck',
@@ -360,13 +227,7 @@ export const speakers = [    {
         title: 'Hack The Ambassador and pen pentester',
         bio: 'Enthousiaste en cybersécurité, spécialisé en pentest et sécurité défensive, certifié par l\'ISC2. Ambassadeur de la plateforme mondiale Hack The Box à Yaoundé, il pratique aussi le développement Python-Django et forme en administration réseau, systèmes, sécurité et cloud.',
         linkedin: 'https://www.linkedin.com/in/mveng?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
-        talk: {
-            title: 'Pentest d’une application Django avec Python : attaques réelles et corrections',
-            category: 'Cybersecurity',
-            day: 'day3',
-            track: 'Python / Security',
-            abstract: 'Les applications web développées avec Django bénéficient par défaut de mécanismes de sécurité robustes. Pourtant, des erreurs de configuration ou de développement peuvent exposer des vulnérabilités critiques.',
-        },
+        talkIds: ['pentest-d-une-app-django-attaques-reelles-et-corrections'],
     },
     {
         id: 'mvenyi-donald',
@@ -377,13 +238,7 @@ export const speakers = [    {
         bio: 'I am a software computer engineer and a Cybersecurity professional. I am equally a co-founder of Corynth-Tech, a Cameroon-based tech institution that provide IT services and academic and professional training. I attended PYCONZA 2025 in Johannesburg and looking forward to attend other PyCon conferences, national and international.',
         linkedin: 'https://www.linkedin.com/in/mvenyi-donald-293117273',
         website: 'https://corynth-tech.com',
-        talk: {
-            title: 'Hacking with Python: Increasing Cameroon\'S Digital Security Posture.',
-            category: 'Cybersecurity',
-            day: 'day1',
-            track: 'Web / Security',
-            abstract: 'Cameroon is one of the fastest-growing digital economies in the world — but with rapid digital growth comes rising cyber threats: SIM swapping, mobile money theft, ransomware targeting hospitals and banks, and data breaches affecting millions. This talk explores how Python developers across the Cameroon can play a vital role in defending our digital future through ethical hacking and cybersecurity.',
-        },
+        talkIds: ['hacking-with-python-cameroon-s-digital-security'],
     },
     {
         id: 'ndongmo-christian',
@@ -393,13 +248,7 @@ export const speakers = [    {
         title: 'Senior Backend & DevOps Architect @ HooYia | DevOps | Kubernetes | Docker | Youtuber(@GoldenBrainTek)',
         bio: 'Christian is a forward-thinking software developer who constantly stays updated with the latest advancements in technology. His dedication to continuous learning fuels his ability to deliver cutting-edge solutions.',
         linkedin: 'https://www.linkedin.com/in/ndongmo-christian-4a5537226/',
-        talk: {
-            title: 'Stop Clicking in AWS: Reproducible Infrastructure for Django with Terraform',
-            category: 'DevOps & Infrastructure',
-            day: 'day1',
-            track: 'DevOps / Cloud',
-            abstract: 'Tired of manually configuring AWS every time you deploy your Django app? In this talk, we’ll explore how to use Terraform to define and provision production infrastructure in a reproducible and scalable way. Starting from a simple Django application, we’ll build a minimal yet realistic AWS setup including compute (EC2), database (RDS), and storage (S3), all managed as code. You’ll learn how Infrastructure as Code improves collaboration, reduces errors, and enables consistent deployments.',
-        },
+        talkIds: ['stop-clicking-in-aws-django-terraform'],
     },
     {
         id: 'ntui-raoul',
@@ -408,13 +257,7 @@ export const speakers = [    {
         country: 'Cameroon',
         title: 'Core team member at Django Cameroon',
         bio: 'Ntui Raoul is a software engineer with over 2-3 years experienced in the field who has had the privilege to work with developers across Cameroon. He\'s a community builder at Python Cameroon and Django Cameroon. He has interest in AI, ML and Cloud computing.',
-        talk: {
-            title: 'Django + LLMs: Building Real AI Features Without Overengineering',
-            category: 'Machine Learning & AI',
-            day: 'day1',
-            track: 'Web / Security',
-            abstract: 'Everyone wants “AI features” now, but most Django devs get stuck between messy API calls to OpenAI and overcomplicated ML pipelines. In this talk, I’ll show you how to ship useful AI inside a Django app using 3 patterns that actually work in production.',
-        },
+        talkIds: ['django-llms-real-ai-features-without-overengineering'],
     },
     {
         id: 'parkson-tano-daniel',
@@ -425,13 +268,7 @@ export const speakers = [    {
         bio: 'Backend-focused full-stack developer with over 7 years of experience specializing in Python and Django. Formerly Senior Developer at Paysika and now CTO at QuickerPay, he builds reliable, secure, high-performance FinTech systems. A former computer science educator, he is passionate about sharing knowledge across the Python ecosystem.',
         linkedin: 'https://www.linkedin.com/in/daniel-parkson-tano/',
         website: 'https://quickerpay.co/',
-        talk: {
-            title: 'From WSGI to ASGI: Modernizing Django with Daphne and Uvicorn',
-            category: 'Web Development',
-            day: 'day1',
-            track: 'Web / Security',
-            abstract: 'Django’s shift from WSGI to ASGI enables modern real-time capabilities like WebSockets and async processing, which we’ll explore through Django Channels and a comparison of Daphne and Uvicorn in practical deployments.',
-        },
+        talkIds: ['from-wsgi-to-asgi-modernizing-django'],
     },
     {
         id: 'patrick-nounga',
@@ -441,13 +278,7 @@ export const speakers = [    {
         title: 'Law & HR professional, Head of board of Directors, Human Resource Volunteers Association',
         bio: 'Law and HR professional, ENAM valedictorian, and Labor Administrator contributing to strategic national projects in extractive industries governance and local content. As Chairman of the Board of Human Resource Volunteers, he has led national programs supporting hundreds of young Cameroonians toward professional integration and training.',
         linkedin: 'https://www.linkedin.com/in/patrick-n-688058173/',
-        talk: {
-            title: 'Patrick\'s Tips to get easly a job/intership as a developer',
-            category: 'Community',
-            day: 'day1',
-            track: 'AI / Data Science',
-            abstract: 'How to deal with recruiter without experience? during the session, we are going to share some experience to help developpers and graduated to increase their employability',
-        },
+        talkIds: ['patrick-s-tips-to-get-a-job-internship-as-a-developer'],
     },
     {
         id: 'petr-andreev',
@@ -457,13 +288,7 @@ export const speakers = [    {
         title: 'CPython Core Research Engineer, Lecturer at Moscow Institute of Physics and Technology',
         bio: 'Specializes in CPython internals, optimization, and high-performance computing, driven by GPU acceleration and CPU vectorization. He evolved from ML systems into a CPython core research engineer, with 8+ years leading teams across AI, maths, and physics. A PyCon speaker (Free Threading: Future of CPython) and lecturer at the Moscow Institute of Physics and Technology, Russia\'s top university, he is open to talks and collaboration.',
         linkedin: 'https://www.linkedin.com/in/petrpy',
-        talk: {
-            title: 'CPython\'s Memory Model',
-            category: 'Python Fundamentals and Best Practices',
-            day: 'day3',
-            track: 'Python / Security',
-            abstract: 'This talk is a deep dive into how CPython manages memory. How does CPython allocate, track, and free the objects your program creates? We explore reference counting, the cyclic garbage collector, object layout, and the arenas and pools behind the scenes, so you can reason about performance and memory behaviour with confidence.',
-        },
+        talkIds: ['cpython-s-memory-model'],
     },
     {
         id: 'sema-kumbela-fombutu',
@@ -473,13 +298,7 @@ export const speakers = [    {
         title: 'People-Systems-Legacy : building resilient people and durable systems designed to outlast a single generation',
         bio: 'Works at the intersection of human development, mental health, and institutional systems. Founder and Lead Psychotherapist at Sanity Global Foundation, advancing mental health research and advocacy in the African context. He also leads several enterprises, focused on building resilient people and durable systems designed to outlast a single generation.',
         linkedin: 'https://www.linkedin.com/in/sema-kumbela-fombutu-2765b091?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
-        talk: {
-            title: 'The Silent Bugs in Tech: Debugging Burnout, Anxiety,and Cognitive Overload in High-Performance Teams',
-            category: 'Social Impact',
-            day: 'day3',
-            track: 'Web / Community',
-            abstract: 'Tech teams fix system bugs, but ignore those affecting the people building systems. This talk explores burnout, anxiety, isolation, cognitive overload, and toxic productivity through a systems-thinking lens. We link mental strain to slower delivery, more bugs, poor decisions, and weak cohesion. We examine root causes, hidden costs, and introduce a practical debugging framework with strategies to sustain performance without sacrificing delivery for healthier, resilient, high-performing engineerin',
-        },
+        talkIds: ['the-silent-bugs-in-tech-debugging-burnout-cognitive-overload'],
     },
     {
         id: 'tayo-tate-desmond-corentin',
@@ -490,22 +309,7 @@ export const speakers = [    {
         bio: 'Ingénieur en informatique et spécialiste IT passionné par l\'IA, Desmond Tayo développe des solutions full-stack et intègre des modèles de langage (LLM). Engagé dans des projets de recherche en Data Science, il optimise les systèmes RAG et automatise les infrastructures cloud pour une IA plus accessible et performante.',
         linkedin: 'https://www.linkedin.com/in/tayo-tate/',
         website: 'https://medium.com/@desmondtayes6',
-        talks: [
-            {
-                title: 'Du Notebook à la production : Déployer ses modèles d\'IA avec FastAPI et Docker',
-                category: 'Machine Learning & AI',
-                day: 'day3',
-                track: 'AI / Data Science',
-                abstract: 'Beaucoup de projets de Data Science ne voient jamais le jour car le passage à la production semble complexe. Ce talk casse cette barrière en proposant un guide pratique : de la création d\'une API avec FastAPI à la conteneurisation avec Docker. On verra comment transformer un simple script de prédiction en un service web robuste, prêt à être intégré dans n\'importe quelle application.',
-            },
-            {
-                title: 'Thinking Like a Data Scientist: Mastering Methodology to Build Better Python Projects',
-                category: 'Python Core',
-                day: 'day3',
-                track: 'AI / Data Science',
-                abstract: 'We often think Data Science is just about importing a library and running "model.fit()". However, most projects fail not because of the algorithm, but because of the methodology. This talk presents a structured way of thinking, from problem framing to data understanding and evaluation, that helps you build better, more reliable Python projects.',
-            },
-        ],
+        talkIds: ['du-notebook-a-la-production-fastapi-docker', 'thinking-like-a-data-scientist-ibm-methodology'],
     },
     {
         id: 'vanessa-manessong',
@@ -516,13 +320,7 @@ export const speakers = [    {
         bio: 'Investigative data analyst specialising in disinformation campaigns and coordinated inauthentic behaviour. Working at the intersection of data analysis and OSINT, she detects influence operations, identifies the actors, and unpacks their tactics. She also founded an organisation guiding young people toward digital careers and stronger employability.',
         linkedin: 'https://www.linkedin.com/in/vanessa-manessong/',
         website: 'https://disinfo.africa/',
-        talk: {
-            title: 'IA et marché tech : construire un profil adaptable et employable',
-            category: 'Education',
-            day: 'day3',
-            track: 'Web / Community',
-            abstract: 'À l’ère de l’IA, de plus en plus de jeunes souhaitent construire une carrière dans l’intelligence artificielle et la data. Mais que révèle réellement le marché de l’emploi tech ? À travers une analyse des offres d’emploi au Cameroun, cette conférence mettra en lumière les compétences les plus recherchées aujourd’hui, les tendances autour de l’IA et de la data, ainsi que l’importance de développer un profil polyvalent, adaptable et employable.',
-        },
+        talkIds: ['ia-et-marche-tech-construire-un-profil-employable'],
     },
     {
         id: 'yannik-kadjie',
@@ -532,13 +330,7 @@ export const speakers = [    {
         title: 'Software Developer',
         bio: 'je suis Yannik KADJIE, un passionné de l\'implementation de solutions accessibles, avec un intérêt particulier pour les technologies Google, en particulier Google Workspace. Je suis enthousiaste à l\'idée de partager mes connaissances et mon expérience sur ce sujet avec vous lors de Google I/O.',
         linkedin: 'https://www.linkedin.com/in/yannik-kadjie/',
-        talk: {
-            title: 'Speed Up Your Python Program With Concurrency',
-            category: 'Python Core',
-            day: 'day3',
-            track: 'Python / Security',
-            abstract: 'Dans cette session, nous allons voir concrètement comment améliorer la vitesse d\'exécution de nos tâches automatisées tout en exploitant au mieux les ressources disponibles grâce au concurrency.',
-        },
+        talkIds: ['speed-up-your-python-program-with-concurrency'],
     },
     {
         id: 'yunwen-eric',
@@ -549,31 +341,6 @@ export const speakers = [    {
         bio: 'Software developer focused on Flutter and web development, passionate about leveraging technology for Africa\'s growth. Beyond coding, he actively engages in community initiatives and advocates for STEM education, dedicated to making a positive impact through software, community engagement, and education.',
         linkedin: 'https://www.linkedin.com/in/yunweneric',
         website: 'https://neero.io/',
-        talk: {
-            title: 'Python, Dart and Flutter: Unlocking Native Performance with FFI',
-            category: 'Open Source',
-            day: 'day1',
-            track: 'DevOps / Cloud',
-            abstract: 'This session explores how Dart FFI enables Flutter applications to communicate directly with Python-powered systems for building high-performance and intelligent applications beyond traditional APIs. Attendees will learn Dart FFI fundamentals, Python and Flutter interoperability, performance tradeoffs, real-world architecture patterns, and best practices for building scalable cross-platform solutions with open-source tools.',
-        },
+        talkIds: ['python-dart-and-flutter-native-performance-with-ffi'],
     },
-
-];
-
-export const TALK_CATEGORIES = [
-    'Keynote',
-    'Web Development',
-    'Data Science',
-    'Machine Learning & AI',
-    'DevOps & Infrastructure',
-    'Cybersecurity',
-    'Python Core',
-    'Open Source',
-    'Ubuntu & Linux',
-    'IoT & Hardware',
-    'Social Impact',
-    'Education',
-    'Community',
-    'Workshop',
-    'Lightning Talk',
 ];

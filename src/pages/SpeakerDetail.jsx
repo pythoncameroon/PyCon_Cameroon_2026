@@ -4,16 +4,7 @@ import { ArrowLeft, Globe, MapPin, Tag, Calendar } from 'lucide-react';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import { speakers } from '../data/speakers';
-import { DAYS, agenda } from '../data/agenda';
-
-const roomLookup = Object.values(agenda)
-    .flat()
-    .reduce((acc, item) => {
-        if (!item.room) return acc;
-        if (item.title) acc[item.title] = item.room;
-        if (item.speaker) acc[item.speaker] = item.room;
-        return acc;
-    }, {});
+import { DAYS, sessionsById, dayBySessionId } from '../data/agenda';
 
 const SpeakerDetail = () => {
     useScrollAnimation();
@@ -36,7 +27,20 @@ const SpeakerDetail = () => {
         );
     }
 
-    const talks = speaker.talks ?? (speaker.talk ? [speaker.talk] : []);
+    const talks = (speaker.talkIds ?? [])
+        .map((id) => {
+            const session = sessionsById[id];
+            if (!session) return null;
+            return {
+                title: session.title,
+                category: session.category,
+                track: session.track,
+                room: session.room,
+                abstract: session.abstract,
+                day: dayBySessionId[id],
+            };
+        })
+        .filter(Boolean);
 
     return (
         <>
@@ -113,7 +117,7 @@ const SpeakerDetail = () => {
                             <div>
                                 {talks.map((talk, i) => {
                                     const day = talk.day ? DAYS.find(d => d.key === talk.day) : null;
-                                    const hall = roomLookup[talk.title] ?? roomLookup[speaker.name];
+                                    const hall = talk.room;
                                     return (
                                         <div key={i} className="card" style={{ borderTop: '3px solid var(--color-orange)', padding: 'var(--spacing-lg)', marginBottom: 'var(--spacing-md)' }}>
                                             <p style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-orange)', fontFamily: 'var(--font-ui)', marginBottom: 'var(--spacing-xs)' }}>
