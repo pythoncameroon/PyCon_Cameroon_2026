@@ -63,6 +63,7 @@ export const agenda = {
         { time: '13:00', title: 'Authentification 2FA : TOTP avec Django', type: 'talk', room: 'Okok', track: 'Web / Community', speaker: 'Jean Marc Wogue', lang: 'fr' },
         { time: '13:35', title: 'AutoXAI : Diagnostic automobile intelligent avec Python', type: 'talk', room: 'Koki', track: 'Python / Security', speaker: 'Marcela Djoukouo Talotsing', lang: 'fr' },
         { time: '13:35', title: 'AI-Powered Smart Agriculture: Greenhouse & Poultry Systems', type: 'talk', room: 'Eru', track: 'AI / Data Science', speaker: 'Ayuk Princelen Tanyi', lang: 'en' },
+        { time: '13:35', title: "CPython's Memory Model", type: 'talk', room: 'Okok', track: 'Web / Community', speaker: 'Petr Andreev', lang: 'en' },
         { time: '15:15', title: 'Coffee break', type: 'break', room: '' },
         { time: '15:35', title: 'Lightning talks — open floor (5-min slots, all attendees welcome)', type: 'lightning', room: 'Ndolè', lang: 'enfr' },
         { time: '16:05', title: 'Closing ceremony + community games — awards, photos, networking', type: 'social', room: '' },
