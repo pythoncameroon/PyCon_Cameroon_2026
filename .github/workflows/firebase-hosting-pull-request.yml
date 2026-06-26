@@ -17,9 +17,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: npm ci && npm run build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PYCONCAMEROON26 }}
-          projectId: pyconcameroon26
-          channelId: pr-${{ github.event.pull_request.number }}
+      - name: Deploy preview channel
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PYCONCAMEROON26 }}
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/firebase-sa.json
+        run: |
+          printf '%s' "$FIREBASE_SERVICE_ACCOUNT" > "$GOOGLE_APPLICATION_CREDENTIALS"
+          channel="pr-${{ github.event.pull_request.number }}"
+          set +e
+          output=$(npx firebase-tools hosting:channel:deploy "$channel" \
+            --project pyconcameroon26 --expires 30d --json 2>&1)
+          status=$?
+          echo "$output"
+          if [ $status -ne 0 ]; then
+            if echo "$output" | grep -q "is the current active version"; then
+              echo "Preview already up to date (build identical to active version); treating as success."
+              exit 0
+            fi
+            exit $status
+          fi
