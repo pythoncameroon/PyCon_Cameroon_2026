@@ -15,7 +15,7 @@ const Privacy = () => {
             </header>
 
             {/* Content */}
-            <section className="section">
+            <section id="privacy-content" className="section">
                 <div className="container legal-content">
                     <p><strong>Summary:</strong> {t('privacy.summary')}</p>
                     <p>{t('privacy.submitTalk')}</p>

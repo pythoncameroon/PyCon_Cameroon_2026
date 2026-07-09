@@ -28,7 +28,7 @@ const Agenda = () => {
                 </div>
             </header>
 
-            <section className="section bg-dark">
+            <section className="section bg-dark" id="agenda-schedule">
                 <div className="container">
                     <div className="agenda-toggle-wrap">
                         <div className="agenda-toggle">

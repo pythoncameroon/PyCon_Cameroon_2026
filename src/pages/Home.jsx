@@ -18,7 +18,7 @@ const Home = () => {
     return (
         <>
             {/* Hero Section */}
-            <section className="hero">
+            <section className="hero" id="home-hero">
                 <div className="hero-background">
                     <div className="hero-overlay"></div>
                 </div>
@@ -48,7 +48,7 @@ const Home = () => {
             <div className="tribal-border"></div>
 
             {/* Event Description Section */}
-            <section className="section bg-dark">
+            <section className="section bg-dark" id="home-welcome">
                 <div className="container">
                     <div className="section-header">
                         <h2>{t('home.welcomeTitle')} <span className="text-gradient">{t('home.welcomeTitleHighlight')}</span></h2>
@@ -86,7 +86,7 @@ const Home = () => {
             </section>
 
             {/* Features Section */}
-            <section className="section features">
+            <section className="section features" id="home-features">
                 <div className="container">
                     <div className="section-header">
                         <h2>{t('home.whatToExpect')}</h2>
@@ -164,7 +164,7 @@ const Home = () => {
             />
 
             {/* Stats Section */}
-            <section className="section bg-dark">
+            <section className="section bg-dark" id="home-stats">
                 <div className="container">
                     <div className="stats-grid">
                         <div className="stat-item animate-fade-scale">
@@ -188,7 +188,7 @@ const Home = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="section"
+            <section className="section" id="home-cta"
                 style={{ background: 'linear-gradient(135deg, var(--color-orange) 0%, var(--color-red) 100%)' }}>
                 <div className="container text-center">
                     <h2 style={{ color: 'white', marginBottom: 'var(--spacing-sm)' }}>{t('home.readyToJoin')}</h2>

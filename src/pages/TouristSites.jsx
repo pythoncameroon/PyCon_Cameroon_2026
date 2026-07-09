@@ -41,7 +41,7 @@ const TouristSites = () => {
                 </div>
             </header>
 
-            <section className="section">
+            <section id="tourist-sites-gallery" className="section">
                 <div className="container">
                     <p style={{ maxWidth: '800px', margin: '0 auto var(--spacing-lg)', textAlign: 'center', color: 'var(--color-text-secondary)' }}>
                         {t('touristSites.intro')}

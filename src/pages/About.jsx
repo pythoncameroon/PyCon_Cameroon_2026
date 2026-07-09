@@ -32,7 +32,7 @@ const About = () => {
       </header>
 
       {/* Python Cameroon User Group Section */}
-      <section className="section bg-dark">
+      <section className="section bg-dark" id="about-user-group">
         <div className="container">
           <div
             className="grid grid-2"
@@ -75,7 +75,7 @@ const About = () => {
       <div className="tribal-border"></div>
 
       {/* PyCon Cameroon Mission Section */}
-      <section className="section">
+      <section className="section" id="about-mission">
         <div className="container">
           <div className="section-header">
             <h2>
@@ -122,7 +122,7 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="section bg-dark">
+      <section className="section bg-dark" id="about-values">
         <div className="container">
           <div className="section-header">
             <h2>

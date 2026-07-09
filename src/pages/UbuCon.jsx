@@ -49,7 +49,7 @@ const UbuCon = () => {
             </header>
 
             {/* About UbuCon */}
-            <section className="section bg-dark">
+            <section className="section bg-dark" id="ubucon-about">
                 <div className="container">
                     <div className="grid grid-2" style={{ alignItems: 'center', gap: 'var(--spacing-xl)' }}>
                         <div>
@@ -96,7 +96,7 @@ const UbuCon = () => {
             <div className="tribal-border"></div>
 
             {/* Topics */}
-            <section className="section">
+            <section className="section" id="ubucon-topics">
                 <div className="container">
                     <div className="section-header">
                         <h2>{t('ubucon.topicsTitle')} <span style={{ color: UBUNTU_ORANGE }}>{t('ubucon.topicsHighlight')}</span></h2>
@@ -118,7 +118,7 @@ const UbuCon = () => {
             </section>
 
             {/* UbuCons Around the World */}
-            <section className="section bg-dark">
+            <section className="section bg-dark" id="ubucon-world">
                 <div className="container">
                     <div className="section-header">
                         <h2>{t('ubucon.worldTitle')} <span style={{ color: UBUNTU_ORANGE }}>{t('ubucon.worldHighlight')}</span></h2>
@@ -152,7 +152,7 @@ const UbuCon = () => {
             <div className="tribal-border"></div>
 
             {/* CTA */}
-            <section className="section"
+            <section className="section" id="ubucon-cta"
                 style={{ background: `linear-gradient(135deg, ${UBUNTU_ORANGE} 0%, ${UBUNTU_AUBERGINE} 100%)` }}>
                 <div className="container text-center">
                     <h2 style={{ color: 'white', marginBottom: 'var(--spacing-sm)' }}>{t('ubucon.ctaTitle')}</h2>

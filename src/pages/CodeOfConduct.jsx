@@ -16,7 +16,7 @@ const CodeOfConduct = () => {
                 </div>
             </header>
 
-            <section className="section">
+            <section id="code-of-conduct-content" className="section">
                 <div className="container legal-content">
                     <h2>{t('codeOfConduct.commitmentTitle')}</h2>
                     <p>{t('codeOfConduct.commitmentP1')}</p>

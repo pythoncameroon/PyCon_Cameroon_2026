@@ -26,7 +26,7 @@ const Venue = () => {
             </header>
 
             {/* Location Section */}
-            <section className="section bg-dark">
+            <section className="section bg-dark" id="venue-location">
                 <div className="container">
                     <div className="grid grid-2" style={{ alignItems: 'center', gap: 'var(--spacing-xl)' }}>
                         <div>
@@ -63,7 +63,7 @@ const Venue = () => {
             <div className="tribal-border"></div>
 
             {/* Getting There & Accommodation */}
-            <section className="section">
+            <section className="section" id="venue-plan-trip">
                 <div className="container">
                     <div className="section-header">
                         <h2>{t('venue.planTripTitle')} <span className="text-gradient">{t('venue.planTripHighlight')}</span></h2>
@@ -106,7 +106,7 @@ const Venue = () => {
             </section>
 
             {/* Explore Yaoundé */}
-            <section className="section bg-dark">
+            <section className="section bg-dark" id="venue-explore">
                 <div className="container">
                     <div className="section-header">
                         <h2>{t('venue.exploreTitle')} <span className="text-gradient">{t('venue.exploreHighlight')}</span></h2>

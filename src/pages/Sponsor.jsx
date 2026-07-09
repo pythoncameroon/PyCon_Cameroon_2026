@@ -39,7 +39,7 @@ const Sponsor = () => {
             </header>
 
             {/* Why Sponsor Section */}
-            <section className="section bg-dark">
+            <section className="section bg-dark" id="sponsor-why">
                 <div className="container">
                     <div className="grid grid-2" style={{ alignItems: 'center', gap: 'var(--spacing-xl)' }}>
                         <div>
@@ -217,7 +217,7 @@ const Sponsor = () => {
             </section>
 
             {/* Contact CTA */}
-            <section className="section"
+            <section className="section" id="sponsor-contact"
                 style={{ background: 'linear-gradient(135deg, var(--color-orange) 0%, var(--color-red) 100%)' }}>
                 <div className="container text-center">
                     <h2 style={{ color: 'white', marginBottom: 'var(--spacing-sm)' }}>{t('sponsor.getInvolved')}</h2>

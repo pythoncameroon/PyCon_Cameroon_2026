@@ -16,7 +16,7 @@ const SpeakerDetail = () => {
 
     if (!speaker) {
         return (
-            <section className="section bg-dark" style={{ minHeight: '60vh', display: 'flex', alignItems: 'center' }}>
+            <section className="section bg-dark" id="speaker-not-found" style={{ minHeight: '60vh', display: 'flex', alignItems: 'center' }}>
                 <div className="container text-center">
                     <h2>{t('speakers.notFound')}</h2>
                     <Link to={l('/speakers')} className="btn btn-primary mt-md">
@@ -110,7 +110,7 @@ const SpeakerDetail = () => {
                 </div>
             </header>
 
-            <section className="section bg-dark">
+            <section className="section bg-dark" id="speaker-talks">
                 <div className="container">
                     <div className="speaker-detail-grid">
                         {talks.length > 0 && (

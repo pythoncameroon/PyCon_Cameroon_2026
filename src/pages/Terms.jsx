@@ -15,7 +15,7 @@ const Terms = () => {
             </header>
 
             {/* Content */}
-            <section className="section">
+            <section id="terms-content" className="section">
                 <div className="container legal-content">
                     <p>{t('terms.lastUpdated')}</p>
 

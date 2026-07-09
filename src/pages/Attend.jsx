@@ -28,7 +28,7 @@ const Attend = () => {
             </header>
 
             {/* Registration Section */}
-            <section className="section">
+            <section className="section" id="attend-registration">
                 <div className="container">
                     <div className="section-header">
                         <h2>{t('attend.registrationTitle')} <span className="text-gradient">{t('attend.registrationHighlight')}</span></h2>
@@ -99,7 +99,7 @@ const Attend = () => {
             </section>
 
             {/* What's Included */}
-            <section className="section bg-dark">
+            <section className="section bg-dark" id="attend-whats-included">
                 <div className="container">
                     <div className="grid grid-2" style={{ alignItems: 'flex-start', gap: 'var(--spacing-xl)' }}>
                         <div>
@@ -175,7 +175,7 @@ const Attend = () => {
             <div className="tribal-border"></div>
 
             {/* International Travel */}
-            <section className="section">
+            <section className="section" id="attend-travel">
                 <div className="container">
                     <div className="section-header">
                         <h2>{t('attend.travelTitle')} <span className="text-gradient">{t('attend.travelHighlight')}</span></h2>
@@ -197,7 +197,7 @@ const Attend = () => {
             </section>
 
             {/* Policies */}
-            <section className="section bg-dark">
+            <section className="section bg-dark" id="attend-policies">
                 <div className="container">
                     <h2 className="mb-lg">{t('attend.policies')}</h2>
 

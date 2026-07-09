@@ -18,7 +18,7 @@ const HealthSafety = () => {
         </div>
       </header>
 
-      <section className="section">
+      <section id="health-safety-content" className="section">
         <div className="container legal-content">
           <p>{t("healthSafety.intro")}</p>
 

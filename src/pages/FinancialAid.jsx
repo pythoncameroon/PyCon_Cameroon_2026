@@ -20,7 +20,7 @@ const FinancialAid = () => {
                 </div>
             </header>
 
-            <section className="section">
+            <section id="financial-aid-details" className="section">
                 <div className="container" style={{ maxWidth: '800px' }}>
                     <p style={{ fontSize: '1.125rem' }}>{t('financialAid.intro')}</p>
 

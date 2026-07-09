@@ -1,25 +1,37 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const ScrollToTop = () => {
     const [isVisible, setIsVisible] = useState(false);
     const { pathname, hash, search } = useLocation();
-    const navigate = useNavigate();
 
-    // Scroll to top on route change, or to hash target if present
     useEffect(() => {
-        if (hash) {
-            const el = document.getElementById(hash.slice(1));
+        if (!hash) {
+            window.scrollTo(0, 0);
+            return;
+        }
+
+        const id = decodeURIComponent(hash.slice(1));
+        let attempts = 0;
+        let timer;
+
+        const scrollToTarget = () => {
+            const el = document.getElementById(id);
             if (el) {
-                setTimeout(() => {
-                    el.scrollIntoView({ behavior: 'smooth' });
-                    navigate(pathname + search, { replace: true });
-                }, 100);
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                timer = setTimeout(() => {
+                    document.getElementById(id)?.scrollIntoView({ block: 'start' });
+                }, 400);
                 return;
             }
-        }
-        window.scrollTo(0, 0);
-    }, [pathname, hash, search, navigate]);
+            if (attempts++ < 50) {
+                timer = setTimeout(scrollToTarget, 100);
+            }
+        };
+
+        scrollToTarget();
+        return () => clearTimeout(timer);
+    }, [pathname, hash, search]);
 
     // Show button when scrolling down
     useEffect(() => {

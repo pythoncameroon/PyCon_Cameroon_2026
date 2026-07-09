@@ -444,10 +444,15 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 90px;
     width: 100%;
     max-width: 100%;
     overflow-x: clip;
     background-color: var(--color-black);
+}
+
+[id] {
+    scroll-margin-top: 90px;
 }
 
 [data-theme="light"] html {
