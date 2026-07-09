@@ -291,6 +291,17 @@ export const speakers = [
         talkIds: ['cpython-s-memory-model'],
     },
     {
+        id: 'samuel-tiokeng',
+        name: 'Samuel Tiokeng',
+        photo: '/speakers/Samuel_Tiokeng.webp',
+        country: 'Cameroon',
+        title: 'DevOps Engineer @ ProgressSoft Corporation',
+        bio: 'A student of complex systems. Fascinated by what keeps complex systems running, how they work, change and fail. His interest mainly revolves around Cloud-Native, DevOps & Infrastructure. Out of computers he enjoys Arts, Humans & Contemporary Literature.',
+        linkedin: 'https://linkedin.com/company/osscameroon/',
+        website: 'https://osscameroon.com',
+        talkIds: ['maximizing-the-use-of-opensource'],
+    },
+    {
         id: 'sema-kumbela-fombutu',
         name: 'Sema Kumbela Fombutu',
         photo: '/speakers/Sema_Kumbela_Fombutu.webp',
