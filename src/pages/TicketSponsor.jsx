@@ -21,7 +21,7 @@ const copy = {
         ticketsGreeting: 'Almost there, {$ fullName $}.',
         tickets: 'How many student tickets would you like to sponsor?',
         payInstructions: (p, price) =>
-            `### Now make the payment\nYou are sponsoring **{$ tickets $}** ticket(s) at **${price.toLocaleString('en-US')} FCFA** each. Please send **(number of tickets × ${price.toLocaleString('en-US')} FCFA) + mobile money charges** to **one** of these numbers, then come back to confirm:\n\n- **MTN MoMo:** ${p.mtn}\n- **Orange Money:** ${p.orange}\n\nBoth accounts are registered to **${p.name}**. Once your transfer is done, tap OK and we will record the confirmation.`,
+            `### Now make the payment\nYou are sponsoring **<span class="js-ticket-count"></span>** ticket(s) at **${price.toLocaleString('en-US')} FCFA** each.\n\nPlease send **<span class="js-pay-total"></span>** (plus any mobile money charges) to **one** of these numbers, then come back to confirm:\n\n- **MTN MoMo:** ${p.mtn}\n- **Orange Money:** ${p.orange}\n\nBoth accounts are registered to **${p.name}**. Once your transfer is done, tap OK and we will record the confirmation.`,
         amount: 'How much did you send in total?',
         amountDesc: 'The total you paid by mobile money, in XAF.',
         method: 'Which service did you pay with?',
@@ -52,7 +52,7 @@ const copy = {
         ticketsGreeting: 'Presque fini, {$ fullName $}.',
         tickets: 'Combien de billets étudiants souhaitez-vous parrainer ?',
         payInstructions: (p, price) =>
-            `### Effectuez maintenant le paiement\nVous parrainez **{$ tickets $}** billet(s) à **${price.toLocaleString('fr-FR')} FCFA** chacun. Envoyez **(nombre de billets × ${price.toLocaleString('fr-FR')} FCFA) + les frais mobile money** à **l'un** de ces numéros, puis revenez confirmer :\n\n- **MTN MoMo :** ${p.mtn}\n- **Orange Money :** ${p.orange}\n\nLes deux comptes sont enregistrés au nom de **${p.name}**. Une fois le transfert effectué, appuyez sur OK et nous enregistrerons la confirmation.`,
+            `### Effectuez maintenant le paiement\nVous parrainez **{$ tickets $}** billet(s) à **${price.toLocaleString('fr-FR')} FCFA** chacun.\n\nEnvoyez **<span class="js-pay-total"></span>** (plus les frais mobile money) à **l'un** de ces numéros, puis revenez confirmer :\n\n- **MTN MoMo :** ${p.mtn}\n- **Orange Money :** ${p.orange}\n\nLes deux comptes sont enregistrés au nom de **${p.name}**. Une fois le transfert effectué, appuyez sur OK et nous enregistrerons la confirmation.`,
         amount: 'Quel montant total avez-vous envoyé ?',
         amountDesc: 'Le total payé par mobile money, en XAF.',
         method: 'Avec quel service avez-vous payé ?',
@@ -85,7 +85,7 @@ function buildTemplate(lang) {
         postUrl: ticketSponsorEndpoint,
         postSheetName: ticketSponsorSheetName,
         page: 'form-slides',
-        pageProgress: 'show',
+        pageProgress: 'hide',
         localization: lang === 'fr' ? 'fr' : 'en',
         colorScheme: isLight ? 'light' : 'dark',
         accent: ACCENT,
@@ -111,7 +111,7 @@ function buildTemplate(lang) {
     composer.textInput('organisation', { question: t.organisation, description: t.organisationDesc, maxlength: 120 });
 
     composer.slide();
-    composer.telInput('phone', { question: t.phone, required: true, maxlength: 20 });
+    composer.telInput('phone', { question: t.phone, required: true, country: 'CM', maxlength: 20, pattern: '[0-9 ]{6,15}' });
 
     composer.slide();
     composer.free(t.ticketsGreeting);
@@ -127,7 +127,7 @@ function buildTemplate(lang) {
     composer.numberInput('amountPaid', { question: t.amount, description: t.amountDesc, required: true, min: 100, step: 1, unitEnd: 'XAF' });
 
     composer.slide();
-    composer.telInput('payerNumber', { question: t.payerNumber, description: t.payerNumberDesc, required: true, maxlength: 20 });
+    composer.telInput('payerNumber', { question: t.payerNumber, description: t.payerNumberDesc, required: true, country: 'CM', maxlength: 20, pattern: '[0-9 ]{6,15}' });
 
     composer.slide();
     composer.free(t.codeGreeting);
@@ -174,6 +174,29 @@ const TicketSponsor = () => {
                 paddingInlineBottom: 0,
             });
             formsmd.init();
+
+            const locale = currentLang === 'fr' ? 'fr-FR' : 'en-US';
+            const updateTotal = () => {
+                const ticketsInput = container.querySelector('input[name="tickets"]');
+                const count = parseInt(ticketsInput ? ticketsInput.value : '1', 10);
+                const n = Number.isFinite(count) && count > 0 ? count : 1;
+                const total = (n * ticketPriceXAF).toLocaleString(locale) + ' FCFA';
+                container.querySelectorAll('.js-ticket-count').forEach((el) => {
+                    el.textContent = String(n);
+                });
+                container.querySelectorAll('.js-pay-total').forEach((el) => {
+                    el.textContent = total;
+                });
+            };
+
+            setTimeout(() => {
+                if (cancelled) return;
+                const ticketsInput = container.querySelector('input[name="tickets"]');
+                if (ticketsInput) {
+                    ticketsInput.addEventListener('input', updateTotal);
+                }
+                updateTotal();
+            }, 0);
         };
 
         render();

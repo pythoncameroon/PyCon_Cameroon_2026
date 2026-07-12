@@ -13,6 +13,8 @@
 .sponsor-form-mount .fmd-root {
     min-height: 460px;
     background-color: transparent !important;
+    display: flex;
+    flex-direction: column;
 }
 
 .sponsor-form-mount .fmd-main {
@@ -22,4 +24,8 @@
 
 .sponsor-form-mount .fmd-body {
     background-color: transparent !important;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
