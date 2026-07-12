@@ -4,3 +4,11 @@ export const ticketSponsorEndpoint =
 export const ticketSponsorSheetName = 'Ticket Sponsors';
 
 export const paymentMethods = ['MTN Mobile Money (MoMo)', 'Orange Money (OM)'];
+
+export const payTo = {
+    mtn: '677123206',
+    orange: '656246181',
+    name: 'STEVE YONKEU',
+};
+
+export const ticketPriceXAF = 3000;

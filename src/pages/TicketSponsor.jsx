@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { Composer, Formsmd } from 'formsmd';
 import 'formsmd/dist/css/formsmd.min.css';
-import { ticketSponsorEndpoint, ticketSponsorSheetName, paymentMethods } from '../data/ticketSponsor';
+import { ticketSponsorEndpoint, ticketSponsorSheetName, paymentMethods, payTo, ticketPriceXAF } from '../data/ticketSponsor';
 import '../styles/sponsor-form.css';
 
 const copy = {
@@ -10,7 +10,7 @@ const copy = {
         title: 'Sponsor a Student',
         titleHighlight: 'Ticket',
         subtitle: 'Cover the cost of a ticket so a student can attend PyCon Cameroon 2026. Pay by MTN MoMo or Orange Money, then confirm your gift below so we can match it and thank you.',
-        intro: '### Let us confirm your gift\nAnswer a few quick questions. Send your mobile money payment first, then have the confirmation code ready.',
+        intro: '### Let us set up your gift\nAnswer a few quick questions about you, then you will make the payment and confirm it here.',
         name: 'First things first, how can we call you?',
         nameDesc: 'The name we should address you by.',
         emailGreeting: 'Thanks {$ fullName $}!',
@@ -18,8 +18,10 @@ const copy = {
         organisation: 'Are you giving on behalf of a company or organisation?',
         organisationDesc: 'Leave this blank to sponsor as an individual.',
         phone: 'What phone number can we reach you on?',
-        ticketsGreeting: 'Here is the important part, {$ fullName $}.',
+        ticketsGreeting: 'Almost there, {$ fullName $}.',
         tickets: 'How many student tickets would you like to sponsor?',
+        payInstructions: (p, price) =>
+            `### Now make the payment\nYou are sponsoring **{$ tickets $}** ticket(s) at **${price.toLocaleString('en-US')} FCFA** each. Please send **(number of tickets × ${price.toLocaleString('en-US')} FCFA) + mobile money charges** to **one** of these numbers, then come back to confirm:\n\n- **MTN MoMo:** ${p.mtn}\n- **Orange Money:** ${p.orange}\n\nBoth accounts are registered to **${p.name}**. Once your transfer is done, tap OK and we will record the confirmation.`,
         amount: 'How much did you send in total?',
         amountDesc: 'The total you paid by mobile money, in XAF.',
         method: 'Which service did you pay with?',
@@ -39,7 +41,7 @@ const copy = {
         title: 'Parrainez un billet',
         titleHighlight: 'étudiant',
         subtitle: "Prenez en charge un billet pour qu'un étudiant puisse participer à la PyCon Cameroun 2026. Payez par MTN MoMo ou Orange Money, puis confirmez votre don ci-dessous pour que nous puissions le rapprocher et vous remercier.",
-        intro: '### Confirmons votre don\nRépondez à quelques questions rapides. Effectuez d\'abord votre paiement mobile money, puis gardez le code de confirmation à portée de main.',
+        intro: '### Préparons votre don\nRépondez à quelques questions sur vous, puis vous effectuerez le paiement et le confirmerez ici.',
         name: 'Pour commencer, comment pouvons-nous vous appeler ?',
         nameDesc: 'Le nom sous lequel nous devons vous adresser.',
         emailGreeting: 'Merci {$ fullName $} !',
@@ -47,8 +49,10 @@ const copy = {
         organisation: "Faites-vous ce don au nom d'une entreprise ou d'une organisation ?",
         organisationDesc: 'Laissez vide pour parrainer à titre individuel.',
         phone: 'Sur quel numéro de téléphone pouvons-nous vous joindre ?',
-        ticketsGreeting: 'Voici le plus important, {$ fullName $}.',
+        ticketsGreeting: 'Presque fini, {$ fullName $}.',
         tickets: 'Combien de billets étudiants souhaitez-vous parrainer ?',
+        payInstructions: (p, price) =>
+            `### Effectuez maintenant le paiement\nVous parrainez **{$ tickets $}** billet(s) à **${price.toLocaleString('fr-FR')} FCFA** chacun. Envoyez **(nombre de billets × ${price.toLocaleString('fr-FR')} FCFA) + les frais mobile money** à **l'un** de ces numéros, puis revenez confirmer :\n\n- **MTN MoMo :** ${p.mtn}\n- **Orange Money :** ${p.orange}\n\nLes deux comptes sont enregistrés au nom de **${p.name}**. Une fois le transfert effectué, appuyez sur OK et nous enregistrerons la confirmation.`,
         amount: 'Quel montant total avez-vous envoyé ?',
         amountDesc: 'Le total payé par mobile money, en XAF.',
         method: 'Avec quel service avez-vous payé ?',
@@ -114,10 +118,13 @@ function buildTemplate(lang) {
     composer.numberInput('tickets', { question: t.tickets, required: true, min: 1, max: 500, step: 1, value: 1 });
 
     composer.slide();
-    composer.numberInput('amountPaid', { question: t.amount, description: t.amountDesc, required: true, min: 100, step: 1, unitEnd: 'XAF' });
+    composer.free(t.payInstructions(payTo, ticketPriceXAF));
 
     composer.slide();
     composer.choiceInput('paymentMethod', { question: t.method, choices: paymentMethods, required: true });
+
+    composer.slide();
+    composer.numberInput('amountPaid', { question: t.amount, description: t.amountDesc, required: true, min: 100, step: 1, unitEnd: 'XAF' });
 
     composer.slide();
     composer.telInput('payerNumber', { question: t.payerNumber, description: t.payerNumberDesc, required: true, maxlength: 20 });

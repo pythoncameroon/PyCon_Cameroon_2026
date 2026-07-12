@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
-import { Calendar, MapPin, CalendarDays, Ticket } from 'lucide-react';
+import { Calendar, MapPin, CalendarDays, Ticket, HeartHandshake } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import LazyImage from '../components/LazyImage';
@@ -40,6 +40,9 @@ const Home = () => {
                         </Link>
                         <Link to={l('/attend')} className="btn btn-secondary btn-lg">
                             <Ticket size="1em" style={{ verticalAlign: '-0.125em' }} /> {t('home.getYourTicket')}
+                        </Link>
+                        <Link to={l('/attend/sponsor')} className="btn btn-primary btn-lg">
+                            <HeartHandshake size="1em" style={{ verticalAlign: '-0.125em' }} /> {t('home.supportAttendees')}
                         </Link>
                     </div>
                 </div>
