@@ -1,0 +1,25 @@
+.sponsor-form-card {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+}
+
+.sponsor-form-card:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: rgba(224, 122, 36, 0.1);
+}
+
+.sponsor-form-mount .fmd-root {
+    min-height: 460px;
+    background-color: transparent !important;
+}
+
+.sponsor-form-mount .fmd-main {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.sponsor-form-mount .fmd-body {
+    background-color: transparent !important;
+}

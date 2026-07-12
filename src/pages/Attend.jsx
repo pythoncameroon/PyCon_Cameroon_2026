@@ -1,11 +1,24 @@
 import React, { useState } from 'react';
-import { Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Check, GraduationCap } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import { useLocalizedPath } from '../hooks/useLocalizedPath';
 
 const Attend = () => {
     const { t } = useTranslation();
+    const { l, lang } = useLocalizedPath();
     useScrollAnimation();
+
+    const sponsorCta = lang === 'fr' ? {
+        title: 'Parrainez un billet etudiant',
+        text: "Impossible d'assister ? Offrez une place a un etudiant. Payez par MTN MoMo ou Orange Money, puis confirmez avec votre code de transaction.",
+        button: 'Parrainer un billet',
+    } : {
+        title: 'Sponsor a student ticket',
+        text: "Can't attend, or want to give back? Cover a ticket for a student. Pay by MTN MoMo or Orange Money, then confirm with your transaction code.",
+        button: 'Sponsor a ticket',
+    };
     const [activeAccordion, setActiveAccordion] = useState(0);
 
     const toggleAccordion = (index) => {
@@ -94,6 +107,27 @@ const Attend = () => {
                         </div>
                     </div>
 
+                    <div className="card animate-on-scroll slide-up" style={{
+                        maxWidth: '1100px',
+                        margin: 'var(--spacing-lg) auto 0',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 'var(--spacing-md)',
+                        flexWrap: 'wrap',
+                        justifyContent: 'space-between',
+                        borderLeft: '4px solid var(--color-orange)',
+                    }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-md)', flex: '1 1 320px' }}>
+                            <GraduationCap size="2.5rem" style={{ color: 'var(--color-orange)', flexShrink: 0 }} />
+                            <div>
+                                <h3 className="card-title" style={{ marginBottom: '0.25rem' }}>{sponsorCta.title}</h3>
+                                <p className="card-text" style={{ marginBottom: 0 }}>{sponsorCta.text}</p>
+                            </div>
+                        </div>
+                        <Link to={l('attend/sponsor')} className="btn btn-primary" style={{ flexShrink: 0 }}>
+                            {sponsorCta.button}
+                        </Link>
+                    </div>
 
                 </div>
             </section>
