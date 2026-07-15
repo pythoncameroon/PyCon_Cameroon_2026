@@ -7,7 +7,7 @@ export const paymentMethods = ['MTN Mobile Money (MoMo)', 'Orange Money (OM)'];
 
 export const payTo = {
     mtn: '677-123-206',
-    orange: '656-246-181',
+    orange: '656-248-161',
     name: 'STEVE YONKEU',
 };
 
