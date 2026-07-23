@@ -12,3 +12,12 @@ export const payTo = {
 };
 
 export const ticketPriceXAF = 3000;
+
+export const remittanceLinks = {
+    'Taptap Send': 'https://www.taptapsend.com',
+    'LemFi': 'https://www.lemfi.com',
+    'Sendwave': 'https://www.sendwave.com',
+    'WorldRemit': 'https://www.worldremit.com',
+    'Remitly': 'https://www.remitly.com',
+    'Western Union / MoneyGram': 'https://www.westernunion.com',
+};
