@@ -1,3 +1,5 @@
+export const grantsOpen = false;
+
 export const grantsEndpoint =
     'https://script.google.com/macros/s/AKfycbxOFVW-AMCfIelNuSc9hY0UUxacBJebq_HarzCnaN_0s4UDEjQb8ExA_cAxG7JTLxJFZA/exec';
 

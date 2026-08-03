@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Mail, HandCoins } from 'lucide-react';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
+import { grantsOpen } from '../data/grants';
 
 const ORGANIZERS_EMAIL = 'organizers@pythoncameroon.org';
 
@@ -35,6 +36,7 @@ const FinancialAid = () => {
 
             <section id="financial-aid-details" className="section">
                 <div className="container" style={{ maxWidth: '800px' }}>
+                    {grantsOpen && (
                     <div className="card" style={{
                         display: 'flex',
                         alignItems: 'center',
@@ -55,6 +57,7 @@ const FinancialAid = () => {
                             {grantsCta.button}
                         </Link>
                     </div>
+                    )}
 
                     <p style={{ fontSize: '1.125rem' }}>{t('financialAid.intro')}</p>
 

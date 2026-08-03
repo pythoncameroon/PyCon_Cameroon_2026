@@ -4,6 +4,7 @@ import { Check, GraduationCap, HandCoins } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
+import { grantsOpen } from '../data/grants';
 
 const Attend = () => {
     const { t } = useTranslation();
@@ -139,6 +140,7 @@ const Attend = () => {
                         </Link>
                     </div>
 
+                    {grantsOpen && (
                     <div className="card animate-on-scroll slide-up" style={{
                         maxWidth: '1100px',
                         margin: 'var(--spacing-md) auto 0',
@@ -160,6 +162,7 @@ const Attend = () => {
                             {grantsCta.button}
                         </Link>
                     </div>
+                    )}
 
                 </div>
             </section>
