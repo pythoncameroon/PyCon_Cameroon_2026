@@ -36,6 +36,7 @@ const copy = {
         grants: 'Which grant(s) do you need?',
         grantsDesc: 'Select up to 2.',
         grantLabels: ['Ticket', 'Transport', 'Accommodation'],
+        centreNote: 'As you are in the Centre region, only a ticket grant applies. Transport and accommodation are for attendees travelling from other regions.',
         motivation: 'Why do you need this grant, and what would attending mean for you?',
         motivationDesc: 'Write at least 150 words. Honesty and detail help us decide.',
         motivationMin: 'Please write at least 150 words (currently {n}).',
@@ -77,6 +78,7 @@ const copy = {
         grants: 'De quelle(s) bourse(s) avez-vous besoin ?',
         grantsDesc: 'Sélectionnez jusqu\'à 2.',
         grantLabels: ['Billet', 'Transport', 'Hébergement'],
+        centreNote: "Comme vous êtes dans la région du Centre, seule une bourse de billet s'applique. Le transport et l'hébergement sont réservés aux participants venant d'autres régions.",
         motivation: 'Pourquoi avez-vous besoin de cette bourse, et que représenterait votre présence ?',
         motivationDesc: 'Écrivez au moins 150 mots. L\'honnêteté et les détails nous aident à décider.',
         motivationMin: 'Veuillez écrire au moins 150 mots (actuellement {n}).',
@@ -185,14 +187,34 @@ const Grants = () => {
             setTimeout(() => {
                 if (cancelled) return;
                 const boxes = Array.from(container.querySelectorAll('input[name="grants"]'));
-                const enforceMax = () => {
+                const regionSelect = container.querySelector('select[name="region"]');
+                const grantsField = boxes[0] ? boxes[0].closest('.fmd-form-field') : null;
+                let centreNote = null;
+                if (grantsField) {
+                    centreNote = document.createElement('div');
+                    centreNote.style.cssText = 'font-size:0.85rem;margin-top:0.5rem;color:var(--color-orange);display:none;';
+                    grantsField.appendChild(centreNote);
+                }
+                const isCentre = () => regionSelect && regionSelect.value === 'Centre';
+                const updateGrants = () => {
+                    const centre = isCentre();
                     const checked = boxes.filter((b) => b.checked).length;
                     boxes.forEach((b) => {
-                        if (!b.checked) b.disabled = checked >= 2;
+                        if (centre && (b.value === 'Transport' || b.value === 'Accommodation')) {
+                            b.checked = false;
+                            b.disabled = true;
+                        } else {
+                            b.disabled = !b.checked && checked >= 2;
+                        }
                     });
+                    if (centreNote) {
+                        centreNote.textContent = centre ? copy[currentLang].centreNote : '';
+                        centreNote.style.display = centre ? 'block' : 'none';
+                    }
                 };
-                boxes.forEach((b) => b.addEventListener('change', enforceMax));
-                enforceMax();
+                boxes.forEach((b) => b.addEventListener('change', updateGrants));
+                if (regionSelect) regionSelect.addEventListener('change', updateGrants);
+                updateGrants();
 
                 const motivation = container.querySelector('textarea[name="motivation"]');
                 if (motivation) {
