@@ -10,9 +10,10 @@ const copy = {
     en: {
         title: 'Call for',
         titleHighlight: 'Grants',
-        subtitle: 'Cost should not keep you away from PyCon Cameroon 2026. Apply for support with your ticket, transport, or accommodation. Grants are limited and ',
+        subtitle: 'Cost should not keep you away from PyCon Cameroon and UbuCon 2026. These grants help cover the financial aid ticket, transport, or accommodation for both events. Grants are limited and ',
         subtitleHighlight: 'open only to applicants living in Cameroon',
-        subtitleAfter: ', so tell us why attending matters to you.',
+        subtitleAfter: ', so tell us why attending matters to you. Students are our priority.',
+        deadlineNote: 'Applications close 15 August 2026.',
         whyTitle: 'What grants can',
         whyHighlight: 'cover',
         whyLead: 'Pick the support you need. You can apply for one or more of the following:',
@@ -50,9 +51,10 @@ const copy = {
     fr: {
         title: 'Appel à',
         titleHighlight: 'bourses',
-        subtitle: "Le coût ne devrait pas vous empêcher de participer à la PyCon Cameroun 2026. Demandez un soutien pour votre billet, votre transport ou votre hébergement. Les bourses sont limitées et ",
+        subtitle: "Le coût ne devrait pas vous empêcher de participer à la PyCon Cameroun et à l'UbuCon 2026. Ces bourses couvrent le billet d'aide financière, le transport ou l'hébergement pour les deux événements. Les bourses sont limitées et ",
         subtitleHighlight: 'réservées aux candidats résidant au Cameroun',
-        subtitleAfter: ', alors dites-nous pourquoi votre présence compte.',
+        subtitleAfter: ', alors dites-nous pourquoi votre présence compte. Les étudiants sont notre priorité.',
+        deadlineNote: 'Les candidatures ferment le 15 août 2026.',
         whyTitle: 'Ce que les bourses',
         whyHighlight: 'couvrent',
         whyLead: 'Choisissez le soutien dont vous avez besoin. Vous pouvez demander un ou plusieurs des éléments suivants :',
@@ -231,6 +233,7 @@ const Grants = () => {
                 <div className="container text-center">
                     <h1>{t.title} <span className="text-gradient">{t.titleHighlight}</span></h1>
                     <p>{t.subtitle}<strong style={{ color: 'var(--color-orange)' }}>{t.subtitleHighlight}</strong>{t.subtitleAfter}</p>
+                    <p style={{ fontWeight: 700, color: 'var(--color-orange)', marginTop: 'var(--spacing-sm)' }}>{t.deadlineNote}</p>
                 </div>
             </header>
 
