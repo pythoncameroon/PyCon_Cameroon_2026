@@ -131,6 +131,7 @@ function buildTemplate(lang) {
         postSheetName: ticketSponsorSheetName,
         page: 'form-slides',
         pageProgress: 'hide',
+        autofocus: 'all-slides',
         localization: lang === 'fr' ? 'fr' : 'en',
         colorScheme: isLight ? 'light' : 'dark',
         accent: ACCENT,
@@ -213,7 +214,7 @@ const TicketSponsor = () => {
             const formsmd = new Formsmd(buildTemplate(currentLang), container, {
                 colorScheme: scheme,
                 isFullPage: false,
-                footer: 'hide',
+                footer: 'show',
                 formsmdBranding: 'hide',
                 paddingInlineTop: 0,
                 paddingInlineBottom: 0,
