@@ -23,30 +23,40 @@ const copy = {
             { title: 'Accommodation', text: 'Support with a place to stay for the days of the conference.' },
         ],
         intro: '### Apply for a grant\nAnswer a few quick questions. Grants are limited and reviewed individually, so be honest and specific.',
-        name: 'First, how can we call you?',
-        nameDesc: 'The name we should address you by.',
+        name: 'What is your full name?',
+        nameDesc: 'First name and surname, as written on your ID. We use it on your ticket and grant record.',
+        namePlaceholder: 'e.g. Marie Nguemo Tchouta',
         emailGreeting: 'Thanks {$ fullName $}!',
-        email: 'What email can we reach you on?',
-        phone: 'What phone number can we reach you on?',
-        region: 'Which region are you from?',
+        email: 'What is your email address?',
+        emailDesc: 'We send the grant decision here, so check the spelling.',
+        emailPlaceholder: 'e.g. marie@example.com',
+        phone: 'What is your phone number?',
+        phoneDesc: 'A number we can reach you on, ideally with WhatsApp.',
+        phonePlaceholder: 'e.g. 6 77 12 34 56',
+        region: 'Which region of Cameroon do you live in?',
+        regionDesc: 'The region you would be travelling from.',
         regionPlaceholder: 'Select your region',
         regionLabels: ['Adamawa', 'Centre', 'East', 'Far North', 'Littoral', 'North', 'North-West', 'South', 'South-West', 'West'],
         status: 'Which best describes you?',
+        statusDesc: 'Students are our priority, so tell us if you are one.',
         statusLabels: ['Student', 'Professional', 'Self-taught / hobbyist', 'Other'],
         grants: 'Which grant(s) do you need?',
-        grantsDesc: 'Select up to 2.',
+        grantsDesc: 'Select up to 2 of the options below.',
         grantLabels: ['Ticket', 'Transport', 'Accommodation'],
         centreNote: 'As you are in the Centre region, only a ticket grant applies. Transport and accommodation are for attendees travelling from other regions.',
         motivation: 'Why do you need this grant, and what would attending mean for you?',
         motivationDesc: 'Write at least 150 words. Honesty and detail help us decide.',
+        motivationPlaceholder: 'Tell us about your situation, what you work on with Python, and what this grant would change for you.',
         motivationMin: 'Please write at least 150 words (currently {n}).',
         wordsLabel: 'words',
         contribution: 'How would you like to take part? (optional)',
         contributionDesc: 'Speaking, volunteering, sprints, or simply attending.',
+        contributionPlaceholder: 'e.g. I would like to volunteer at registration.',
         links: 'A link to your work? (optional)',
         linksDesc: 'GitHub, LinkedIn, a portfolio, anything.',
+        linksPlaceholder: 'https://github.com/yourusername',
         message: 'Anything else you would like us to know? (optional)',
-        messagePlaceholder: 'Optional.',
+        messagePlaceholder: 'Leave this blank if you have nothing to add.',
         submit: 'Submit my application',
     },
     fr: {
@@ -65,30 +75,40 @@ const copy = {
             { title: 'Hébergement', text: 'Un soutien pour le logement pendant les jours de la conférence.' },
         ],
         intro: '### Demander une bourse\nRépondez à quelques questions. Les bourses sont limitées et examinées individuellement : soyez honnête et précis.',
-        name: 'Pour commencer, comment pouvons-nous vous appeler ?',
-        nameDesc: 'Le nom sous lequel nous devons vous adresser.',
+        name: 'Quel est votre nom complet ?',
+        nameDesc: "Prénom et nom, tels qu'ils figurent sur votre pièce d'identité. Ils apparaîtront sur votre billet et votre dossier de bourse.",
+        namePlaceholder: 'ex. Marie Nguemo Tchouta',
         emailGreeting: 'Merci {$ fullName $} !',
-        email: 'À quelle adresse email pouvons-nous vous joindre ?',
-        phone: 'Sur quel numéro de téléphone pouvons-nous vous joindre ?',
-        region: 'De quelle région êtes-vous ?',
+        email: 'Quelle est votre adresse email ?',
+        emailDesc: "La décision vous sera envoyée à cette adresse, vérifiez l'orthographe.",
+        emailPlaceholder: 'ex. marie@example.com',
+        phone: 'Quel est votre numéro de téléphone ?',
+        phoneDesc: 'Un numéro où vous joindre, idéalement avec WhatsApp.',
+        phonePlaceholder: 'ex. 6 77 12 34 56',
+        region: 'Dans quelle région du Cameroun vivez-vous ?',
+        regionDesc: "La région d'où vous partiriez.",
         regionPlaceholder: 'Sélectionnez votre région',
         regionLabels: ['Adamaoua', 'Centre', 'Est', 'Extrême-Nord', 'Littoral', 'Nord', 'Nord-Ouest', 'Sud', 'Sud-Ouest', 'Ouest'],
         status: 'Qu\'est-ce qui vous décrit le mieux ?',
+        statusDesc: 'Les étudiants sont notre priorité, dites-nous si vous en êtes un.',
         statusLabels: ['Étudiant(e)', 'Professionnel(le)', 'Autodidacte / amateur', 'Autre'],
         grants: 'De quelle(s) bourse(s) avez-vous besoin ?',
-        grantsDesc: 'Sélectionnez jusqu\'à 2.',
+        grantsDesc: 'Sélectionnez jusqu\'à 2 options ci-dessous.',
         grantLabels: ['Billet', 'Transport', 'Hébergement'],
         centreNote: "Comme vous êtes dans la région du Centre, seule une bourse de billet s'applique. Le transport et l'hébergement sont réservés aux participants venant d'autres régions.",
         motivation: 'Pourquoi avez-vous besoin de cette bourse, et que représenterait votre présence ?',
         motivationDesc: 'Écrivez au moins 150 mots. L\'honnêteté et les détails nous aident à décider.',
+        motivationPlaceholder: 'Parlez-nous de votre situation, de ce que vous faites avec Python, et de ce que cette bourse changerait pour vous.',
         motivationMin: 'Veuillez écrire au moins 150 mots (actuellement {n}).',
         wordsLabel: 'mots',
         contribution: 'Comment souhaiteriez-vous participer ? (optionnel)',
         contributionDesc: 'Conférence, bénévolat, sprints, ou simplement participer.',
+        contributionPlaceholder: "ex. J'aimerais aider à l'accueil des participants.",
         links: 'Un lien vers votre travail ? (optionnel)',
         linksDesc: 'GitHub, LinkedIn, un portfolio, etc.',
+        linksPlaceholder: 'https://github.com/votrenom',
         message: 'Autre chose à nous signaler ? (optionnel)',
-        messagePlaceholder: 'Optionnel.',
+        messagePlaceholder: "Laissez vide si vous n'avez rien à ajouter.",
         submit: 'Envoyer ma demande',
     },
 };
@@ -124,32 +144,32 @@ function buildTemplate(lang) {
     const regionChoices = cameroonRegions.map((value, i) => ({ label: t.regionLabels[i] || value, value }));
 
     composer.free(t.intro);
-    composer.textInput('fullName', { question: t.name, description: t.nameDesc, required: true, maxlength: 80 });
+    composer.textInput('fullName', { question: t.name, description: t.nameDesc, placeholder: t.namePlaceholder, required: true, maxlength: 80 });
 
     composer.slide();
     composer.free(t.emailGreeting);
-    composer.emailInput('email', { question: t.email, required: true, maxlength: 120 });
+    composer.emailInput('email', { question: t.email, description: t.emailDesc, placeholder: t.emailPlaceholder, required: true, maxlength: 120 });
 
     composer.slide();
-    composer.telInput('phone', { question: t.phone, required: true, country: 'CM', maxlength: 20, pattern: '[0-9 ]{6,15}' });
+    composer.telInput('phone', { question: t.phone, description: t.phoneDesc, placeholder: t.phonePlaceholder, required: true, country: 'CM', maxlength: 20, pattern: '[0-9 ]{6,15}' });
 
     composer.slide();
-    composer.selectBox('region', { question: t.region, placeholder: t.regionPlaceholder, options: regionChoices, required: true });
+    composer.selectBox('region', { question: t.region, description: t.regionDesc, placeholder: t.regionPlaceholder, options: regionChoices, required: true });
 
     composer.slide();
-    composer.choiceInput('status', { question: t.status, choices: statusChoices, required: true });
+    composer.choiceInput('status', { question: t.status, description: t.statusDesc, choices: statusChoices, required: true });
 
     composer.slide();
     composer.choiceInput('grants', { question: t.grants, description: t.grantsDesc, choices: grantChoices, multiple: true, required: true, hideFormText: true });
 
     composer.slide();
-    composer.textInput('motivation', { question: t.motivation, description: t.motivationDesc, required: true, multiline: true, maxlength: 1500 });
+    composer.textInput('motivation', { question: t.motivation, description: t.motivationDesc, placeholder: t.motivationPlaceholder, required: true, multiline: true, maxlength: 1500 });
 
     composer.slide();
-    composer.textInput('contribution', { question: t.contribution, description: t.contributionDesc, multiline: true, maxlength: 1000 });
+    composer.textInput('contribution', { question: t.contribution, description: t.contributionDesc, placeholder: t.contributionPlaceholder, multiline: true, maxlength: 1000 });
 
     composer.slide();
-    composer.urlInput('links', { question: t.links, description: t.linksDesc, maxlength: 200 });
+    composer.urlInput('links', { question: t.links, description: t.linksDesc, placeholder: t.linksPlaceholder, maxlength: 200 });
 
     composer.slide();
     composer.textInput('message', { question: t.message, placeholder: t.messagePlaceholder, multiline: true, maxlength: 1000 });
