@@ -2697,6 +2697,134 @@ img {
 }
 
 /* ===================================
+   Keynote Cards
+   =================================== */
+.keynote-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.keynote-card-link {
+    display: flex;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.keynote-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+    border-top: 3px solid var(--color-orange);
+    cursor: pointer;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.keynote-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.keynote-card-media {
+    position: relative;
+    background: var(--color-dark-alt);
+}
+
+.keynote-card-photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.keynote-card-photo-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-orange);
+}
+
+.keynote-card-badge {
+    position: absolute;
+    left: var(--spacing-sm);
+    bottom: var(--spacing-sm);
+    background: var(--color-orange);
+    color: #fff;
+    font-family: var(--font-ui);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 50px;
+}
+
+.keynote-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: var(--spacing-md);
+    flex: 1;
+}
+
+.keynote-card-name {
+    margin: 0;
+    font-size: 1.3rem;
+    line-height: 1.2;
+}
+
+.keynote-card-role {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    color: var(--color-text-secondary);
+    max-width: none;
+}
+
+.keynote-card-talk {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-orange);
+    line-height: 1.4;
+    max-width: none;
+}
+
+.keynote-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.9rem;
+    margin-top: auto;
+    padding-top: 4px;
+    font-family: var(--font-ui);
+    font-size: 0.76rem;
+    color: var(--color-text-muted);
+}
+
+.keynote-card-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.keynote-card-lang {
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+@media (max-width: 600px) {
+    .keynote-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===================================
    Speakers Page Specific Styles
    =================================== */
 .timeline {

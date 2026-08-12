@@ -33,6 +33,7 @@ const SpeakerDetail = () => {
             if (!session) return null;
             return {
                 title: session.title,
+                type: session.type,
                 category: session.category,
                 track: session.track,
                 room: session.room,
@@ -121,7 +122,7 @@ const SpeakerDetail = () => {
                                     return (
                                         <div key={i} className="card" style={{ borderTop: '3px solid var(--color-orange)', padding: 'var(--spacing-lg)', marginBottom: 'var(--spacing-md)' }}>
                                             <p style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-orange)', fontFamily: 'var(--font-ui)', marginBottom: 'var(--spacing-xs)' }}>
-                                                {t('speakers.talkDetails')}
+                                                {talk.type === 'keynote' ? t('speakers.keynoteBadge') : t('speakers.talkDetails')}
                                             </p>
                                             <h2 style={{ marginBottom: 'var(--spacing-sm)', lineHeight: 1.35 }}>{talk.title}</h2>
 

@@ -22,7 +22,8 @@ export const DAYS = [
 export const agenda = {
     day1: [
         { time: '08:30', title: 'Registration & Welcome Coffee', type: 'break', room: '' },
-        { time: '09:00', title: 'Opening + Keynote 1', type: 'keynote', room: 'Ndolè', lang: 'enfr' },
+        { time: '09:00', title: 'Opening ceremony', type: 'keynote', room: 'Ndolè', lang: 'enfr' },
+        { id: 'keynote-la-tech-je-t-aime-moi-non-plus', time: '09:15', title: 'La Tech, je t\'aime moi non plus', type: 'keynote', room: 'Ndolè', speaker: 'Sarah Abderemane', category: 'Community', lang: 'fr', abstract: 'Dans cette keynote, elle raconte son parcours : celui d\'une femme qui a appris à trouver sa place dans un écosystème parfois intimidant, et qui a découvert qu\'avec les bons ingrédients, on peut non seulement s\'y retrouver, mais y laisser sa marque.' },
         { time: '09:45', title: 'Coffee break', type: 'break', room: '' },
         { id: 'from-wsgi-to-asgi-modernizing-django', time: '11:10', title: 'From WSGI to ASGI: Modernizing Django', type: 'talk', room: 'Koki', track: 'Web / Security', speaker: 'Parkson Tano Daniel', category: 'Web Development', lang: 'en', abstract: 'Django’s shift from WSGI to ASGI enables modern real-time capabilities like WebSockets and async processing, which we’ll explore through Django Channels and a comparison of Daphne and Uvicorn in practical deployments.' },
         { id: 'turning-python-projects-into-ai-powered-tools', time: '11:10', title: 'Turning Python Projects into AI-Powered Tools', type: 'talk', room: 'Eru', track: 'AI / Data Science', speaker: 'Caleb Jephuneh', category: 'Machine Learning & AI', lang: 'enfr', abstract: 'What if your existing Python scripts could think, adapt, and make decisions? In this session, we explore practical ways to integrate AI into everyday Python projects without needing a PhD in machine learning. We’ll start with familiar tools like data processing scripts and gradually layer in capabilities such as natural language understanding, predictions, and automation. By the end, you’ll have a clear roadmap for upgrading your current projects into smarter, AI-driven systems.' },
@@ -48,6 +49,7 @@ export const agenda = {
     day2: [
         { time: '08:30', title: 'Registration & Welcome Coffee', type: 'break', room: '' },
         { time: '09:00', title: 'UbuCon Cameroon Opening', type: 'keynote', room: 'Welcome, Ubuntu ecosystem update', lang: 'enfr' },
+        { id: 'keynote-building-a-saas-in-africa-to-the-world', time: '09:20', title: 'Building a SaaS in Africa to the World', type: 'keynote', room: 'Ndolè', speaker: 'Adonis Simo', category: 'Web Development', lang: 'fr', abstract: 'A tale on how to design, build and scale a SaaS product in Africa and target the world. We will explore how to think the product, how to make the various design choices and promote it.' },
         { id: 'built-by-us-a-cameroonian-s-roadmap-to-open-source', time: '09:50', title: 'Built by Us: A Cameroonian\'s Roadmap to Open Source', type: 'workshop', room: 'UbuCon Track', speaker: 'Muluh Azinwi Success Ndahi\'li', category: 'Open Source', lang: 'en', abstract: 'Most Cameroonian developers have complained about broken school portals and local platforms that never work, then gone home and done nothing. This talk asks Why? Open source has an image problem: it feels like unmonetized labour. But ignoring local problems has a cost. This talk reframes contribution as the smartest investment a young Cameroonian dev can make.' },
         { id: 'open-source-impact-how-python-communities-solve-real-problems', time: '11:00', title: 'Open Source Impact: How Python Communities Solve Real Problems', type: 'workshop', room: 'UbuCon Track', speaker: 'Johnpaul Hampo', category: 'Open Source', lang: 'en', abstract: 'Open source is not just about code—it’s about communities solving meaningful problems together. In this talk, the impact of open source via python communities on real problems will be shown and discussed, thereby encouraging the listeners to engage in open source projects and also to leverage python communities.' },
         { time: '12:10', title: 'Lunch break', type: 'break', room: '' },
@@ -59,7 +61,7 @@ export const agenda = {
     ],
     day3: [
         { time: '08:30', title: 'Welcome Coffee', type: 'break', room: '' },
-        { time: '09:00', title: 'Keynote 2', type: 'keynote', room: 'Ndolè', lang: 'enfr' },
+        { id: 'keynote-ai-can-code-but-it-cannot-think-like-you-yet', time: '09:00', title: 'AI Can Code, But It Can\'t Think Like You (Yet): The Human in the Loop', type: 'keynote', room: 'Ndolè', speaker: 'Veliswa Boya', category: 'Machine Learning & AI', lang: 'en', abstract: '"Why bother learning to code when we have AI?" AI coding assistants are transforming software development by turning ideas into specs, designs, and working code. In this session, we\'ll explore how learning to code isn\'t about competing with AI but instead about learning to lead it.' },
         { time: '09:45', title: 'Coffee break', type: 'break', room: '' },
         { id: 'python-in-the-browser-no-install-no-barrier', time: '10:05', title: 'Python in the Browser: No Install, No Barrier', type: 'talk', room: 'Koki', track: 'Python / Security', speaker: 'Hypolit Zeuchieu', category: 'Python Core', lang: 'fren', abstract: 'What if your Python script could run in the browser, no installation, no server, no barriers? As a Python developer, I asked this question and discovered a whole new world. This talk is about that discovery shared.' },
         { id: 'thinking-like-a-data-scientist-ibm-methodology', time: '10:05', title: 'Thinking Like a Data Scientist: IBM Methodology', type: 'talk', room: 'Eru', track: 'AI / Data Science', speaker: 'Tayo Tate Desmond', category: 'Python Core', lang: 'en', abstract: 'We often think Data Science is just about importing a library and running "model.fit()". However, most projects fail not because of the algorithm, but because of the methodology. This talk presents a structured way of thinking, from problem framing to data understanding and evaluation, that helps you build better, more reliable Python projects.' },
@@ -113,3 +115,10 @@ export const dayBySessionId = Object.entries(agenda)
         items.forEach((s) => { if (s.id) acc[s.id] = day; });
         return acc;
     }, {});
+
+const DAY_ORDER = DAYS.reduce((acc, d, i) => ({ ...acc, [d.key]: i }), {});
+
+export const keynoteSessions = Object.values(agenda)
+    .flat()
+    .filter((s) => s.id && s.type === 'keynote' && s.speaker)
+    .sort((a, b) => DAY_ORDER[dayBySessionId[a.id]] - DAY_ORDER[dayBySessionId[b.id]]);

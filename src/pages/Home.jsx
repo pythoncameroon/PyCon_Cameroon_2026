@@ -6,7 +6,14 @@ import { useTranslation } from 'react-i18next';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import LazyImage from '../components/LazyImage';
 import TrackSection from '../components/TrackSection';
+import KeynoteCard from '../components/KeynoteCard';
 import { sponsorshipDeckUrl } from '../data/sponsors';
+import { speakers } from '../data/speakers';
+import { keynoteSessions } from '../data/agenda';
+
+const keynotes = keynoteSessions
+    .map((session) => ({ session, speaker: speakers.find((s) => (s.talkIds ?? []).includes(session.id)) }))
+    .filter((k) => k.speaker);
 
 const Home = () => {
     useScrollAnimation();
@@ -87,6 +94,28 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Keynote Speakers */}
+            {keynotes.length > 0 && (
+                <section className="section" id="home-keynotes">
+                    <div className="container">
+                        <div className="section-header">
+                            <h2>{t('home.keynoteTitle')} <span className="text-gradient">{t('home.keynoteHighlight')}</span></h2>
+                            <p>{t('home.keynoteSubtitle')}</p>
+                        </div>
+                        <div className="keynote-grid stagger">
+                            {keynotes.map(({ session, speaker }) => (
+                                <KeynoteCard key={session.id} speaker={speaker} session={session} />
+                            ))}
+                        </div>
+                        <div className="text-center" style={{ marginTop: 'var(--spacing-xl)' }}>
+                            <Link to={l('/speakers')} className="btn btn-secondary" style={{ padding: '0.85rem 2.25rem', background: 'var(--color-black)' }}>
+                                {t('home.keynoteCta')}
+                            </Link>
+                        </div>
+                    </div>
+                </section>
+            )}
 
             {/* Features Section */}
             <section className="section features" id="home-features">
