@@ -1,9 +1,10 @@
-import { useEffect, useRef } from 'react';
-import { useParams } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { Composer, Formsmd } from 'formsmd';
 import { Ticket, Bus, BedDouble } from 'lucide-react';
 import 'formsmd/dist/css/formsmd.min.css';
-import { grantsEndpoint, grantsSheetName, grantTypes, grantStatusOptions, cameroonRegions } from '../data/grants';
+import { useLocalizedPath } from '../hooks/useLocalizedPath';
+import { grantsEndpoint, grantsSheetName, grantTypes, grantStatusOptions, cameroonRegions, grantsDeadline, isGrantsOpen } from '../data/grants';
 import '../styles/sponsor-form.css';
 
 const copy = {
@@ -13,7 +14,12 @@ const copy = {
         subtitle: 'Cost should not keep you away from PyCon Cameroon and UbuCon 2026. These grants help cover the financial aid ticket, transport, or accommodation for both events. Grants are limited and ',
         subtitleHighlight: 'open only to applicants living in Cameroon',
         subtitleAfter: ', so tell us why attending matters to you. Students are our priority.',
-        deadlineNote: 'Applications close 15 August 2026.',
+        deadlineNote: 'Applications close 15 August 2026 at 23:59 (GMT+1).',
+        closedTitle: 'Applications are now',
+        closedHighlight: 'closed',
+        closedLead: 'The call for grants closed on 15 August 2026 at 23:59 (GMT+1). We are no longer accepting new applications.',
+        closedBody: 'Every application we received is being reviewed individually. We will get back to you by email, so keep an eye on your inbox and your spam folder. Thank you for taking the time to apply.',
+        closedCta: 'See other ways to attend',
         whyTitle: 'What grants can',
         whyHighlight: 'cover',
         whyLead: 'Pick the support you need. You can apply for one or more of the following:',
@@ -65,7 +71,12 @@ const copy = {
         subtitle: "Le coût ne devrait pas vous empêcher de participer à la PyCon Cameroun et à l'UbuCon 2026. Ces bourses couvrent le billet d'aide financière, le transport ou l'hébergement pour les deux événements. Les bourses sont limitées et ",
         subtitleHighlight: 'réservées aux candidats résidant au Cameroun',
         subtitleAfter: ', alors dites-nous pourquoi votre présence compte. Les étudiants sont notre priorité.',
-        deadlineNote: 'Les candidatures ferment le 15 août 2026.',
+        deadlineNote: 'Les candidatures ferment le 15 août 2026 à 23h59 (GMT+1).',
+        closedTitle: 'Les candidatures sont',
+        closedHighlight: 'closes',
+        closedLead: "L'appel à bourses a fermé le 15 août 2026 à 23h59 (GMT+1). Nous n'acceptons plus de nouvelles candidatures.",
+        closedBody: 'Chaque candidature reçue est examinée individuellement. Nous vous répondrons par email, alors surveillez votre boîte de réception et vos spams. Merci d\'avoir pris le temps de postuler.',
+        closedCta: 'Voir les autres façons de participer',
         whyTitle: 'Ce que les bourses',
         whyHighlight: 'couvrent',
         whyLead: 'Choisissez le soutien dont vous avez besoin. Vous pouvez demander un ou plusieurs des éléments suivants :',
@@ -179,14 +190,24 @@ function buildTemplate(lang) {
 
 const Grants = () => {
     const { lang } = useParams();
+    const { l } = useLocalizedPath();
     const containerRef = useRef(null);
     const currentLang = lang === 'fr' ? 'fr' : 'en';
     const t = copy[currentLang];
     const grantIcons = [Ticket, Bus, BedDouble];
+    const [open, setOpen] = useState(isGrantsOpen);
+
+    useEffect(() => {
+        if (!open) return;
+        const msUntilClose = grantsDeadline.getTime() - Date.now();
+        if (msUntilClose > 2147483647) return;
+        const timer = setTimeout(() => setOpen(false), Math.max(msUntilClose, 0));
+        return () => clearTimeout(timer);
+    }, [open]);
 
     useEffect(() => {
         const container = containerRef.current;
-        if (!container) return;
+        if (!container || !open) return;
 
         let cancelled = false;
 
@@ -267,7 +288,7 @@ const Grants = () => {
             observer.disconnect();
             if (container) container.innerHTML = '';
         };
-    }, [currentLang]);
+    }, [currentLang, open]);
 
     return (
         <>
@@ -275,7 +296,9 @@ const Grants = () => {
                 <div className="container text-center">
                     <h1>{t.title} <span className="text-gradient">{t.titleHighlight}</span></h1>
                     <p>{t.subtitle}<strong style={{ color: 'var(--color-orange)' }}>{t.subtitleHighlight}</strong>{t.subtitleAfter}</p>
-                    <p style={{ fontWeight: 700, color: 'var(--color-orange)', marginTop: 'var(--spacing-sm)' }}>{t.deadlineNote}</p>
+                    {open && (
+                        <p style={{ fontWeight: 700, color: 'var(--color-orange)', marginTop: 'var(--spacing-sm)' }}>{t.deadlineNote}</p>
+                    )}
                 </div>
             </header>
 
@@ -302,9 +325,20 @@ const Grants = () => {
 
             <section className="section bg-dark" id="grants-form">
                 <div className="container">
-                    <div className="card sponsor-form-card">
-                        <div ref={containerRef} className="sponsor-form-mount" />
-                    </div>
+                    {open ? (
+                        <div className="card sponsor-form-card">
+                            <div ref={containerRef} className="sponsor-form-mount" />
+                        </div>
+                    ) : (
+                        <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
+                            <h2>{t.closedTitle} <span className="text-gradient">{t.closedHighlight}</span></h2>
+                            <p style={{ marginTop: 'var(--spacing-sm)' }}>{t.closedLead}</p>
+                            <p style={{ color: 'var(--color-text-secondary)' }}>{t.closedBody}</p>
+                            <Link to={l('/attend')} className="btn btn-primary" style={{ marginTop: 'var(--spacing-md)' }}>
+                                {t.closedCta}
+                            </Link>
+                        </div>
+                    )}
                 </div>
             </section>
         </>

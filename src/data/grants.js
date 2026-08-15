@@ -1,4 +1,8 @@
-export const grantsOpen = false;
+export const grantsDeadline = new Date('2026-08-15T23:59:59+01:00');
+
+export const isGrantsOpen = () => Date.now() <= grantsDeadline.getTime();
+
+export const grantsOpen = isGrantsOpen();
 
 export const grantsEndpoint =
     'https://script.google.com/macros/s/AKfycbxOFVW-AMCfIelNuSc9hY0UUxacBJebq_HarzCnaN_0s4UDEjQb8ExA_cAxG7JTLxJFZA/exec';
