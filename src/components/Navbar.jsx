@@ -48,7 +48,6 @@ const Navbar = () => {
             <div className="nav-container">
                 <Link to={l('/')} className="nav-logo">
                     <img src="/images/branding/python-cameroon-logo.webp" alt="PyCon Cameroon Logo" />
-                    <span>PyCon CM</span>
                 </Link>
 
                 <div className={`nav-links ${isOpen ? 'active' : ''}`} id="navLinks">
@@ -86,7 +85,6 @@ const Navbar = () => {
                     <div className="nav-drawer-header">
                         <Link to={l('/')} className="nav-logo" onClick={() => setIsOpen(false)}>
                             <img src="/images/branding/python-cameroon-logo.webp" alt="PyCon Cameroon Logo" />
-                            <span>PyCon CM</span>
                         </Link>
                     </div>
                     <div className="nav-drawer-links">
