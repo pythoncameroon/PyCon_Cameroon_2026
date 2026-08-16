@@ -14,7 +14,6 @@ const Footer = () => {
                     <div>
                         <div className="footer-brand">
                             <img src="/images/branding/python-cameroon-logo.webp" alt="PyCon Cameroon Logo" />
-                            <span style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--color-orange)' }}>PyCon CM 2026</span>
                         </div>
 
                         <p className="footer-description">
