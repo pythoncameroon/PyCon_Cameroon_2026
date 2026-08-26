@@ -75,7 +75,11 @@
     "readyToJoin": "Ready to Join Us?",
     "readyToJoinText": "Be part of Cameroon's first PyCon and help shape the future of Python in Africa.",
     "submitATalk": "Submit a Talk",
-    "sponsorshipDeck": "Sponsorship Deck"
+    "sponsorshipDeck": "Sponsorship Deck",
+    "sponsorsTitle": "Our",
+    "sponsorsHighlight": "Sponsors",
+    "sponsorsAll": "See all our sponsors",
+    "sponsorsAria": "Our sponsors' logos"
   },
   "about": {
     "title": "About",
