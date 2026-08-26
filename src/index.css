@@ -327,10 +327,6 @@
     color: #8b5a2b;
 }
 
-[data-theme="light"] .sponsor-showcase-tile-desc {
-    background: #f5f5f5;
-}
-
 [data-theme="light"] .btn-tier.btn-diamond {
     background: #00b8d4;
     color: #ffffff;
@@ -3267,10 +3263,21 @@ a.sponsor-showcase-name.silver-link:hover {
     justify-content: center;
     text-align: center;
     padding: var(--spacing-md);
-    text-decoration: none;
     position: relative;
-    overflow: hidden;
-    min-height: 220px;
+    overflow: visible;
+    z-index: 1;
+}
+
+@media (hover: hover) {
+    .sponsor-showcase-tile:hover {
+        z-index: 30;
+    }
+}
+
+.sponsor-showcase-tile:focus-within,
+.sponsor-showcase-tile:focus-visible,
+.sponsor-showcase-tile[data-open="true"] {
+    z-index: 30;
 }
 
 .sponsor-showcase-tile-logo {
@@ -3297,50 +3304,149 @@ a.sponsor-showcase-name.silver-link:hover {
     font-weight: 600;
 }
 
-.sponsor-showcase-tile-desc {
+a.sponsor-showcase-tile-name:hover {
+    color: var(--color-orange);
+}
+
+/* Floating popover with the sponsor's full description */
+.sponsor-showcase-popover {
     position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 1rem var(--spacing-sm);
+    bottom: calc(100% + 12px);
+    left: 50%;
+    width: min(340px, 90vw);
+    max-width: calc(100vw - 2rem);
     background: var(--color-dark-alt);
-    color: var(--color-text-secondary);
-    font-size: 0.8rem;
-    line-height: 1.45;
-    text-align: center;
-    border-radius: inherit;
+    border: 1px solid var(--color-orange);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: var(--spacing-sm);
+    text-align: left;
     opacity: 0;
-    transition: opacity var(--transition-normal);
-    overflow-y: auto;
     pointer-events: none;
+    transform: translateX(-50%) translateY(6px) scale(0.98);
+    transition: opacity var(--transition-normal), transform var(--transition-normal);
+    z-index: 40;
 }
 
-.sponsor-showcase-tile:hover .sponsor-showcase-tile-desc,
-.sponsor-showcase-tile:focus-visible .sponsor-showcase-tile-desc {
-    opacity: 1;
+/* Invisible bridge so the pointer doesn't lose :hover crossing the gap */
+.sponsor-showcase-popover::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -12px;
+    height: 12px;
 }
 
-@media (hover: none), (max-width: 768px) {
-    .sponsor-showcase-tile {
-        min-height: 0;
-    }
+.sponsor-showcase-popover::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    margin-top: -5px;
+    background: var(--color-dark-alt);
+    border-right: 1px solid var(--color-orange);
+    border-bottom: 1px solid var(--color-orange);
+    transform: translateX(-50%) rotate(45deg);
+}
 
-    .sponsor-showcase-tile-desc {
-        position: static;
-        inset: auto;
+@media (hover: hover) {
+    .sponsor-showcase-tile:hover .sponsor-showcase-popover {
         opacity: 1;
-        padding: 0;
-        margin-top: var(--spacing-xs);
-        background: transparent;
-        border-radius: 0;
-        overflow: visible;
         pointer-events: auto;
+        transform: translateX(-50%) translateY(0) scale(1);
     }
+}
+
+.sponsor-showcase-tile:focus-within .sponsor-showcase-popover,
+.sponsor-showcase-tile:focus-visible .sponsor-showcase-popover,
+.sponsor-showcase-tile[data-open="true"] .sponsor-showcase-popover {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0) scale(1);
+}
+
+/* Flip below the tile when there isn't enough room above (set via JS) */
+.sponsor-showcase-tile[data-placement="below"] .sponsor-showcase-popover {
+    bottom: auto;
+    top: calc(100% + 12px);
+    transform: translateX(-50%) translateY(-6px) scale(0.98);
+}
+
+.sponsor-showcase-tile[data-placement="below"] .sponsor-showcase-popover::before {
+    top: -12px;
+    bottom: auto;
+}
+
+.sponsor-showcase-tile[data-placement="below"] .sponsor-showcase-popover::after {
+    top: auto;
+    bottom: 100%;
+    margin-top: 0;
+    margin-bottom: -5px;
+    border-right: none;
+    border-bottom: none;
+    border-left: 1px solid var(--color-orange);
+    border-top: 1px solid var(--color-orange);
+}
+
+.sponsor-showcase-popover-head {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.6rem;
+}
+
+.sponsor-showcase-popover-logo {
+    width: 40px;
+    height: 40px;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 4px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sponsor-showcase-popover-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.sponsor-showcase-popover-name {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+}
+
+.sponsor-showcase-popover-desc {
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: var(--color-text-secondary);
+    max-height: 240px;
+    overflow-y: auto;
+    margin: 0 0 0.6rem;
+}
+
+.sponsor-showcase-popover-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--color-orange);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.sponsor-showcase-popover-link:hover {
+    text-decoration: underline;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .sponsor-showcase-tile-desc {
+    .sponsor-showcase-popover {
         transition: none;
     }
 }

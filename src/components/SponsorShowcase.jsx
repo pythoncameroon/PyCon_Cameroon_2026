@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useId, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowUpRight } from 'lucide-react';
@@ -78,23 +78,106 @@ const SilverCard = ({ sponsor, lang }) => (
 );
 
 // Shared logo-tile layout for the "bronze" and "community" tiers.
-const LogoTile = ({ sponsor, tier, lang }) => {
-    const Tag = sponsor.website ? 'a' : 'div';
-    const linkProps = sponsor.website
-        ? { href: sponsor.website, target: '_blank', rel: 'noopener noreferrer' }
-        : {};
+// The description lives in a floating popover shown on hover/focus
+// (desktop) or tap (touch devices) rather than inline.
+const LogoTile = ({ sponsor, tier, lang, t }) => {
     const description = getDescription(sponsor, lang);
+    const popoverId = useId();
+    const tileRef = useRef(null);
+    const [open, setOpen] = useState(false);
+    const [isBelow, setIsBelow] = useState(false);
+
+    const isTouchDevice = () =>
+        typeof window !== 'undefined' && window.matchMedia?.('(hover: none)').matches;
+
+    const updatePlacement = () => {
+        const top = tileRef.current?.getBoundingClientRect().top ?? Infinity;
+        setIsBelow(top < 300);
+    };
+
+    const handleTileClick = (e) => {
+        if (e.target.closest('a')) return; // let real links navigate normally
+        if (!isTouchDevice()) return;
+        updatePlacement();
+        setOpen((v) => !v);
+    };
+
+    useEffect(() => {
+        if (!open) return undefined;
+
+        const handlePointerDown = (e) => {
+            if (!tileRef.current?.contains(e.target)) setOpen(false);
+        };
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape') setOpen(false);
+        };
+        document.addEventListener('pointerdown', handlePointerDown);
+        document.addEventListener('keydown', handleKeyDown);
+        return () => {
+            document.removeEventListener('pointerdown', handlePointerDown);
+            document.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [open]);
 
     return (
-        <Tag className={`card sponsor-showcase-tile ${tier} animate-on-scroll slide-up`} {...linkProps}>
+        <div
+            ref={tileRef}
+            className={`card sponsor-showcase-tile ${tier} animate-on-scroll slide-up`}
+            data-placement={isBelow ? 'below' : 'above'}
+            data-open={open ? 'true' : undefined}
+            onMouseEnter={updatePlacement}
+            onFocus={updatePlacement}
+            onClick={handleTileClick}
+            tabIndex={sponsor.website ? undefined : 0}
+            aria-describedby={description ? popoverId : undefined}
+        >
             <div className="sponsor-showcase-tile-logo">
                 <img src={sponsor.logo} alt={sponsor.name} loading="lazy" />
             </div>
-            <span className="sponsor-showcase-tile-name">{sponsor.name}</span>
-            {description && (
-                <span className="sponsor-showcase-tile-desc">{description}</span>
+            {sponsor.website ? (
+                <a
+                    href={sponsor.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="sponsor-showcase-tile-name"
+                >
+                    {sponsor.name}
+                </a>
+            ) : (
+                <span className="sponsor-showcase-tile-name">{sponsor.name}</span>
             )}
-        </Tag>
+            {description && (
+                <div
+                    className="sponsor-showcase-popover"
+                    id={popoverId}
+                    role="group"
+                    aria-label={sponsor.name}
+                >
+                    <div className="sponsor-showcase-popover-head">
+                        <div className="sponsor-showcase-popover-logo">
+                            <img src={sponsor.logo} alt="" loading="lazy" />
+                        </div>
+                        <div>
+                            <div className="sponsor-showcase-popover-name">{sponsor.name}</div>
+                            <span className={`sponsor-showcase-badge ${tier}`}>
+                                {t(`sponsors.tierBadge.${tier}`)}
+                            </span>
+                        </div>
+                    </div>
+                    <p className="sponsor-showcase-popover-desc">{description}</p>
+                    {sponsor.website && (
+                        <a
+                            href={sponsor.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="sponsor-showcase-popover-link"
+                        >
+                            {t('sponsors.visitWebsite')} <ArrowUpRight size={14} />
+                        </a>
+                    )}
+                </div>
+            )}
+        </div>
     );
 };
 
@@ -158,7 +241,7 @@ const SponsorShowcase = ({ sponsors = defaultSponsorsList }) => {
                         {tier === 'bronze' && (
                             <div className="grid grid-4 stagger">
                                 {tierSponsors.map((sponsor) => (
-                                    <LogoTile key={sponsor.id} sponsor={sponsor} tier="bronze" lang={i18n.language} />
+                                    <LogoTile key={sponsor.id} sponsor={sponsor} tier="bronze" lang={i18n.language} t={t} />
                                 ))}
                             </div>
                         )}
@@ -166,7 +249,7 @@ const SponsorShowcase = ({ sponsors = defaultSponsorsList }) => {
                         {tier === 'community' && (
                             <div className="grid grid-4 stagger">
                                 {tierSponsors.map((sponsor) => (
-                                    <LogoTile key={sponsor.id} sponsor={sponsor} tier="community" lang={i18n.language} />
+                                    <LogoTile key={sponsor.id} sponsor={sponsor} tier="community" lang={i18n.language} t={t} />
                                 ))}
                             </div>
                         )}
