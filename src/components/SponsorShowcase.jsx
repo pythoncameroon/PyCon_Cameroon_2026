@@ -77,7 +77,7 @@ const SilverCard = ({ sponsor, lang }) => (
     </div>
 );
 
-// Shared logo-tile layout for the "bronze" and "community" tiers.
+// Shared logo-tile layout for the "bronze", "community", and "deployment" tiers.
 // The description lives in a floating popover shown on hover/focus
 // (desktop) or tap (touch devices) rather than inline.
 const LogoTile = ({ sponsor, tier, lang, t }) => {
@@ -250,6 +250,14 @@ const SponsorShowcase = ({ sponsors = defaultSponsorsList }) => {
                             <div className="grid grid-4 stagger">
                                 {tierSponsors.map((sponsor) => (
                                     <LogoTile key={sponsor.id} sponsor={sponsor} tier="community" lang={i18n.language} t={t} />
+                                ))}
+                            </div>
+                        )}
+
+                        {tier === 'deployment' && (
+                            <div className="grid grid-4 stagger">
+                                {tierSponsors.map((sponsor) => (
+                                    <LogoTile key={sponsor.id} sponsor={sponsor} tier="deployment" lang={i18n.language} t={t} />
                                 ))}
                             </div>
                         )}

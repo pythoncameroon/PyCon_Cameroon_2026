@@ -3081,6 +3081,10 @@ img {
     color: var(--color-green);
 }
 
+.sponsor-tier-heading-label.deployment {
+    color: #9aa5b1;
+}
+
 .sponsor-tier-heading-line {
     flex: 1;
     height: 1px;
@@ -3116,6 +3120,10 @@ img {
 
 .sponsor-showcase-badge.community {
     color: var(--color-green);
+}
+
+.sponsor-showcase-badge.deployment {
+    color: #9aa5b1;
 }
 
 .sponsor-showcase-name {
@@ -3255,7 +3263,7 @@ a.sponsor-showcase-name.silver-link:hover {
     margin-bottom: 0;
 }
 
-/* Bronze & Community (shared logo-tile layout) */
+/* Bronze, Community & Deployment (shared logo-tile layout) */
 .sponsor-showcase-tile {
     display: flex;
     flex-direction: column;

@@ -254,14 +254,16 @@
       "gold": "Gold Sponsors",
       "silver": "Silver Sponsors",
       "bronze": "Bronze Sponsors",
-      "community": "Community Sponsors"
+      "community": "Community Sponsors",
+      "deployment": "Deployment Sponsors"
     },
     "tierBadge": {
       "diamond": "Diamond",
       "gold": "Gold",
       "silver": "Silver",
       "bronze": "Bronze",
-      "community": "Community"
+      "community": "Community",
+      "deployment": "Deployment"
     },
     "visitWebsite": "Visit website",
     "joinList": "Want to join this list?",

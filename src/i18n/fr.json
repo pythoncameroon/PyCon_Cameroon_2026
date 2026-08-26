@@ -254,14 +254,16 @@
       "gold": "Sponsors Gold",
       "silver": "Sponsors Silver",
       "bronze": "Sponsors Bronze",
-      "community": "Sponsors Communaut\u00e9"
+      "community": "Sponsors Communaut\u00e9",
+      "deployment": "Sponsors D\u00e9ploiement"
     },
     "tierBadge": {
       "diamond": "Diamond",
       "gold": "Gold",
       "silver": "Silver",
       "bronze": "Bronze",
-      "community": "Community"
+      "community": "Community",
+      "deployment": "Deployment"
     },
     "visitWebsite": "Visiter le site",
     "joinList": "Vous souhaitez rejoindre cette liste ?",

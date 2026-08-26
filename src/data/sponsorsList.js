@@ -1,10 +1,10 @@
-export const TIERS = ['diamond', 'gold', 'silver', 'bronze', 'community'];
+export const TIERS = ['diamond', 'gold', 'silver', 'bronze', 'community', 'deployment'];
 
 /**
  * @typedef {Object} Sponsor
  * @property {string} id - unique, slug
  * @property {string} name
- * @property {'diamond'|'gold'|'silver'|'bronze'|'community'} tier
+ * @property {'diamond'|'gold'|'silver'|'bronze'|'community'|'deployment'} tier
  * @property {string} logo - square, ~400x400, transparent or white background
  * @property {string} [website] - optional
  * @property {{ fr: string, en: string }} description - 1 to 3 sentences
@@ -13,7 +13,7 @@ export const TIERS = ['diamond', 'gold', 'silver', 'bronze', 'community'];
 // {
 //   id: 'acme',                       // unique, slug
 //   name: 'ACME Corp',
-//   tier: 'gold',                     // 'diamond' | 'gold' | 'silver' | 'bronze' | 'community'
+//   tier: 'gold',                     // 'diamond' | 'gold' | 'silver' | 'bronze' | 'community' | 'deployment'
 //   logo: '/sponsors/acme.webp',      // carré, ~400×400, fond transparent ou blanc
 //   website: 'https://acme.example',  // optionnel
 //   description: { fr: '…', en: '…' } // 1 à 3 phrases
@@ -85,6 +85,17 @@ export const sponsorsList = [
     description: {
       fr: "JetBrains crée des outils de développement logiciel intelligents utilisés par plus de 11,4 millions de professionnels et 88 des 100 plus grandes entreprises du classement Fortune Global. Sa gamme de plus de 30 produits comprend des IDE primés, dont PyCharm — l'IDE de référence pour un développement Python productif et efficace. L'entreprise propose également l'assistant de codage basé sur l'IA de JetBrains, ainsi que l'agent de codage Junie.",
       en: "JetBrains creates intelligent software development tools used by over 11.4 million professionals and 88 Fortune Global Top 100 companies. Its lineup of more than 30 products includes award-winning IDEs, including PyCharm — the go-to IDE for productive and efficient Python development. The company also offers the JetBrains AI-powered coding assistant, and coding agent Junie.",
+    },
+  },
+  {
+    id: 'pythonanywhere',
+    name: 'PythonAnywhere',
+    tier: 'deployment',
+    logo: '/sponsors/pythonanywhere.svg',
+    website: 'https://www.pythonanywhere.com',
+    description: {
+      fr: "PythonAnywhere est un environnement de développement et d'hébergement Python en ligne, avec consoles, éditeur et tâches planifiées directement dans le navigateur. Il permet de déployer des applications web (Django, Flask, etc.) en quelques clics, sans gérer de serveurs. Son offre gratuite est très appréciée des apprenants et enseignants ; PythonAnywhere fait partie d'Anaconda.",
+      en: "PythonAnywhere is an online Python development and hosting environment, with consoles, an editor, and scheduled tasks right in the browser. It lets you deploy web apps (Django, Flask, etc.) in a few clicks, without managing servers. Its free tier is popular with learners and educators; PythonAnywhere is part of Anaconda.",
     },
   },
 ];
