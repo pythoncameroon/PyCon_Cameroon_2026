@@ -54,7 +54,7 @@ const Navbar = () => {
                     <NavLink to={l('/about')} className={({ isActive }) => isActive ? "active" : ""}>{t('nav.about')}</NavLink>
                     <NavLink to={l('/agenda')} className={({ isActive }) => isActive ? "active" : ""}>{t('nav.agenda')}</NavLink>
                     <NavLink to={l('/speakers')} className={({ isActive }) => isActive ? "active" : ""}>{t('nav.speakers')}</NavLink>
-                    <NavLink to={l('/sponsor')} className={({ isActive }) => isActive ? "active" : ""}>{t('nav.sponsor')}</NavLink>
+                    <NavLink to={l('/sponsors')} className={({ isActive }) => isActive ? "active" : ""}>{t('nav.sponsor')}</NavLink>
                     <NavLink to={l('/attend')} className={({ isActive }) => isActive ? "active" : ""}>{t('nav.attend')}</NavLink>
                     <NavLink to={l('/venue')} className={({ isActive }) => isActive ? "active" : ""}>{t('nav.venue')}</NavLink>
                     <NavLink to={l('/ubucon')} className={({ isActive }) => isActive ? "active" : ""} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
@@ -91,7 +91,7 @@ const Navbar = () => {
                         <NavLink to={l('/about')} className={({ isActive }) => isActive ? "active" : ""}>{t('nav.about')}</NavLink>
                         <NavLink to={l('/agenda')} className={({ isActive }) => isActive ? "active" : ""}>{t('nav.agenda')}</NavLink>
                         <NavLink to={l('/speakers')} className={({ isActive }) => isActive ? "active" : ""}>{t('nav.speakers')}</NavLink>
-                        <NavLink to={l('/sponsor')} className={({ isActive }) => isActive ? "active" : ""}>{t('nav.sponsor')}</NavLink>
+                        <NavLink to={l('/sponsors')} className={({ isActive }) => isActive ? "active" : ""}>{t('nav.sponsor')}</NavLink>
                         <NavLink to={l('/attend')} className={({ isActive }) => isActive ? "active" : ""}>{t('nav.attend')}</NavLink>
                         <NavLink to={l('/venue')} className={({ isActive }) => isActive ? "active" : ""}>{t('nav.venue')}</NavLink>
                         <NavLink to={l('/ubucon')} className={({ isActive }) => isActive ? "active" : ""} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>

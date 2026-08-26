@@ -3,7 +3,7 @@
     "about": "\u00c0 propos",
     "agenda": "Agenda",
     "speakers": "Intervenants",
-    "sponsor": "Sponsoriser",
+    "sponsor": "Sponsors",
     "attend": "Participer",
     "venue": "Lieu",
     "ubucon": "UbuCon"
@@ -239,6 +239,30 @@
     "getInvolved": "Impliquez-vous aujourd'hui",
     "getInvolvedText": "Rejoignez les entreprises qui ouvrent la voie en soutenant la communaut\u00e9 Python en Afrique.",
     "contactSponsor": "Contactez-nous pour le sponsoring"
+  },
+  "sponsors": {
+    "title": "Nos",
+    "titleHighlight": "Sponsors",
+    "subtitle": "Ils rendent PyCon Cameroun 2026 possible. Merci !",
+    "becomeSponsor": "Devenir sponsor",
+    "tierLabels": {
+      "diamond": "Sponsor Diamond",
+      "gold": "Sponsors Gold",
+      "silver": "Sponsors Silver",
+      "bronze": "Sponsors Bronze",
+      "community": "Sponsors Communaut\u00e9"
+    },
+    "tierBadge": {
+      "diamond": "Diamond",
+      "gold": "Gold",
+      "silver": "Silver",
+      "bronze": "Bronze",
+      "community": "Community"
+    },
+    "visitWebsite": "Visiter le site",
+    "joinList": "Vous souhaitez rejoindre cette liste ?",
+    "emptyTitle": "Les sponsors 2026 arrivent",
+    "emptyText": "Votre entreprise pourrait \u00eatre la premi\u00e8re affich\u00e9e ici."
   },
   "attend": {
     "title": "Participer \u00e0",
