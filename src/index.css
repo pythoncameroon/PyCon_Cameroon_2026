@@ -295,6 +295,38 @@
     color: #8b5a2b;
 }
 
+[data-theme="light"] .sponsor-showcase-card.diamond {
+    border-color: #00b8d4;
+}
+
+[data-theme="light"] .sponsor-showcase-badge.diamond,
+[data-theme="light"] .sponsor-tier-heading-label.diamond {
+    color: #00838f;
+}
+
+[data-theme="light"] .sponsor-showcase-card.gold {
+    border-color: #c9a800;
+}
+
+[data-theme="light"] .sponsor-showcase-badge.gold,
+[data-theme="light"] .sponsor-tier-heading-label.gold {
+    color: #b8860b;
+}
+
+[data-theme="light"] .sponsor-showcase-card.silver {
+    border-color: #909090;
+}
+
+[data-theme="light"] .sponsor-showcase-badge.silver,
+[data-theme="light"] .sponsor-tier-heading-label.silver {
+    color: #666666;
+}
+
+[data-theme="light"] .sponsor-showcase-badge.bronze,
+[data-theme="light"] .sponsor-tier-heading-label.bronze {
+    color: #8b5a2b;
+}
+
 [data-theme="light"] .btn-tier.btn-diamond {
     background: #00b8d4;
     color: #ffffff;
@@ -3004,6 +3036,434 @@ img {
 }
 
 /* ===================================
+   Sponsor showcase
+   =================================== */
+.sponsor-tier-block {
+    margin-bottom: var(--spacing-lg);
+}
+
+.sponsor-tier-block:last-of-type {
+    margin-bottom: var(--spacing-md);
+}
+
+.sponsor-tier-heading {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.sponsor-tier-heading-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+.sponsor-tier-heading-label.diamond {
+    color: #b9f2ff;
+}
+
+.sponsor-tier-heading-label.gold {
+    color: #ffd700;
+}
+
+.sponsor-tier-heading-label.silver {
+    color: #c0c0c0;
+}
+
+.sponsor-tier-heading-label.bronze {
+    color: #cd7f32;
+}
+
+.sponsor-tier-heading-label.community {
+    color: var(--color-green);
+}
+
+.sponsor-tier-heading-line {
+    flex: 1;
+    height: 1px;
+    background: var(--color-border);
+}
+
+.sponsor-showcase-badge {
+    display: inline-block;
+    border: 1px solid currentColor;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 4px 12px;
+    border-radius: 50px;
+    margin-bottom: var(--spacing-xs);
+}
+
+.sponsor-showcase-badge.diamond {
+    color: #b9f2ff;
+}
+
+.sponsor-showcase-badge.gold {
+    color: #ffd700;
+}
+
+.sponsor-showcase-badge.silver {
+    color: #c0c0c0;
+}
+
+.sponsor-showcase-badge.bronze {
+    color: #cd7f32;
+}
+
+.sponsor-showcase-badge.community {
+    color: var(--color-green);
+}
+
+.sponsor-showcase-name {
+    margin-bottom: var(--spacing-xs);
+}
+
+.sponsor-showcase-desc {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.sponsor-showcase-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--color-orange);
+    font-weight: 600;
+}
+
+.sponsor-showcase-link:hover {
+    text-decoration: underline;
+}
+
+/* Diamond */
+.sponsor-showcase-diamond-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.sponsor-showcase-card.diamond {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    background: linear-gradient(145deg, var(--color-dark) 0%, var(--color-dark-alt) 100%);
+    border: 2px solid #b9f2ff;
+    padding: var(--spacing-lg);
+}
+
+.sponsor-showcase-logo.diamond {
+    width: 220px;
+    height: 220px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 12px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sponsor-showcase-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .sponsor-showcase-card.diamond {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sponsor-showcase-logo.diamond {
+        width: 160px;
+        height: 160px;
+        margin: 0 auto;
+    }
+}
+
+/* Gold */
+.sponsor-showcase-card.gold {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    border: 2px solid #ffd700;
+}
+
+.sponsor-showcase-gold-head {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.sponsor-showcase-logo.gold {
+    width: 96px;
+    height: 96px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 10px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sponsor-showcase-card.gold .sponsor-showcase-name {
+    font-size: 1.5rem;
+}
+
+.sponsor-showcase-card.gold .sponsor-showcase-desc {
+    font-size: 0.95rem;
+}
+
+/* Silver */
+.sponsor-showcase-card.silver {
+    border: 1px solid #c0c0c0;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.sponsor-showcase-logo.silver {
+    width: 72px;
+    height: 72px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 8px;
+    margin: 0 auto var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sponsor-showcase-card.silver .sponsor-showcase-name {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+a.sponsor-showcase-name.silver-link:hover {
+    color: var(--color-orange);
+}
+
+.sponsor-showcase-card.silver .sponsor-showcase-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+}
+
+/* Bronze & Community (shared logo-tile layout) */
+.sponsor-showcase-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--spacing-md);
+    position: relative;
+    overflow: visible;
+    z-index: 1;
+}
+
+@media (hover: hover) {
+    .sponsor-showcase-tile:hover {
+        z-index: 30;
+    }
+}
+
+.sponsor-showcase-tile:focus-within,
+.sponsor-showcase-tile:focus-visible,
+.sponsor-showcase-tile[data-open="true"] {
+    z-index: 30;
+}
+
+.sponsor-showcase-tile-logo {
+    width: 96px;
+    height: 64px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 8px;
+    border: 2px solid var(--color-border);
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sponsor-showcase-tile-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.sponsor-showcase-tile-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+a.sponsor-showcase-tile-name:hover {
+    color: var(--color-orange);
+}
+
+/* Floating popover with the sponsor's full description */
+.sponsor-showcase-popover {
+    position: absolute;
+    bottom: calc(100% + 12px);
+    left: 50%;
+    width: min(340px, 90vw);
+    max-width: calc(100vw - 2rem);
+    background: var(--color-dark-alt);
+    border: 1px solid var(--color-orange);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: var(--spacing-sm);
+    text-align: left;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(6px) scale(0.98);
+    transition: opacity var(--transition-normal), transform var(--transition-normal);
+    z-index: 40;
+}
+
+/* Invisible bridge so the pointer doesn't lose :hover crossing the gap */
+.sponsor-showcase-popover::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -12px;
+    height: 12px;
+}
+
+.sponsor-showcase-popover::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    margin-top: -5px;
+    background: var(--color-dark-alt);
+    border-right: 1px solid var(--color-orange);
+    border-bottom: 1px solid var(--color-orange);
+    transform: translateX(-50%) rotate(45deg);
+}
+
+@media (hover: hover) {
+    .sponsor-showcase-tile:hover .sponsor-showcase-popover {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+}
+
+.sponsor-showcase-tile:focus-within .sponsor-showcase-popover,
+.sponsor-showcase-tile:focus-visible .sponsor-showcase-popover,
+.sponsor-showcase-tile[data-open="true"] .sponsor-showcase-popover {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0) scale(1);
+}
+
+/* Flip below the tile when there isn't enough room above (set via JS) */
+.sponsor-showcase-tile[data-placement="below"] .sponsor-showcase-popover {
+    bottom: auto;
+    top: calc(100% + 12px);
+    transform: translateX(-50%) translateY(-6px) scale(0.98);
+}
+
+.sponsor-showcase-tile[data-placement="below"] .sponsor-showcase-popover::before {
+    top: -12px;
+    bottom: auto;
+}
+
+.sponsor-showcase-tile[data-placement="below"] .sponsor-showcase-popover::after {
+    top: auto;
+    bottom: 100%;
+    margin-top: 0;
+    margin-bottom: -5px;
+    border-right: none;
+    border-bottom: none;
+    border-left: 1px solid var(--color-orange);
+    border-top: 1px solid var(--color-orange);
+}
+
+.sponsor-showcase-popover-head {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.6rem;
+}
+
+.sponsor-showcase-popover-logo {
+    width: 40px;
+    height: 40px;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 4px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sponsor-showcase-popover-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.sponsor-showcase-popover-name {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+}
+
+.sponsor-showcase-popover-desc {
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: var(--color-text-secondary);
+    max-height: 240px;
+    overflow-y: auto;
+    margin: 0 0 0.6rem;
+}
+
+.sponsor-showcase-popover-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--color-orange);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.sponsor-showcase-popover-link:hover {
+    text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sponsor-showcase-popover {
+        transition: none;
+    }
+}
+
+/* Empty state */
+.sponsor-showcase-empty {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    text-align: center;
+}
+
+.sponsor-showcase-empty .grid {
+    margin: var(--spacing-md) 0 var(--spacing-lg);
+}
+
+/* ===================================
    Venue Page Specific Styles
    =================================== */
 .card-img {
@@ -3199,5 +3659,93 @@ img {
     .site-drawer-close {
         top: var(--spacing-xs);
         right: var(--spacing-xs);
+    }
+}
+/* ===================================
+   Sponsor marquee (home)
+   =================================== */
+.sponsor-marquee {
+    overflow: hidden;
+    width: 100%;
+    padding: var(--spacing-sm) 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+.sponsor-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: sponsor-marquee 40s linear infinite;
+}
+
+.sponsor-marquee:hover .sponsor-marquee-track {
+    animation-play-state: paused;
+}
+
+.sponsor-marquee-group {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
+    flex-shrink: 0;
+}
+
+.sponsor-marquee-logo {
+    height: 72px;
+    width: 150px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 10px;
+    border: 2px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.sponsor-marquee-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+@keyframes sponsor-marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    .sponsor-marquee-track {
+        animation: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .sponsor-marquee-group[aria-hidden="true"] {
+        display: none;
+    }
+
+    .sponsor-marquee {
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .sponsor-marquee-logo {
+        height: 56px;
+        width: 120px;
+    }
+
+    .sponsor-marquee-group {
+        gap: var(--spacing-md);
     }
 }

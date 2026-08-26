@@ -7,6 +7,7 @@ import useScrollAnimation from '../hooks/useScrollAnimation';
 import LazyImage from '../components/LazyImage';
 import TrackSection from '../components/TrackSection';
 import KeynoteCard from '../components/KeynoteCard';
+import SponsorMarquee from '../components/SponsorMarquee';
 import { sponsorshipDeckUrl } from '../data/sponsors';
 import { speakers } from '../data/speakers';
 import { keynoteSessions } from '../data/agenda';
@@ -116,6 +117,9 @@ const Home = () => {
                     </div>
                 </section>
             )}
+
+            {/* Sponsors marquee */}
+            <SponsorMarquee />
 
             {/* Features Section */}
             <section className="section features" id="home-features">
