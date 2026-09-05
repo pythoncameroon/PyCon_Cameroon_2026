@@ -44,6 +44,39 @@ export const sponsorsList = [
     },
   },
   {
+    id: 'valkey',
+    name: 'Valkey',
+    tier: 'bronze',
+    logo: '/sponsors/valkey.svg',
+    website: 'https://valkey.io',
+    description: {
+      fr: "Valkey est une base de données clé-valeur open source haute performance, sous licence BSD et hébergée par la Linux Foundation, née en 2024 d'un fork de Redis. Elle sert de cache en mémoire, de file de messages ou de base principale, avec scripting Lua et mode cluster. Soutenue par AWS, Google Cloud et Oracle, elle propose des clients officiels, dont un pour Python.",
+      en: "Valkey is an open-source, high-performance key-value datastore, BSD-licensed and hosted by the Linux Foundation, born in 2024 as a fork of Redis. It serves as an in-memory cache, message queue or primary database, with Lua scripting and cluster mode. Backed by AWS, Google Cloud and Oracle, it offers official clients, including one for Python.",
+    },
+  },
+  {
+    id: 'suprapay',
+    name: 'SupraPay',
+    tier: 'bronze',
+    logo: '/sponsors/suprapay.webp',
+    website: 'https://www.suprapay.io',
+    description: {
+      fr: "SupraPay est une fintech qui fournit aux freelances, créateurs et PME d'Afrique des coordonnées bancaires dédiées en dollars et en euros pour encaisser leurs paiements internationaux. Les fonds sont retirables en Mobile Money dans une douzaine de pays, dont le Cameroun, généralement en moins d'une heure. Fondée en 2024, elle propose aussi des liens de paiement et des transferts vers plus de 25 pays.",
+      en: "SupraPay is a fintech that gives African freelancers, creators and SMEs dedicated US dollar and euro banking details to collect international payments. Funds can be withdrawn to Mobile Money in a dozen countries, including Cameroon, usually within an hour. Founded in 2024, it also offers payment links and transfers to over 25 countries.",
+    },
+  },
+  {
+    id: 'trust-consulting',
+    name: 'Trust Consulting',
+    tier: 'bronze',
+    logo: '/sponsors/trust.jpg',
+    website: 'https://www.linkedin.com/company/trust-consulting-sarl',
+    description: {
+      fr: "Trust Consulting est un cabinet de conseil et de services numériques basé à Yaoundé, au Cameroun. Il accompagne les entreprises dans la conception et le développement de solutions logicielles adaptées à leurs besoins. Son équipe réunit des développeurs qui contribuent activement à l'écosystème Python camerounais.",
+      en: "Trust Consulting is an IT consulting and digital services firm based in Yaoundé, Cameroon. It supports businesses in designing and building software solutions tailored to their needs. Its team includes developers who actively contribute to Cameroon's Python ecosystem.",
+    },
+  },
+  {
     id: 'black-python-devs',
     name: 'Black Python Devs',
     tier: 'community',
@@ -85,6 +118,17 @@ export const sponsorsList = [
     description: {
       fr: "JetBrains crée des outils de développement logiciel intelligents utilisés par plus de 11,4 millions de professionnels et 88 des 100 plus grandes entreprises du classement Fortune Global. Sa gamme de plus de 30 produits comprend des IDE primés, dont PyCharm — l'IDE de référence pour un développement Python productif et efficace. L'entreprise propose également l'assistant de codage basé sur l'IA de JetBrains, ainsi que l'agent de codage Junie.",
       en: "JetBrains creates intelligent software development tools used by over 11.4 million professionals and 88 Fortune Global Top 100 companies. Its lineup of more than 30 products includes award-winning IDEs, including PyCharm — the go-to IDE for productive and efficient Python development. The company also offers the JetBrains AI-powered coding assistant, and coding agent Junie.",
+    },
+  },
+  {
+    id: 'defna',
+    name: 'DEFNA',
+    tier: 'community',
+    logo: '/sponsors/defna.png',
+    website: 'https://www.defna.org',
+    description: {
+      fr: "La Django Events Foundation North America (DEFNA) est une organisation à but non lucratif créée en 2015 à la demande de la Django Software Foundation pour organiser DjangoCon US, la conférence annuelle de la communauté Django nord-américaine. Elle finance aussi des événements Django via son programme de bourses lancé en 2017. DEFNA œuvre à rendre les événements open source accessibles à tous les développeurs.",
+      en: "The Django Events Foundation North America (DEFNA) is a non-profit founded in 2015 at the request of the Django Software Foundation to run DjangoCon US, the annual conference for the North American Django community. It also funds Django events through its grants program launched in 2017. DEFNA works to make open-source events accessible to all developers.",
     },
   },
   {
