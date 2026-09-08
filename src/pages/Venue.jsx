@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Check, MapPin } from 'lucide-react';
+import { Check, MapPin, ExternalLink } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import VenueCard from '../components/VenueCard';
+import VenueCarousel from '../components/VenueCarousel';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { venueData as venueImages } from '../data/venues';
+import { venuePhotos } from '../data/venuePhotos';
 
 const Venue = () => {
     const { t } = useTranslation();
@@ -14,6 +16,11 @@ const Venue = () => {
 
     const facilityItems = t('venue.facilityItems', { returnObjects: true });
     const translatedVenues = t('data.venues', { returnObjects: true });
+    const translatedPhotos = t('venue.photos', { returnObjects: true });
+    const carouselImages = venuePhotos.map((photo, index) => ({
+        ...photo,
+        alt: translatedPhotos[index]?.alt || t('venue.venueName'),
+    }));
 
     return (
         <>
@@ -36,8 +43,12 @@ const Venue = () => {
                                 <h3 className="card-title" style={{ color: 'var(--color-orange)' }}>{t('venue.venueName')}</h3>
                                 <p className="card-text">
                                     {t('venue.venueCity')}<br />
-                                    {t('venue.addressSoon')}
+                                    {t('venue.venueAddress')}
                                 </p>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Girafe+H%C3%B4tel+Elig-Essono+Yaound%C3%A9" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ marginTop: 'var(--spacing-sm)' }}>
+                                    <ExternalLink size="1em" style={{ verticalAlign: '-0.125em', marginRight: '0.5rem' }} />
+                                    {t('venue.openInMaps')}
+                                </a>
                             </div>
 
                             <p>{t('venue.finalizingVenue')}</p>
@@ -51,10 +62,13 @@ const Venue = () => {
                             </ul>
                         </div>
 
-                        <div style={{ height: '400px', background: '#333', borderRadius: 'var(--radius-lg)', overflow: 'hidden', position: 'relative' }}>
-                            <iframe width="100%" height="100%" style={{ border: 0 }} loading="lazy" allowFullScreen
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63675.71966952737!2d11.47957790899039!3d3.848032766624866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bcf7a309a7977%3A0x7f54bad35e693c51!2sYaound%C3%A9%2C%20Cameroon!5e0!3m2!1sen!2scm!4v1684490000000!5m2!1sen!2scm">
-                            </iframe>
+                        <div className="venue-media">
+                            <VenueCarousel images={carouselImages} />
+                            <div className="venue-map">
+                                <iframe width="100%" height="100%" style={{ border: 0 }} loading="lazy" allowFullScreen
+                                    title="Girafe Hotel map" src="https://www.google.com/maps?q=Girafe+H%C3%B4tel+Elig-Essono+Yaound%C3%A9&z=16&output=embed">
+                                </iframe>
+                            </div>
                         </div>
                     </div>
                 </div>

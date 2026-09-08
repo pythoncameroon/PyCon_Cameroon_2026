@@ -3757,3 +3757,126 @@ a.sponsor-showcase-tile-name:hover {
         gap: var(--spacing-md);
     }
 }
+
+/* ===================================
+   Venue Page: Photo Carousel & Map
+   =================================== */
+.venue-media {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.venue-carousel {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    background: var(--color-dark-alt);
+    box-shadow: var(--shadow-md);
+    outline: none;
+    user-select: none;
+}
+
+.venue-carousel:focus-visible {
+    box-shadow: 0 0 0 3px var(--color-orange), var(--shadow-md);
+}
+
+.venue-carousel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 500ms ease;
+}
+
+.venue-carousel-slide {
+    position: relative;
+    flex: 0 0 100%;
+    height: 100%;
+}
+
+.venue-carousel-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.venue-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: none;
+    border-radius: var(--radius-full);
+    background: rgba(13, 13, 13, 0.55);
+    color: #fff;
+    cursor: pointer;
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.venue-carousel-btn:hover,
+.venue-carousel-btn:focus-visible {
+    background: var(--color-orange);
+    outline: none;
+}
+
+.venue-carousel-btn.prev { left: var(--spacing-xs); }
+.venue-carousel-btn.next { right: var(--spacing-xs); }
+
+.venue-carousel-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 0.6rem;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+}
+
+.venue-carousel-dots button {
+    width: 0.65rem;
+    height: 0.65rem;
+    padding: 0;
+    border: none;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.venue-carousel-dots button.active {
+    background: var(--color-orange);
+    transform: scale(1.25);
+}
+
+.venue-carousel-dots button:focus-visible {
+    outline: 2px solid var(--color-orange);
+    outline-offset: 2px;
+}
+
+.venue-map {
+    height: 260px;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    background: var(--color-dark-alt);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .venue-carousel-track {
+        transition: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .venue-carousel-btn {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+
+    .venue-map {
+        height: 220px;
+    }
+}
