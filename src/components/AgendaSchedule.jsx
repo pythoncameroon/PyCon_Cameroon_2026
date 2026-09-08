@@ -1,38 +1,8 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Clock, MapPin, User, Languages, Tag } from 'lucide-react';
 import { TYPE_STYLES, LANG_LABELS } from '../data/agenda';
-import { speakers } from '../data/speakers';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
-
-const normalizeName = (s) =>
-    (s || '')
-        .normalize('NFKD')
-        .replace(/[̀-ͯ]/g, '')
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, ' ')
-        .trim();
-
-const NAME_ALIASES = {
-    'kamdem ulrich': 'kamdem-yamen-ulrich-laress-ulrich',
-    'tayo tate desmond': 'tayo-tate-desmond-corentin',
-};
-
-const speakerIdByName = {};
-speakers.forEach((sp) => {
-    speakerIdByName[normalizeName(sp.name)] = sp.id;
-});
-
-const resolveSpeakerId = (name) => {
-    const key = normalizeName(name);
-    if (NAME_ALIASES[key]) return NAME_ALIASES[key];
-    if (speakerIdByName[key]) return speakerIdByName[key];
-    const tokens = key.split(' ').filter(Boolean);
-    const match = speakers.find((sp) => {
-        const spKey = normalizeName(sp.name);
-        return tokens.length > 1 && tokens.every((t) => spKey.includes(t));
-    });
-    return match ? match.id : null;
-};
+import { resolveSpeakerId, splitSpeakerNames } from '../utils/speakerNames';
 
 const groupByTimeSlot = (sessions) => {
     const slots = [];
@@ -82,16 +52,29 @@ const BreakRow = ({ session }) => (
 
 const SessionCard = ({ session, accentColor }) => {
     const { l } = useLocalizedPath();
+    const navigate = useNavigate();
     const style = TYPE_STYLES[session.type] || TYPE_STYLES.talk;
     const color = accentColor || style.color;
-    const speakerId = session.speaker ? resolveSpeakerId(session.speaker) : null;
+    const speakerNames = session.speaker ? splitSpeakerNames(session.speaker) : [];
+    const primarySpeakerId = speakerNames.map(resolveSpeakerId).find(Boolean) || null;
+    const isClickable = Boolean(session.id && primarySpeakerId);
+
+    const goToSpeaker = () => navigate(l(`/speakers/${primarySpeakerId}`));
 
     return (
-        <div className="card agenda-session-card" style={{
-            padding: 'var(--spacing-md)',
-            borderLeft: `4px solid ${color}`,
-            margin: 0,
-        }}>
+        <div
+            className="card agenda-session-card"
+            role={isClickable ? 'link' : undefined}
+            tabIndex={isClickable ? 0 : undefined}
+            onClick={isClickable ? goToSpeaker : undefined}
+            onKeyDown={isClickable ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goToSpeaker(); } } : undefined}
+            style={{
+                padding: 'var(--spacing-md)',
+                borderLeft: `4px solid ${color}`,
+                margin: 0,
+                cursor: isClickable ? 'pointer' : undefined,
+            }}
+        >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 'var(--spacing-sm)', flexWrap: 'wrap', marginBottom: 'var(--spacing-xs)' }}>
                 <h4 style={{ margin: 0, fontSize: '1rem', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontWeight: 700, lineHeight: 1.35 }}>{session.title}</h4>
                 <span style={{
@@ -110,19 +93,29 @@ const SessionCard = ({ session, accentColor }) => {
                 </span>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                {session.speaker && (
-                    speakerId ? (
-                        <Link
-                            to={l(`/speakers/${speakerId}`)}
-                            style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-orange)', fontFamily: 'var(--font-ui)', fontWeight: 600, textDecoration: 'none' }}
-                        >
-                            <User size={13} style={{ color: 'var(--color-orange)', flexShrink: 0 }} /> {session.speaker}
-                        </Link>
-                    ) : (
-                        <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
-                            <User size={13} style={{ color: 'var(--color-orange)', flexShrink: 0 }} /> {session.speaker}
-                        </span>
-                    )
+                {speakerNames.length > 0 && (
+                    <span style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '5px', fontSize: '0.83rem', fontFamily: 'var(--font-ui)' }}>
+                        <User size={13} style={{ color: 'var(--color-orange)', flexShrink: 0 }} />
+                        {speakerNames.map((name, i) => {
+                            const speakerId = resolveSpeakerId(name);
+                            return (
+                                <span key={name} style={{ display: 'contents' }}>
+                                    {i > 0 && <span style={{ color: 'var(--color-text-secondary)' }}>&amp;</span>}
+                                    {speakerId ? (
+                                        <Link
+                                            to={l(`/speakers/${speakerId}`)}
+                                            onClick={(e) => e.stopPropagation()}
+                                            style={{ color: 'var(--color-orange)', fontWeight: 600, textDecoration: 'none' }}
+                                        >
+                                            {name}
+                                        </Link>
+                                    ) : (
+                                        <span style={{ color: 'var(--color-text-secondary)' }}>{name}</span>
+                                    )}
+                                </span>
+                            );
+                        })}
+                    </span>
                 )}
                 {session.room && (
                     <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>

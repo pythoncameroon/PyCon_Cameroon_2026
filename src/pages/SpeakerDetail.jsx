@@ -5,6 +5,7 @@ import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import { speakers } from '../data/speakers';
 import { DAYS, sessionsById, dayBySessionId } from '../data/agenda';
+import { resolveSpeakerId, splitSpeakerNames } from '../utils/speakerNames';
 
 const SpeakerDetail = () => {
     useScrollAnimation();
@@ -31,6 +32,11 @@ const SpeakerDetail = () => {
         .map((id) => {
             const session = sessionsById[id];
             if (!session) return null;
+            const coSpeakers = session.speaker
+                ? splitSpeakerNames(session.speaker)
+                    .filter((name) => resolveSpeakerId(name) !== speaker.id)
+                    .map((name) => ({ name, id: resolveSpeakerId(name) }))
+                : [];
             return {
                 title: session.title,
                 type: session.type,
@@ -39,6 +45,7 @@ const SpeakerDetail = () => {
                 room: session.room,
                 abstract: session.abstract,
                 day: dayBySessionId[id],
+                coSpeakers,
             };
         })
         .filter(Boolean);
@@ -125,6 +132,22 @@ const SpeakerDetail = () => {
                                                 {talk.type === 'keynote' ? t('speakers.keynoteBadge') : t('speakers.talkDetails')}
                                             </p>
                                             <h2 style={{ marginBottom: 'var(--spacing-sm)', lineHeight: 1.35 }}>{talk.title}</h2>
+
+                                            {talk.coSpeakers.length > 0 && (
+                                                <p style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '5px', fontSize: '0.85rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: '0 0 var(--spacing-sm)' }}>
+                                                    {t('speakers.withCoSpeakers')}
+                                                    {talk.coSpeakers.map((co, j) => (
+                                                        <span key={co.name}>
+                                                            {j > 0 && ', '}
+                                                            {co.id ? (
+                                                                <Link to={l(`/speakers/${co.id}`)} style={{ color: 'var(--color-orange)', fontWeight: 600, textDecoration: 'none' }}>
+                                                                    {co.name}
+                                                                </Link>
+                                                            ) : co.name}
+                                                        </span>
+                                                    ))}
+                                                </p>
+                                            )}
 
                                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: 'var(--spacing-md)' }}>
                                                 {talk.category && (

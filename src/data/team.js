@@ -2,7 +2,7 @@ export const teamData = [
   {
     name: "Steve Yonkeu",
     role: "Lead Python Cameroon",
-    image: "/images/organizers/Steve.webp",
+    image: "/speakers/Steve_Yonkeu.webp",
     linkedin: "https://www.linkedin.com/in/yokwejuste",
     website: "https://yokwejuste.me",
     color: "orange",
@@ -11,7 +11,7 @@ export const teamData = [
   {
     name: "Edmond Makolle",
     role: "Co-Lead, Mentorship / Learning Coordinator",
-    image: "/images/organizers/edmond-makole.webp",
+    image: "/speakers/Edmond_Makole.webp",
     linkedin: "https://www.linkedin.com/in/edmondmakolle",
     website: "https://landing.edmondmakolle.com",
     color: "green",
