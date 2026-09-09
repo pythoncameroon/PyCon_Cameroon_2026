@@ -43,6 +43,17 @@ export const speakers = [
         talkIds: ['ai-powered-smart-agriculture-greenhouse-poultry-systems'],
     },
     {
+        id: 'chifen-sama',
+        name: 'Chifen Sama',
+        photo: '/speakers/Chifen_Sama.webp',
+        country: 'Cameroon',
+        title: 'Nurse & developer — I build boringly simple tech that has the bigger market',
+        bio: 'Sama Chifen is a registered nurse, self-taught developer, and founder of Inkwave and LifeDrop in Cameroon. He builds health tech for African communities and has learned the hard way that the simplest solution usually wins — most of his deployed tools run on WhatsApp, not on apps. He volunteers as a Health Tech Volunteer with Vision in Action Cameroon, where "does it actually get used?" beats "is it impressive?" every time.',
+        linkedin: 'https://linkedin.com/in/chif3n',
+        website: 'https://chifen.is-a.dev',
+        talkIds: ['you-don-t-need-an-app-solving-real-problems-with-a-dumb-whatsapp-bot'],
+    },
+    {
         id: 'claude-ndanda',
         name: 'Claude Ndanda',
         photo: '/speakers/Claude_Ndanda.webp',
@@ -52,6 +63,14 @@ export const speakers = [
         linkedin: 'https://www.linkedin.com/in/claude-ndanda-trixx-6aa606302/',
         website: 'https://zen.africa/',
         talkIds: ['construire-son-propre-serveur-mcp-avec-python'],
+    },
+    {
+        id: 'daniele-procida',
+        name: 'Daniele Procida',
+        photo: '/speakers/Daniele_Procida.webp',
+        country: 'United Kingdom',
+        title: 'Director of Engineering @ Canonical',
+        talkIds: ['career-success-the-next-10-years', 'jobs-and-early-career-success'],
     },
     {
         id: 'emambou-ulrich',
@@ -249,6 +268,14 @@ export const speakers = [
         linkedin: 'https://www.linkedin.com/in/daniel-parkson-tano/',
         website: 'https://quickerpay.co/',
         talkIds: ['from-wsgi-to-asgi-modernizing-django'],
+    },
+    {
+        id: 'pedro-leao-da-cruz',
+        name: 'Pedro Leão da Cruz',
+        photo: '/speakers/Pedro_Leao_da_Cruz.webp',
+        country: 'United Kingdom',
+        title: 'Engineering Manager @ Canonical',
+        talkIds: ['beyond-the-spreadsheet-google-workspace-ai'],
     },
     {
         id: 'patrick-nounga',
