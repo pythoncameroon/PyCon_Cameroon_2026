@@ -2562,6 +2562,10 @@ img {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
+.agenda-slot-tracks.is-solo-talk {
+    max-width: 400px;
+}
+
 .agenda-session-card {
     height: 100%;
 }

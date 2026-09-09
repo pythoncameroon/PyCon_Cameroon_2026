@@ -152,6 +152,7 @@ const SessionCard = ({ session, accentColor }) => {
 
 const TimeSlot = ({ slot, accentColor }) => {
     const parallel = slot.sessions.length > 1;
+    const soloTalk = !parallel && slot.sessions[0].type === 'talk';
 
     return (
         <div className="agenda-slot">
@@ -159,7 +160,7 @@ const TimeSlot = ({ slot, accentColor }) => {
                 <Clock size={13} style={{ opacity: 0.7 }} />
                 <span>{slot.time}</span>
             </div>
-            <div className={`agenda-slot-tracks${parallel ? ' is-parallel' : ''}`}>
+            <div className={`agenda-slot-tracks${parallel ? ' is-parallel' : ''}${soloTalk ? ' is-solo-talk' : ''}`}>
                 {slot.sessions.map((session, i) => (
                     <SessionCard key={i} session={session} accentColor={accentColor} />
                 ))}
