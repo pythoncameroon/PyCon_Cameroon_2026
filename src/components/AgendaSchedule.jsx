@@ -150,9 +150,9 @@ const SessionCard = ({ session, accentColor }) => {
     );
 };
 
-const TimeSlot = ({ slot, accentColor }) => {
+const TimeSlot = ({ slot, accentColor, dayHasParallelSlots }) => {
     const parallel = slot.sessions.length > 1;
-    const soloTalk = !parallel && slot.sessions[0].type === 'talk';
+    const soloTalk = !parallel && dayHasParallelSlots && slot.sessions[0].type === 'talk';
 
     return (
         <div className="agenda-slot">
@@ -171,13 +171,14 @@ const TimeSlot = ({ slot, accentColor }) => {
 
 const AgendaSchedule = ({ sessions, accentColor }) => {
     const slots = groupByTimeSlot(sessions);
+    const dayHasParallelSlots = slots.some((slot) => slot.kind === 'sessions' && slot.sessions.length > 1);
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-sm)' }}>
             {slots.map((slot, i) => (
                 slot.kind === 'break'
                     ? <BreakRow key={i} session={slot.sessions[0]} />
-                    : <TimeSlot key={i} slot={slot} accentColor={accentColor} />
+                    : <TimeSlot key={i} slot={slot} accentColor={accentColor} dayHasParallelSlots={dayHasParallelSlots} />
             ))}
         </div>
     );
