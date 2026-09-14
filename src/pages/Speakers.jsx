@@ -6,9 +6,10 @@ import useScrollAnimation from '../hooks/useScrollAnimation';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import KeynoteCard from '../components/KeynoteCard';
 import { speakers } from '../data/speakers';
-import { sessionsById, keynoteSessions } from '../data/agenda';
+import { sessionsById, keynoteSessions, sessionTitle } from '../data/agenda';
 
 const SpeakerCard = ({ speaker, linkTo }) => {
+    const { lang } = useLocalizedPath();
     const talks = (speaker.talkIds ?? []).map(id => sessionsById[id]).filter(Boolean);
     const primaryTalk = talks[0];
     return (
@@ -23,7 +24,7 @@ const SpeakerCard = ({ speaker, linkTo }) => {
                 )}
                 <div className="speaker-card-name">{speaker.name}</div>
                 {speaker.title && <div className="speaker-card-title">{speaker.title}</div>}
-                {primaryTalk?.title && <div className="speaker-card-talk">{primaryTalk.title}</div>}
+                {primaryTalk?.title && <div className="speaker-card-talk">{sessionTitle(primaryTalk, lang)}</div>}
                 {primaryTalk?.category && <span className="speaker-card-tag">{primaryTalk.category}</span>}
                 {talks.length > 1 && <span className="speaker-card-tag">+{talks.length - 1} more</span>}
             </div>

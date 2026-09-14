@@ -171,6 +171,7 @@
     "keynoteHighlight": "Speakers",
     "keynoteSubtitle": "One keynote to open each day of PyCon Cameroon and UbuCon 2026",
     "keynoteBadge": "Keynote",
+    "panelBadge": "Panel",
     "allTitle": "All",
     "allHighlight": "Speakers",
     "allSubtitle": "Meet the rest of our confirmed speakers for PyCon Cameroon 2026",
@@ -570,7 +571,8 @@
     "title": "Conference",
     "titleHighlight": "Agenda",
     "subtitle": "Three days of Python, Ubuntu, and open source. September 17 to 19, 2026",
-    "note": "Schedule is subject to change. All times are local (WAT, UTC+1)."
+    "note": "Schedule is subject to change. All times are local (WAT, UTC+1).",
+    "durationNote": "Each session shows its start time, end time and duration. A {{minutes}}-minute transition is scheduled between two presentations."
   },
   "financialAid": {
     "title": "Financial",

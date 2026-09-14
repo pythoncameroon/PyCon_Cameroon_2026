@@ -70,7 +70,7 @@ export const speakers = [
         photo: '/speakers/Daniele_Procida.webp',
         country: 'United Kingdom',
         title: 'Director of Engineering @ Canonical',
-        talkIds: ['career-success-the-next-10-years', 'jobs-and-early-career-success'],
+        talkIds: ['career-success-the-next-10-years', 'jobs-and-early-career-success', 'panel-emploi-tech-et-ia'],
     },
     {
         id: 'emambou-ulrich',
@@ -164,7 +164,7 @@ export const speakers = [
         title: 'Alea jacta est.',
         bio: 'Étudiante en statistiques et économie, elle applique la data science aux enjeux de développement : jeunesse, emploi décent et innovation en Afrique. Volontaire chez WiMLDS Yaoundé, elle rend la data science accessible aux jeunes femmes africaines et travaille sur l\'analyse de données d\'enquêtes ménages africaines.',
         linkedin: 'https://www.linkedin.com/in/leslyenkwatp/',
-        talkIds: ['l-importance-de-la-coherence-des-donnees-03-bonnes-pratiques'],
+        talkIds: ['l-importance-de-la-coherence-des-donnees-03-bonnes-pratiques', 'panel-emploi-tech-et-ia'],
     },
     {
         id: 'linuce-demanou',
@@ -196,6 +196,15 @@ export const speakers = [
         bio: 'Doctorante en Mécanique Énergétique à l\'Université de Dschang, ses recherches portent sur l\'intégration de l\'IA explicable dans le diagnostic et le pronostic des véhicules. Passionnée par la maintenance prédictive et l\'enseignement, elle œuvre à rendre les outils d\'IA plus compréhensibles et accessibles aux techniciens et ingénieurs.',
         linkedin: 'https://linkedin.com/in/marcela-djoukouo-talotsing-8a8815273',
         talkIds: ['autoxai-diagnostic-automobile-intelligent-avec-python'],
+    },
+    {
+        id: 'marc-daha',
+        name: 'Marc Daha',
+        photo: '/speakers/Marc_Daha.webp',
+        country: 'Cameroon',
+        title: 'Digital Project Manager & CEO | Hinkaku Ltd',
+        bio: 'Digital Project Manager et CEO de Hinkaku Ltd, il accompagne la conception et le développement de produits numériques, de la définition du besoin aux choix techniques, en passant par la sécurité, l\'infrastructure et la coordination des équipes. Sa mission : créer des solutions digitales fiables, capables de rivaliser avec les standards internationaux.',
+        talkIds: ['panel-emploi-tech-et-ia'],
     },
     {
         id: 'marielle-daha',
@@ -360,7 +369,7 @@ export const speakers = [
         bio: 'Senior Developer Advocate at AWS, working especially with (but not limited to) developers in the sub-Saharan Africa region. Formerly an AWS Community Hero, she was the first woman out of Africa to be named an AWS Hero. Her background spans software development, business and systems analysis, solutions architecture, and cloud engineering, and she loves working with people who are new to tech.',
         linkedin: 'https://www.linkedin.com/in/veliswa-boya/',
         website: 'https://dev.to/vel12171',
-        talkIds: ['keynote-ai-can-code-but-it-cannot-think-like-you-yet'],
+        talkIds: ['keynote-ai-can-code-but-it-cannot-think-like-you-yet', 'panel-emploi-tech-et-ia'],
     },
     {
         id: 'yannik-kadjie',

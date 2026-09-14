@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import { DAYS, agenda } from '../data/agenda';
 import AgendaSchedule from '../components/AgendaSchedule';
+import { TRANSITION_MINUTES } from '../utils/agendaTime';
 
 const Agenda = () => {
     const { t } = useTranslation();
@@ -53,6 +54,10 @@ const Agenda = () => {
                             <span style={{ fontWeight: 700, color: '#E95420', fontSize: '1rem', fontFamily: 'var(--font-ui)' }}>UbuCon Cameroon Day</span>
                         </div>
                     )}
+
+                    <p style={{ textAlign: 'center', fontSize: '0.85rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', marginBottom: 'var(--spacing-md)' }}>
+                        {t('agenda.durationNote', { minutes: TRANSITION_MINUTES })}
+                    </p>
 
                     <AgendaSchedule sessions={sessions} />
                 </div>

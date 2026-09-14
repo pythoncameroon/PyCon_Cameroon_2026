@@ -1,8 +1,9 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { Clock, MapPin, User, Languages, Tag } from 'lucide-react';
-import { TYPE_STYLES, LANG_LABELS } from '../data/agenda';
+import { TYPE_STYLES, LANG_LABELS, sessionTitle } from '../data/agenda';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { resolveSpeakerId, splitSpeakerNames } from '../utils/speakerNames';
+import { beforeTransition, formatDuration } from '../utils/agendaTime';
 
 const groupByTimeSlot = (sessions) => {
     const slots = [];
@@ -22,13 +23,30 @@ const groupByTimeSlot = (sessions) => {
         slots.push({ time: session.time, kind: 'sessions', sessions: [session] });
     });
 
+    // A slot ends when the next one starts. Between two presentation slots we keep a
+    // transition gap; a slot followed by a break runs until the break. A session can
+    // still declare its own `end` to override this.
+    slots.forEach((slot, i) => {
+        const explicitEnd = slot.sessions.find((s) => s.end)?.end;
+        const next = slots[i + 1];
+        if (explicitEnd) {
+            slot.end = explicitEnd;
+        } else if (!next) {
+            slot.end = null;
+        } else if (slot.kind === 'sessions' && next.kind === 'sessions') {
+            slot.end = beforeTransition(next.time);
+        } else {
+            slot.end = next.time;
+        }
+    });
+
     return slots;
 };
 
-const BreakRow = ({ session }) => (
+const BreakRow = ({ session, end }) => (
     <div style={{ display: 'flex', gap: 'var(--spacing-md)', alignItems: 'center', padding: '0.75rem 0' }}>
-        <span style={{ minWidth: '60px', fontSize: '0.82rem', fontWeight: 600, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
-            {session.time}
+        <span style={{ minWidth: '60px', fontSize: '0.82rem', fontWeight: 600, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', whiteSpace: 'nowrap' }}>
+            {session.time}{end ? ` – ${end}` : ''}
         </span>
         <div style={{ flex: 1, height: '1px', background: 'var(--color-border)', position: 'relative' }}>
             <span style={{
@@ -50,8 +68,9 @@ const BreakRow = ({ session }) => (
     </div>
 );
 
-const SessionCard = ({ session, accentColor }) => {
-    const { l } = useLocalizedPath();
+const SessionCard = ({ session, end, accentColor }) => {
+    const { l, lang } = useLocalizedPath();
+    const duration = formatDuration(session.time, end);
     const navigate = useNavigate();
     const style = TYPE_STYLES[session.type] || TYPE_STYLES.talk;
     const color = accentColor || style.color;
@@ -76,7 +95,7 @@ const SessionCard = ({ session, accentColor }) => {
             }}
         >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 'var(--spacing-sm)', flexWrap: 'wrap', marginBottom: 'var(--spacing-xs)' }}>
-                <h4 style={{ margin: 0, fontSize: '1rem', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontWeight: 700, lineHeight: 1.35 }}>{session.title}</h4>
+                <h4 style={{ margin: 0, fontSize: '1rem', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontWeight: 700, lineHeight: 1.35 }}>{sessionTitle(session, lang)}</h4>
                 <span style={{
                     fontSize: '0.72rem',
                     fontWeight: 700,
@@ -93,6 +112,11 @@ const SessionCard = ({ session, accentColor }) => {
                 </span>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                {duration && (
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.83rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
+                        <Clock size={13} style={{ color: 'var(--color-orange)', flexShrink: 0 }} /> {session.time} – {end} · {duration}
+                    </span>
+                )}
                 {speakerNames.length > 0 && (
                     <span style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '5px', fontSize: '0.83rem', fontFamily: 'var(--font-ui)' }}>
                         <User size={13} style={{ color: 'var(--color-orange)', flexShrink: 0 }} />
@@ -162,7 +186,7 @@ const TimeSlot = ({ slot, accentColor, dayHasParallelSlots }) => {
             </div>
             <div className={`agenda-slot-tracks${parallel ? ' is-parallel' : ''}${soloTalk ? ' is-solo-talk' : ''}`}>
                 {slot.sessions.map((session, i) => (
-                    <SessionCard key={i} session={session} accentColor={accentColor} />
+                    <SessionCard key={i} session={session} end={slot.end} accentColor={accentColor} />
                 ))}
             </div>
         </div>
@@ -177,7 +201,7 @@ const AgendaSchedule = ({ sessions, accentColor }) => {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-sm)' }}>
             {slots.map((slot, i) => (
                 slot.kind === 'break'
-                    ? <BreakRow key={i} session={slot.sessions[0]} />
+                    ? <BreakRow key={i} session={slot.sessions[0]} end={slot.end} />
                     : <TimeSlot key={i} slot={slot} accentColor={accentColor} dayHasParallelSlots={dayHasParallelSlots} />
             ))}
         </div>

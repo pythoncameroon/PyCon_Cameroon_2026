@@ -4,13 +4,13 @@ import { ArrowLeft, Globe, MapPin, Tag, Calendar } from 'lucide-react';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import { speakers } from '../data/speakers';
-import { DAYS, sessionsById, dayBySessionId } from '../data/agenda';
+import { DAYS, sessionsById, dayBySessionId, sessionTitle } from '../data/agenda';
 import { resolveSpeakerId, splitSpeakerNames } from '../utils/speakerNames';
 
 const SpeakerDetail = () => {
     useScrollAnimation();
     const { t } = useTranslation();
-    const { l } = useLocalizedPath();
+    const { l, lang } = useLocalizedPath();
     const { speakerId } = useParams();
 
     const speaker = speakers.find(s => s.id === speakerId);
@@ -38,7 +38,7 @@ const SpeakerDetail = () => {
                     .map((name) => ({ name, id: resolveSpeakerId(name) }))
                 : [];
             return {
-                title: session.title,
+                title: sessionTitle(session, lang),
                 type: session.type,
                 category: session.category,
                 track: session.track,
@@ -129,7 +129,7 @@ const SpeakerDetail = () => {
                                     return (
                                         <div key={i} className="card" style={{ borderTop: '3px solid var(--color-orange)', padding: 'var(--spacing-lg)', marginBottom: 'var(--spacing-md)' }}>
                                             <p style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-orange)', fontFamily: 'var(--font-ui)', marginBottom: 'var(--spacing-xs)' }}>
-                                                {talk.type === 'keynote' ? t('speakers.keynoteBadge') : t('speakers.talkDetails')}
+                                                {talk.type === 'keynote' ? t('speakers.keynoteBadge') : talk.type === 'panel' ? t('speakers.panelBadge') : t('speakers.talkDetails')}
                                             </p>
                                             <h2 style={{ marginBottom: 'var(--spacing-sm)', lineHeight: 1.35 }}>{talk.title}</h2>
 
