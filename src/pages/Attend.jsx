@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Check, GraduationCap, HandCoins } from 'lucide-react';
+import { Check, HandCoins } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
@@ -10,16 +10,6 @@ const Attend = () => {
     const { t } = useTranslation();
     const { l, lang } = useLocalizedPath();
     useScrollAnimation();
-
-    const sponsorCta = lang === 'fr' ? {
-        title: 'Parrainez un billet etudiant',
-        text: "Impossible d'assister ? Offrez une place a un etudiant. Payez par MTN MoMo ou Orange Money, puis confirmez avec votre code de transaction.",
-        button: 'Parrainer un billet',
-    } : {
-        title: 'Sponsor a student ticket',
-        text: "Can't attend, or want to give back? Cover a ticket for a student. Pay by MTN MoMo or Orange Money, then confirm with your transaction code.",
-        button: 'Sponsor a ticket',
-    };
 
     const grantsCta = lang === 'fr' ? {
         title: 'Besoin d\'un coup de pouce ?',
@@ -78,7 +68,7 @@ const Attend = () => {
                                 {t('attend.earlyBirdText')}
                             </p>
 
-                            <a href="https://ly.reckot.com/pycon-cameroon-2026-a4390c99-early-birds" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ width: '100%', marginTop: 'auto' }}>{t('attend.getEarlyBird')}</a>
+                            <span className="btn btn-primary" style={{ width: '100%', marginTop: 'auto', opacity: 0.6, cursor: 'default' }}>{t('attend.soldOut')}</span>
                         </div>
 
                         {/* Normal Rate */}
@@ -95,8 +85,8 @@ const Attend = () => {
                                 {t('attend.normalRateText')}
                             </p>
 
-                            <a href="https://ly.reckot.com/pycon-cameroon-2026-a4390c99-regular" target="_blank" rel="noopener noreferrer" className="btn btn-primary"
-                                style={{ width: '100%', background: 'var(--color-blue)', color: 'white', marginTop: 'auto' }}>{t('attend.getNormal')}</a>
+                            <span className="btn btn-primary"
+                                style={{ width: '100%', background: 'var(--color-blue)', color: 'white', opacity: 0.6, cursor: 'default', marginTop: 'auto' }}>{t('attend.soldOut')}</span>
                         </div>
 
                         {/* On-Site Rate */}
@@ -113,31 +103,9 @@ const Attend = () => {
                                 {t('attend.onSiteText')}
                             </p>
 
-                            <span className="btn btn-primary"
-                                style={{ width: '100%', background: 'var(--color-green)', color: 'white', cursor: 'default', marginTop: 'auto' }}>{t('attend.availableAtVenue')}</span>
+                            <a href="https://ly.reckot.com/pycon-cameroon-2026-a4390c99-during-event" target="_blank" rel="noopener noreferrer" className="btn btn-primary"
+                                style={{ width: '100%', background: 'var(--color-green)', color: 'white', marginTop: 'auto' }}>{t('attend.getOnSite')}</a>
                         </div>
-                    </div>
-
-                    <div className="card animate-on-scroll slide-up" style={{
-                        maxWidth: '1100px',
-                        margin: 'var(--spacing-lg) auto 0',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 'var(--spacing-md)',
-                        flexWrap: 'wrap',
-                        justifyContent: 'space-between',
-                        borderLeft: '4px solid var(--color-orange)',
-                    }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-md)', flex: '1 1 320px' }}>
-                            <GraduationCap size="2.5rem" style={{ color: 'var(--color-orange)', flexShrink: 0 }} />
-                            <div>
-                                <h3 className="card-title" style={{ marginBottom: '0.25rem' }}>{sponsorCta.title}</h3>
-                                <p className="card-text" style={{ marginBottom: 0 }}>{sponsorCta.text}</p>
-                            </div>
-                        </div>
-                        <Link to={l('attend/sponsor')} className="btn btn-primary" style={{ flexShrink: 0 }}>
-                            {sponsorCta.button}
-                        </Link>
                     </div>
 
                     {grantsOpen && (

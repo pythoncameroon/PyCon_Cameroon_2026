@@ -9,7 +9,6 @@ const About = lazy(() => import('./pages/About'));
 const Speakers = lazy(() => import('./pages/Speakers'));
 const Sponsor = lazy(() => import('./pages/Sponsor'));
 const Sponsors = lazy(() => import('./pages/Sponsors'));
-const TicketSponsor = lazy(() => import('./pages/TicketSponsor'));
 const Grants = lazy(() => import('./pages/Grants'));
 const Attend = lazy(() => import('./pages/Attend'));
 const Venue = lazy(() => import('./pages/Venue'));
@@ -84,7 +83,6 @@ function App() {
         <Route path="sponsor" element={<LazyPage><Sponsor /></LazyPage>} />
         <Route path="sponsors" element={<LazyPage><Sponsors /></LazyPage>} />
         <Route path="attend" element={<LazyPage><Attend /></LazyPage>} />
-        <Route path="attend/sponsor" element={<LazyPage><TicketSponsor /></LazyPage>} />
         <Route path="grants" element={<LazyPage><Grants /></LazyPage>} />
         <Route path="venue" element={<LazyPage><Venue /></LazyPage>} />
         <Route path="privacy" element={<LazyPage><Privacy /></LazyPage>} />
