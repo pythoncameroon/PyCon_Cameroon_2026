@@ -217,6 +217,17 @@ export const speakers = [
         talkIds: ['built-by-us-a-cameroonian-s-roadmap-to-open-source'],
     },
     {
+        id: 'mvenyi-donald',
+        name: 'Mvenyi Donald',
+        photo: '/speakers/Mvenyi_Donald.webp',
+        country: 'Cameroon',
+        title: 'Corynth Tech',
+        bio: 'I am a software computer engineer and a Cybersecurity professional. I am equally a co-founder of Corynth-Tech, a Cameroon-based tech institution that provide IT services and academic and professional training. I attended PYCONZA 2025 in Johannesburg and looking forward to attend other PyCon conferences, national and international.',
+        linkedin: 'https://www.linkedin.com/in/mvenyi-donald-293117273',
+        website: 'https://corynth-tech.com',
+        talkIds: ['hacking-with-python-cameroon-s-digital-security'],
+    },
+    {
         id: 'ndongmo-christian',
         name: 'Ndongmo Christian',
         photo: '/speakers/Ndongmo_Christian.webp',
