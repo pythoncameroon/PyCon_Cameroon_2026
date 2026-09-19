@@ -78,9 +78,9 @@ export const agenda = {
         { id: 'ai-powered-smart-agriculture-greenhouse-poultry-systems', time: '13:40', title: 'AI-Powered Smart Agriculture: Greenhouse & Poultry Systems', type: 'talk', room: 'Ndolè', track: 'IoT & Hardware', speaker: 'Ayuk Princelen Tanyi', category: 'IoT & Hardware', lang: 'en', abstract: 'Agriculture in Africa faces major challenges including climate instability, disease outbreaks, inefficient resource management, and limited access to affordable smart farming technologies. This session presents the development of an AI-powered smart greenhouse and poultry monitoring system designed to address these problems using IoT, automation, and machine learning.' },
         { id: 'you-don-t-need-an-app-solving-real-problems-with-a-dumb-whatsapp-bot', time: '14:10', title: 'You Don\'t Need an App: Solving Real Problems With a Dumb WhatsApp Bot', type: 'talk', room: 'Ndolè', speaker: 'Chifen Sama', category: 'Social Impact', lang: 'en', abstract: 'Developers over-engineer. This talk argues that for many real problems — especially in low-connectivity, low-trust settings — a basic WhatsApp chatbot beats a full app or custom platform, because it actually ships and gets used. Drawing on health-tech projects deployed in Cameroon, it\'s a practical case for choosing the boring, simple solution.' },
         { id: 'maximizing-the-use-of-opensource', time: '14:10', title: 'Maximizing the Use of Open Source', type: 'talk', room: 'Ndolè', speaker: 'Samuel Tiokeng', category: 'Open Source', lang: 'en', abstract: 'Open source powers the tech world, but are you using it to its full potential? This talk explores how individuals, professionals, and businesses can stop just seeing open source as a nice to have and start leveraging it strategically.' },
-        { time: '15:35', title: 'Coffee break', type: 'break', room: '' },
-        { time: '15:55', title: 'Closing ceremony + community games — awards, photos, networking', type: 'social', room: '' },
-        { time: '16:50', title: 'End of Day 3 — see you next year!', type: 'break', room: '' },
+        { time: '14:35', title: 'Coffee break', type: 'break', room: '' },
+        { time: '14:55', title: 'Closing ceremony + community games — awards, photos, networking', type: 'social', room: '' },
+        { time: '15:50', title: 'End of Day 3 — see you next year!', type: 'break', room: '' },
     ],
 };
 
