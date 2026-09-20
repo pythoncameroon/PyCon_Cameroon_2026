@@ -9,7 +9,6 @@ const normalizeName = (s) =>
         .trim();
 
 const NAME_ALIASES = {
-    'kamdem ulrich': 'kamdem-yamen-ulrich-laress-ulrich',
     'tayo tate desmond': 'tayo-tate-desmond-corentin',
 };
 
