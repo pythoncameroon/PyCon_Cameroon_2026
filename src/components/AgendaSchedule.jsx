@@ -3,45 +3,7 @@ import { Clock, MapPin, User, Languages, Tag } from 'lucide-react';
 import { TYPE_STYLES, LANG_LABELS, sessionTitle } from '../data/agenda';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { resolveSpeakerId, splitSpeakerNames } from '../utils/speakerNames';
-import { beforeTransition, formatDuration } from '../utils/agendaTime';
-
-const groupByTimeSlot = (sessions) => {
-    const slots = [];
-    const indexByTime = new Map();
-
-    sessions.forEach((session) => {
-        const isBreak = session.type === 'break' || session.type === 'social';
-        if (isBreak) {
-            slots.push({ time: session.time, kind: 'break', sessions: [session] });
-            return;
-        }
-        if (indexByTime.has(session.time)) {
-            slots[indexByTime.get(session.time)].sessions.push(session);
-            return;
-        }
-        indexByTime.set(session.time, slots.length);
-        slots.push({ time: session.time, kind: 'sessions', sessions: [session] });
-    });
-
-    // A slot ends when the next one starts. Between two presentation slots we keep a
-    // transition gap; a slot followed by a break runs until the break. A session can
-    // still declare its own `end` to override this.
-    slots.forEach((slot, i) => {
-        const explicitEnd = slot.sessions.find((s) => s.end)?.end;
-        const next = slots[i + 1];
-        if (explicitEnd) {
-            slot.end = explicitEnd;
-        } else if (!next) {
-            slot.end = null;
-        } else if (slot.kind === 'sessions' && next.kind === 'sessions') {
-            slot.end = beforeTransition(next.time);
-        } else {
-            slot.end = next.time;
-        }
-    });
-
-    return slots;
-};
+import { formatDuration, groupByTimeSlot } from '../utils/agendaTime';
 
 const BreakRow = ({ session, end }) => (
     <div style={{ display: 'flex', gap: 'var(--spacing-md)', alignItems: 'center', padding: '0.75rem 0' }}>
@@ -75,18 +37,18 @@ const SessionCard = ({ session, end, accentColor }) => {
     const style = TYPE_STYLES[session.type] || TYPE_STYLES.talk;
     const color = accentColor || style.color;
     const speakerNames = session.speaker ? splitSpeakerNames(session.speaker) : [];
-    const primarySpeakerId = speakerNames.map(resolveSpeakerId).find(Boolean) || null;
-    const isClickable = Boolean(session.id && primarySpeakerId);
+    const isClickable = Boolean(session.id);
+    const sessionPath = isClickable ? l(`/sessions/${session.id}`) : null;
 
-    const goToSpeaker = () => navigate(l(`/speakers/${primarySpeakerId}`));
+    const goToSession = () => navigate(sessionPath);
 
     return (
         <div
             className="card agenda-session-card"
             role={isClickable ? 'link' : undefined}
             tabIndex={isClickable ? 0 : undefined}
-            onClick={isClickable ? goToSpeaker : undefined}
-            onKeyDown={isClickable ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goToSpeaker(); } } : undefined}
+            onClick={isClickable ? goToSession : undefined}
+            onKeyDown={isClickable ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goToSession(); } } : undefined}
             style={{
                 padding: 'var(--spacing-md)',
                 borderLeft: `4px solid ${color}`,
@@ -95,7 +57,13 @@ const SessionCard = ({ session, end, accentColor }) => {
             }}
         >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 'var(--spacing-sm)', flexWrap: 'wrap', marginBottom: 'var(--spacing-xs)' }}>
-                <h4 style={{ margin: 0, fontSize: '1rem', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontWeight: 700, lineHeight: 1.35 }}>{sessionTitle(session, lang)}</h4>
+                <h4 style={{ margin: 0, fontSize: '1rem', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontWeight: 700, lineHeight: 1.35 }}>
+                    {isClickable ? (
+                        <Link to={sessionPath} onClick={(e) => e.stopPropagation()} style={{ color: 'inherit', textDecoration: 'none' }}>
+                            {sessionTitle(session, lang)}
+                        </Link>
+                    ) : sessionTitle(session, lang)}
+                </h4>
                 <span style={{
                     fontSize: '0.72rem',
                     fontWeight: 700,

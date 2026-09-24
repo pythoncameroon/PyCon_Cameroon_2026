@@ -574,7 +574,13 @@
     "titleHighlight": "Agenda",
     "subtitle": "Three days of Python, Ubuntu, and open source. September 17 to 19, 2026",
     "note": "Schedule is subject to change. All times are local (WAT, UTC+1).",
-    "durationNote": "Each session shows its start time, end time and duration. A {{minutes}}-minute transition is scheduled between two presentations."
+    "durationNote": "Each session shows its start time, end time and duration. A {{minutes}}-minute transition is scheduled between two presentations.",
+    "backToAgenda": "Back to Agenda",
+    "sessionNotFound": "Session not found.",
+    "aboutSession": "About this Session",
+    "speakersLabel_one": "Speaker",
+    "speakersLabel_other": "Speakers",
+    "noAbstract": "More details coming soon."
   },
   "financialAid": {
     "title": "Financial",

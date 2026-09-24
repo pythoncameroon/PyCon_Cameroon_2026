@@ -38,6 +38,7 @@ const SpeakerDetail = () => {
                     .map((name) => ({ name, id: resolveSpeakerId(name) }))
                 : [];
             return {
+                id,
                 title: sessionTitle(session, lang),
                 type: session.type,
                 category: session.category,
@@ -131,7 +132,9 @@ const SpeakerDetail = () => {
                                             <p style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-orange)', fontFamily: 'var(--font-ui)', marginBottom: 'var(--spacing-xs)' }}>
                                                 {talk.type === 'keynote' ? t('speakers.keynoteBadge') : talk.type === 'panel' ? t('speakers.panelBadge') : t('speakers.talkDetails')}
                                             </p>
-                                            <h2 style={{ marginBottom: 'var(--spacing-sm)', lineHeight: 1.35 }}>{talk.title}</h2>
+                                            <h2 style={{ marginBottom: 'var(--spacing-sm)', lineHeight: 1.35 }}>
+                                                <Link to={l(`/sessions/${talk.id}`)} style={{ color: 'inherit', textDecoration: 'none' }}>{talk.title}</Link>
+                                            </h2>
 
                                             {talk.coSpeakers.length > 0 && (
                                                 <p style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '5px', fontSize: '0.85rem', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: '0 0 var(--spacing-sm)' }}>

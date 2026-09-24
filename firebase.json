@@ -6,6 +6,13 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "regex": "^/(?P<path>(en|fr)(/.*)?)$",
+        "destination": "/2026/:path",
+        "type": 301
+      }
+    ],
     "rewrites": [
       {
         "source": "**",

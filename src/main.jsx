@@ -9,9 +9,17 @@ import App from './App.jsx'
 const savedTheme = localStorage.getItem('pycon-theme') || 'dark';
 document.documentElement.setAttribute('data-theme', savedTheme);
 
+// Every edition lives under its year, e.g. /2026/en/agenda. Prefix any
+// un-versioned URL (old links, the bare domain) with the current edition.
+const EDITION_BASE = '/2026';
+const { pathname, search, hash } = window.location;
+if (pathname !== EDITION_BASE && !pathname.startsWith(`${EDITION_BASE}/`)) {
+  window.history.replaceState(null, '', `${EDITION_BASE}${pathname === '/' ? '' : pathname}${search}${hash}`);
+}
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={EDITION_BASE}>
       <App />
     </BrowserRouter>
   </StrictMode>,
