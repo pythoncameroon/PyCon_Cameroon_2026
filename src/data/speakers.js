@@ -135,17 +135,6 @@ export const speakers = [
         talkIds: ['open-source-impact-how-python-communities-solve-real-problems'],
     },
     {
-        id: 'kamdem-yamen-ulrich-laress-ulrich',
-        name: 'Kamdem Yamen Ulrich Laress Ulrich',
-        photo: '/speakers/Kamdem_Yamen_Ulrich_Laress_Ulrich.webp',
-        country: 'Cameroon',
-        title: 'Freelancer',
-        bio: 'Ingénieur télécommunications spécialisé en sécurité des systèmes et réseaux. D\'abord développeur backend en freelance, il découvre l\'administration système Linux puis le DevOps, qui fusionne ses deux passions. Certifié sur Terraform et AWS Solutions Architect, il travaille aujourd\'hui en freelance comme DevOps et développeur backend.',
-        linkedin: 'https://www.linkedin.com/in/ulrich-laress-kamdem-yamen/',
-        website: 'https://itindepth.odoo.com/blog',
-        talkIds: ['k3s-the-kubernetes-for-gentle-apps'],
-    },
-    {
         id: 'leslye-nkwa',
         name: 'Leslye Nkwa',
         photo: '/speakers/Leslye_Nkwa.webp',
