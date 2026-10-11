@@ -28,6 +28,7 @@
     "builtBy": "Cr\u00e9\u00e9 par",
     "terms": "Conditions g\u00e9n\u00e9rales",
     "privacy": "Politique de confidentialit\u00e9",
+    "report": "Rapport 2026",
     "healthSafety": "Sant\u00e9 & S\u00e9curit\u00e9"
   },
   "home": {
@@ -255,17 +256,19 @@
       "diamond": "Sponsor Diamond",
       "gold": "Sponsors Gold",
       "silver": "Sponsors Silver",
+      "dinner": "Sponsor du d\u00eener des speakers",
       "bronze": "Sponsors Bronze",
       "community": "Sponsors Communaut\u00e9",
-      "deployment": "Sponsors D\u00e9ploiement"
+      "hosting": "Sponsors H\u00e9bergement"
     },
     "tierBadge": {
       "diamond": "Diamond",
       "gold": "Gold",
       "silver": "Silver",
+      "dinner": "D\u00eener speakers",
       "bronze": "Bronze",
       "community": "Community",
-      "deployment": "Deployment"
+      "hosting": "H\u00e9bergement"
     },
     "visitWebsite": "Visiter le site",
     "joinList": "Vous souhaitez rejoindre cette liste ?",
@@ -783,6 +786,174 @@
         "Designer UI/UX et graphique",
         "Responsable du groupe d'utilisateurs Canonical Cameroun"
       ]
+    }
+  },
+  "report": {
+    "title": "Rapport",
+    "titleHighlight": "2026",
+    "subtitle": "Trois jours de Python, d'Ubuntu et d'open source \u00e0 Yaound\u00e9 : ce qui s'est pass\u00e9, qui l'a rendu possible et la suite.",
+    "meta": "17\u201319 septembre 2026 \u00b7 Girafe H\u00f4tel, Yaound\u00e9, Cameroun",
+    "heroAlt": "Les participants de PyCon & UbuCon Cameroon 2026 r\u00e9unis pour la photo de groupe de cl\u00f4ture",
+    "summaryTitle": "Synth\u00e8se",
+    "summaryHighlight": "g\u00e9n\u00e9rale",
+    "summaryP1": "PyCon Cameroon 2026 a r\u00e9uni la communaut\u00e9 Python du pays pendant trois jours au Girafe H\u00f4tel de Yaound\u00e9, du 17 au 19 septembre. Pour la premi\u00e8re fois, la conf\u00e9rence \u00e9tait associ\u00e9e \u00e0 UbuCon Cameroon, une journ\u00e9e enti\u00e8re consacr\u00e9e \u00e0 Ubuntu et \u00e0 l'open source, co-organis\u00e9e avec le groupe d'utilisateurs Canonical local.",
+    "summaryP2": "Le programme a m\u00eal\u00e9 keynotes, talks r\u00e9partis sur trois salles en parall\u00e8le, ateliers pratiques, un panel bilingue sur l'emploi tech et l'IA, des lightning talks et des jeux communautaires. Les sessions se sont tenues en anglais, en fran\u00e7ais et dans les deux langues, \u00e0 l'image de la sc\u00e8ne tech bilingue du Cameroun.",
+    "summaryP3": "Rien de tout cela n'est possible sans nos sponsors, communaut\u00e9s partenaires, intervenants et b\u00e9n\u00e9voles. Ce rapport est notre fa\u00e7on de les remercier, et un compte rendu transparent de ce que leur soutien a permis.",
+    "glanceTitle": "En bref",
+    "stats": {
+      "days": "Jours",
+      "sessions": "Sessions",
+      "speakers": "Intervenants",
+      "countries": "Pays des intervenants",
+      "sponsors": "Sponsors",
+      "partners": "Communaut\u00e9s partenaires",
+      "attendees": "Participants"
+    },
+    "programTitle": "Le",
+    "programHighlight": "Programme",
+    "programSubtitle": "R\u00e9partition des sessions programm\u00e9es par format, th\u00e8me et langue.",
+    "formatsTitle": "Formats",
+    "topicsTitle": "Th\u00e8mes",
+    "languagesTitle": "Langues",
+    "formats": {
+      "keynote": "Keynotes",
+      "talk": "Talks",
+      "workshop": "Ateliers",
+      "panel": "Panel"
+    },
+    "languages": {
+      "en": "Anglais",
+      "fr": "Fran\u00e7ais",
+      "bilingual": "Bilingue"
+    },
+    "daysTitle": "Jour apr\u00e8s",
+    "daysHighlight": "jour",
+    "daysSubtitle": "Les temps forts et les photos de chaque journ\u00e9e.",
+    "dayWord": "Jour",
+    "keySessions": "Sessions phares",
+    "seeAgenda": "Agenda complet",
+    "openPhoto": "Ouvrir la photo en grand",
+    "day1": {
+      "title": "Ouverture de PyCon",
+      "text": "D\u00e8s le matin, les participants faisaient la queue devant le lieu pour l'enregistrement et le caf\u00e9 d'accueil. Apr\u00e8s la c\u00e9r\u00e9monie d'ouverture, la keynote de Sarah Abderemane a donn\u00e9 le ton, puis la journ\u00e9e s'est r\u00e9partie sur trois salles : web et s\u00e9curit\u00e9, IA et data science, DevOps et cloud. Au programme : microservices avec Django et FastAPI, un moteur de recherche vectoriel construit de z\u00e9ro, Terraform pour Django sur AWS, ASGI, serveurs MCP en Python et IoT pour le diagnostic automobile. La journ\u00e9e s'est conclue par un atelier sur le burnout et la surcharge cognitive, suivi de jeux communautaires.",
+      "photos": [
+        "La grande salle comble devant la banni\u00e8re PyCon & UbuCon Cameroon",
+        "Keynote d'ouverture sur la sc\u00e8ne principale",
+        "Arriv\u00e9e des participants pour l'enregistrement devant le lieu",
+        "Une salle pleine pendant une session du matin",
+        "Pause d\u00e9jeuner : les participants passent \u00e0 table",
+        "Mains lev\u00e9es dans le public pendant une session interactive",
+        "De l'\u00e9nergie sur sc\u00e8ne devant le mur des sponsors",
+        "Des participants prennent des notes pendant un talk",
+        "Remerciements aux sponsors sur l'\u00e9cran principal"
+      ]
+    },
+    "day2": {
+      "title": "UbuCon Cameroon",
+      "text": "Le deuxi\u00e8me jour \u00e9tait consacr\u00e9 \u00e0 UbuCon Cameroon, co-organis\u00e9e avec le groupe d'utilisateurs Canonical. Adonis Simo a ouvert avec une keynote sur la cr\u00e9ation d'un SaaS en Afrique pour le monde, suivie d'une journ\u00e9e de sessions pratiques : une feuille de route vers l'open source pour les d\u00e9veloppeurs camerounais, Django avec Valkey pour le cache et le temps r\u00e9el, Daniele Procida sur la r\u00e9ussite professionnelle et le premier emploi, l'IA dans Google Workspace, l'authentification \u00e0 deux facteurs avec Django et l'Open Documentation Academy.",
+      "photos": [
+        "Photo de groupe UbuCon Cameroon devant le mur des sponsors",
+        "Une salle comble pour UbuCon Cameroon",
+        "La salle des ateliers, ordinateurs ouverts",
+        "Un talk carri\u00e8re dans la grande salle",
+        "D\u00e9jeuner ensemble entre deux ateliers",
+        "Des participants en plein atelier pratique",
+        "Des amiti\u00e9s n\u00e9es \u00e0 UbuCon",
+        "Distribution de goodies sur sc\u00e8ne",
+        "Tout sourire devant le mur des sponsors"
+      ]
+    },
+    "day3": {
+      "title": "Cl\u00f4ture de PyCon",
+      "text": "La keynote de Veliswa Boya sur la place de l'humain quand l'IA \u00e9crit de plus en plus de code a ouvert la derni\u00e8re journ\u00e9e. Trois salles ont ensuite abord\u00e9 Python dans le navigateur, la concurrence, les tableaux de bord Metabase, le creative coding avec Matplotlib, les workflows IA et Django r\u00e9actif. Un panel bilingue sur l'emploi tech et l'IA a r\u00e9uni Daniele Procida, Veliswa Boya, Leslye Nkwa et Marc Daha, suivi de talks sur la s\u00e9curit\u00e9, l'agriculture intelligente et les bots WhatsApp. Des lightning talks ouverts et une fresque graffiti r\u00e9alis\u00e9e en direct ont pr\u00e9c\u00e9d\u00e9 la c\u00e9r\u00e9monie de cl\u00f4ture, les r\u00e9compenses et les photos de groupe.",
+      "photos": [
+        "Photo de groupe de cl\u00f4ture avec toute la conf\u00e9rence",
+        "Intervenants, organisateurs et b\u00e9n\u00e9voles sur sc\u00e8ne \u00e0 la c\u00e9r\u00e9monie de cl\u00f4ture",
+        "Le panel bilingue sur l'emploi tech et l'IA",
+        "Une performance pendant les festivit\u00e9s de cl\u00f4ture",
+        "La fresque graffiti r\u00e9alis\u00e9e pendant la conf\u00e9rence",
+        "Assiettes bien remplies le dernier jour",
+        "Des participants signent la fresque",
+        "Un participant prend le micro",
+        "C\u00e9l\u00e9bration de la fin de trois belles journ\u00e9es"
+      ]
+    },
+    "sponsorsTitle": "Merci \u00e0 nos",
+    "sponsorsHighlight": "Sponsors",
+    "sponsorsSubtitle": "Votre soutien a financ\u00e9 le lieu, les repas, les goodies, l'aide financi\u00e8re et tout ce que vous voyez ci-dessus. Voici o\u00f9 votre marque \u00e9tait visible.",
+    "visibilityTitle": "Visibilit\u00e9 de la marque",
+    "visibility": [
+      {
+        "title": "Fond de sc\u00e8ne & mur photo",
+        "text": "Les logos des sponsors \u00e9taient derri\u00e8re chaque keynote et sur l'espace le plus photographi\u00e9 de l'\u00e9v\u00e9nement, visibles sur les photos de groupe officielles."
+      },
+      {
+        "title": "Roll-ups",
+        "text": "Les roll-ups des sponsors \u00e9taient install\u00e9s dans la grande salle et les salles parall\u00e8les pendant les trois jours."
+      },
+      {
+        "title": "Remerciements \u00e0 l'\u00e9cran",
+        "text": "Les sponsors ont \u00e9t\u00e9 remerci\u00e9s depuis la sc\u00e8ne principale, logos sur grand \u00e9cran."
+      },
+      {
+        "title": "Site web",
+        "text": "Chaque sponsor figure avec une description et un lien sur le site de la conf\u00e9rence, y compris dans ce rapport."
+      }
+    ],
+    "partnersTitle": "Communaut\u00e9s",
+    "partnersHighlight": "partenaires",
+    "partnersSubtitle": "Les communaut\u00e9s locales qui ont relay\u00e9 l'\u00e9v\u00e9nement, mobilis\u00e9 les participants et anim\u00e9 des sessions.",
+    "thanksTitle": "Merci",
+    "thanksHighlight": "\u00e0 tous",
+    "thanksText": "\u00c0 chaque intervenant, b\u00e9n\u00e9vole, organisateur et participant qui a fait vivre PyCon & UbuCon Cameroon 2026 : merci. Vous souhaitez soutenir la prochaine \u00e9dition, ou avez des questions sur ce rapport ? \u00c9crivez-nous.",
+    "contact": "Contacter les organisateurs",
+    "sponsorDeck": "Dossier de sponsoring",
+    "download": "T\u00e9l\u00e9charger le rapport PDF",
+    "audienceTitle": "Le",
+    "audienceHighlight": "Public",
+    "audienceSubtitle": "Toutes les personnes pr\u00e9sentes sur place pendant les trois jours, et d'o\u00f9 venaient nos intervenants.",
+    "speakersByCountry": "Intervenants par pays",
+    "countryNotListed": "Non renseign\u00e9",
+    "countryNames": {
+      "Cameroon": "Cameroun",
+      "United Kingdom": "Royaume-Uni",
+      "Senegal": "S\u00e9n\u00e9gal",
+      "Rwanda": "Rwanda",
+      "France": "France",
+      "South Africa": "Afrique du Sud",
+      "Nigeria": "Nigeria"
+    },
+    "topicNames": {
+      "Machine Learning & AI": "Machine learning & IA",
+      "Community": "Communaut\u00e9",
+      "Web Development": "D\u00e9veloppement web",
+      "Open Source": "Open source",
+      "Python Core": "Python core",
+      "DevOps & Infrastructure": "DevOps & infrastructure",
+      "IoT & Hardware": "IoT & mat\u00e9riel",
+      "Social Impact": "Impact social",
+      "Ubuntu & Linux": "Ubuntu & Linux",
+      "Education": "\u00c9ducation",
+      "Cybersecurity": "Cybers\u00e9curit\u00e9"
+    },
+    "aidTitle": "Aide",
+    "aidHighlight": "financi\u00e8re",
+    "aidSubtitle": "Une partie du budget est retourn\u00e9e directement \u00e0 la communaut\u00e9, pour que le co\u00fbt n'emp\u00eache personne de venir \u00e0 PyCon Cameroon.",
+    "aid": [
+      { "title": "Bourses de billets", "text": "Des billets gratuits pour les \u00e9tudiants et membres de la communaut\u00e9 qui ne pouvaient pas s'en offrir un." },
+      { "title": "H\u00e9bergement", "text": "Des nuits d'h\u00f4tel \u00e0 Yaound\u00e9 pour les speakers et boursiers venus d'autres villes et pays." },
+      { "title": "Transport", "text": "Les frais de voyage vers Yaound\u00e9 pris en charge pour les speakers et boursiers venus d'autres r\u00e9gions." }
+    ],
+    "pdf": {
+      "kicker": "Rapport d'activit\u00e9",
+      "edition": "PyCon & UbuCon Cameroon 2026",
+      "contents": "Sommaire",
+      "foreword": "Avant-propos",
+      "byNumbers": "En chiffres",
+      "footer": "PyCon & UbuCon Cameroon 2026 \u00b7 Rapport d'activit\u00e9",
+      "sponsorTiers": "Nos sponsors",
+      "closingTitle": "Construisons ensemble la prochaine \u00e9dition",
+      "website": "cm.pycon.org/2026"
     }
   }
 }
