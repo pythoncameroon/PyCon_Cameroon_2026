@@ -3,7 +3,7 @@ import { speakers } from './speakers.js';
 import { sponsorsList } from './sponsorsList.js';
 import { partnerCommunities } from './partners.js';
 
-export const attendeeTotal = '457+';
+export const attendeeTotal = '500+';
 
 export const reportSessions = Object.values(agenda).flat().filter((s) => s.id);
 
