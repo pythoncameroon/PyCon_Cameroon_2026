@@ -944,19 +944,6 @@
       { "title": "Bourses de billets", "text": "Des billets gratuits pour les \u00e9tudiants et membres de la communaut\u00e9 qui ne pouvaient pas s'en offrir un." },
       { "title": "H\u00e9bergement", "text": "Des nuits d'h\u00f4tel \u00e0 Yaound\u00e9 pour les speakers et boursiers venus d'autres villes et pays." },
       { "title": "Transport", "text": "Les frais de voyage vers Yaound\u00e9 pris en charge pour les speakers et boursiers venus d'autres r\u00e9gions." }
-    ],
-    "pdf": {
-      "kicker": "Rapport d'activit\u00e9 \u00b7 Premi\u00e8re \u00e9dition",
-      "galleryTitle": "Galerie",
-      "galleryHighlight": "photos",
-      "edition": "PyCon & UbuCon Cameroon 2026",
-      "contents": "Sommaire",
-      "foreword": "Avant-propos",
-      "byNumbers": "En chiffres",
-      "footer": "PyCon & UbuCon Cameroon 2026 \u00b7 Rapport d'activit\u00e9",
-      "sponsorTiers": "Nos sponsors",
-      "closingTitle": "Construisons ensemble la prochaine \u00e9dition",
-      "website": "cm.pycon.org/2026"
-    }
+    ]
   }
 }
