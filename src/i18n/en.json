@@ -921,19 +921,6 @@
       { "title": "Ticket grants", "text": "Free conference tickets for students and community members who could not afford one." },
       { "title": "Accommodation", "text": "Hotel nights in Yaound\u00e9 for speakers and grant recipients travelling from other cities and countries." },
       { "title": "Transport", "text": "Travel costs to Yaound\u00e9 covered for speakers and grant recipients coming from other regions." }
-    ],
-    "pdf": {
-      "kicker": "Event Report \u00b7 First Edition",
-      "galleryTitle": "Photo",
-      "galleryHighlight": "Gallery",
-      "edition": "PyCon & UbuCon Cameroon 2026",
-      "contents": "Contents",
-      "foreword": "Foreword",
-      "byNumbers": "By the numbers",
-      "footer": "PyCon & UbuCon Cameroon 2026 \u00b7 Event Report",
-      "sponsorTiers": "Our sponsors",
-      "closingTitle": "Let's build the next edition together",
-      "website": "cm.pycon.org/2026"
-    }
+    ]
   }
 }
