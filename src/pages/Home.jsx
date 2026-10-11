@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
-import { Calendar, MapPin, CalendarDays, Ticket } from 'lucide-react';
+import { Calendar, MapPin, CalendarDays, FileText } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import LazyImage from '../components/LazyImage';
@@ -32,6 +32,7 @@ const Home = () => {
                 </div>
 
                 <div className="hero-content animate-fade-scale">
+                    <span className="report-day-badge" style={{ fontSize: '1rem', padding: '6px 18px', marginBottom: 'var(--spacing-md)' }}>{t('home.wrapNotice')}</span>
                     <h1 className="hero-title">
                         <span className="highlight">PyCon</span> Cameroon 2026
                     </h1>
@@ -43,11 +44,11 @@ const Home = () => {
                     </div>
 
                     <div className="hero-buttons">
-                        <Link to={l('/agenda')} className="btn btn-primary btn-lg">
-                            <CalendarDays size="1em" style={{ verticalAlign: '-0.125em' }} /> {t('home.viewAgenda')}
+                        <Link to={l('/report')} className="btn btn-primary btn-lg">
+                            <FileText size="1em" style={{ verticalAlign: '-0.125em' }} /> {t('home.viewReport')}
                         </Link>
-                        <Link to={l('/attend')} className="btn btn-secondary btn-lg">
-                            <Ticket size="1em" style={{ verticalAlign: '-0.125em' }} /> {t('home.getYourTicket')}
+                        <Link to={l('/agenda')} className="btn btn-secondary btn-lg">
+                            <CalendarDays size="1em" style={{ verticalAlign: '-0.125em' }} /> {t('home.viewAgenda')}
                         </Link>
                     </div>
                 </div>
@@ -224,13 +225,13 @@ const Home = () => {
             <section className="section" id="home-cta"
                 style={{ background: 'linear-gradient(135deg, var(--color-orange) 0%, var(--color-red) 100%)' }}>
                 <div className="container text-center">
-                    <h2 style={{ color: 'white', marginBottom: 'var(--spacing-sm)' }}>{t('home.readyToJoin')}</h2>
+                    <h2 style={{ color: 'white', marginBottom: 'var(--spacing-sm)' }}>{t('home.wrapTitle')}</h2>
                     <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.25rem', marginBottom: 'var(--spacing-md)' }}>
-                        {t('home.readyToJoinText')}
+                        {t('home.wrapText')}
                     </p>
                     <div className="flex justify-center gap-sm flex-wrap">
-                        <Link to={l('/attend')} className="btn btn-lg" style={{ background: 'white', color: 'var(--color-orange)' }}>
-                            {t('home.getYourTicket')}
+                        <Link to={l('/report')} className="btn btn-lg" style={{ background: 'white', color: 'var(--color-orange)' }}>
+                            {t('home.viewReport')}
                         </Link>
                         <a href={sponsorshipDeckUrl} target="_blank" rel="noopener noreferrer" className="btn btn-lg btn-secondary" style={{ borderColor: 'white', color: 'white' }}>
                             {t('home.sponsorshipDeck')}
