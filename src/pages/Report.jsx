@@ -61,7 +61,7 @@ const Report = () => {
 
             <section className="section bg-dark" id="summary">
                 <div className="container">
-                    <img src={photoSrc('day3', 0)} alt={t('report.heroAlt')} className="report-hero" />
+                    <img src="/images/report/cover.webp" alt={t('report.heroAlt')} className="report-hero" />
                     <div className="grid grid-2" style={{ alignItems: 'center', gap: 'var(--spacing-xl)', marginTop: 'var(--spacing-xl)' }}>
                         <div>
                             <h2 style={{ marginBottom: 'var(--spacing-md)' }}>
