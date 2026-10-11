@@ -1,10 +1,10 @@
-export const TIERS = ['diamond', 'gold', 'silver', 'bronze', 'community', 'deployment'];
+export const TIERS = ['diamond', 'gold', 'silver', 'dinner', 'bronze', 'community', 'hosting'];
 
 /**
  * @typedef {Object} Sponsor
  * @property {string} id - unique, slug
  * @property {string} name
- * @property {'diamond'|'gold'|'silver'|'bronze'|'community'|'deployment'} tier
+ * @property {'diamond'|'gold'|'silver'|'dinner'|'bronze'|'community'|'hosting'} tier
  * @property {string} logo - square, ~400x400, transparent or white background
  * @property {string} [website] - optional
  * @property {{ fr: string, en: string }} description - 1 to 3 sentences
@@ -13,7 +13,7 @@ export const TIERS = ['diamond', 'gold', 'silver', 'bronze', 'community', 'deplo
 // {
 //   id: 'acme',                       // unique, slug
 //   name: 'ACME Corp',
-//   tier: 'gold',                     // 'diamond' | 'gold' | 'silver' | 'bronze' | 'community' | 'deployment'
+//   tier: 'gold',                     // 'diamond' | 'gold' | 'silver' | 'bronze' | 'community' | 'hosting'
 //   logo: '/sponsors/acme.webp',      // carré, ~400×400, fond transparent ou blanc
 //   website: 'https://acme.example',  // optionnel
 //   description: { fr: '…', en: '…' } // 1 à 3 phrases
@@ -30,6 +30,17 @@ export const sponsorsList = [
     description: {
       fr: "Canonical fournit des solutions open source sécurisées de niveau entreprise, utilisées par des millions de développeurs et les plus grandes organisations mondiales. Son produit phare, Ubuntu, est le système d'exploitation open source le plus utilisé au monde, plateforme de référence pour le cloud et le développement Python. Canonical propose aussi des technologies cloud-native comme MicroK8s, LXD et Ubuntu Pro.",
       en: "Canonical delivers secure, enterprise-grade open-source solutions used by millions of developers and organizations worldwide. Its flagship product, Ubuntu, is the world's most used open-source OS and a go-to platform for cloud infrastructure and Python development. Canonical also offers MicroK8s, LXD, and Ubuntu Pro.",
+    },
+  },
+  {
+    id: 'aws',
+    name: 'AWS',
+    tier: 'dinner',
+    logo: '/sponsors/aws.svg',
+    website: 'https://aws.amazon.com',
+    description: {
+      fr: "Amazon Web Services (AWS) est la plateforme cloud d'Amazon, qui propose plus de 200 services — calcul, stockage, bases de données, IA et machine learning — utilisés par des millions de clients dans le monde. AWS soutient les développeurs Python avec son SDK Boto3 et AWS Lambda. Pour PyCon Cameroon 2026, AWS a offert le dîner des speakers.",
+      en: "Amazon Web Services (AWS) is Amazon's cloud platform, offering over 200 services — compute, storage, databases, AI and machine learning — used by millions of customers worldwide. AWS supports Python developers with its Boto3 SDK and AWS Lambda. For PyCon Cameroon 2026, AWS hosted the speaker dinner.",
     },
   },
   {
@@ -134,7 +145,7 @@ export const sponsorsList = [
   {
     id: 'pythonanywhere',
     name: 'PythonAnywhere',
-    tier: 'deployment',
+    tier: 'hosting',
     logo: '/sponsors/pythonanywhere.svg',
     website: 'https://www.pythonanywhere.com',
     description: {

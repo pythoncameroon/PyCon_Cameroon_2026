@@ -77,7 +77,7 @@ const SilverCard = ({ sponsor, lang }) => (
     </div>
 );
 
-// Shared logo-tile layout for the "bronze", "community", and "deployment" tiers.
+// Shared logo-tile layout for the "bronze", "community", and "hosting" tiers.
 // The description lives in a floating popover shown on hover/focus
 // (desktop) or tap (touch devices) rather than inline.
 const LogoTile = ({ sponsor, tier, lang, t }) => {
@@ -237,27 +237,10 @@ const SponsorShowcase = ({ sponsors = defaultSponsorsList }) => {
                                 ))}
                             </div>
                         )}
-
-                        {tier === 'bronze' && (
+                        {!['diamond', 'gold', 'silver'].includes(tier) && (
                             <div className="grid grid-4 stagger">
                                 {tierSponsors.map((sponsor) => (
-                                    <LogoTile key={sponsor.id} sponsor={sponsor} tier="bronze" lang={i18n.language} t={t} />
-                                ))}
-                            </div>
-                        )}
-
-                        {tier === 'community' && (
-                            <div className="grid grid-4 stagger">
-                                {tierSponsors.map((sponsor) => (
-                                    <LogoTile key={sponsor.id} sponsor={sponsor} tier="community" lang={i18n.language} t={t} />
-                                ))}
-                            </div>
-                        )}
-
-                        {tier === 'deployment' && (
-                            <div className="grid grid-4 stagger">
-                                {tierSponsors.map((sponsor) => (
-                                    <LogoTile key={sponsor.id} sponsor={sponsor} tier="deployment" lang={i18n.language} t={t} />
+                                    <LogoTile key={sponsor.id} sponsor={sponsor} tier={tier} lang={i18n.language} t={t} />
                                 ))}
                             </div>
                         )}

@@ -28,6 +28,7 @@
     "builtBy": "Built by",
     "terms": "Terms and Conditions",
     "privacy": "Privacy Policy",
+    "report": "2026 Report",
     "healthSafety": "Health & Safety"
   },
   "home": {
@@ -255,17 +256,19 @@
       "diamond": "Diamond Sponsor",
       "gold": "Gold Sponsors",
       "silver": "Silver Sponsors",
+      "dinner": "Speaker Dinner Sponsor",
       "bronze": "Bronze Sponsors",
       "community": "Community Sponsors",
-      "deployment": "Deployment Sponsors"
+      "hosting": "Hosting Sponsors"
     },
     "tierBadge": {
       "diamond": "Diamond",
       "gold": "Gold",
       "silver": "Silver",
+      "dinner": "Speaker dinner",
       "bronze": "Bronze",
       "community": "Community",
-      "deployment": "Deployment"
+      "hosting": "Hosting"
     },
     "visitWebsite": "Visit website",
     "joinList": "Want to join this list?",
@@ -782,6 +785,152 @@
         "UI/UX and Graphic Designer",
         "Lead of Canonical User Group Cameroon"
       ]
+    }
+  },
+  "report": {
+    "title": "2026",
+    "titleHighlight": "Event Report",
+    "subtitle": "Three days of Python, Ubuntu and open source in Yaound\u00e9 \u2014 what happened, who made it possible, and what comes next.",
+    "meta": "September 17\u201319, 2026 \u00b7 Girafe H\u00f4tel, Yaound\u00e9, Cameroon",
+    "heroAlt": "Attendees of PyCon & UbuCon Cameroon 2026 gathered for the closing group photo",
+    "summaryTitle": "Executive",
+    "summaryHighlight": "Summary",
+    "summaryP1": "PyCon Cameroon 2026 brought the country's Python community together for three days at the Girafe H\u00f4tel in Yaound\u00e9, from September 17 to 19. For the first time, the conference was paired with UbuCon Cameroon, a full day dedicated to Ubuntu and open source, co-organized with the local Canonical user group.",
+    "summaryP2": "The programme mixed keynotes, talks across three parallel rooms, hands-on workshops, a bilingual panel on tech jobs and AI, lightning talks and community games. Sessions ran in English, French and both, reflecting the bilingual nature of Cameroon's tech scene.",
+    "summaryP3": "None of this happens without our sponsors, partner communities, speakers and volunteers. This report is our thank-you, and an open account of what their support made possible.",
+    "glanceTitle": "At a glance",
+    "stats": {
+      "days": "Days",
+      "sessions": "Sessions",
+      "speakers": "Speakers",
+      "countries": "Speaker countries",
+      "sponsors": "Sponsors",
+      "partners": "Partner communities",
+      "attendees": "Attendees"
+    },
+    "programTitle": "The",
+    "programHighlight": "Programme",
+    "programSubtitle": "How the scheduled sessions were spread across formats, topics and languages.",
+    "formatsTitle": "Formats",
+    "topicsTitle": "Topics",
+    "languagesTitle": "Languages",
+    "formats": {
+      "keynote": "Keynotes",
+      "talk": "Talks",
+      "workshop": "Workshops",
+      "panel": "Panel"
+    },
+    "languages": {
+      "en": "English",
+      "fr": "French",
+      "bilingual": "Bilingual"
+    },
+    "daysTitle": "Day by",
+    "daysHighlight": "Day",
+    "daysSubtitle": "Highlights and photos from each day of the conference.",
+    "dayWord": "Day",
+    "keySessions": "Key sessions",
+    "seeAgenda": "Full agenda",
+    "openPhoto": "Open full-size photo",
+    "day1": {
+      "title": "PyCon opens",
+      "text": "Attendees queued outside the venue from early morning for registration and welcome coffee. After the opening ceremony, Sarah Abderemane's keynote set the tone, and the day split into three rooms covering web and security, AI and data science, and DevOps and cloud: microservices with Django and FastAPI, a vector search engine built from scratch, Terraform for Django on AWS, ASGI, MCP servers in Python and IoT for car diagnostics. The day closed with a workshop on burnout and cognitive overload, followed by community games.",
+      "photos": [
+        "Packed main hall in front of the PyCon & UbuCon Cameroon backdrop",
+        "Opening keynote on the main stage",
+        "Attendees arriving for registration outside the venue",
+        "A full room during a morning session",
+        "Lunch break: attendees digging in",
+        "Hands up from the audience during an interactive session",
+        "Energy on stage in front of the sponsor wall",
+        "Attendees taking notes during a talk",
+        "Thanking our sponsors on the main screen"
+      ]
+    },
+    "day2": {
+      "title": "UbuCon Cameroon",
+      "text": "Day 2 was dedicated to UbuCon Cameroon, co-organized with the Canonical user group. Adonis Simo opened with a keynote on building a SaaS in Africa for the world, followed by a day of hands-on sessions: a roadmap to open source for Cameroonian developers, Django with Valkey for caching and real-time features, Daniele Procida on career success and early-career jobs, Google Workspace AI, two-factor authentication with Django, and the Open Documentation Academy.",
+      "photos": [
+        "UbuCon Cameroon group photo at the sponsor wall",
+        "A full room for UbuCon Cameroon",
+        "The workshop hall, laptops open",
+        "A career talk in the main hall",
+        "Lunch together between workshops",
+        "Attendees working through a hands-on workshop",
+        "Friends made at UbuCon",
+        "Conference swag handed out on stage",
+        "All smiles at the sponsor wall"
+      ]
+    },
+    "day3": {
+      "title": "PyCon closes",
+      "text": "Veliswa Boya's keynote on keeping the human in the loop as AI writes more code opened the final day. Three rooms then covered Python in the browser, concurrency, Metabase dashboards, creative coding with Matplotlib, AI workflows and reactive Django. A bilingual panel on tech jobs and AI brought together Daniele Procida, Veliswa Boya, Leslye Nkwa and Marc Daha, followed by talks on security, smart agriculture and WhatsApp bots. Open lightning talks and a live graffiti artwork led into the closing ceremony, awards and group photos.",
+      "photos": [
+        "Closing group photo with the whole conference",
+        "Speakers, organizers and volunteers on stage at the closing ceremony",
+        "The bilingual panel on tech jobs and AI",
+        "A performance during the closing celebrations",
+        "The live graffiti artwork created during the conference",
+        "Plates full on the last day",
+        "Attendees adding their signatures to the artwork",
+        "An attendee takes the mic",
+        "Celebrating the end of three great days"
+      ]
+    },
+    "sponsorsTitle": "Thank you to our",
+    "sponsorsHighlight": "Sponsors",
+    "sponsorsSubtitle": "Your support funded the venue, meals, swag, financial aid and the experience above. Here is where your brand showed up.",
+    "visibilityTitle": "Brand visibility",
+    "visibility": [
+      {
+        "title": "Stage backdrop & photo wall",
+        "text": "Sponsor logos sat behind every keynote and in the most-photographed spot of the event, visible in the official group photos."
+      },
+      {
+        "title": "Roll-up banners",
+        "text": "Sponsor roll-ups stood in the main hall and breakout rooms for all three days."
+      },
+      {
+        "title": "On-screen thank-you",
+        "text": "Sponsors were thanked from the main stage, with their logos on the big screen."
+      },
+      {
+        "title": "Website",
+        "text": "Every sponsor is listed with a description and link on the conference website, including this report."
+      }
+    ],
+    "partnersTitle": "Partner",
+    "partnersHighlight": "Communities",
+    "partnersSubtitle": "The local communities that helped spread the word, bring attendees and run sessions.",
+    "thanksTitle": "Thank",
+    "thanksHighlight": "You",
+    "thanksText": "To every speaker, volunteer, organizer and attendee who made PyCon & UbuCon Cameroon 2026 happen: thank you. Want to support the next edition, or have questions about this report? Get in touch.",
+    "contact": "Contact the organizers",
+    "sponsorDeck": "Sponsorship deck",
+    "download": "Download the PDF report",
+    "audienceTitle": "The",
+    "audienceHighlight": "Audience",
+    "audienceSubtitle": "Everyone who attended in person across the three days, and where our speakers came from.",
+    "speakersByCountry": "Speakers by country",
+    "countryNotListed": "Not listed",
+    "aidTitle": "Financial",
+    "aidHighlight": "Aid",
+    "aidSubtitle": "Part of the budget went straight back to the community, so cost was not the reason someone missed PyCon Cameroon.",
+    "aid": [
+      { "title": "Ticket grants", "text": "Free conference tickets for students and community members who could not afford one." },
+      { "title": "Accommodation", "text": "Hotel nights in Yaound\u00e9 for speakers and grant recipients travelling from other cities and countries." },
+      { "title": "Transport", "text": "Travel costs to Yaound\u00e9 covered for speakers and grant recipients coming from other regions." }
+    ],
+    "pdf": {
+      "kicker": "Event Report",
+      "edition": "PyCon & UbuCon Cameroon 2026",
+      "contents": "Contents",
+      "foreword": "Foreword",
+      "byNumbers": "By the numbers",
+      "footer": "PyCon & UbuCon Cameroon 2026 \u00b7 Event Report",
+      "sponsorTiers": "Our sponsors",
+      "closingTitle": "Let's build the next edition together",
+      "website": "cm.pycon.org/2026"
     }
   }
 }

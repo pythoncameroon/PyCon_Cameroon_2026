@@ -324,6 +324,7 @@ export const speakers = [
         name: 'Veliswa Boya',
         photo: '/speakers/Veliswa_Boya.webp',
         title: 'Developer Advocate at AWS',
+        country: 'South Africa',
         keynote: true,
         bio: 'Senior Developer Advocate at AWS, working especially with (but not limited to) developers in the sub-Saharan Africa region. Formerly an AWS Community Hero, she was the first woman out of Africa to be named an AWS Hero. Her background spans software development, business and systems analysis, solutions architecture, and cloud engineering, and she loves working with people who are new to tech.',
         linkedin: 'https://www.linkedin.com/in/veliswa-boya/',
