@@ -2430,6 +2430,10 @@ img {
     flex-wrap: wrap;
 }
 
+.hero-buttons .btn {
+    gap: 0.5em;
+}
+
 @media (min-width: 992px) {
     .hero-buttons {
         flex-wrap: nowrap;
