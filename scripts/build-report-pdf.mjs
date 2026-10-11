@@ -136,10 +136,10 @@ const build = (lang) => {
         <div class="three-col">
             ${bars(r.formatsTitle, sessionFormats.map(([type, count]) => ({ label: r.formats[type], count })))}
             ${bars(r.languagesTitle, sessionLanguages.map(([key, count]) => ({ label: r.languages[key], count })))}
-            ${bars(r.topicsTitle, sessionTopics.slice(0, 6).map(([label, count]) => ({ label: r.topicNames?.[label] ?? label, count })))}
+            ${bars(r.topicsTitle, sessionTopics.map(([label, count]) => ({ label: r.topicNames?.[label] ?? label, count })))}
         </div>
         <div class="strip tall">
-            ${[['day3', 8], ['day1', 8], ['day2', 8], ['day1', 9]].map(([day, n]) => `<img src="${photo(day, n)}" alt="">`).join('')}
+            ${[['day3', 8], ['day1', 9]].map(([day, n]) => `<img src="${photo(day, n)}" alt="">`).join('')}
         </div>`, { n: 4, footer });
 
     const days = DAYS.map((day, i) => {
@@ -261,7 +261,7 @@ h3 { font-size: 13pt; margin-bottom: 3mm; }
 .gallery img { width: 100%; height: 100%; min-height: 0; object-fit: cover; object-position: center top; border-radius: 1.5mm; }
 .strip.fill { flex: 1; min-height: 0; grid-template-rows: 1fr 1fr; }
 .strip.fill img { height: 100%; }
-.strip.tall { flex: 1; min-height: 0; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+.strip.tall { flex: 1; min-height: 0; grid-template-columns: 1fr 1fr; grid-template-rows: minmax(0, 1fr); }
 .strip.tall img { height: 100%; }
 
 .hero-stat { display: flex; align-items: center; gap: 8mm; padding: 6mm 8mm; margin-bottom: 6mm; background: var(--dark); border: 0.3mm solid var(--border); border-left: 2mm solid var(--orange); border-radius: 2mm; }
