@@ -26,12 +26,13 @@ const work = mkdtempSync(join(tmpdir(), 'pycon-report-'));
 
 const asset = (path) => pathToFileURL(join(publicDir, path)).href;
 const photo = (day, n) => pathToFileURL(join(work, `${day}-${String(n).padStart(2, '0')}.jpg`)).href;
+const extraPhoto = (name) => pathToFileURL(join(work, `${name}.jpg`)).href;
 
 // ponytail: Chrome embeds WebP uncompressed in PDFs, so photos go in as JPEG via macOS `sips`; swap for another converter off macOS.
 const convertPhotos = () => {
     const dir = join(publicDir, 'images/report');
     for (const file of readdirSync(dir).filter((f) => f.endsWith('.webp'))) {
-        execFileSync('sips', ['-Z', '1400', '-s', 'format', 'jpeg', '-s', 'formatOptions', '75', join(dir, file), '--out', join(work, file.replace(/\.webp$/, '.jpg'))], { stdio: 'ignore' });
+        execFileSync('sips', ['-Z', file.startsWith('gallery-') ? '600' : '1200', '-s', 'format', 'jpeg', '-s', 'formatOptions', '70', join(dir, file), '--out', join(work, file.replace(/\.webp$/, '.jpg'))], { stdio: 'ignore' });
     }
 };
 
@@ -71,12 +72,13 @@ const build = (lang) => {
         `${r.programTitle} ${r.programHighlight}`,
         `${r.daysTitle} ${r.daysHighlight}`,
         `${r.sponsorsTitle} ${r.sponsorsHighlight}`,
+        `${r.pdf.galleryTitle} ${r.pdf.galleryHighlight}`,
         `${r.aidTitle} ${r.aidHighlight}`,
         `${r.partnersTitle} ${r.partnersHighlight}`,
     ];
 
     const cover = page(`
-        <div class="cover-photo" style="background-image:url('${photo('day3', 1)}')"></div>
+        <div class="cover-photo" style="background-image:url('${extraPhoto('cover')}')"></div>
         <div class="cover-shade"></div>
         <div class="cover-top">
             <img src="${asset('images/branding/python-cameroon-logo.webp')}" alt="" class="cover-logo">
@@ -96,7 +98,7 @@ const build = (lang) => {
                 <ol class="toc">
                     ${contents.map((c, i) => `<li><span>${String(i + 1).padStart(2, '0')}</span>${esc(c)}</li>`).join('')}
                 </ol>
-                <img class="foreword-photo" src="${photo('day1', 2)}" alt="">
+                <img class="foreword-photo" src="${photo('day1', 7)}" alt="">
             </div>
             <div>
                 ${sectionTitle(1, r.summaryTitle, r.summaryHighlight)}
@@ -105,8 +107,9 @@ const build = (lang) => {
                 <p>${esc(r.summaryP3)}</p>
             </div>
         </div>
-        <div class="strip">
-            <img src="${photo('day1', 3)}" alt=""><img src="${photo('day2', 2)}" alt=""><img src="${photo('day3', 3)}" alt="">
+        <div class="strip fill">
+            <img src="${photo('day2', 7)}" alt=""><img src="${extraPhoto('speaker')}" alt=""><img src="${photo('day3', 9)}" alt="">
+            <img src="${extraPhoto('extra-1')}" alt=""><img src="${extraPhoto('extra-2')}" alt=""><img src="${extraPhoto('extra-3')}" alt="">
         </div>`, { n: 2, footer });
 
     const numbers = page(`
@@ -124,7 +127,7 @@ const build = (lang) => {
         </div>
         <div class="two-col fill">
             ${bars(r.speakersByCountry, speakerCountries.map(([country, count]) => ({ label: country ? r.countryNames?.[country] ?? country : r.countryNotListed, count })))}
-            <img class="panel-photo" src="${photo('day2', 1)}" alt="">
+            <img class="panel-photo" src="${photo('day2', 9)}" alt="">
         </div>`, { n: 3, footer });
 
     const programme = page(`
@@ -136,7 +139,7 @@ const build = (lang) => {
             ${bars(r.topicsTitle, sessionTopics.slice(0, 6).map(([label, count]) => ({ label: r.topicNames?.[label] ?? label, count })))}
         </div>
         <div class="strip tall">
-            ${[['day1', 4], ['day2', 3], ['day2', 6], ['day3', 3]].map(([day, n]) => `<img src="${photo(day, n)}" alt="">`).join('')}
+            ${[['day3', 8], ['day1', 8], ['day2', 8], ['day1', 9]].map(([day, n]) => `<img src="${photo(day, n)}" alt="">`).join('')}
         </div>`, { n: 4, footer });
 
     const days = DAYS.map((day, i) => {
@@ -172,13 +175,19 @@ const build = (lang) => {
         <h3 class="sub">${esc(r.pdf.sponsorTiers)}</h3>
         ${tierBlocks}`, { n: 8, footer });
 
+    const gallery = page(`
+        ${sectionTitle(6, r.pdf.galleryTitle, r.pdf.galleryHighlight)}
+        <div class="gallery">
+            ${Array.from({ length: 24 }, (_, i) => `<img src="${extraPhoto(`gallery-${String(i + 1).padStart(2, '0')}`)}" alt="">`).join('')}
+        </div>`, { n: 9, footer });
+
     const closing = page(`
-        ${sectionTitle(6, r.aidTitle, r.aidHighlight)}
+        ${sectionTitle(7, r.aidTitle, r.aidHighlight)}
         <p class="muted">${esc(r.aidSubtitle)}</p>
         <div class="visibility aid">
             ${r.aid.map((v) => `<div class="vis"><h4>${esc(v.title)}</h4><p>${esc(v.text)}</p></div>`).join('')}
         </div>
-        ${sectionTitle(7, r.partnersTitle, r.partnersHighlight)}
+        ${sectionTitle(8, r.partnersTitle, r.partnersHighlight)}
         <p class="muted">${esc(r.partnersSubtitle)}</p>
         <div class="partners">
             ${partnerCommunities.map((p) => `<div class="partner"><img src="${asset(p.image.slice(1))}" alt=""><span>${esc(p.name)}</span></div>`).join('')}
@@ -193,7 +202,7 @@ const build = (lang) => {
             </div>
             <p class="closing-line gradient">${esc(r.pdf.closingTitle)}</p>
         </div>
-        <div class="toghu bottom"></div>`, { n: 9, cls: 'last' });
+        <div class="toghu bottom"></div>`, { n: 10, cls: 'last' });
 
     return `<!doctype html>
 <html lang="${lang}">
@@ -248,6 +257,10 @@ h3 { font-size: 13pt; margin-bottom: 3mm; }
 .foreword-photo { width: 100%; height: 62mm; object-fit: cover; object-position: center top; border-radius: 2mm; }
 .strip { margin-top: auto; padding-top: 6mm; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; }
 .strip img { width: 100%; height: 48mm; object-fit: cover; object-position: center top; border-radius: 2mm; }
+.gallery { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(6, 1fr); gap: 2mm; margin-top: 2mm; }
+.gallery img { width: 100%; height: 100%; min-height: 0; object-fit: cover; object-position: center top; border-radius: 1.5mm; }
+.strip.fill { flex: 1; min-height: 0; grid-template-rows: 1fr 1fr; }
+.strip.fill img { height: 100%; }
 .strip.tall { flex: 1; min-height: 0; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
 .strip.tall img { height: 100%; }
 
@@ -308,7 +321,7 @@ h3 { font-size: 13pt; margin-bottom: 3mm; }
 </style>
 </head>
 <body>
-${[cover, foreword, numbers, programme, ...days, sponsors, closing].join('\n')}
+${[cover, foreword, numbers, programme, ...days, sponsors, gallery, closing].join('\n')}
 </body>
 </html>`;
 };
